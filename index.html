@@ -1,535 +1,584 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michelle Pellon | Healthcare Information Technology Executive</title>
-    
-    <meta name="description" content="Drawing on more than 15 years of technology leadership experience, I specialize in turning complex business challenges into streamlined, and efficient solutions.">
-    <meta name="keywords" content="Michelle Pellon, Healthcare Technology Executive, Healthcare IT Leadership, BlueSprig Pediatrics, Digital Transformation, Healthcare Innovation, Houston Technology Executive, Healthcare Cybersecurity, EHR Implementation, IT Strategy">
-    <meta name="author" content="Michelle Pellon">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    
-    <!-- Geographical Tags for Local SEO -->
-    <meta name="geo.region" content="US-TX">
-    <meta name="geo.placename" content="Houston">
-    <meta name="geo.position" content="29.7604;-95.3698">
-    <meta name="ICBM" content="29.7604, -95.3698">
-    
-    <!-- Open Graph Tags for Social Media Sharing -->
-    <meta property="og:title" content="Michelle Pellon - Healthcare Technology Executive">
-    <meta property="og:description" content="Healthcare Technology Executive leading digital transformation and IT innovation in pediatric healthcare. Expertise in EHR implementation, cybersecurity, and operational excellence.">
-    <meta property="og:image" content="img/michelle-pellon-headshot.jpg">
-    <meta property="og:url" content="https://michellepellon.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Michelle Pellon">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Michelle Pellon - Healthcare Technology Leader">
-    <meta name="twitter:description" content="VP of IT at BlueSprig Pediatrics, specializing in healthcare technology transformation and digital innovation.">
-    <meta name="twitter:image" content="img/michelle-pellon-headshot.jpg">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Michelle Pellon | Healthcare Information Technology Executive</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <meta
+    name="description"
+    content="Drawing on more than 15 years of technology leadership experience, I specialize in turning complex business challenges into streamlined and efficient solutions."
+  />
+  <meta
+    name="keywords"
+    content="Michelle Pellon, Healthcare Technology Executive, Healthcare IT Leadership, BlueSprig Pediatrics, Digital Transformation, Healthcare Innovation, Houston Technology Executive, Healthcare Cybersecurity, EHR Implementation, IT Strategy"
+  />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
 
-        gtag('config', 'G-TPVXJT8FKZ');
-    </script>
+  <!-- Geographical Tags for Local SEO -->
+  <meta name="geo.region" content="US-TX" />
+  <meta name="geo.placename" content="Houston" />
+  <meta name="geo.position" content="29.7604;-95.3698" />
+  <meta name="ICBM" content="29.7604, -95.3698" />
 
-    <style>
-        :root {
-            --primary: #534D41;        /* Warm gray */
-            --secondary: #A69F95;      /* Light warm gray */
-            --accent: #8B7355;         /* Warm brown */
-            --background: #F5F3F0;     /* Off-white */
-            --surface: #FFFFFF;
-            --text-primary: #2C2824;   /* Dark warm gray */
-            --text-secondary: #6B635A;  /* Medium warm gray */
-            --subtle-border: rgba(166, 159, 149, 0.2); /* Very light warm gray */
-            
-            /* Subtle shadows */
-            --shadow-1: 0 2px 8px rgba(44, 40, 36, 0.08);
-            --shadow-2: 0 4px 12px rgba(44, 40, 36, 0.12);
-            
-            /* Typography */
-            --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
-            --font-sans: 'Frutiger', 'Helvetica Neue', sans-serif;
+  <!-- Open Graph Tags for Social Media Sharing -->
+  <meta
+    property="og:title"
+    content="Michelle Pellon - Healthcare Technology Executive"
+  />
+  <meta
+    property="og:description"
+    content="Healthcare Technology Executive leading digital transformation and IT innovation in pediatric healthcare. Expertise in EHR implementation, cybersecurity, and operational excellence."
+  />
+  <meta property="og:image" content="img/michelle-pellon-headshot.jpg" />
+  <meta property="og:url" content="https://michellepellon.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Michelle Pellon" />
+  <meta property="og:locale" content="en_US" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Michelle Pellon - Healthcare Technology Leader"
+  />
+  <meta
+    name="twitter:description"
+    content="VP of IT at BlueSprig Pediatrics, specializing in healthcare technology transformation and digital innovation."
+  />
+  <meta name="twitter:image" content="img/michelle-pellon-headshot.jpg" />
 
-        body {
-            font-family: var(--font-sans);
-            line-height: 1.5;
-            color: var(--text-primary);
-            background-color: var(--background);
-            font-size: 14px;
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            min-height: 100vh;
-            letter-spacing: 0.01em;
-        }
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
-        /* Left Navigation */
-        .nav-sidebar {
-            position: fixed;
-            width: 250px;
-            height: 100vh;
-            background: var(--surface);
-            padding: 1.5rem 1rem;
-            border-right: 1px solid var(--subtle-border);
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            object-fit: cover;
-            border: 4px solid var(--surface);
-            box-shadow: var(--shadow-1);
-            transition: transform 0.3s ease;
-        }
+    gtag('config', 'G-TPVXJT8FKZ');
+  </script>
 
-        .nav-header {
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
+  <style>
+    /* 
+      ================
+      Root Variables
+      ================
+    */
+    :root {
+      --primary: #534d41;            /* Warm gray */
+      --secondary: #a69f95;          /* Light warm gray */
+      --accent: #8b7355;             /* Warm brown */
+      --surface: #ffffff;            /* White surface color */
+      --text-primary: #2c2824;       /* Dark warm gray */
+      --text-secondary: #6b635a;     /* Medium warm gray */
+      --subtle-border: rgba(166, 159, 149, 0.2); /* Very light warm gray */
 
-        .nav-name {
-            font-size: 1.1rem;
-            font-weight: normal;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
+      /* Subtle shadows */
+      --shadow-1: 0 2px 8px rgba(44, 40, 36, 0.08);
+      --shadow-2: 0 4px 12px rgba(44, 40, 36, 0.12);
 
-        .nav-title {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
+      /* Typography */
+      --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+      --font-sans: 'Frutiger', 'Helvetica Neue', sans-serif;
+    }
 
-        .section {
-            margin-bottom: 3rem;
-            padding: 1.5rem 0;
-            background: transparent;
-            border-bottom: 1px solid var(--subtle-border);
-        }
+    /* 
+      ================
+      Global Reset
+      ================
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .section h2 {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            font-weight: normal;
-            color: var(--primary);
-            letter-spacing: 0.02em;
-        }
+    /* 
+      ================
+      Base Styles
+      ================
+    */
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      color: var(--text-primary);
+      /** The key removal: background is now pure white */
+      background-color: #fff; 
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        .section h3 {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            font-weight: normal;
-            color: var(--accent);
-            letter-spacing: 0.01em;
-        }
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    ul {
+      margin: 0.5rem 0;
+      padding-left: 1.25rem;
+    }
+    li {
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
 
-        .hero {
-            margin: 1rem 0 3rem 0;
-            padding: 2rem 0;
-            background: transparent;
-            border-bottom: 1px solid var(--subtle-border);
-        }
+    /* 
+      ================
+      Navigation Sidebar
+      ================
+    */
+    .nav-sidebar {
+      width: 100%;
+      background: var(--surface);
+      padding: 1rem;
+      border-bottom: 1px solid var(--subtle-border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative; 
+    }
 
-        .hero h1 {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            color: var(--primary);
-            font-weight: normal;
-            letter-spacing: 0.02em;
-        }
+    .profile-container {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
 
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            line-height: 1.4;
-            max-width: 650px;
-            margin-bottom: 0.75rem;
-        }
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+      border: 4px solid var(--surface);
+      box-shadow: var(--shadow-1);
+      transition: transform 0.3s ease;
+    }
 
-        .hero p:last-child {
-            font-size: 0.95rem;
-            font-style: italic;
-        }
+    .profile-image:hover {
+      transform: scale(1.02);
+    }
 
-        .experience-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--subtle-border);
-        }
+    .nav-header {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
-        .company {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
+    .nav-name {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
 
-        .main-content {
-            grid-column: 2;
-            max-width: 1200px;
-            padding: 1.5rem 2rem;
-        }
+    .nav-title {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
 
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      width: 100%;
+      justify-content: center;
+    }
 
-        ul {
-            margin: 0.5rem 0;
-            padding-left: 1.25rem;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
 
-        li {
-            margin-bottom: 0.25rem;
-            font-size: 0.9rem;
-        }
+    .nav-links a:hover {
+      background-color: rgba(25, 118, 210, 0.08);
+      color: var(--primary);
+    }
 
-        p {
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
-        }
+    /* 
+      ================
+      Main Content
+      ================
+    */
+    .main-content {
+      flex: 1 1 auto;
+      background: var(--surface);
+      padding: 1rem;
+    }
 
-        /* Left Navigation */
-        .nav-sidebar {
-            position: fixed;
-            width: 300px;
-            height: 100vh;
-            background: var(--surface);
-            padding: 3rem 2rem;
-            border-right: 1px solid var(--subtle-border);
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr; 
+      gap: 1.5rem;
+    }
 
-        .profile-container {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
+    /* 
+      ================
+      Hero Section
+      ================
+    */
+    .hero {
+      margin: 1rem 0 3rem 0;
+      padding: 2rem 0;
+      background: transparent;
+      border-bottom: 1px solid var(--subtle-border);
+    }
 
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 2rem;
-            object-fit: cover;
-            border: 6px solid var(--surface);
-            box-shadow: var(--shadow-1);
-            transition: transform 0.3s ease;
-        }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: var(--primary);
+      font-weight: normal;
+      letter-spacing: 0.02em;
+    }
 
-        .profile-image:hover {
-            transform: scale(1.02);
-        }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      max-width: 650px;
+      margin-bottom: 0.75rem;
+    }
 
-        .nav-header {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
+    .hero p:last-child {
+      font-size: 0.95rem;
+      font-style: italic;
+    }
 
-        .nav-name {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+    /* 
+      ================
+      Sections
+      ================
+    */
+    .section {
+      margin-bottom: 3rem;
+      padding: 1.5rem 0;
+      background: transparent;
+      border-bottom: 1px solid var(--subtle-border);
+    }
 
-        .nav-title {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
+    .section:last-child {
+      border-bottom: none;
+    }
 
-        .nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            width: 100%;
-        }
+    .section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-weight: normal;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            padding: 0.75rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
+    .section h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      font-weight: normal;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+    }
 
-        .nav-links a:hover {
-            background-color: rgba(25, 118, 210, 0.08);
-            color: var(--primary);
-        }
+    .experience-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--subtle-border);
+    }
 
-        /* Main Content */
-        .main-content {
-            grid-column: 2;
-            max-width: 1200px;
-            padding: 2rem 4rem;
-            background: var(--surface);
-        }
+    .experience-item:last-child {
+      border-bottom: none;
+    }
 
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .company {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
 
-        .section {
-            margin-bottom: 6rem;
-            margin-right: 30rem;
-            padding: 2rem 0;
-            background: transparent;
-            border-bottom: 1px solid var(--subtle-border);
-        }
+    /* 
+      ================
+      Contact
+      ================
+    */
+    .contact {
+      padding: 2rem;
+      text-align: center;
+    }
 
-        .section:last-child {
-            border-bottom: none;
-        }
+    .contact h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-weight: normal;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+    }
 
-        .section h2 {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            font-weight: normal;
-            color: var(--primary);
-            letter-spacing: 0.02em;
-        }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
 
-        .section h3 {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            margin-bottom: 1.2rem;
-            font-weight: normal;
-            color: var(--accent);
-            letter-spacing: 0.01em;
-        }
+    .social-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
 
-        .experience-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        }
+    .social-links a:hover {
+      background-color: rgba(25, 118, 210, 0.08);
+    }
 
-        .experience-item:last-child {
-            border-bottom: none;
-        }
+    /* 
+      ================
+      Responsive Media Queries
+      ================
+    */
+    @media (min-width: 992px) {
+      body {
+        display: grid;
+        /* Adjust the sidebar width as you wish. Example: 150px */
+        grid-template-columns: 150px 1fr;
+        min-height: 100vh;
+      }
 
-        .company {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
+      .nav-sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        /* Same width as above. Example: 150px */
+        width: 250px; 
+        border-bottom: none; 
+        border-right: 1px solid var(--subtle-border);
+      }
 
-        .hero {
-            margin: 2rem 0 6rem 0;
-            padding: 4rem 0;
-            background: transparent;
-            border-bottom: 1px solid var(--subtle-border);
-        }
+      .main-content {
+        grid-column: 2;
+        max-width: 1200px;
+        padding: 2rem 3rem;
+        /* Must match the fixed sidebar width. Example: 150px */
+        margin-left: 150px; 
+      }
 
-        .hero h1 {
-            font-family: var(--font-serif);
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            color: var(--primary);
-            font-weight: normal;
-            letter-spacing: 0.02em;
-        }
+      .content-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
 
-        .hero p {
-            font-size: 1.4rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            max-width: 650px;
-            margin-bottom: 1rem;
-        }
+      .hero {
+        margin: 2rem 0 6rem 0;
+        padding: 4rem 0;
+      }
 
-        .hero p:last-child {
-            font-size: 1.2rem;
-            font-style: italic;
-        }
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+      }
 
-        .contact {
-            padding: 2rem;
-            text-align: center;
-        }
+      .hero p {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
+      .hero p:last-child {
+        font-size: 1.2rem;
+      }
 
-        .social-links a {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
+      .section {
+        margin-bottom: 6rem;
+        padding: 2rem 0;
+      }
 
-        .social-links a:hover {
-            background-color: rgba(25, 118, 210, 0.08);
-        }
+      .section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+      }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            body {
-                grid-template-columns: 1fr;
-            }
+      .section h3 {
+        font-size: 1.6rem;
+      }
 
-            .nav-sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
-                padding: 1rem;
-            }
+      .experience-item {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+      }
 
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-
-            .main-content {
-                padding: 1rem;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 2rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+      .company {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="nav-sidebar">
-        <div class="profile-container">
-            <img src="img/michelle-pellon-headshot.jpg" alt="Michelle Pellon" class="profile-image">
-        </div>
-        <div class="nav-header">
-            <h1><a href="#" class="nav-name">Michelle Pellon</a></h1>
-            <div class="nav-title">Healthcare Information Technology (IT) Executive</div>
-        </div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+  <nav class="nav-sidebar">
+    <div class="profile-container">
+      <img
+        src="img/michelle-pellon-headshot.jpg"
+        alt="Michelle Pellon"
+        class="profile-image"
+      />
+    </div>
+    <div class="nav-header">
+      <h1><a href="#" class="nav-name">Michelle Pellon</a></h1>
+      <div class="nav-title">
+        Healthcare Executive Information Technology (IT)
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <main class="main-content">
+  <main class="main-content">
+    <div class="content-grid">
+      <section id="about" class="section">
+        <h2>About</h2>
+        <p>
+          Drawing from more than 15 years of technology leadership
+          experience, I specialize in turning complex healthcare
+          challenges into streamlined, efficient solutions.
+        </p>
+        <p>
+          My work at the intersection of healthcare and technology has
+          consistently delivered measurable improvements in patient
+          outcomes, operational efficiency, and provider satisfaction.
+        </p>
+        <p>
+          Currently, I am the Vice President of Information Technology
+          at BlueSprig Pediatrics, where I drive digital innovation in
+          ABA therapy services for autistic children across the United
+          States.
+        </p>
+      </section>
+    </div>
 
-        <div class="content-grid">
-            <section id="about" class="section">
-                <h2>About</h2>
-                <p>Drawing from more than 15 years of technology leadership experience, I specialize in turning complex healthcare challenges into streamlined, efficient solutions.</p>
-                <p>My work at the intersection of healthcare and technology has consistently delivered measurable improvements in patient outcomes, operational efficiency, and provider satisfaction.</p>
-                <p>Currently, I am the Vice President of Information Technology at BlueSprig Pediatrics, where I drive digital innovation in ABA therapy services for autistic children across the United States.</p>
-            </section>
-        </div>
+    <section id="experience" class="section">
+      <div class="experience-item">
+        <h2>Experience</h2>
+        <p>I have held senior IT leadership roles at: </p>
+        <img
+          src="img/experience-logos-greyscale.png"
+          alt="BlueSprig Pediatrics"
+          style="width: 50%; margin-bottom: 1rem;"
+        />
+        <p>
+          I partnered with private equity firms, including
+          <a href="https://www.waudcapital.com/en/home/">Waud Capital Partners</a>
+          and <a href="https://www.kkr.com/">KKR</a>, throughout the
+          entire deal cycle.
+        </p>
+        <p>
+          My experience spans diverse industries, including
+          <a href="https://www.practicetek.com">retail healthcare</a>
+          (mental health, optometry, dental, and chiropractic),
+          <a href="https://eptura.com/ioffice/">facilities management</a>,
+          and <a href="https://www.naes.com">energy grid operations</a>,
+          where I delivered highly available and secure solutions for
+          varied teams from sales and development to power plant
+          operators and healthcare professionals.
+        </p>
+        <p>
+          I have consistently focused on supporting organizations
+          through critical transitions while maintaining robust
+          technical infrastructure and security measures.
+        </p>
+      </div>
+    </section>
 
-        <section id="experience" class="section">
-            <div class="experience-item">
-                <h2>Experience</h2>
-                <p>I have held senior IT leadership roles at: </p>
-                <img src="img/experience-logos-greyscale.png" alt="BlueSprig Pediatrics" style="width: 100%; margin-bottom: 1rem;"> 
-                <p>I partnered with private equity firms, including <a href="https://www.waudcapital.com/en/home/">Waud Capital Partners</a> and <a href="https://www.kkr.com/">KKR</a>, throughout the entire deal cycle.</p>
-                <p>My experience spans diverse industries, including <a href="https://www.practicetek.com">retail healthcare</a> (mental health, optometry, dental, and chiropractic), <a href="https://eptura.com/ioffice/">facilities management</a>, and <a href="https://www.naes.com">energy grid operations</a>, where I delivered highly available and secure solutions for varied teams from sales and development to power plant operators and healthcare professionals.</p>
-                <p>I have consistently focused on supporting organizations through critical transitions while maintaining robust technical infrastructure and security measures.</p>
-            </div>
+    <section id="contact" class="contact section">
+      <h2>Need to get in touch?</h2>
+      <div class="social-links">
+        <a
+          href="https://linkedin.com/in/michelle-pellon-469766246"
+          target="_blank"
+        >
+          <img
+            src="img/linkedin-icon.png"
+            alt="LinkedIn"
+            style="width: 24px; height: 24px;"
+          />
+        </a>
+        <a href="mailto:mgracepellon@gmail.com">
+          <img
+            src="img/email-icon.png"
+            alt="Email"
+            style="width: 24px; height: 24px;"
+          />
+        </a>
+        <a href="tel:+18323395370">
+          <img
+            src="img/phone-icon.png"
+            alt="Phone"
+            style="width: 24px; height: 24px;"
+          />
+        </a>
+        <a href="https://github.com/michellepellon" target="_blank">
+          <img
+            src="img/github-icon.png"
+            alt="GitHub"
+            style="width: 24px; height: 24px;"
+          />
+        </a>
+      </div>
+    </section>
+  </main>
 
-        </section>
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document
+          .querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
 
-        <section id="contact" class="contact section">
-            <h2>Need to get in touch?</h2>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/michelle-pellon-469766246" target="_blank">
-                    <img src="img/linkedin-icon.png" alt="LinkedIn" style="width: 24px; height: 24px;">
-                </a>
-                <a href="mailto:mgracepellon@gmail.com">
-                    <img src="img/email-icon.png" alt="Email" style="width: 24px; height: 24px;">
-                </a>
-                <a href="tel:+18323395370">
-                    <img src="img/phone-icon.png" alt="Phone" style="width: 24px; height: 24px;">
-                </a>
-                <a href="https://github.com/michellepellon" target="_blank">
-                    <img src="img/github-icon.png" alt="GitHub" style="width: 24px; height: 24px;">
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Navigation opacity
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            nav.style.backgroundColor = window.scrollY > 50 ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.95)';
-        });
-    </script>
+    // Optional: Make nav background slightly opaque on scroll
+    window.addEventListener('scroll', function () {
+      const nav = document.querySelector('nav');
+      nav.style.backgroundColor =
+        window.scrollY > 50
+          ? 'rgba(255, 255, 255, 0.98)'
+          : 'rgba(255, 255, 255, 0.95)';
+    });
+  </script>
 </body>
 </html>
