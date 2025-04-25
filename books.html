@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books I've Read | Michelle Pellon</title>
+
+  <meta name="description" content="A collection of books that have shaped my thinking and career in healthcare technology." />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TPVXJT8FKZ');
+  </script>
+
+  <style>
+    :root {
+      --background: #ffffff;
+      --text: #252525;
+      --accent: #3e80c1;
+      --muted: #737373;
+      --border: #e0e0e0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+      padding: 1rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--text);
+    }
+    
+    .book a {
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .nav-bar a {
+      margin: 0 1rem;
+      padding: 0.5rem 0;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-bar a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-bar a:hover::after {
+      width: 100%;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .book {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .book:hover {
+      transform: translateY(-5px);
+    }
+
+    .book-cover {
+      aspect-ratio: 2/3;
+      background-color: #e5e5e5;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+    }
+
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .book-info {
+      flex-grow: 1;
+    }
+
+    .book-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .book-author {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .book-year {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .book-tags {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .book-tag {
+      font-size: 0.7rem;
+      background-color: rgba(62, 128, 193, 0.1);
+      color: var(--accent);
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .back-to-home {
+      margin-top: 1rem;
+      display: inline-block;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .header p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 1rem;
+      }
+
+      .book-title {
+        font-size: 0.9rem;
+      }
+
+      .book-author {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav-bar">
+      <a href="index.html">Home</a>
+      <a href="#" class="active">Books</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <header class="header">
+      <h1>Books I've Read</h1>
+      <p>Below you will find my recent reads with reviews and thoughts.</p>
+    </header>
+
+    <div class="books-grid">
+      <div class="book">
+        <a href="books/hardcore-zen.html">
+          <div class="book-cover">
+            <img src="https://m.media-amazon.com/images/I/41OKX3NsKsL._SY445_SX342_.jpg" alt="Hardcore Zen" />
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">Hardcore Zen: Punk Rock, Monster Movies and the Truth About Reality</h3>
+            <p class="book-author">Brad Warner</p>
+            <p class="book-year">2015</p>
+            <div class="book-tags">
+              <span class="book-tag">Buddhism</span>
+              <span class="book-tag">Zen</span>
+            </div>
+          </div>
+        </a>
+      </div>
+  </div>
+</body>
+</html>

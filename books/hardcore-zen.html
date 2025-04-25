@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardcore Zen | Books | Michelle Pellon</title>
+
+  <meta name="description" content="My thoughts on Hardcore Zen by Brad Warner." />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TPVXJT8FKZ');
+  </script>
+
+  <style>
+    :root {
+      --background: #ffffff;
+      --text: #252525;
+      --text-light: #555555;
+      --accent: #3e80c1;
+      --muted: #737373;
+      --border: #e0e0e0;
+      --white: #ffffff;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+      /* Spacing */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 1rem;
+      --space-4: 2rem;
+      --space-5: 4rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--background);
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    a:hover {
+      color: var(--text);
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: var(--space-3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin-bottom: var(--space-3);
+      font-size: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-3);
+      margin: var(--space-4) 0;
+      font-style: italic;
+      color: var(--text-light);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--space-3);
+    }
+
+    .nav-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--background);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-3) 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .profile-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .site-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .nav-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: var(--space-1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-4);
+    }
+
+    .nav-link {
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-bottom: var(--space-1);
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .breadcrumbs a {
+      color: var(--muted);
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--accent);
+    }
+
+    .breadcrumbs .separator {
+      color: var(--muted);
+    }
+
+    .book-header {
+      display: flex;
+      gap: var(--space-4);
+      margin-bottom: var(--space-5);
+      align-items: flex-start;
+    }
+
+    .book-cover {
+      flex-shrink: 0;
+      width: 200px;
+      aspect-ratio: 2/3;
+      box-shadow: var(--shadow-md);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .book-info {
+      flex-grow: 1;
+    }
+
+    .book-title {
+      font-size: 2.2rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .book-author {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: var(--space-3);
+    }
+
+    .book-meta {
+      margin-bottom: var(--space-3);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .book-meta div {
+      margin-bottom: var(--space-1);
+    }
+
+    .book-rating {
+      margin-bottom: var(--space-2);
+    }
+
+    .star {
+      color: #ffd700;
+    }
+
+    .empty-star {
+      color: var(--border);
+    }
+
+    .book-tags {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-3);
+    }
+
+    .book-tag {
+      font-size: 0.75rem;
+      background-color: rgba(62, 128, 193, 0.1);
+      color: var(--accent);
+      padding: var(--space-1) var(--space-2);
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    .book-content {
+      margin-bottom: var(--space-5);
+    }
+
+    .book-section {
+      margin-bottom: var(--space-4);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: var(--space-3);
+      padding-bottom: var(--space-1);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .book-notes {
+      margin-top: var(--space-4);
+    }
+
+    .book-notes ul {
+      padding-left: var(--space-4);
+      margin-bottom: var(--space-3);
+    }
+
+    .book-notes li {
+      margin-bottom: var(--space-2);
+    }
+
+    .navigate-books {
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--space-5);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--border);
+    }
+
+    .prev-book, .next-book {
+      max-width: 45%;
+    }
+
+    .navigate-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-1);
+    }
+
+    .navigate-title {
+      font-family: 'Fraunces', serif;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      padding: var(--space-4) 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: var(--space-5);
+    }
+
+    .back-to-books {
+      display: inline-block;
+      margin-top: var(--space-3);
+      padding: var(--space-2) var(--space-3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .back-to-books:hover {
+      background-color: rgba(62, 128, 193, 0.1);
+      border-color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .book-header {
+        flex-direction: column;
+      }
+
+      .book-cover {
+        width: 150px;
+        margin: 0 auto var(--space-3) auto;
+      }
+
+      .book-title {
+        font-size: 1.8rem;
+      }
+
+      .book-author {
+        font-size: 1.1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav-container">
+    <div class="container nav-wrapper">
+      <div class="logo-container">
+        <img src="../img/michelle-pellon-headshot.jpg" alt="Michelle Pellon" class="profile-image">
+        <div>
+          <h1 class="site-title">Michelle Pellon</h1>
+          <div class="nav-subtitle">Healthcare IT Executive</div>
+        </div>
+      </div>
+      
+      <nav class="nav-links">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#experience" class="nav-link">Experience</a>
+        <a href="../books.html" class="nav-link">Books</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../index.html">Home</a>
+      <span class="separator">›</span>
+      <a href="../books.html">Books</a>
+      <span class="separator">›</span>
+      <span>Hardcore Zen</span>
+    </div>
+    
+    <div class="book-header">
+      <div class="book-cover">
+        <img src="https://m.media-amazon.com/images/I/71V-OONVxGL._SL1500_.jpg" alt="Hardcore Zen">
+      </div>
+      
+      <div class="book-info">
+        <h1 class="book-title">Hardcore Zen: Punk Rock, Monster Movies and the Truth About Reality</h1>
+        <div class="book-author">by Brad Warner</div>
+        
+        <div class="book-meta">
+          <div><strong>Read:</strong> April 2025</div>
+          <div><strong>Published:</strong> 2015</div>
+          <div><strong>Publisher:</strong> Wisdom Publications</div>
+          <div><strong>ISBN:</strong> 978-1614293163</div>
+        </div>
+        
+        <div class="book-rating">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="rating-text">(4/5)</span>
+        </div>
+        
+        <div class="book-tags">
+          <span class="book-tag">Buddhism</span>
+          <span class="book-tag">Zen</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="book-content">
+      <div class="book-section">
+        <h2 class="section-title">Summary</h2>
+        <p>
+          In "Hardcore Zen," Brad Warner combines his background as a punk rock bassist with his journey to becoming a Zen Buddhist priest to create a unique, irreverent approach to spiritual practice. The book serves as "both an autobiography and an introduction to Sōtō Zen philosophy," challenging readers to question everything—including the book itself. Warner focuses on "the importance of a direct experience of reality in all its rawness over adherence to any set of beliefs—even Zen ones," delivering his message with humor, profanity, and surprising wisdom.
+        </p>
+      </div>
+      
+      <div class="book-section">
+        <h2 class="section-title">My Thoughts</h2>
+        <p>
+          Hardcore Zen was a great introduction to Zen Buddhism, though Warner's narrative sometimes rambles. The book's second half, which focused more on Zen concepts than Warner's life story, resonated more strongly with me. I particularly appreciated his straightforward approach to explaining complicated philosophical issues, which made ancient wisdom accessible without diluting its essence. While the book's heavy emphasis on questioning authority and the futility of chasing enlightenment didn't feel especially relevant to my interests, it was an enjoyable and quick read that offered a refreshing perspective on spirituality.
+        </p>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <a href="../books.html" class="back-to-books">← Back to All Books</a>
+      <p>&copy; 2025 Michelle Pellon. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
