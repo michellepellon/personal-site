@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Books | Michelle Pellon</title>
+  <title>Services | Michelle Pellon</title>
 
-  <meta name="description" content="Recommended books for technology leaders. Essential reading on leadership, digital transformation, mindfulness, and business strategy for healthcare IT executives." />
-  <meta name="keywords" content="Technology Leadership Books, Business Books, Healthcare IT Reading List, Digital Transformation Books, Leadership Development" />
+  <meta name="description" content="Healthcare IT consulting services specializing in digital transformation, M&A integration, cybersecurity, and technology leadership. Expert CTO/CIO advisory services." />
+  <meta name="keywords" content="Healthcare IT Consulting, Digital Transformation, M&A Integration, CTO Services, CIO Advisory, Healthcare Technology, Cybersecurity, HIPAA Compliance" />
   <meta name="author" content="Michelle Pellon" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://michellepellon.com/books.html" />
+  <link rel="canonical" href="https://michellepellon.com/consulting.html" />
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Recommended Reading | Michelle Pellon" />
-  <meta property="og:description" content="Essential books for technology leaders on digital transformation, leadership, and business strategy." />
+  <meta property="og:title" content="Healthcare IT Consulting Services | Michelle Pellon" />
+  <meta property="og:description" content="Expert healthcare IT consulting for digital transformation, M&A integration, and scaling technology infrastructure. CTO/CIO advisory services with 15+ years experience." />
   <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
-  <meta property="og:url" content="https://michellepellon.com/books.html" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://michellepellon.com/consulting.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Michelle Pellon" />
 
   <!-- Twitter Card Tags -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Recommended Books | Michelle Pellon" />
-  <meta name="twitter:description" content="Essential reading for technology leaders and healthcare IT executives." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Healthcare IT Consulting | Michelle Pellon" />
+  <meta name="twitter:description" content="Expert consulting for digital transformation, M&A integration, and healthcare technology leadership." />
   <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
 
   <!-- Favicon -->
@@ -33,17 +35,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Recommended Books for Technology Leaders",
-    "description": "Essential reading list for healthcare IT executives",
-    "numberOfItems": 6,
-    "itemListElement": [
-      {
-        "@type": "Book",
-        "position": 1,
-        "name": "Hardcore Zen",
-        "author": "Brad Warner"
-      }
+    "@type": "ProfessionalService",
+    "name": "Michelle Pellon Healthcare IT Consulting",
+    "description": "Healthcare IT consulting services specializing in digital transformation and M&A integration",
+    "url": "https://michellepellon.com/consulting.html",
+    "provider": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "jobTitle": "Healthcare IT Consultant"
+    },
+    "areaServed": "United States",
+    "serviceType": [
+      "Digital Transformation",
+      "M&A Technology Integration",
+      "Cybersecurity Consulting",
+      "IT Strategy",
+      "Interim CTO/CIO Services"
     ]
   }
   </script>
@@ -138,13 +145,6 @@
       font-weight: 600;
       line-height: 1.3;
       margin-bottom: var(--spacing-sm);
-    }
-
-    h4 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      line-height: 1.4;
-      margin-bottom: var(--spacing-xs);
     }
 
     p {
@@ -269,177 +269,174 @@
       max-width: 700px;
     }
 
-    /* Book Sections */
-    .books-section {
+    /* Sections */
+    .section {
       padding: var(--spacing-3xl) 0;
+      border-top: 1px solid var(--border-color);
     }
 
     .section-header {
       margin-bottom: var(--spacing-2xl);
-      padding-bottom: var(--spacing-lg);
-      border-bottom: 1px solid var(--border-color);
     }
 
     .section-header h2 {
       margin-bottom: var(--spacing-sm);
     }
 
-    .section-description {
+    .section-subtitle {
+      font-size: 1.25rem;
       color: var(--text-secondary);
-      font-size: 1.125rem;
+      max-width: 1000px;
+      line-height: 1.6;
     }
 
-    /* Books Grid */
-    .books-grid {
+    /* Services Grid */
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: var(--spacing-xl);
-      margin-bottom: var(--spacing-3xl);
+      margin-top: var(--spacing-2xl);
     }
 
-    .book-card {
+    .service-card {
+      padding: var(--spacing-lg);
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      overflow: hidden;
       transition: all 0.3s ease;
-      background: var(--bg-white);
     }
 
-    .book-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+    .service-card:hover {
       border-color: var(--accent-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
 
-    .book-card-link {
-      display: block;
-      color: inherit;
-      border: none;
-    }
-
-    .book-card-link:hover {
-      color: inherit;
-    }
-
-    .book-cover {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      background: var(--bg-light);
-    }
-
-    .book-content {
-      padding: var(--spacing-lg);
-    }
-
-    .book-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: var(--spacing-xs);
-      color: var(--text-primary);
-    }
-
-    .book-author {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: var(--spacing-sm);
-    }
-
-    .book-description {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
+    .service-card h3 {
       margin-bottom: var(--spacing-md);
     }
 
-    .book-category {
-      display: inline-block;
-      padding: var(--spacing-xs) var(--spacing-sm);
-      background: var(--bg-light);
-      border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: 500;
+    .service-card p {
+      font-size: 1rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-card li {
+      padding: var(--spacing-xs) 0;
       color: var(--text-secondary);
+      font-size: 0.95rem;
+      padding-left: var(--spacing-md);
+      position: relative;
     }
 
-    /* Reading List */
-    .reading-list {
-      background: var(--bg-light);
-      border-radius: 12px;
-      padding: var(--spacing-2xl);
-      margin-bottom: var(--spacing-3xl);
+    .service-card li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
     }
 
-    .reading-list h3 {
-      margin-bottom: var(--spacing-lg);
+    /* Process Section */
+    .process-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
     }
 
-    .reading-list-items {
+    .process-item {
       display: grid;
-      gap: var(--spacing-md);
+      grid-template-columns: 60px 1fr;
+      gap: var(--spacing-lg);
+      align-items: start;
     }
 
-    .reading-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: var(--spacing-md);
-      padding: var(--spacing-md);
-      background: var(--bg-white);
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      transition: all 0.2s ease;
-    }
-
-    .reading-item:hover {
-      border-color: var(--accent-blue);
-      transform: translateX(4px);
-    }
-
-    .reading-item-number {
-      width: 32px;
-      height: 32px;
+    .process-number {
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      background: var(--text-primary);
-      color: white;
+      background: var(--bg-light);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 600;
-      font-size: 0.875rem;
-    }
-
-    .reading-item-content h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 0.25rem;
+      border: 2px solid var(--border-color);
     }
 
-    .reading-item-author {
-      font-size: 0.875rem;
-      color: var(--text-muted);
+    .process-content h3 {
+      margin-bottom: var(--spacing-sm);
     }
 
-    /* Quote Section */
-    .quote-section {
-      background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+    .process-content p {
+      font-size: 1rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--bg-light);
       padding: var(--spacing-3xl);
       border-radius: 12px;
       text-align: center;
       margin: var(--spacing-3xl) 0;
-      border: 1px solid var(--border-color);
     }
 
-    .quote-text {
-      font-size: 1.5rem;
-      font-style: italic;
-      color: var(--text-primary);
+    .cta-section h2 {
       margin-bottom: var(--spacing-md);
-      line-height: 1.6;
     }
 
-    .quote-author {
+    .cta-section p {
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.875rem 1.75rem;
       font-size: 1rem;
-      color: var(--text-secondary);
       font-weight: 500;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--text-primary);
+      color: white;
+      border-color: var(--text-primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-primary);
+      background: var(--bg-light);
     }
 
     /* Footer */
@@ -453,40 +450,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: var(--spacing-md);
-    }
-
-    .social-links {
-      display: flex;
-      gap: var(--spacing-md);
-      align-items: center;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--bg-light);
-      border: 1px solid var(--border-color);
-      color: var(--text-primary);
-      transition: all 0.2s ease;
-      text-decoration: none;
-    }
-
-    .social-link:hover {
-      background: var(--accent-blue);
-      color: white;
-      border-color: var(--accent-blue);
-      transform: translateY(-2px);
-    }
-
-    .social-link svg {
-      width: 20px;
-      height: 20px;
     }
 
     .footer-links {
@@ -544,17 +507,28 @@
         font-size: 2.5rem;
       }
 
-      .books-grid {
+      .services-grid {
         grid-template-columns: 1fr;
       }
 
-      .quote-text {
+      .process-item {
+        grid-template-columns: 50px 1fr;
+        gap: var(--spacing-md);
+      }
+
+      .process-number {
+        width: 50px;
+        height: 50px;
         font-size: 1.25rem;
       }
 
       .footer-content {
         flex-direction: column;
         gap: var(--spacing-md);
+      }
+
+      .cta-section {
+        padding: var(--spacing-2xl) var(--spacing-lg);
       }
     }
 
@@ -589,9 +563,9 @@
         </div>
         <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
-          <a href="consulting.html">Services</a>
+          <a href="consulting.html" class="active">Services</a>
           <a href="blog.html">Blog</a>
-          <a href="books.html" class="active">Reading</a>
+          <a href="books.html">Reading</a>
           <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
         </div>
       </nav>
@@ -602,31 +576,56 @@
   <section class="page-header">
     <div class="container">
       <div class="fade-in">
-        <h1>Books I've Read</h1>
+        <h1>Services</h1>
+        <p class="page-subtitle">Transform your technology infrastructure, streamline operations, and achieve measurable business outcomes with expert healthcare IT leadership.</p>
       </div>
     </div>
   </section>
 
   <main id="main-content">
-    <section class="books-section">
+    <!-- Services Section -->
+    <section class="section">
+      
+      <div class="container">
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Fractional / Interim CIO</h3>
+            <p>Many companies do not need a CIO forever. Michelle steps in to build the right foundation, fast-track strategy and execution, then hands off a clear playbook the internal team can run.</p>
+            <ul>
+              <li>Builds strategic plans aligned with business goals</li>
+              <li>Launches execution quickly while refining team focus</li>
+              <li>Mentors directors and managers for long-term success</li>
+              <li>Prepares a full transition plan before stepping out</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-description">Below you’ll find my recent reads with reviews and thoughts.</p>
+          <h3>Who it's for</h3>
+          <p class="section-subtitle">Companies in transition, post-investment, or scaling quickly but not ready for a full-time CIO.</p>
         </div>
         
-        <div class="books-grid">
-          <!-- Book 1 -->
-          <article class="book-card fade-in">
-            <a href="books/hardcore-zen.html" class="book-card-link">
-              <div class="book-content">
-                <h3 class="book-title">Hardcore Zen</h3>
-                <p class="book-author">Brad Warner</p>
-                <p class="book-description">A punk rock approach to Zen Buddhism that challenges conventional thinking and brings mindfulness into the modern workplace.</p>
-                <span class="book-category">Philosophy & Mindfulness</span>
-              </div>
-            </a>
-          </article>
+        <div class="section-header">
+          <h3>Outcome</h3>
+          <p class="section-subtitle">A strategic information technology foundation, fully operational core IT processes, and a team ready to execute long after Michelle transitions out.</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-section">
+          <div class="cta-buttons">
+            <a href="https://calendly.com/michellepellon" class="btn btn-primary">Schedule a Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -649,9 +648,9 @@
           </a>
         </div>
         <div class="footer-links">
-          <a href="consulting.html">Services</a>
-          <a href="blog.html">Blog</a>
           <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="books.html">Reading</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="mailto:mgracepellon@gmail.com">Contact</a>
         </div>

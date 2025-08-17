@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Michelle Pellon</title>
+
+  <meta name="description" content="Privacy Policy for michellepellon.com - Learn how we collect, use, and protect your personal information. GDPR and CCPA compliant." />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://michellepellon.com/privacy.html" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Privacy Policy | Michelle Pellon" />
+  <meta property="og:description" content="Privacy policy for michellepellon.com. How we protect your data and respect your privacy." />
+  <meta property="og:url" content="https://michellepellon.com/privacy.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Michelle Pellon" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy",
+    "description": "Privacy policy for michellepellon.com",
+    "url": "https://michellepellon.com/privacy.html",
+    "publisher": {
+      "@type": "Person",
+      "name": "Michelle Pellon"
+    },
+    "dateModified": "2025-01-06"
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TPVXJT8FKZ');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --max-width: 1100px;
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --text-muted: #999999;
+      --link-color: #000000;
+      --link-hover: #4d65ff;
+      --accent-blue: #4d65ff;
+      --border-color: #e5e5e5;
+      --bg-white: #ffffff;
+      --bg-light: #fafafa;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --shadow-md: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-white);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-lg);
+      margin-top: var(--spacing-2xl);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-md);
+      margin-top: var(--spacing-xl);
+    }
+
+    p {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin-bottom: var(--spacing-md);
+      padding-left: var(--spacing-lg);
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: var(--spacing-xs);
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+      color: var(--accent-blue);
+      border-bottom-color: var(--accent-blue);
+    }
+
+    /* Navigation */
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) 0;
+      height: 72px;
+    }
+
+    .nav-brand {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-menu {
+      display: none;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .nav-menu span {
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      border: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--text-primary);
+    }
+
+    .nav-cta {
+      background: rgb(56, 113, 222);
+      color: white !important;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0.1px;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      border: none;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-cta:hover {
+      background: rgb(40, 90, 180);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: calc(72px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .page-header h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.05;
+    }
+
+    .page-subtitle {
+      font-size: 1.375rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding: var(--spacing-3xl) 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .last-updated {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: var(--spacing-2xl);
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--bg-light);
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    /* Policy Sections */
+    .policy-section {
+      margin-bottom: var(--spacing-2xl);
+      padding-bottom: var(--spacing-2xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .policy-section:last-child {
+      border-bottom: none;
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--spacing-xl) 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--spacing-3xl);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      border: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-copyright {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 var(--spacing-md);
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .page-header {
+        padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-2xl);
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .content-section {
+        padding: var(--spacing-2xl) var(--spacing-md);
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="nav-container">
+    <div class="container">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-brand">Michelle Pellon</div>
+        <div class="nav-menu" id="nav-menu" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="consulting.html">Services</a>
+          <a href="blog.html">Blog</a>
+          <a href="books.html">Reading</a>
+          <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="fade-in">
+        <h1>Privacy Policy</h1>
+        <p class="page-subtitle">Your privacy is important to us. This policy explains how we collect, use, and protect your information.</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <section class="content-section">
+      <div class="container">
+        <div class="last-updated">Last Updated: January 2025</div>
+
+        <div class="policy-section">
+          <h2>Information We Collect</h2>
+          <p>We collect information you provide directly to us, such as when you contact us via email or fill out a contact form. This may include:</p>
+          <ul>
+            <li>Name and contact information</li>
+            <li>Email address</li>
+            <li>Phone number (if provided)</li>
+            <li>Company name and role</li>
+            <li>Any other information you choose to provide</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2>How We Use Your Information</h2>
+          <p>We use the information we collect to:</p>
+          <ul>
+            <li>Respond to your inquiries and fulfill your requests</li>
+            <li>Send you information about our services that may interest you</li>
+            <li>Communicate with you about consulting opportunities</li>
+            <li>Improve our website and services</li>
+            <li>Comply with legal obligations</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2>Analytics and Cookies</h2>
+          <p>We use Google Analytics to understand how visitors interact with our website. Google Analytics uses cookies to collect anonymous information such as:</p>
+          <ul>
+            <li>Number of visitors to the site</li>
+            <li>Pages visited and time spent on each page</li>
+            <li>How visitors arrived at our site</li>
+            <li>General geographic location (country/city level)</li>
+          </ul>
+          <p>You can opt-out of Google Analytics by installing the Google Analytics Opt-out Browser Add-on.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>Information Sharing</h2>
+          <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except:</p>
+          <ul>
+            <li>To comply with legal obligations</li>
+            <li>To protect our rights, privacy, safety, or property</li>
+            <li>With service providers who assist us in operating our website (bound by confidentiality agreements)</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2>Data Security</h2>
+          <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>Your Rights</h2>
+          <p>You have the right to:</p>
+          <ul>
+            <li>Access the personal information we hold about you</li>
+            <li>Request correction of inaccurate information</li>
+            <li>Request deletion of your personal information</li>
+            <li>Opt-out of marketing communications</li>
+            <li>Lodge a complaint with a supervisory authority</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2>Children's Privacy</h2>
+          <p>Our website is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>Contact Us</h2>
+          <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+          <p>
+            Email: <a href="mailto:mgracepellon@gmail.com">mgracepellon@gmail.com</a><br>
+            Website: <a href="https://michellepellon.com">michellepellon.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copyright">
+          &copy; 2025 Michelle Pellon. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="mailto:mgracepellon@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('nav-menu').addEventListener('click', function() {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

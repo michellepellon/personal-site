@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Case for Digital National Parks | Michelle Pellon</title>
+
+  <meta name="description" content="AI agents promise convenience, but at what cost? Explore the rise of 'digital national parks' to protect privacy, autonomy, and human choice." />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="A Case for Digital National Parks" />
+  <meta property="og:description" content="AI agents promise convenience, but at what cost? Explore the rise of 'digital national parks' to protect privacy, autonomy, and human choice." />
+  <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Michelle Pellon" />
+  <meta property="article:author" content="Michelle Pellon" />
+  <meta property="article:published_time" content="2025-08-18T00:00:00Z" />
+  <meta property="article:tag" content="AI Privacy Risk" />
+  <meta property="article:tag" content="Digital Autonomy" />
+  <meta property="article:tag" content="Surveillance" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A Case for Digital National Parks" />
+  <meta name="twitter:description" content="AI agents promise convenience, but at what cost? Explore the rise of 'digital national parks' to protect privacy, autonomy, and human choice." />
+  <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta name="twitter:creator" content="@michellepellon" />
+
+  <!-- LinkedIn Tags -->
+  <meta property="article:author" content="https://linkedin.com/in/michelle-pellon-469766246" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "A Case for Digital National Parks",
+    "alternativeHeadline": "",
+    "image": "https://michellepellon.com/img/michelle-pellon-headshot.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "url": "https://michellepellon.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://michellepellon.com/img/michelle-pellon-headshot.jpg"
+      }
+    },
+    "datePublished": "2025-08-18",
+    "dateModified": "2025-08-18",
+    "description": "AI agents promise convenience, but at what cost? Explore the rise of 'digital national parks' to protect privacy, autonomy, and human choice.",
+    "keywords": "AI Privacy Risk, Digital Autonomy, Surveillance",
+    "url": "https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks"
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TPVXJT8FKZ');
+  </script>
+  
+  <!-- Cookie Consent -->
+  <script src="../cookie-consent.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --max-width: 1100px;
+      --article-width: 800px;
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --text-muted: #999999;
+      --link-color: #000000;
+      --link-hover: #4d65ff;
+      --accent-blue: #4d65ff;
+      --border-color: #e5e5e5;
+      --bg-white: #ffffff;
+      --bg-light: #fafafa;
+      --bg-code: #f6f8fa;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --shadow-md: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-white);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .article-container {
+      max-width: var(--article-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    h2 {
+      font-size: 1.875rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-top: var(--spacing-2xl);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-top: var(--spacing-lg);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      border-bottom-color: var(--link-hover);
+    }
+
+    /* Navigation */
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) 0;
+      height: 72px;
+    }
+
+    .nav-brand {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-menu {
+      display: none;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .nav-menu span {
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      border: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--text-primary);
+    }
+
+    .nav-cta {
+      background: rgb(56, 113, 222);
+      color: white !important;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0.1px;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      border: none;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-cta:hover {
+      background: rgb(40, 90, 180);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+      transform: translateY(-1px);
+      color: white;
+    }
+
+    /* Article Header */
+    .article-header {
+      padding: calc(72px + var(--spacing-3xl)) 0 var(--spacing-2xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .article-category {
+      color: var(--accent-blue);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+    }
+
+    .article-date {
+      font-weight: 400;
+    }
+
+    .article-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.2;
+    }
+
+    .article-subtitle {
+      font-size: 1.375rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Article Content */
+    .article-content {
+      padding: var(--spacing-3xl) 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--spacing-md);
+      padding-left: var(--spacing-lg);
+      color: var(--text-secondary);
+    }
+
+    .article-content li {
+      margin-bottom: var(--spacing-xs);
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    .article-content blockquote {
+      margin: var(--spacing-xl) 0;
+      padding: var(--spacing-lg);
+      border-left: 4px solid var(--accent-blue);
+      background: var(--bg-light);
+      font-style: italic;
+    }
+
+    .article-content code {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 0.9em;
+      padding: 2px 6px;
+      background: var(--bg-code);
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .article-content pre {
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-md);
+      background: var(--bg-code);
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+    }
+
+    .article-content pre code {
+      padding: 0;
+      background: transparent;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Table Styles */
+    .article-content table {
+      width: 100%;
+      margin: var(--spacing-lg) 0;
+      border-collapse: collapse;
+      border: 1px solid var(--border-color);
+    }
+
+    .article-content th,
+    .article-content td {
+      padding: var(--spacing-sm);
+      text-align: left;
+      border: 1px solid var(--border-color);
+    }
+
+    .article-content th {
+      background: var(--bg-light);
+      font-weight: 600;
+    }
+
+    /* Author Section */
+    .author-section {
+      padding: var(--spacing-2xl);
+      background: var(--bg-light);
+      border-radius: 12px;
+      margin: var(--spacing-3xl) 0;
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h3 {
+      margin-top: 0;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .author-bio {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* Share Section */
+    .share-section {
+      padding: var(--spacing-xl) 0;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      margin-top: var(--spacing-md);
+    }
+
+    .share-button {
+      padding: var(--spacing-sm) var(--spacing-md);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      color: var(--text-primary);
+    }
+
+    .share-button:hover {
+      background: var(--bg-light);
+      border-color: var(--accent-blue);
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--spacing-xl) 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--spacing-3xl);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      border: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-copyright {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .container,
+      .article-container {
+        padding: 0 var(--spacing-md);
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .article-header {
+        padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
+      }
+
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .author-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .share-buttons {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="nav-container">
+    <div class="container">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-brand">Michelle Pellon</div>
+        <div class="nav-menu" id="nav-menu" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../consulting.html">Services</a>
+          <a href="../blog.html" class="active">Blog</a>
+          <a href="../books.html">Reading</a>
+          <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Article Header -->
+  <article>
+    <header class="article-header">
+      <div class="article-container">
+        <div class="article-meta">
+          <span class="article-category">Digital Autonomy</span>
+          <span class="article-category">AI Privacy Risk</span>
+          <span class="article-category">Surveillance</span>
+          <span class="article-date">August 18, 2025</span>
+        </div>
+        <h1 class="article-title">A Case for Digital National Parks</h1>
+        <p class="article-subtitle">Why We Must Protect Human Choice in an Age of AI Convenience</p>
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content">
+      <div class="article-container">
+        <p>Rachel Carson began her seminal work, Silent Spring, in a town where no birds sang. I want to paint a picture of our approaching silence — a world where no human decision goes unmediated by AI.</p>
+
+        <p>Imagine waking in 2027. The AI agent running on your smartphone next to your bed has already:</p>
+
+        <ul>
+          <li>Responded to seventeen emails in your style</li>
+          <li>Rescheduled three meetings based on priority algorithms</li>
+          <li>Ordered groceries according to health-optimization models</li>
+          <li>Adjusted your thermostat based on energy trading algorithms</li>
+          <li>Messaged your mother with generated pleasantries</li>
+          <li>Booked a surprise for your partner that they will “love” based on behavioral analysis</li>
+        </ul>
+
+        <p>You have saved three hours. You have also made zero authentic choices. The birds still sing, but do you still decide?</p>
+
+        <h2>The Consequence of Digital Accumulation</h2>
+
+        <p>To complete the stark picture, Carson wrote about DDT moving up the food chain, concentrating at each level until eagles laid eggs with shells too thin to survive. She called it <i>bioaccumulation</i> — the process by which small, seemingly harmless doses become lethal concentrations.</p>
+
+        <p>Today, we are witnessing <i>digital accumulation</i>. Each day, we collectively deploy more AI agents that collect countless fragments of our data — a calendar entry here, a message thread there, a payment record, a location ping. Individually, these bits seem harmless, even helpful. But these agents do not operate in isolation. They increasingly function as parts of a vast multi-agent system that shares learning and builds upon combined data.</p>
+
+        <p>For example, a dinner-reservation agent might share its training infrastructure with an email agent, which in turn shares parameters with a banking agent. The banking agent could share optimization functions with a health agent. The boundaries we think exist between these services are illusions — permeable membranes in a growing digital organism. In this organism, information flows freely, accumulating and concentrating until it crystallizes into a near-perfect profile of our behavior.</p>
+
+        <p>We have become patients in our own digital lives, suffering a kind of agnosia — an inability to recognize the surveillance apparatus we have willingly invited in. We see the convenience but not the camera. We enjoy the assistance but not the analysis.</p>
+
+        <p>Each step seems logical. Each permission appears reasonable. Yet we are building toward a moment — not of dramatic explosion, but of quiet disappearance of privacy so complete that recovery becomes impossible.</p>
+
+        <h2>The Uncertainty of Intent</h2>
+
+        <p>In AI-mediated systems, we face a new uncertainty principle: we cannot have both perfect assistance and perfect privacy at once.</p>
+
+        <p>Even more troubling is an <b>intent</b> uncertainty principle: when an AI agent accesses our data, we cannot determine whether it is truly serving our interests or those of its creators. The agent booking our dinner might optimize for our preferences — or for restaurants that pay for priority placement. The agent managing our calendar might organize our time efficiently — or ensure we are free during advertiser-preferred shopping windows.</p>
+
+        <p>This is not a conspiracy but an architecture. The system works exactly as designed. That is the problem.</p>
+
+        <p>The "cognitive fingerprint" these models build of us is unique, identifying, and impossibly intimate. They develop detailed profiles of not just what we do, but how we think. The travel-booking agent, for instance, does not just need our destination and dates to be useful; it learns our decision patterns — how far in advance we plan, what factors make us hesitate, which messages change our minds, and what time of day we are most impulsive. The question is, at what point does convenience become pure surveillance?</p>
+
+        <p><i>Note</i>: Not all AI agents today share parameters or ecosystems as seamlessly as described—many remain isolated. But the trend toward integration is accelerating. For instance, governments such as the UK have begun publishing <b>algorithmic registers</b> to address bias and opacity, while the European Union has created the <b>European Centre for Algorithmic Transparency (ECAT)</b> to oversee algorithmic decision-making. These moves show that oversight is becoming a necessity, not a hypothetical.</p>
+
+        <h2>A Fable for Tomorrow's Internet</h2>
+
+        <p>Picture a future internet full of agents with temporal boundaries — permissions that expire like Cinderella’s magic at midnight. Imagine data gardens where information can be accessed by algorithms but never exported — seen but not stored. Envision what we might call "digital national parks" — spaces where AI agents cannot enter and human decision-making remains wild and unmediated.</p>
+
+        <p>The technical mechanisms to realize this vision already exist in embryonic form:</p>
+
+        <ul>
+          <li><b>Capability Cages</b>: Instead of granting broad permissions, create narrow capability tunnels. An agent can book a restaurant, for example, but cannot read your entire calendar. It can only query, "Is Tuesday at 7 PM free?" and receive a simple yes/no response. No additional context is harvested.</li>
+          <li><b>Homomorphic Interactions</b>: Compute on encrypted data so agents can process information they never actually see in plain text. While resource-intensive today, computing power grows exponentially. Companies such as <a href="https://www.microsoft.com/en-us/research/project/microsoft-seal/">Microsoft (SEAL library)</a>, <a href="https://www.zama.ai/">Zama</a>, and <a href="https://dualitytech.com/">Duality Technologies</a> are actively pushing forward <i>Fully Homomorphic Encryption (FHE)</i> — showing that secure computation on private data is not science fiction but active research.</li>
+          <li><b>Audit Meadows</b>: Establish spaces where every agent action is not just logged but visualized. Imagine AI data-access patterns mapped out like wildlife migration routes, each agent leaving colored tracks. This isn’t far-fetched: tools like <a href="https://www.aequitas-project.eu/">Aequitas</a> and <a href="https://github.com/Trusted-AI/AIX360">IBM's AIX360</a> already help organizations audit AI for bias and transparency. The UK and EU are developing formal registers and centers to document algorithmic activity. The seeds of accountability are already sprouting.</li>
+        </ul>
+
+        <p>The answer is not to reject AI agents wholesale — that ship has sailed — but to establish the terms of engagement. We can build <b>psychohistorical boundaries</b>: zones where human unpredictability is preserved, where a bit of inefficiency protects autonomy, and where friction guards our freedom of choice.</p>
+
+        <h2>The Question That Matters</h2>
+
+        <p>When we grant an AI agent access to our digital lives, are we hiring a helpful assistant or appointing our biographer?</p>
+
+        <p>The answer depends on whether we act now, while the concrete of our AI infrastructure is still wet enough to reshape. Once it hardens — once patterns crystallize and agents achieve lock-in in our day-to-day routines — the question becomes moot.</p>
+
+        <p>The genie is already halfway out of the bottle. We cannot shove it back in. But we still hold the bottle, and that — as Carson knew when she faced the chemical industry — still counts for everything.</p>
+
+        <!-- Author Section -->
+        <div class="author-section">
+          <img src="../img/michelle-pellon-headshot.jpg" alt="Michelle Pellon" class="author-avatar">
+          <div class="author-info">
+            <h3>Michelle Pellon</h3>
+            <p class="author-bio">Michelle Pellon writes at the intersection of technology, ethics, and human autonomy. She maintains that technical complexity should never preclude public understanding—and that such understanding is our strongest defense against technological determinism.</p>
+          </div>
+        </div>
+
+        <!-- Share Section -->
+        <div class="share-section">
+          <h3>Share this article</h3>
+          <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?url=https://michellepellon.com/blog/2025-08-06-playbook-excel-data-analysis-using-llms.html&text=A Playbook for Excel Data Analysis using LLMs" class="share-button" target="_blank">Share on Twitter</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michellepellon.com/blog/2025-08-06-playbook-excel-data-analysis-using-llms.html" class="share-button" target="_blank">Share on LinkedIn</a>
+            <a href="mailto:?subject=A Playbook for Excel Data Analysis using LLMs&body=https://michellepellon.com/blog/2025-08-06-playbook-excel-data-analysis-using-llms.html" class="share-button">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copyright">
+          &copy; 2025 Michelle Pellon. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="../blog.html">Back to Blog</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="mailto:mgracepellon@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('nav-menu').addEventListener('click', function() {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

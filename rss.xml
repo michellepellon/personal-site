@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Michelle Pellon's Blog</title>
+    <description>Insights on healthcare technology, digital transformation, IT leadership, and building high-performing teams</description>
+    <link>https://michellepellon.com/blog.html</link>
+    <atom:link href="https://michellepellon.com/rss.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <managingEditor>mgracepellon@gmail.com (Michelle Pellon)</managingEditor>
+    <webMaster>mgracepellon@gmail.com (Michelle Pellon)</webMaster>
+    <lastBuildDate>Sun, 18 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <pubDate>Sun, 18 Aug 2025 00:00:00 +0000</pubDate>
+    <ttl>1440</ttl>
+    <generator>Hand-crafted RSS by Michelle Pellon</generator>
+    <image>
+      <url>https://michellepellon.com/img/michelle-pellon-headshot.jpg</url>
+      <title>Michelle Pellon's Blog</title>
+      <link>https://michellepellon.com/blog.html</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+    
+    <item>
+      <title>A Case for Digital National Parks</title>
+      <description><![CDATA[
+        AI agents promise convenience, but at what cost? Explore the rise of 'digital national parks' to protect privacy, autonomy, and human choice in an increasingly automated world.
+      ]]></description>
+      <link>https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks.html</link>
+      <guid>https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks.html</guid>
+      <pubDate>Sun, 18 Aug 2025 00:00:00 +0000</pubDate>
+      <author>mgracepellon@gmail.com (Michelle Pellon)</author>
+      <category>AI Privacy Risk</category>
+      <category>Digital Autonomy</category>
+      <category>Surveillance</category>
+    </item>
+  </channel>
+</rss>
