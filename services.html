@@ -9,7 +9,7 @@
   <meta name="keywords" content="Healthcare IT Consulting, Digital Transformation, M&A Integration, CTO Services, CIO Advisory, Healthcare Technology, Cybersecurity, HIPAA Compliance" />
   <meta name="author" content="Michelle Pellon" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://michellepellon.com/consulting.html" />
+  <link rel="canonical" href="https://michellepellon.com/services.html" />
 
   <!-- Open Graph Tags -->
   <meta property="og:title" content="Healthcare IT Consulting Services | Michelle Pellon" />
@@ -17,7 +17,7 @@
   <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://michellepellon.com/consulting.html" />
+  <meta property="og:url" content="https://michellepellon.com/services.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Michelle Pellon" />
 
@@ -38,7 +38,7 @@
     "@type": "ProfessionalService",
     "name": "Michelle Pellon Healthcare IT Consulting",
     "description": "Healthcare IT consulting services specializing in digital transformation and M&A integration",
-    "url": "https://michellepellon.com/consulting.html",
+    "url": "https://michellepellon.com/services.html",
     "provider": {
       "@type": "Person",
       "name": "Michelle Pellon",
@@ -340,6 +340,68 @@
       color: var(--accent-blue);
     }
 
+    /* Featured Service Card */
+    .featured-service {
+      grid-column: 1 / -1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: var(--spacing-2xl);
+    }
+
+    .service-details {
+      margin-top: var(--spacing-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+
+    .service-detail-section {
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .service-detail-section:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .service-detail-section h4 {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-blue);
+      font-weight: 600;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .service-detail-section p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    .service-detail-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .service-detail-section li {
+      padding: var(--spacing-xs) 0;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      padding-left: var(--spacing-md);
+      position: relative;
+    }
+
+    .service-detail-section li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
     /* Process Section */
     .process-list {
       display: flex;
@@ -472,6 +534,38 @@
       font-size: 0.875rem;
     }
 
+    .social-links {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background: var(--accent-blue);
+      color: white;
+      border-color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .container {
@@ -563,7 +657,7 @@
         </div>
         <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
-          <a href="consulting.html" class="active">Services</a>
+          <a href="services.html" class="active">Services</a>
           <a href="blog.html">Blog</a>
           <a href="books.html">Reading</a>
           <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
@@ -585,47 +679,38 @@
   <main id="main-content">
     <!-- Services Section -->
     <section class="section">
-      
       <div class="container">
         <div class="services-grid">
-          <div class="service-card">
+          <div class="service-card featured-service">
             <h3>Fractional / Interim CIO</h3>
             <p>Many companies do not need a CIO forever. Michelle steps in to build the right foundation, fast-track strategy and execution, then hands off a clear playbook the internal team can run.</p>
-            <ul>
-              <li>Builds strategic plans aligned with business goals</li>
-              <li>Launches execution quickly while refining team focus</li>
-              <li>Mentors directors and managers for long-term success</li>
-              <li>Prepares a full transition plan before stepping out</li>
-            </ul>
+            
+            <div class="service-details">
+              <div class="service-detail-section">
+                <h4>Who it's for</h4>
+                <p>Companies in transition, post-investment, or scaling quickly but not ready for a full-time CIO.</p>
+              </div>
+              
+              <div class="service-detail-section">
+                <h4>What you get</h4>
+                <ul>
+                  <li>Strategic plans aligned with business goals</li>
+                  <li>Quick execution with refined team focus</li>
+                  <li>Mentored directors and managers for long-term success</li>
+                  <li>Complete transition plan before stepping out</li>
+                </ul>
+              </div>
+              
+              <div class="service-detail-section">
+                <h4>Outcome</h4>
+                <p>A strategic IT foundation, fully operational core processes, and a team ready to execute independently.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h3>Who it's for</h3>
-          <p class="section-subtitle">Companies in transition, post-investment, or scaling quickly but not ready for a full-time CIO.</p>
-        </div>
-        
-        <div class="section-header">
-          <h3>Outcome</h3>
-          <p class="section-subtitle">A strategic information technology foundation, fully operational core IT processes, and a team ready to execute long after Michelle transitions out.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section">
-      <div class="container">
-        <div class="cta-section">
-          <div class="cta-buttons">
-            <a href="https://calendly.com/michellepellon" class="btn btn-primary">Schedule a Call</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
@@ -648,7 +733,7 @@
           </a>
         </div>
         <div class="footer-links">
-          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
           <a href="blog.html">Blog</a>
           <a href="books.html">Reading</a>
           <a href="privacy.html">Privacy Policy</a>

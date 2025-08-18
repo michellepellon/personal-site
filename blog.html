@@ -499,6 +499,38 @@
       font-size: 0.875rem;
     }
 
+    .social-links {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background: var(--accent-blue);
+      color: white;
+      border-color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .container {
@@ -579,7 +611,7 @@
         </div>
         <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
-          <a href="consulting.html">Services</a>
+          <a href="services.html">Services</a>
           <a href="blog.html" class="active">Blog</a>
           <a href="books.html">Reading</a>
           <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
@@ -652,10 +684,9 @@
           </a>
         </div>
         <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="consulting.html">Services</a>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Blog</a>
           <a href="books.html">Reading</a>
-          <a href="rss.xml">RSS Feed</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="mailto:mgracepellon@gmail.com">Contact</a>
         </div>
