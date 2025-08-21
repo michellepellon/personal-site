@@ -97,8 +97,10 @@
     h1{font-size:3.5rem;font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:var(--spacing-md)}
     h2{font-size:2.5rem;font-weight:600;line-height:1.2;letter-spacing:-.02em;margin-bottom:var(--spacing-md)}
     p{margin-bottom:var(--spacing-md);color:var(--text-secondary);font-size:1.125rem;line-height:1.7}
-    a{color:var(--link-color);text-decoration:none;transition:color .2s;border-bottom:1px solid transparent}
-    a:hover{color:var(--accent-blue);border-bottom-color:var(--accent-blue)}
+    a{color:var(--link-color);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;transition:all .2s}
+    a:hover{color:var(--accent-blue);text-decoration-thickness:2px}
+    .nav-links a,.btn,.nav-brand,.social-link{text-decoration:none;border-bottom:none}
+    .nav-links a:hover,.btn:hover{text-decoration:none}
 
     .nav-container{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:1000;border-bottom:1px solid var(--border-color)}
     .nav{display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md) 0;height:72px}

@@ -23,7 +23,7 @@
           left: 0;
           right: 0;
           background: #1a1a1a;
-          color: white;
+          color: #ffffff !important;
           padding: 1rem;
           display: flex;
           justify-content: space-between;
@@ -38,15 +38,25 @@
         #cookie-consent-banner p {
           margin: 0;
           flex: 1;
+          color: #ffffff !important;
+          font-size: 0.875rem;
+          line-height: 1.5;
         }
         
         #cookie-consent-banner a {
-          color: #66b3ff;
+          color: #79b8ff !important;
           text-decoration: underline;
+          text-underline-offset: 2px;
         }
         
         #cookie-consent-banner a:hover {
-          color: #99ccff;
+          color: #a3ccff !important;
+          text-decoration-thickness: 2px;
+        }
+        
+        #cookie-consent-banner a:focus-visible {
+          outline: 2px solid #79b8ff;
+          outline-offset: 2px;
         }
         
         .cookie-buttons {
@@ -75,12 +85,18 @@
         
         .cookie-button-reject {
           background: transparent;
-          color: white;
-          border: 1px solid #666;
+          color: #ffffff !important;
+          border: 1px solid #999;
         }
         
         .cookie-button-reject:hover {
           background: rgba(255,255,255,0.1);
+          border-color: #ccc;
+        }
+        
+        .cookie-button:focus-visible {
+          outline: 2px solid #79b8ff;
+          outline-offset: 2px;
         }
         
         @media (max-width: 600px) {
