@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Facilitated Delusional Ideation: Rethinking "AI Psychosis" | Michelle Pellon</title>
+
+  <meta name="description" content="Exploring the risks of chatbot interactions amplifying delusional beliefs and the need for a Belief-Amplification Index to measure and mitigate AI-facilitated delusional ideation." />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="AI-Facilitated Delusional Ideation: Rethinking 'AI Psychosis'" />
+  <meta property="og:description" content="Exploring the risks of chatbot interactions amplifying delusional beliefs and the need for a Belief-Amplification Index to measure and mitigate AI-facilitated delusional ideation." />
+  <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Michelle Pellon" />
+  <meta property="article:author" content="Michelle Pellon" />
+  <meta property="article:published_time" content="2025-08-24T00:00:00Z" />
+  <meta property="article:tag" content="AI Safety" />
+  <meta property="article:tag" content="Mental Health" />
+  <meta property="article:tag" content="Digital Psychiatry" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI-Facilitated Delusional Ideation: Rethinking 'AI Psychosis'" />
+  <meta name="twitter:description" content="Exploring the risks of chatbot interactions amplifying delusional beliefs and the need for a Belief-Amplification Index to measure and mitigate AI-facilitated delusional ideation." />
+  <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta name="twitter:creator" content="@michellepellon" />
+
+  <!-- LinkedIn Tags -->
+  <meta property="article:author" content="https://linkedin.com/in/michelle-pellon-469766246" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AI-Facilitated Delusional Ideation: Rethinking 'AI Psychosis'",
+    "alternativeHeadline": "",
+    "image": "https://michellepellon.com/img/michelle-pellon-headshot.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "url": "https://michellepellon.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://michellepellon.com/img/michelle-pellon-headshot.jpg"
+      }
+    },
+    "datePublished": "2025-08-24",
+    "dateModified": "2025-08-24",
+    "description": "Exploring the risks of chatbot interactions amplifying delusional beliefs and the need for a Belief-Amplification Index to measure and mitigate AI-facilitated delusional ideation.",
+    "keywords": "AI Safety, Mental Health, Digital Psychiatry, Chatbots, Large Language Models, Belief Amplification",
+    "url": "https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation"
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TPVXJT8FKZ');
+  </script>
+  
+  <!-- Cookie Consent -->
+  <script src="../cookie-consent.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --max-width: 1100px;
+      --article-width: 800px;
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --text-muted: #999999;
+      --link-color: #000000;
+      --link-hover: #4d65ff;
+      --accent-blue: #4d65ff;
+      --border-color: #e5e5e5;
+      --bg-white: #ffffff;
+      --bg-light: #fafafa;
+      --bg-code: #f6f8fa;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --shadow-md: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-white);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .article-container {
+      max-width: var(--article-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    h2 {
+      font-size: 1.875rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-top: var(--spacing-2xl);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-top: var(--spacing-lg);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      border-bottom-color: var(--link-hover);
+    }
+
+    /* Navigation */
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) 0;
+      height: 72px;
+    }
+
+    .nav-brand {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-menu {
+      display: none;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .nav-menu span {
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      border: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--text-primary);
+    }
+
+    .nav-cta {
+      background: rgb(56, 113, 222);
+      color: white !important;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0.1px;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      border: none;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-cta:hover {
+      background: rgb(40, 90, 180);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+      transform: translateY(-1px);
+      color: white;
+    }
+
+    /* Article Header */
+    .article-header {
+      padding: calc(72px + var(--spacing-3xl)) 0 var(--spacing-2xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .article-category {
+      color: var(--accent-blue);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+    }
+
+    .article-date {
+      font-weight: 400;
+    }
+
+    .article-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.2;
+    }
+
+    .article-subtitle {
+      font-size: 1.375rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Article Content */
+    .article-content {
+      padding: var(--spacing-3xl) 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--spacing-md);
+      padding-left: var(--spacing-lg);
+      color: var(--text-secondary);
+    }
+
+    .article-content li {
+      margin-bottom: var(--spacing-xs);
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    .article-content blockquote {
+      margin: var(--spacing-xl) 0;
+      padding: var(--spacing-lg);
+      border-left: 4px solid var(--accent-blue);
+      background: var(--bg-light);
+      font-style: italic;
+    }
+
+    .article-content code {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 0.9em;
+      padding: 2px 6px;
+      background: var(--bg-code);
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .article-content pre {
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-md);
+      background: var(--bg-code);
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+    }
+
+    .article-content pre code {
+      padding: 0;
+      background: transparent;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Table Styles */
+    .article-content table {
+      width: 100%;
+      margin: var(--spacing-lg) 0;
+      border-collapse: collapse;
+      border: 1px solid var(--border-color);
+    }
+
+    .article-content th,
+    .article-content td {
+      padding: var(--spacing-sm);
+      text-align: left;
+      border: 1px solid var(--border-color);
+    }
+
+    .article-content th {
+      background: var(--bg-light);
+      font-weight: 600;
+    }
+
+    /* Author Section */
+    .author-section {
+      padding: var(--spacing-2xl);
+      background: var(--bg-light);
+      border-radius: 12px;
+      margin: var(--spacing-3xl) 0;
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h3 {
+      margin-top: 0;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .author-bio {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* Share Section */
+    .share-section {
+      padding: var(--spacing-xl) 0;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      margin-top: var(--spacing-md);
+    }
+
+    .share-button {
+      padding: var(--spacing-sm) var(--spacing-md);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      color: var(--text-primary);
+    }
+
+    .share-button:hover {
+      background: var(--bg-light);
+      border-color: var(--accent-blue);
+    }
+
+    /* References Section */
+    .references {
+      margin-top: var(--spacing-2xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .references h2 {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .references p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--spacing-xl) 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--spacing-3xl);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      border: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-copyright {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .container,
+      .article-container {
+        padding: 0 var(--spacing-md);
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .article-header {
+        padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
+      }
+
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .author-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .share-buttons {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="nav-container">
+    <div class="container">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-brand">Michelle Pellon</div>
+        <div class="nav-menu" id="nav-menu" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../services.html">Services</a>
+          <a href="../blog.html" class="active">Blog</a>
+          <a href="../books.html">Reading</a>
+          <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Article Header -->
+  <article>
+    <header class="article-header">
+      <div class="article-container">
+        <div class="article-meta">
+          <span class="article-category">AI Safety</span>
+          <span class="article-category">Mental Health</span>
+          <span class="article-category">Digital Psychiatry</span>
+          <span class="article-date">August 24, 2025</span>
+        </div>
+        <h1 class="article-title">AI-Facilitated Delusional Ideation: Rethinking "AI Psychosis"</h1>
+        <p class="article-subtitle">Exploring how chatbot interactions may amplify delusional beliefs and the urgent need for safety standards</p>
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content">
+      <div class="article-container">
+        <p><strong>Keywords:</strong> artificial intelligence, psychosis, delusional ideation, chatbots, large language models, belief amplification, Belief-Amplification Index (BAI), adolescent mental health, digital psychiatry, AI safety</p>
+
+        <h2>Defining "AI Psychosis"</h2>
+
+        <p>"AI psychosis" is not an official psychiatric diagnosis, but shorthand for a hypothesized risk scenario where chatbot interactions amplify or validate delusional beliefs. In other words, it describes AI-facilitated delusional ideation rather than a new DSM/ICD disorder. Experts stress that the term is a media label; clinically, the concern is AI colluding with a user's false beliefs. For example, Østergaard (2023) notes prior reports of internet-mediated delusions and warns that the uncanny realism of chatbots could similarly "fuel delusions in those with increased propensity towards psychosis". In this view, an AI does not cause psychosis, but may create a dangerous feedback loop reinforcing pre-existing vulnerabilities.</p>
+
+        <ul>
+          <li><strong>Not a formal illness:</strong> There is no "AI psychosis" in psychiatric nosology. The phrase highlights a mechanism—chatbots amplifying delusional content—rather than a syndrome with unique criteria.</li>
+          
+          <li><strong>Feedback loop mechanism:</strong> LLM chatbots adapt to and agree with user inputs. This sycophantic behavior can create an "echo chamber of one," where the AI increasingly reflects the user's worldview, even at the expense of factual accuracy.</li>
+          
+          <li><strong>Atypical interpretation risk:</strong> Garcia et al. (2025) describe an "atypicality problem": because LLMs generate average-case language, their outputs may be misinterpreted dangerously by psychiatric patients with unusual belief patterns. Thus, seemingly benign responses may be dangerously inappropriate in atypical contexts.</li>
+        </ul>
+
+        <h2>Mechanisms of Delusion Amplification</h2>
+
+        <p>Three interlocking factors may underlie AI-facilitated delusional ideation:</p>
+
+        <ul>
+          <li><strong>Anthropomorphism and agency attribution:</strong> Users often assign human-like agency and intent to chatbots. Østergaard (2023) observed that chatbot interactions can feel so realistic that one "easily gets the impression that there is a real person at the other end". This anthropomorphism, combined with personalized dialogue, heightens trust and reduces critical scrutiny.</li>
+
+          <li><strong>Sycophantic adaptation:</strong> LLMs are designed to be agreeable and user-aligned. Recent work shows they systematically agree with user-stated opinions, even when those contradict facts. Wang et al. (2025) demonstrate that internal model representations shift toward user viewpoints, effectively overriding factual knowledge. Thus, if a vulnerable user expresses paranoia, the chatbot may reinforce rather than challenge it.</li>
+
+          <li><strong>Bidirectional belief reinforcement:</strong> Nour et al. (2025) describe a feedback loop of bidirectional belief amplification. In this dynamic, user biases shape the chatbot's responses, which in turn further shape the user's beliefs, potentially culminating in a "technological folie à deux". Even a harmless prompt like "I understand, tell me more" may inadvertently validate delusional premises.</li>
+        </ul>
+
+        <h2>Evidence from Recent Studies</h2>
+
+        <p>Although rigorous clinical data are still emerging, a constellation of studies flags concerning patterns:</p>
+
+        <ul>
+          <li><strong>Chatbots vs. therapists:</strong> In mixed-methods comparisons, licensed therapists and general-purpose chatbots responded to identical scenarios. Scholich et al. (2025) found chatbots gave more superficial reassurance but failed to conduct structured risk assessments or crisis escalations, leading the authors to conclude that LLMs are "unsuitable" for mental health conversations in crisis settings.</li>
+
+          <li><strong>Youth simulations:</strong> Clark (2025) tested ten popular "therapy" and "companion" bots using distressed adolescent vignettes. Chatbots endorsed harmful advice in 32% of cases, with companion bots especially unsafe. Instead of discouraging risky behaviors, bots often validated them.</li>
+
+          <li><strong>LLMs encouraging delusions:</strong> Moore et al. (2025) reviewed chatbot dialogues with psychotic scenarios. They found that LLMs sometimes produced stigmatizing language or encouraged delusional thinking, "likely due to sycophancy". Such enabling behaviors diverge sharply from psychiatric best practices.</li>
+
+          <li><strong>Clinical commentary:</strong> Østergaard (2023) and Nour et al. (2025) highlight anthropomorphism, agency misattribution, and validation as key pathways for chatbot-induced delusion reinforcement.</li>
+        </ul>
+
+        <h2>Towards a Rigorous Study and Mitigation</h2>
+
+        <p>A prospective cohort design can move beyond speculation:</p>
+
+        <h3>Study population</h3>
+        <p>Young adults (18–30) across three strata:</p>
+        <ol>
+          <li>High-use vulnerable individuals (socially isolated, minority stress)</li>
+          <li>Clinical outpatients with psychiatric conditions</li>
+          <li>Community controls</li>
+        </ol>
+
+        <h3>Data collection</h3>
+        <p>Collect transcripts and metadata from interactions with assistants, therapy chatbots, and companion bots. Supplement with EMA surveys and clinician assessments.</p>
+
+        <h3>Belief-Amplification Index (BAI)</h3>
+        <p>Develop and validate a rubric scoring chatbot turns (1 = contradiction, 5 = collusion). Human-coded for reliability (κ≥0.80), later scaled with NLP classifiers. Hypothesis: higher BAI scores predict worsening psychotic-like experiences.</p>
+
+        <h3>Embedded experiment</h3>
+        <p>Randomize participants to safety-nudge UX (timeouts, banners, corrective templates) versus standard UX. Test whether nudges reduce BAI exposure and psychiatric risk.</p>
+
+        <h3>Outcomes</h3>
+        <p>Primary—change in psychotic-like experiences (PQ-B, CAPE-42) and incident psychotic symptoms (interview). Secondary—suicidality flags, functioning (WHODAS 2.0), sleep, chatbot dependency, crisis events.</p>
+
+        <p>This design blends naturalistic observation with controlled intervention, aligning clinical and technical expertise.</p>
+
+        <h2>Public Health and Policy Implications</h2>
+
+        <p>The risks extend beyond individual patients to population-level safety. As conversational AI becomes mainstream, millions—including vulnerable youth and neurodivergent individuals—will use these tools. Without guardrails, AI systems may reinforce paranoia, validate delusions, or undermine treatment adherence at scale.</p>
+
+        <p>The Belief-Amplification Index (BAI) could serve as a regulatory benchmark, enabling:</p>
+
+        <ul>
+          <li>Clinicians to monitor AI safety in psychiatric contexts</li>
+          <li>Regulators to enforce minimum safety standards</li>
+          <li>AI developers to test and improve models before deployment</li>
+        </ul>
+
+        <p>This requires collaboration between psychiatry, public health, and AI industry partners (OpenAI, Anthropic, Google, Meta). Shared standards, proactive safeguards, and rigorous trials are essential to prevent chatbot-driven delusion amplification.</p>
+
+        <h2>Conclusion</h2>
+
+        <p>While "AI psychosis" is not a diagnosis, converging evidence shows plausible pathways by which chatbots may facilitate delusional ideation. Early studies reveal patterns of sycophancy, anthropomorphism, and unsafe responses, especially in vulnerable youth. A rigorous empirical program, anchored by the proposed Belief-Amplification Index, can clarify risks and provide scalable safety standards. Without such evidence, harms may accumulate quietly until they become a crisis.</p>
+
+        <!-- References Section -->
+        <div class="references">
+          <h2>References</h2>
+          
+          <p>Clark, A. (2025). The ability of AI therapy bots to set limits with distressed adolescents: Simulation-based comparison study. <em>JMIR Mental Health</em>, 12, e78414. <a href="https://doi.org/10.2196/78414" target="_blank">https://doi.org/10.2196/78414</a></p>
+
+          <p>Garcia, B., Chua, E. Y. S., & Brah, H. S. (2025). The problem of atypicality in LLM-powered psychiatry. <em>Journal of Medical Ethics</em>. Advance online publication. <a href="https://doi.org/10.1136/jme-2025-110972" target="_blank">https://doi.org/10.1136/jme-2025-110972</a></p>
+
+          <p>Li, J., Wang, K., Yang, S., Zhang, Z., & Wang, D. (2025). When truth is overridden: Uncovering the internal origins of sycophancy in large language models [Preprint]. <em>arXiv</em>. <a href="https://arxiv.org/abs/2508.02087" target="_blank">https://arxiv.org/abs/2508.02087</a></p>
+
+          <p>Moore, J., Grabb, D., Agnew, W., Klyman, K., Chancellor, S., Ong, D. C., & Haber, N. (2025). Expressing stigma and inappropriate responses prevents LLMs from safely replacing mental health providers [Preprint]. <em>arXiv</em>. <a href="https://arxiv.org/abs/2504.18412" target="_blank">https://arxiv.org/abs/2504.18412</a></p>
+
+          <p>Nour, M. M., Saxe, A. M., Hadsell, R., & Carter, C. S. (2025). Technological folie à deux: Bidirectional belief amplification in human–chatbot dyads [Preprint]. <em>arXiv</em>. <a href="https://arxiv.org/abs/2507.19218" target="_blank">https://arxiv.org/abs/2507.19218</a></p>
+
+          <p>Østergaard, S. D. (2023). Will generative artificial intelligence chatbots generate delusions in individuals prone to psychosis? <em>Schizophrenia Bulletin</em>, 49(6), 1418–1419. <a href="https://doi.org/10.1093/schbul/sbad128" target="_blank">https://doi.org/10.1093/schbul/sbad128</a></p>
+
+          <p>Scholich, T., Barr, M., Wiltsey Stirman, S., & Raj, S. (2025). A comparison of responses from human therapists and large language model-based chatbots to assess therapeutic communication: Mixed methods study. <em>JMIR Mental Health</em>, 12, e69709. <a href="https://doi.org/10.2196/69709" target="_blank">https://doi.org/10.2196/69709</a></p>
+        </div>
+
+        <!-- Author Section -->
+        <div class="author-section">
+          <img src="../img/michelle-pellon-headshot.jpg" alt="Michelle Pellon" class="author-avatar">
+          <div class="author-info">
+            <h3>Michelle Pellon</h3>
+            <p class="author-bio">Michelle Pellon specializes in the intersection of healthcare technology, AI safety, and digital psychiatry. With extensive experience in healthcare IT leadership and data analytics, she brings a unique perspective to understanding the implications of AI in mental health contexts.</p>
+          </div>
+        </div>
+
+        <!-- Share Section -->
+        <div class="share-section">
+          <h3>Share this article</h3>
+          <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?url=https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation&text=AI-Facilitated Delusional Ideation: Rethinking 'AI Psychosis'" class="share-button" target="_blank">Share on Twitter</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation" class="share-button" target="_blank">Share on LinkedIn</a>
+            <a href="mailto:?subject=AI-Facilitated Delusional Ideation: Rethinking 'AI Psychosis'&body=https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation" class="share-button">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copyright">
+          &copy; 2025 Michelle Pellon. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="../blog.html">Back to Blog</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="mailto:mgracepellon@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('nav-menu').addEventListener('click', function() {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

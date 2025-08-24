@@ -36,6 +36,13 @@
   
   <!-- Blog Posts -->
   <url>
+    <loc>https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
     <loc>https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks</loc>
     <lastmod>2025-08-18</lastmod>
     <changefreq>yearly</changefreq>

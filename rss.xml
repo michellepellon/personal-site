@@ -8,8 +8,8 @@
     <language>en-us</language>
     <managingEditor>mgracepellon@gmail.com (Michelle Pellon)</managingEditor>
     <webMaster>mgracepellon@gmail.com (Michelle Pellon)</webMaster>
-    <lastBuildDate>Sun, 18 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <pubDate>Sun, 18 Aug 2025 00:00:00 +0000</pubDate>
+    <lastBuildDate>Sat, 24 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <pubDate>Sat, 24 Aug 2025 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
     <generator>Hand-crafted RSS by Michelle Pellon</generator>
     <image>
@@ -19,6 +19,20 @@
       <width>144</width>
       <height>144</height>
     </image>
+    
+    <item>
+      <title>AI-Facilitated Delusional Ideation: Rethinking "AI Psychosis"</title>
+      <description><![CDATA[
+        Exploring the risks of chatbot interactions amplifying delusional beliefs and the urgent need for a Belief-Amplification Index to measure and mitigate AI-facilitated delusional ideation in vulnerable populations.
+      ]]></description>
+      <link>https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation.html</link>
+      <guid>https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation.html</guid>
+      <pubDate>Sat, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <author>mgracepellon@gmail.com (Michelle Pellon)</author>
+      <category>AI Safety</category>
+      <category>Mental Health</category>
+      <category>Digital Psychiatry</category>
+    </item>
     
     <item>
       <title>A Case for Digital National Parks</title>
