@@ -7,60 +7,53 @@
   <!-- Homepage -->
   <url>
     <loc>https://michellepellon.com/</loc>
-    <lastmod>2025-01-06</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Main Pages -->
   <url>
-    <loc>https://michellepellon.com/consulting.html</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://michellepellon.com/services</loc>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://michellepellon.com/blog.html</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://michellepellon.com/blog</loc>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://michellepellon.com/books.html</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://michellepellon.com/books</loc>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Blog Posts -->
   <url>
-    <loc>https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks.html</loc>
+    <loc>https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks</loc>
     <lastmod>2025-08-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://michellepellon.com/blog/2025-08-06-playbook-excel-data-analysis-using-llms.html</loc>
-    <lastmod>2025-08-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <!-- Book Pages -->
   <url>
-    <loc>https://michellepellon.com/books/hardcore-zen.html</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://michellepellon.com/books/hardcore-zen</loc>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Legal Pages -->
   <url>
-    <loc>https://michellepellon.com/privacy.html</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://michellepellon.com/privacy</loc>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
