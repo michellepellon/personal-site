@@ -3,59 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Michelle Pellon</title>
+  <title>Zen Practice CV | Michelle Pellon</title>
 
-  <meta name="description" content="Healthcare IT blog featuring insights on digital transformation, M&A integration, data analytics, and technology leadership from VP of IT Michelle Pellon." />
-  <meta name="keywords" content="Healthcare IT Blog, Digital Transformation, Technology Leadership, Data Analytics, M&A Integration, Healthcare Technology, IT Strategy" />
+  <meta name="description" content="Michelle Pellon's Soto Zen Buddhist practice curriculum vitae, documenting years of study, retreats, and practice periods with renowned teachers." />
+  <meta name="keywords" content="Zen Buddhism, Soto Zen, Buddhist Practice, Norman Fischer, Ben Connelly, MZMC, Minnesota Zen Meditation Center" />
   <meta name="author" content="Michelle Pellon" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://michellepellon.com/blog" />
-
-  <!-- RSS Feed -->
-  <link rel="alternate" type="application/rss+xml" title="Michelle Pellon's Blog RSS Feed" href="/rss.xml" />
+  <link rel="canonical" href="https://michellepellon.com/zen-cv" />
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Blog | Michelle Pellon - Healthcare IT Leadership" />
-  <meta property="og:description" content="Insights on healthcare technology, digital transformation, data analytics, and building high-performing IT teams." />
+  <meta property="og:title" content="Zen Practice CV | Michelle Pellon" />
+  <meta property="og:description" content="Documenting my journey in Soto Zen Buddhist practice and study since 2012." />
   <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://michellepellon.com/blog.html" />
-  <meta property="og:type" content="blog" />
+  <meta property="og:url" content="https://michellepellon.com/zen-cv.html" />
+  <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Michelle Pellon" />
 
   <!-- Twitter Card Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Healthcare IT Blog | Michelle Pellon" />
-  <meta name="twitter:description" content="Insights on digital transformation, data analytics, and technology leadership in healthcare." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Zen Practice CV | Michelle Pellon" />
+  <meta name="twitter:description" content="My journey in Soto Zen Buddhist practice and study." />
   <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Michelle Pellon's Healthcare IT Blog",
-    "description": "Insights on healthcare technology and digital transformation",
-    "url": "https://michellepellon.com/blog.html",
-    "author": {
-      "@type": "Person",
-      "name": "Michelle Pellon"
-    },
-    "blogPost": [
-      {
-        "@type": "BlogPosting",
-        "headline": "Excel Data Analysis Using LLMs: A Practical Playbook",
-        "datePublished": "2025-08-06",
-        "url": "https://michellepellon.com/blog/2025-08-06-playbook-excel-data-analysis-using-llms.html"
-      }
-    ]
-  }
-  </script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
@@ -138,18 +110,20 @@
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 600;
       line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: var(--spacing-md);
+      margin-top: var(--spacing-2xl);
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 600;
       line-height: 1.3;
       margin-bottom: var(--spacing-sm);
+      margin-top: var(--spacing-lg);
     }
 
     p {
@@ -256,7 +230,7 @@
 
     /* Page Header */
     .page-header {
-      padding: calc(72px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+      padding: calc(72px + var(--spacing-3xl)) 0 var(--spacing-2xl);
       border-bottom: 1px solid var(--border-color);
     }
 
@@ -274,199 +248,121 @@
       max-width: 700px;
     }
 
-    /* Blog Grid */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: var(--spacing-xl);
+    /* Content Section */
+    .zen-content {
       padding: var(--spacing-3xl) 0;
-    }
-
-    .blog-card {
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      background: var(--bg-white);
-    }
-
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--accent-blue);
-    }
-
-    .blog-card-link {
-      display: block;
-      color: inherit;
-      border: none;
-    }
-
-    .blog-card-link:hover {
-      color: inherit;
-    }
-
-    .blog-card-content {
-      padding: var(--spacing-lg);
-    }
-
-    .blog-meta {
-      display: flex;
-      gap: var(--spacing-md);
-      margin-bottom: var(--spacing-sm);
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-
-    .blog-date {
-      font-weight: 500;
-    }
-
-    .blog-category {
-      color: var(--accent-blue);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-size: 0.75rem;
-    }
-
-    .blog-card h2 {
-      font-size: 1.5rem;
-      margin-bottom: var(--spacing-sm);
-      line-height: 1.3;
-    }
-
-    .blog-excerpt {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: var(--spacing-md);
-    }
-
-    .blog-read-more {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--spacing-xs);
-      color: var(--text-primary);
-      font-weight: 500;
-      font-size: 0.95rem;
-      border: none;
-    }
-
-    .blog-read-more:hover {
-      color: var(--accent-blue);
-      gap: var(--spacing-sm);
-    }
-
-    /* Categories */
-    .categories-section {
-      padding: var(--spacing-2xl) 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .categories-list {
-      display: flex;
-      gap: var(--spacing-sm);
-      flex-wrap: wrap;
-    }
-
-    .category-tag {
-      padding: var(--spacing-xs) var(--spacing-md);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      background: var(--bg-white);
-    }
-
-    .category-tag:hover,
-    .category-tag.active {
-      background: var(--text-primary);
-      color: white;
-      border-color: var(--text-primary);
-    }
-
-    /* Empty State */
-    .empty-state {
-      text-align: center;
-      padding: var(--spacing-3xl) 0;
-    }
-
-    .empty-state h2 {
-      margin-bottom: var(--spacing-md);
-    }
-
-    .empty-state p {
-      color: var(--text-secondary);
-      max-width: 500px;
-      margin: 0 auto var(--spacing-xl);
-    }
-
-    /* Newsletter Signup */
-    .newsletter-section {
-      background: var(--bg-light);
-      padding: var(--spacing-3xl);
-      border-radius: 12px;
-      text-align: center;
-      margin: var(--spacing-3xl) 0;
-    }
-
-    .newsletter-section h2 {
-      margin-bottom: var(--spacing-md);
-    }
-
-    .newsletter-section p {
-      font-size: 1.125rem;
-      margin-bottom: var(--spacing-xl);
-    }
-
-    .newsletter-form {
-      display: flex;
-      gap: var(--spacing-md);
-      max-width: 500px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .newsletter-input {
-      flex: 1;
-      padding: var(--spacing-sm) var(--spacing-md);
+    /* Practice Info Box */
+    .practice-info {
+      background: var(--bg-light);
+      border-radius: 8px;
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-2xl);
       border: 1px solid var(--border-color);
-      border-radius: 6px;
-      font-size: 1rem;
-      font-family: inherit;
     }
 
-    .newsletter-input:focus {
-      outline: none;
-      border-color: var(--accent-blue);
+    .practice-info h3 {
+      margin-top: 0;
+      margin-bottom: var(--spacing-md);
+      color: var(--text-primary);
     }
 
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.875rem 1.75rem;
+    .practice-info p {
+      margin-bottom: var(--spacing-sm);
       font-size: 1rem;
+    }
+
+    .practice-info p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Timeline Items */
+    .timeline-section {
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .timeline-item {
+      padding: var(--spacing-md) 0;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      padding-left: var(--spacing-lg);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-item::before {
+      content: "◦";
+      position: absolute;
+      left: 0;
+      top: var(--spacing-md);
+      color: var(--accent-blue);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .timeline-date {
+      font-size: 0.875rem;
+      color: var(--text-muted);
       font-weight: 500;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      text-decoration: none;
-      border: 2px solid transparent;
+      margin-bottom: var(--spacing-xs);
     }
 
-    .btn-primary {
-      background: var(--text-primary);
-      color: white;
-      border-color: var(--text-primary);
+    .timeline-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
     }
 
-    .btn-primary:hover {
-      background: var(--accent-blue);
-      border-color: var(--accent-blue);
-      transform: translateY(-1px);
+    .timeline-details {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .timeline-teacher {
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-top: var(--spacing-xs);
+    }
+
+    /* External Links */
+    .external-link {
+      color: var(--accent-blue);
+      border-bottom: 1px solid var(--accent-blue);
+    }
+
+    .external-link:hover {
+      color: var(--link-hover);
+      border-bottom-color: var(--link-hover);
+    }
+
+    /* Quote Section */
+    .zen-quote {
+      background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+      padding: var(--spacing-2xl);
+      border-radius: 8px;
+      margin: var(--spacing-2xl) 0;
+      border-left: 4px solid var(--accent-blue);
+      font-style: italic;
+    }
+
+    .zen-quote p {
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .zen-quote .attribution {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-style: normal;
+      text-align: right;
     }
 
     /* Footer */
@@ -480,21 +376,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: var(--spacing-lg);
-    }
-
-    .footer-links a {
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-      border: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--text-primary);
     }
 
     .footer-copyright {
@@ -569,12 +450,8 @@
         font-size: 2.5rem;
       }
 
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
+      .zen-content {
+        padding: var(--spacing-2xl) 0;
       }
 
       .footer-content {
@@ -615,9 +492,9 @@
         <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
           <a href="services.html">Services</a>
-          <a href="blog.html" class="active">Blog</a>
+          <a href="blog.html">Blog</a>
           <a href="books.html">Reading</a>
-          <a href="zen-cv.html">Zen Practice</a>
+          <a href="zen-cv.html" class="active">Zen Practice</a>
           <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
         </div>
       </nav>
@@ -628,57 +505,81 @@
   <section class="page-header">
     <div class="container">
       <div class="fade-in">
-        <h1>Blog</h1>
-        <p class="page-subtitle">Insights at the intersection of technology, ethics, and human autonomy</p>
+        <h1>Zen Practice Curriculum Vitae</h1>
+        <p class="page-subtitle">My journey in Soto Zen Buddhist practice and study</p>
       </div>
     </div>
   </section>
 
   <main id="main-content">
-    <!-- Categories -->
-    <section class="categories-section">
+    <section class="zen-content">
       <div class="container">
-        <div class="categories-list">
-          <span class="category-tag active">All Posts</span>
-          <span class="category-tag">AI Safety</span>
-          <span class="category-tag">Digital Autonomy</span>
+        <!-- Current Practice -->
+        <div class="practice-info fade-in">
+          <h3>Current Practice</h3>
+          <p><strong>Sangha:</strong> <a href="https://www.mnzencenter.org/" target="_blank" rel="noopener noreferrer" class="external-link">Minnesota Zen Meditation Center (MZMC)</a></p>
+          <p><strong>Teacher:</strong> Ben Connelly</p>
+          <p><strong>Practice Since:</strong> 2012</p>
+          <p><strong>Tradition:</strong> Soto Zen Buddhism</p>
         </div>
-      </div>
-    </section>
 
-    <!-- Blog Posts -->
-    <section class="blog-section">
-      <div class="container">
-        <div class="blog-grid">
-          <!-- Blog Post 1 -->
-          <article class="blog-card fade-in">
-            <a href="blog/2025-08-24-ai-facilitated-delusional-ideation.html" class="blog-card-link">
-              <div class="blog-card-content">
-                <div class="blog-meta">
-                  <span class="blog-category">AI Safety</span>
-                  <span class="blog-date">August 24, 2025</span>
-                </div>
-                <h2>AI-Facilitated Delusional Ideation: Rethinking "AI Psychosis"</h2>
-                <p class="blog-excerpt">Exploring the risks of chatbot interactions amplifying delusional beliefs and the urgent need for a Belief-Amplification Index to measure and mitigate AI-facilitated delusional ideation.</p>
-                <span class="blog-read-more">Read more →</span>
-              </div>
-            </a>
-          </article>
+        <!-- Practice Background -->
+        <div class="timeline-section fade-in">
+          <h2>Practice Background</h2>
+          <div class="timeline-item">
+            <div class="timeline-date">2012 - Present</div>
+            <div class="timeline-title">Soto Zen Practice</div>
+            <div class="timeline-details">
+              Began sitting with <a href="https://en.wikipedia.org/wiki/Zoketsu_Norman_Fischer" target="_blank" rel="noopener noreferrer" class="external-link">Norman Fischer's</a> 
+              <a href="https://everydayzen.org/" target="_blank" rel="noopener noreferrer" class="external-link">Everyday Zen Sangha</a>. 
+              Currently practicing with Minnesota Zen Meditation Center under the guidance of Ben Connelly.
+            </div>
+          </div>
+        </div>
 
-          <!-- Blog Post 2 -->
-          <article class="blog-card fade-in">
-            <a href="blog/2025-08-18-a-case-for-digital-national-parks.html" class="blog-card-link">
-              <div class="blog-card-content">
-                <div class="blog-meta">
-                  <span class="blog-category">Digital Autonomy</span>
-                  <span class="blog-date">August 18, 2025</span>
-                </div>
-                <h2>A Case for Digital National Parks</h2>
-                <p class="blog-excerpt">AI promises convenience, but at what cost to privacy and human freedom? This piece argues for urgent safeguards—our own “digital national parks”—to preserve authentic choice in an automated world.</p>
-                <span class="blog-read-more">Read more →</span>
-              </div>
-            </a>
-          </article>
+        <!-- Practice Periods -->
+        <div class="timeline-section fade-in">
+          <h2>Practice Periods</h2>
+          <div class="timeline-item">
+            <div class="timeline-date">Spring 2025</div>
+            <div class="timeline-title">Gandavyuha Sutra: Continuous Practice of Relationship</div>
+            <div class="timeline-teacher">with Ben Connelly</div>
+            <div class="timeline-details">Minnesota Zen Meditation Center</div>
+          </div>
+        </div>
+
+        <!-- Retreats -->
+        <div class="timeline-section fade-in">
+          <h2>Retreats</h2>
+          <div class="timeline-item">
+            <div class="timeline-date">August 16, 2025</div>
+            <div class="timeline-title">Your Great Road Opens Up: Dōgen's Approach to Continuous Practice</div>
+            <div class="timeline-teacher">with Norman Fischer</div>
+            <div class="timeline-details">1-Day Retreat at Spirit Rock Meditation Center</div>
+          </div>
+        </div>
+
+        <!-- Courses -->
+        <div class="timeline-section fade-in">
+          <h2>Courses & Study Groups</h2>
+          <div class="timeline-item">
+            <div class="timeline-date">Fall 2025</div>
+            <div class="timeline-title">Awakening the Heart Practice Mahayana: Emptiness, Heart Sutra</div>
+            <div class="timeline-teacher">with Tim Burkett</div>
+            <div class="timeline-details">Minnesota Zen Meditation Center</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Spring 2025</div>
+            <div class="timeline-title">Morning Study Group: Cultivating the Empty Field by Hongzhi</div>
+            <div class="timeline-teacher">with Ted O'Toole</div>
+            <div class="timeline-details">Minnesota Zen Meditation Center</div>
+          </div>
+        </div>
+
+        <!-- Zen Quote -->
+        <div class="zen-quote fade-in">
+          <p>"To study the Buddha way is to study the self. To study the self is to forget the self. To forget the self is to be actualized by myriad things."</p>
+          <div class="attribution">— Eihei Dōgen, Genjōkōan</div>
         </div>
       </div>
     </section>
@@ -703,13 +604,6 @@
             </svg>
           </a>
         </div>
-        <div class="footer-links">
-          <a href="services.html">Services</a>
-          <a href="blog.html">Blog</a>
-          <a href="books.html">Reading</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="mailto:mgracepellon@gmail.com">Contact</a>
-        </div>
       </div>
     </div>
   </footer>
@@ -717,15 +611,8 @@
   <script>
     // Mobile menu toggle
     document.getElementById('nav-menu').addEventListener('click', function() {
-      document.getElementById('nav-links').classList.toggle('active');
-    });
-
-    // Category filter (placeholder functionality)
-    document.querySelectorAll('.category-tag').forEach(tag => {
-      tag.addEventListener('click', function() {
-        document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-      });
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('active');
     });
   </script>
 </body>
