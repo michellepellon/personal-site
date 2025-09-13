@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moment Meditation Chrome Extension - Zen Breathing App by Michelle Pellon | Digital Mindfulness Tool</title>
+
+  <meta name="description" content="Moment Chrome extension brings Zen meditation to your browser. Created by Zen practitioner Michelle Pellon, this mindfulness breathing app transforms digital work into meditative practice. Free meditation timer with Dogen quotes." />
+  <meta name="keywords" content="Zen meditation Chrome extension, mindfulness breathing app, digital meditation timer, Zen practitioner Michelle Pellon, browser meditation tool, Dogen quotes app, free meditation Chrome extension, mindful breathing exercises, digital wellness technology, Zen meditation technology, workplace mindfulness app, browser-based meditation, digital Zen practice, meditation app for Chrome, mindfulness at work tool" />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://michellepellon.com/portfolio/moment.html" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Moment: Zen Meditation Chrome Extension by Michelle Pellon" />
+  <meta property="og:description" content="Transform your browser into a Zen meditation space. Created by experienced Zen practitioner Michelle Pellon. Features breathing exercises, Dogen quotes, and mindful design. Install free from Chrome Web Store." />
+  <meta property="og:image" content="https://michellepellon.com/img/moment1.png" />
+  <meta property="og:url" content="https://michellepellon.com/portfolio/moment.html" />
+  <meta property="og:type" content="article" />
+  <meta property="article:author" content="Michelle Pellon" />
+  <meta property="article:tag" content="Zen meditation" />
+  <meta property="article:tag" content="Chrome extension" />
+  <meta property="article:tag" content="Mindfulness app" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Moment - Zen Meditation Chrome Extension",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Chrome",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "jobTitle": "Zen Practitioner & Technology Leader",
+      "url": "https://michellepellon.com",
+      "sameAs": [
+        "https://michellepellon.com/zen-cv.html",
+        "https://www.linkedin.com/in/michelle-pellon/"
+      ]
+    },
+    "description": "A Chrome extension that transforms breathing into Zen meditation practice. Features guided breathing exercises, Dogen quotes, and mindful design principles.",
+    "softwareVersion": "1.0",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "42"
+    },
+    "screenshot": "https://michellepellon.com/img/moment2.png",
+    "featureList": [
+      "Guided breathing meditation",
+      "Customizable meditation timer",
+      "Dogen Zen quotes",
+      "Progress tracking visualization",
+      "Three-bell ceremony",
+      "Offline functionality"
+    ],
+    "url": "https://chromewebstore.google.com/detail/moment/mgmamhecannemaoigpbpdmnapnlmbgnl"
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.min.css">
+
+  <style>
+    .portfolio-hero {
+      padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-2xl);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .portfolio-hero h1 {
+      color: white;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .portfolio-hero .subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing-lg);
+    }
+    .portfolio-meta {
+      display: flex;
+      gap: var(--spacing-xl);
+      flex-wrap: wrap;
+      margin-top: var(--spacing-xl);
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+    .meta-label {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .meta-value {
+      font-size: 1.125rem;
+      font-weight: 500;
+    }
+    .portfolio-section {
+      padding: var(--spacing-3xl) 0;
+    }
+    .portfolio-section h2 {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-lg);
+    }
+    .portfolio-section h3 {
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing-md);
+      margin-top: var(--spacing-xl);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-xl);
+    }
+    .feature-card {
+      padding: var(--spacing-lg);
+      background: var(--bg-light);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .feature-card h4 {
+      font-size: 1.125rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+    .gallery-image {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: var(--bg-light);
+    }
+    .gallery-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .gallery-caption {
+      padding: var(--spacing-md);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    .cta-section {
+      background: var(--bg-light);
+      padding: var(--spacing-2xl);
+      border-radius: 12px;
+      text-align: center;
+      margin-top: var(--spacing-3xl);
+    }
+    .cta-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--spacing-lg);
+    }
+    .btn-chrome {
+      background: #4285f4;
+      color: white;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.2s ease;
+    }
+    .btn-chrome:hover {
+      background: #3367d6;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+    }
+    .principle-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+    .principle-item {
+      padding-left: var(--spacing-lg);
+      border-left: 3px solid var(--accent-blue);
+    }
+    .principle-item strong {
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: var(--spacing-xs);
+      font-size: 1.125rem;
+    }
+    @media (max-width: 768px) {
+      .portfolio-hero h1 {
+        font-size: 2rem;
+      }
+      .image-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="nav-container">
+    <div class="container">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-brand">Michelle Pellon</div>
+        <button class="nav-menu" id="nav-menu" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#portfolio">Portfolio</a>
+          <a href="../services.html">Services</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../books.html">Reading</a>
+          <a href="../zen-cv.html">Zen Practice</a>
+          <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="portfolio-hero">
+    <div class="container">
+      <h1>Moment</h1>
+      <p class="subtitle">A Chrome extension that transforms breathing into meditative practice</p>
+      <div class="portfolio-meta">
+        <div class="meta-item">
+          <span class="meta-label">Type</span>
+          <span class="meta-value">Chrome Extension</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">Designer & Developer</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Platform</span>
+          <span class="meta-value">Chrome Web Store</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Focus</span>
+          <span class="meta-value">Mindful UI/UX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Design Philosophy Section -->
+    <section class="portfolio-section">
+      <div class="container">
+        <h2>Design Philosophy: Digital Zen for the Modern Practitioner</h2>
+        <p>Developed based off <a href="../zen-cv.html">years of Zen practice</a>, Moment demonstrates that digital mindfulness tools don't need to mimic analog meditation aids (singing bowls, meditation cushions) but can create their own vernacular. This Chrome meditation extension brings authentic Zen practice into the browser, making mindfulness accessible during the workday. By embracing the constraints and affordances of the browser environment, it creates a uniquely digital yet deeply human meditation experience.</p>
+
+        <p>Following Zen principles of simplicity and presence, the interface becomes invisible during practice, allowing the breath—not the technology—to be the focal point. This meditation app embodies the Zen teaching that true practice requires nothing extra. The success of this mindfulness tool lies not in what it adds, but in what it thoughtfully omits, creating space for authentic meditation to unfold.</p>
+
+        <p>Informed by years of Zen practice and study, small touches create warmth in this digital meditation space: the heart symbol that gently pulses in the footer, authentic Dogen quotes that rotate based on practice history, the traditional three-bell ceremony marking transitions, and mindful language like "arriving," "settling," and "beginning" that humanize the meditation experience. These elements transform a functional Chrome extension into a genuine Zen practice container for the digital age.</p>
+
+        <div class="cta-section">
+          <h3>Experience Moment</h3>
+          <p>Available now in the Chrome Web Store</p>
+          <div class="cta-buttons">
+            <a href="https://chromewebstore.google.com/detail/moment/mgmamhecannemaoigpbpdmnapnlmbgnl" target="_blank" rel="noopener" class="btn-chrome">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.4c2.127 0 4.07.784 5.565 2.073l-3.365 5.83A3.6 3.6 0 0 0 12 9.6a3.6 3.6 0 0 0-3.6 3.6c0 .703.204 1.358.553 1.914L5.588 20.93A9.576 9.576 0 0 1 2.4 12C2.4 6.696 6.696 2.4 12 2.4zm7.2 3.6H12c2.988 0 5.4 2.412 5.4 5.4 0 1.183-.384 2.276-1.032 3.168l3.365 5.83A9.576 9.576 0 0 0 21.6 12c0-2.556-1.002-4.878-2.632-6.6A9.528 9.528 0 0 0 19.2 6zm-7.2 2.4a3.6 3.6 0 0 1 3.6 3.6 3.6 3.6 0 0 1-3.6 3.6 3.6 3.6 0 0 1-3.6-3.6 3.6 3.6 0 0 1 3.6-3.6zm-6.435 5.273L9.09 8.01A5.973 5.973 0 0 0 6 12c0 .984.24 1.91.66 2.73l-1.095 1.897c-.66-1.116-1.065-2.406-1.065-3.827 0-1.194.288-2.316.765-3.327zm1.095 1.897A3.574 3.574 0 0 0 8.4 15.6c.703 0 1.358-.204 1.914-.553l3.365 5.83A9.576 9.576 0 0 1 12 21.6c-2.556 0-4.878-1.002-6.6-2.632l2.265-3.398z"/>
+              </svg>
+              Install from Chrome Web Store
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Design Section -->
+    <section class="portfolio-section">
+      <div class="container">
+        <h2>Visual Design</h2>
+        <p>The interface demonstrates that digital mindfulness tools can create their own vernacular by embracing browser constraints and affordances.</p>
+
+        <div class="image-gallery">
+          <div class="gallery-image">
+            <img src="../img/moment1.png" alt="Moment hold-to-arrive interaction">
+            <div class="gallery-caption">Hold-to-arrive interaction with depth-based visual feedback</div>
+          </div>
+
+          <div class="gallery-image">
+            <img src="../img/moment2.png" alt="Moment main interface showing breathing circles">
+            <div class="gallery-caption">Main breathing interface with synchronized animation circles</div>
+          </div>
+
+          <div class="gallery-image">
+            <img src="../img/moment3.png" alt="Moment river visualization for practice history">
+            <div class="gallery-caption">River visualization transforming practice history into flowing water</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Principles Section -->
+    <section class="portfolio-section">
+      <div class="container">
+        <h2>Core Design Principles</h2>
+
+        <div class="principle-list">
+          <div class="principle-item">
+            <strong>Embodied Interaction Design</strong>
+            <p>The interface uses physical metaphors that mirror the breathing experience. The "hold to arrive" interaction creates an intentional pause before practice begins, with depth-based visual feedback providing tactile satisfaction in a digital medium.</p>
+          </div>
+
+          <div class="principle-item">
+            <strong>Temporal Architecture</strong>
+            <p>The experience follows distinct phases mirroring traditional meditation: arrival phase with gradual deepening, three-bell ceremony marking transitions, synchronized breathing circles, and a 30-second settling period with a pendulum that gradually slows to stillness.</p>
+          </div>
+
+          <div class="principle-item">
+            <strong>Minimalist Visual Language</strong>
+            <p>The interface embraces restraint through a limited palette of blues and grays, clean typography, and breathing room between elements. Animations follow natural physics—objects accelerate and decelerate as they would in the physical world. This digital interpretation of <a href="https://en.wikipedia.org/wiki/Wabi-sabi" target="_blank" rel="noopener">wabi-sabi</a> finds beauty in simplicity and the essential.</p>
+          </div>
+
+          <div class="principle-item">
+            <strong>Poetic Data Visualization</strong>
+            <p>Practice history becomes a "river" where each day appears as either a ripple (practiced) or still water (no practice). This metaphor makes data emotionally resonant, removes judgment, and creates a living document that flows like water.</p>
+          </div>
+
+          <div class="principle-item">
+            <strong>Non-Intrusive Presence</strong>
+            <p>Lives quietly in the browser toolbar, uses badges to show remaining minutes without interruption, provides gentle system notifications, and maintains state across sessions—respecting that mindfulness should complement, not compete with, daily tasks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Technical Implementation Section -->
+    <section class="portfolio-section">
+      <div class="container">
+        <h2>Technical Implementation</h2>
+
+        <h3>Architecture Highlights</h3>
+        <ul>
+          <li>Built as a Chrome Extension using vanilla JavaScript for optimal performance</li>
+          <li>CSS custom properties enable dynamic breathing rhythm adjustments</li>
+          <li><a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B%C3%A9zier_curves" target="_blank" rel="noopener">Cubic-bezier curves</a> create naturalistic animation timing</li>
+          <li>Local storage maintains practice history and user preferences</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener">Service worker</a> manages background timers and notifications</li>
+          <li>No external dependencies to ensure privacy and performance</li>
+          <li>Offline-first approach for reliability</li>
+          <li>Responsive design adapts to various popup window sizes</li>
+          <li>Accessibility features including keyboard navigation and ARIA labels</li>
+          <li>Progressive enhancement ensures core functionality always works</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copyright">
+          &copy; 2025 Michelle Pellon. All rights reserved.
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/michelle-pellon/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/michellepellon" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">Home</a>
+          <a href="../services.html">Services</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../books.html">Reading</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="mailto:mgracepellon@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    (function() {
+      const navMenu = document.getElementById('nav-menu');
+      const navLinks = document.getElementById('nav-links');
+      if (navMenu && navLinks) {
+        navMenu.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
