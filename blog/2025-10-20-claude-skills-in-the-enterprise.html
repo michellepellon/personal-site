@@ -576,6 +576,7 @@
           <span class="article-category">AI</span>
           <span class="article-category">Enterprise</span>
           <span class="article-date">October 20, 2025</span>
+          <span class="article-date">• 8 min read</span>
         </div>
         <h1 class="article-title">Claude Skills in the Enterprise</h1>
         <p class="article-subtitle"><em>Claude Skills, packaged as a governed, repo-first library, are the practical path to scalable, cross-domain human–AI collaboration in the Enterprise.</em></p>
@@ -587,9 +588,55 @@
       <div class="article-container">
         <p>The whiteboard still shows smudged arrows from last quarter's finance close: CSVs, approvals, three sign-offs. This time, Claude handled 80% of the grind in an hour—because the know-how lived in reusable skills, not in someone's head. <a href="https://www.anthropic.com/news/skills" target="_blank">Claude Skills</a>, packaged as a governed, repo-first library, are the practical path to scalable, cross-domain human–AI collaboration in the Enterprise.</p>
 
+        <h3>What You'll Learn</h3>
+
+        <p>In this post you'll learn:</p>
+
+        <ul>
+          <li><strong>What Claude Skills are</strong> and how they differ from prompts, MCP servers, and sub-agents</li>
+          <li><strong>How to build a "Skillplane"</strong>—a governed, repo-first skills library for enterprise deployment</li>
+          <li><strong>The practical operating model</strong> for Finance, Ops, IT, and HR teams to author and share skills without becoming programmers</li>
+          <li><strong>5 common pitfalls</strong> to avoid when deploying skills at scale</li>
+        </ul>
+
+        <h3>Key Terms</h3>
+
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: var(--spacing-lg);">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color);">
+              <th style="text-align: left; padding: var(--spacing-sm); font-weight: 600;">Term</th>
+              <th style="text-align: left; padding: var(--spacing-sm); font-weight: 600;">Definition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: var(--spacing-sm); vertical-align: top;"><strong>Skill</strong></td>
+              <td style="padding: var(--spacing-sm); color: var(--text-secondary);">A folder containing a SKILL.md spec (triggers, steps, inputs/outputs, success checks) and optional support files that define reusable workflows for Claude</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: var(--spacing-sm); vertical-align: top;"><strong>Sub-agent</strong></td>
+              <td style="padding: var(--spacing-sm); color: var(--text-secondary);">Pre-configured specialist worker processes with separate contexts and tool scopes that a coordinator agent can delegate tasks to for parallel execution</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: var(--spacing-sm); vertical-align: top;"><strong>MCP Server</strong></td>
+              <td style="padding: var(--spacing-sm); color: var(--text-secondary);">Model Context Protocol server—governed, auditable integration points into enterprise systems like ERPs, ticketing platforms, BI tools, and source control</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: var(--spacing-sm); vertical-align: top;"><strong>Domain SME</strong></td>
+              <td style="padding: var(--spacing-sm); color: var(--text-secondary);">Subject Matter Expert from Finance, Operations, IT, or HR who authors skill specifications without needing programming expertise</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: var(--spacing-sm); vertical-align: top;"><strong>Skillplane</strong></td>
+              <td style="padding: var(--spacing-sm); color: var(--text-secondary);">The proposed operating model for deploying Claude Skills as a governed, repo-first library across enterprise departments</td>
+            </tr>
+          </tbody>
+        </table>
+
         <h2>Mechanism</h2>
 
-        <p>Start with the plumbing, not the poetry. A Claude Skill is a folder with a <a href="https://github.com/anthropics/skills/blob/main/agent_skills_spec.md" target="_blank">SKILL.md</a> (purpose, triggers, inputs/outputs, steps, success checks) and optional support files (templates, fixtures, code, tests). Claude sees only the lightweight name/description up front; it "progressively discloses" the rest when a user request matches the skill's triggers. Multiple skills can be active at once—Claude coordinates them like a project manager. When determinism beats tokens, skills call small scripts (e.g., Python) to compute, transform, or validate.</p>
+        <p>Start with the plumbing, not the poetry. A Claude Skill is a folder with a <a href="https://github.com/anthropics/skills/blob/main/agent_skills_spec.md" target="_blank">SKILL.md</a> (purpose, triggers, inputs/outputs, steps, success checks) and optional support files (templates, fixtures, code, tests). For comprehensive implementation guidance, see <a href="https://docs.claude.com/en/docs/claude-code/skills" target="_blank">Anthropic's official Claude Code Skills documentation</a>.</p>
+
+        <p>Claude sees only the lightweight name/description up front; it "progressively discloses" the rest when a user request matches the skill's triggers. Multiple skills can be active at once—Claude coordinates them like a project manager. When determinism beats tokens, skills call small scripts (e.g., Python) to compute, transform, or validate.</p>
 
         <p>Two things make this more than "prompt snippets":</p>
 
@@ -604,15 +651,27 @@
           <li>If a process depends on tribal knowledge, why not encode it once and let everyone (humans and AI) benefit?</li>
         </ul>
 
-        <h2>Where MCP servers and sub-agents fit</h2>
+        <h2>Where MCP Servers and Sub-Agents Fit</h2>
 
         <ul>
           <li><strong>Skills → knowledge & process plane.</strong> What to do, when, with what inputs/outputs, and how to judge success.</li>
           <li><strong>Sub-agents → execution plane.</strong> Pre-configured specialists (separate contexts/tool scopes) that a coordinator can delegate to for parallel work.</li>
-          <li><strong>MCP servers → integration plane.</strong> The governed, auditable rails into ERPs, ticketing, BI, source control, etc.</li>
+          <li><strong>MCP servers → integration plane.</strong> Model Context Protocol (MCP) servers provide governed, auditable rails into ERPs, ticketing systems, BI platforms, source control, and other enterprise systems.</li>
         </ul>
 
-        <p>A quarterly close might load three skills (variance analysis, narrative drafting, figure-check), spin up two sub-agents for parallel data cleanup, and query the ERP via an MCP server with read-only scopes. Skills decide what and when; sub-agents do; MCP connects.</p>
+        <p>Here's how these components work together in practice:</p>
+
+        <h3>Example: Finance Quarterly Close</h3>
+
+        <p>A quarterly close workflow might load three skills (variance analysis, narrative drafting, and figure-check), spin up two sub-agents for parallel data cleanup, and query the ERP via an MCP server with read-only scopes. Skills decide <em>what</em> and <em>when</em>; sub-agents <em>do</em> the work; MCP <em>connects</em> to enterprise systems.</p>
+
+        <h3>Example: HR Employee Onboarding</h3>
+
+        <p>An HR onboarding workflow demonstrates the same pattern across a different domain. The process loads four skills (equipment-requisition, account-provisioning-checklist, compliance-training-assignment, and welcome-package-generation).</p>
+
+        <p>One sub-agent handles IT system access requests via MCP integrations with Active Directory and Okta, while another generates personalized welcome materials using templates and employee data. The account-provisioning skill defines the sequence, approval gates, and rollback steps; the sub-agents execute in parallel where possible; and MCP servers enforce least-privilege access to HR and IT systems.</p>
+
+        <p>Result: what once took three days of manual coordination and email chains now completes in under an hour, with full audit trails and zero forgotten steps.</p>
 
         <h2>The 'Skillplane' Operating Model</h2>
 
@@ -704,12 +763,70 @@
 
         <p>That's the bar—not Python mastery. A well-written SKILL.md is the highest-leverage artifact in this system.</p>
 
-        <h2>Objections & limits</h2>
+        <h2>Objections & Limits</h2>
+
+        <h3>"We'll drown in skills."</h3>
+
+        <p>You will—without governance. Skill sprawl is a real risk when every team starts creating their own without coordination.</p>
+
+        <p><strong>Mitigation actions:</strong></p>
 
         <ul>
-          <li><strong>"We'll drown in skills."</strong> You will—without governance. Start with a registry, CODEOWNERS, and explicit triggers; review for overlap; deprecate aggressively.</li>
-          <li><strong>"Security risk if skills run code."</strong> Treat scripts like any production change: scopes, sandbox, peer review, audit logs. Prefer declarative guidance; scripts only where determinism matters.</li>
-          <li><strong>"Model drift will break behavior."</strong> Tests are the guardrail. Keep tabletop scenarios current, run scripted checks in CI, and monitor telemetry for regressions.</li>
+          <li>Establish a central registry (registry.yaml) as the single source of truth</li>
+          <li>Require CODEOWNERS approval for all new skills</li>
+          <li>Define explicit, non-overlapping triggers for each skill</li>
+          <li>Schedule quarterly reviews to identify redundancy and consolidation opportunities</li>
+          <li>Deprecate unused or redundant skills aggressively—track usage metrics</li>
+          <li>Set a "rule of three": if three teams need similar functionality, create one shared skill instead of three separate ones</li>
+        </ul>
+
+        <h3>"Security risk if skills run code."</h3>
+
+        <p>Skills that execute scripts do introduce risk—treat them like any production code change.</p>
+
+        <p><strong>Mitigation actions:</strong></p>
+
+        <ul>
+          <li>Enforce mandatory security review for any skill containing executable code</li>
+          <li>Define tool scopes explicitly (e.g., read-only vs. read-write access)</li>
+          <li>Run skills in sandboxed environments with limited network and filesystem access</li>
+          <li>Require peer review and approval from both domain SME and engineering steward</li>
+          <li>Maintain comprehensive audit logs of skill executions, including inputs, outputs, and system calls</li>
+          <li>Prefer declarative guidance in SKILL.md; use scripts only where determinism is critical</li>
+          <li>Apply the principle of least privilege: if a skill only needs to read data, don't grant write access</li>
+        </ul>
+
+        <h3>"Model drift will break behavior."</h3>
+
+        <p>Claude's capabilities evolve, and what works today might not work identically next month.</p>
+
+        <p><strong>Mitigation actions:</strong></p>
+
+        <ul>
+          <li>Write comprehensive test scenarios for every skill (given/when/then format)</li>
+          <li>Run automated checks in CI for each PR and on a regular schedule (daily or weekly)</li>
+          <li>Monitor telemetry for task success rates, error patterns, and execution time changes</li>
+          <li>Set up alerts for sudden drops in success rate or spikes in error frequency</li>
+          <li>Keep "golden examples" of expected inputs and outputs; regression-test against them</li>
+          <li>Version skills explicitly and maintain a changelog of behavioral changes</li>
+          <li>When model behavior changes, update tests and documentation—don't silently accept degraded performance</li>
+        </ul>
+
+        <h3>Risk Checklist for New Skills</h3>
+
+        <p>Before merging any new skill, verify:</p>
+
+        <ul>
+          <li>☐ Triggers are specific and non-overlapping with existing skills</li>
+          <li>☐ Inputs and outputs are clearly documented with examples</li>
+          <li>☐ Success criteria are measurable and testable</li>
+          <li>☐ Failure modes are identified with recommended recovery actions</li>
+          <li>☐ Data classification is documented (public, internal, confidential, restricted)</li>
+          <li>☐ Tool scopes are minimal and justified</li>
+          <li>☐ PII handling complies with company policy and regulatory requirements</li>
+          <li>☐ Test scenarios cover happy path and at least three edge cases</li>
+          <li>☐ CODEOWNERS has approved (domain SME + engineering steward + security reviewer)</li>
+          <li>☐ Audit logging is enabled if skill accesses sensitive systems</li>
         </ul>
 
         <h2>Implications (Policy/Ops)</h2>
@@ -720,11 +837,91 @@
           <li><strong>Policymakers/Security:</strong> Define approval paths for code-running skills, data-class constraints, audit trails on skill loads/execs, and a prompt-injection checklist.</li>
         </ul>
 
-        <h2>Next Steps</h2>
+        <h2>Common Pitfalls to Avoid</h2>
 
-        <p>Pick one high-friction workflow (Finance close step, Ops triage, IT incident runbook, HR onboarding). Write the SKILL.md with triggers, steps, success checks, and a sample input/output. PR it, test it, publish it to the catalog, and schedule a brown-bag for adoption. Repeat.</p>
+        <p>Based on early deployments and Anthropic's guidance, watch out for these five pitfalls:</p>
 
-        <p>Skills are our first real peek at managing a fleet of agents: shared specs, delegated execution, and governed integrations across knowledge, execution, and integration planes.</p>
+        <h3>1. Treating Skills Like Scripts</h3>
+
+        <p><strong>The mistake:</strong> Writing skills that are just thin wrappers around Python or bash scripts, missing the opportunity for progressive disclosure and human readability.</p>
+
+        <p><strong>The fix:</strong> Skills should be specifications that humans can read and execute, with scripts reserved only for deterministic operations (validation, transformation, API calls). If a human can't follow the SKILL.md to complete the task manually, Claude probably can't either.</p>
+
+        <h3>2. Skipping the Registry</h3>
+
+        <p><strong>The mistake:</strong> Teams create skills in isolation without central coordination. Result: five different "ticket triage" skills that overlap and confuse users.</p>
+
+        <p><strong>The fix:</strong> Maintain registry.yaml from day one. Require registration before deployment. Make discovery easy through a searchable web interface.</p>
+
+        <h3>3. Over-Engineering on Day One</h3>
+
+        <p><strong>The mistake:</strong> Building elaborate CI pipelines, testing frameworks, and integration layers before anyone has written a single skill that delivers value.</p>
+
+        <p><strong>The fix:</strong> Start with one high-value skill, a simple template, and manual review. Add automation incrementally as the library grows. Perfect is the enemy of shipped.</p>
+
+        <h3>4. Token Cost Overrun</h3>
+
+        <p><strong>The mistake:</strong> Loading every available skill into context regardless of relevance, resulting in massive token costs and slower responses.</p>
+
+        <p><strong>The fix:</strong> Use explicit trigger conditions. Only load skills when the user's request matches documented triggers. Monitor token usage per skill and optimize or deprecate expensive, rarely-used skills.</p>
+
+        <h3>5. Forgetting Organizational Change Management</h3>
+
+        <p><strong>The mistake:</strong> Assuming that if you build it, they will come. SMEs need training, support, and incentives to participate.</p>
+
+        <p><strong>The fix:</strong> Run workshops ("SOP → Skill in 90 minutes"). Celebrate early wins publicly. Create "First Skill" awards. Make skill authorship count in performance reviews. Provide office hours where SMEs can get help from engineering stewards.</p>
+
+        <h2>Next Steps: Your First Skill in 30 Minutes</h2>
+
+        <p>Ready to start? Follow this quick-win path:</p>
+
+        <h3>Step 1: Identify Your Candidate Workflow (5 minutes)</h3>
+
+        <p>Pick one high-friction, repetitive workflow that meets these criteria:</p>
+
+        <ul>
+          <li>Takes 30-90 minutes of manual work today</li>
+          <li>Happens at least monthly</li>
+          <li>Has clear inputs, outputs, and success criteria</li>
+          <li>Doesn't require complex judgment calls</li>
+        </ul>
+
+        <p>Examples: Finance close variance analysis, Ops ticket triage, IT incident runbook, HR onboarding checklist.</p>
+
+        <h3>Step 2: Draft Your SKILL.md (15 minutes)</h3>
+
+        <p>Use the <a href="https://github.com/anthropics/skills/blob/main/agent_skills_spec.md" target="_blank">official SKILL.md template</a> or reference the implementation in my <a href="https://github.com/michellepellon/dotfiles/tree/main/.claude" target="_blank">dotfiles/.claude</a> directory. Include:</p>
+
+        <ul>
+          <li>Clear trigger phrases (when should Claude invoke this skill?)</li>
+          <li>Required inputs and expected outputs with examples</li>
+          <li>Step-by-step process (as if training a new teammate)</li>
+          <li>Success checks and common failure modes</li>
+        </ul>
+
+        <h3>Step 3: Test and Iterate (10 minutes)</h3>
+
+        <p>Run through the skill with Claude. Ask yourself:</p>
+
+        <ul>
+          <li>Did it trigger when expected?</li>
+          <li>Were the outputs correct and complete?</li>
+          <li>Where did it stumble or need clarification?</li>
+        </ul>
+
+        <p>Refine the SKILL.md based on what you learn. The first version won't be perfect—that's expected.</p>
+
+        <h3>Get Started Today</h3>
+
+        <p>Clone the <a href="https://github.com/anthropics/skills" target="_blank">Anthropic Skills repository</a> for templates and examples. For a production-ready implementation pattern, see the setup in my <a href="https://github.com/michellepellon/dotfiles/blob/main/docs/claude-code-setup.md" target="_blank">dotfiles documentation</a>.</p>
+
+        <p>Have questions or want to share your first skill? <a href="mailto:mgracepellon@gmail.com">Send me an email</a>—I'd love to hear what you're building.</p>
+
+        <h3>Looking Ahead</h3>
+
+        <p>Claude Skills are our first real peek at managing a fleet of agents: shared specs, delegated execution, and governed integrations across knowledge, execution, and integration planes. The organizations that figure out the "Skillplane" operating model now will have a significant advantage as AI agents become more capable and autonomous.</p>
+
+        <p>Start small. Ship fast. Learn continuously.</p>
 
         <!-- Author Section -->
         <div class="author-section">
