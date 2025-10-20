@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Skills in the Enterprise: A Practical Playbook | Michelle Pellon</title>
+
+  <meta name="description" content="Learn how to deploy Claude Skills as a governed, repo-first library for scalable AI collaboration across Finance, Ops, IT, and HR teams." />
+  <meta name="keywords" content="Claude Skills, AI collaboration, enterprise AI, human-AI collaboration, AI agents, MCP servers, skill library, Anthropic Claude, AI governance, enterprise automation, AI workflow, AI integration" />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Claude Skills in the Enterprise: A Practical Playbook" />
+  <meta property="og:description" content="Learn how to deploy Claude Skills as a governed, repo-first library for scalable AI collaboration across Finance, Ops, IT, and HR teams." />
+  <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Michelle Pellon" />
+  <meta property="article:author" content="Michelle Pellon" />
+  <meta property="article:published_time" content="2025-10-20T00:00:00Z" />
+  <meta property="article:tag" content="AI" />
+  <meta property="article:tag" content="Enterprise" />
+  <meta property="article:tag" content="Claude" />
+  <meta property="article:tag" content="Human-AI Collaboration" />
+  <meta property="article:tag" content="AI Agents" />
+  <meta property="article:tag" content="Enterprise Automation" />
+  <meta property="article:tag" content="AI Governance" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Claude Skills in the Enterprise: A Practical Playbook" />
+  <meta name="twitter:description" content="Learn how to deploy Claude Skills as a governed, repo-first library for scalable AI collaboration across Finance, Ops, IT, and HR teams." />
+  <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta name="twitter:creator" content="@michellepellon" />
+
+  <!-- LinkedIn Tags -->
+  <meta property="article:author" content="https://www.linkedin.com/in/michelle-pellon/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Claude Skills in the Enterprise",
+    "alternativeHeadline": "A Practical Playbook for Deploying Claude Skills Across Departments",
+    "image": "https://michellepellon.com/img/michelle-pellon-headshot.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "url": "https://michellepellon.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/michelle-pellon/",
+        "https://github.com/michellepellon"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://michellepellon.com/img/michelle-pellon-headshot.jpg"
+      }
+    },
+    "datePublished": "2025-10-20",
+    "dateModified": "2025-10-20",
+    "description": "Learn how to deploy Claude Skills as a governed, repo-first library for scalable AI collaboration across Finance, Ops, IT, and HR teams.",
+    "keywords": "Claude Skills, AI collaboration, enterprise AI, human-AI collaboration, AI agents, MCP servers, skill library, Anthropic Claude, AI governance, enterprise automation",
+    "url": "https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise"
+    },
+    "articleSection": "Enterprise AI",
+    "wordCount": 1500,
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TPVXJT8FKZ');
+  </script>
+
+  <!-- Cookie Consent -->
+  <script src="../cookie-consent.min.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --max-width: 1100px;
+      --article-width: 800px;
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --text-muted: #999999;
+      --link-color: #000000;
+      --link-hover: #4d65ff;
+      --accent-blue: #4d65ff;
+      --border-color: #e5e5e5;
+      --bg-white: #ffffff;
+      --bg-light: #fafafa;
+      --bg-code: #f6f8fa;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --shadow-md: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-white);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .article-container {
+      max-width: var(--article-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    h2 {
+      font-size: 1.875rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-top: var(--spacing-2xl);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-top: var(--spacing-lg);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      border-bottom-color: var(--link-hover);
+    }
+
+    /* Navigation */
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) 0;
+      height: 72px;
+    }
+
+    .nav-brand {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-menu {
+      display: none;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .nav-menu span {
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      border: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--text-primary);
+    }
+
+    .nav-cta {
+      background: rgb(56, 113, 222);
+      color: white !important;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0.1px;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      border: none;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-cta:hover {
+      background: rgb(40, 90, 180);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+      transform: translateY(-1px);
+      color: white;
+    }
+
+    /* Article Header */
+    .article-header {
+      padding: calc(72px + var(--spacing-3xl)) 0 var(--spacing-2xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .article-category {
+      color: var(--accent-blue);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+    }
+
+    .article-date {
+      font-weight: 400;
+    }
+
+    .article-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.2;
+    }
+
+    .article-subtitle {
+      font-size: 1.375rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Article Content */
+    .article-content {
+      padding: var(--spacing-3xl) 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--spacing-md);
+      padding-left: var(--spacing-lg);
+      color: var(--text-secondary);
+    }
+
+    .article-content li {
+      margin-bottom: var(--spacing-xs);
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    .article-content blockquote {
+      margin: var(--spacing-xl) 0;
+      padding: var(--spacing-lg);
+      border-left: 4px solid var(--accent-blue);
+      background: var(--bg-light);
+      font-style: italic;
+    }
+
+    .article-content code {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 0.9em;
+      padding: 2px 6px;
+      background: var(--bg-code);
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .article-content pre {
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-md);
+      background: var(--bg-code);
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+    }
+
+    .article-content pre code {
+      padding: 0;
+      background: transparent;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Author Section */
+    .author-section {
+      padding: var(--spacing-2xl);
+      background: var(--bg-light);
+      border-radius: 12px;
+      margin: var(--spacing-3xl) 0;
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h3 {
+      margin-top: 0;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .author-bio {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* Share Section */
+    .share-section {
+      padding: var(--spacing-xl) 0;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      margin-top: var(--spacing-md);
+    }
+
+    .share-button {
+      padding: var(--spacing-sm) var(--spacing-md);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      color: var(--text-primary);
+    }
+
+    .share-button:hover {
+      background: var(--bg-light);
+      border-color: var(--accent-blue);
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--spacing-xl) 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--spacing-3xl);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      border: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-copyright {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .container,
+      .article-container {
+        padding: 0 var(--spacing-md);
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .article-header {
+        padding: calc(72px + var(--spacing-2xl)) 0 var(--spacing-xl);
+      }
+
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .author-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .share-buttons {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="nav-container">
+    <div class="container">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-brand">Michelle Pellon</div>
+        <div class="nav-menu" id="nav-menu" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../services.html">Services</a>
+          <a href="../blog.html" class="active">Blog</a>
+          <a href="../books.html">Reading</a>
+          <a href="https://calendly.com/michellepellon" class="nav-cta">Schedule a Call</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Article Header -->
+  <article>
+    <header class="article-header">
+      <div class="article-container">
+        <div class="article-meta">
+          <span class="article-category">AI</span>
+          <span class="article-category">Enterprise</span>
+          <span class="article-date">October 20, 2025</span>
+        </div>
+        <h1 class="article-title">Claude Skills in the Enterprise</h1>
+        <p class="article-subtitle"><em>Claude Skills, packaged as a governed, repo-first library, are the practical path to scalable, cross-domain human–AI collaboration in the Enterprise.</em></p>
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content">
+      <div class="article-container">
+        <p>The whiteboard still shows smudged arrows from last quarter's finance close: CSVs, approvals, three sign-offs. This time, Claude handled 80% of the grind in an hour—because the know-how lived in reusable skills, not in someone's head. <a href="https://www.anthropic.com/news/skills" target="_blank">Claude Skills</a>, packaged as a governed, repo-first library, are the practical path to scalable, cross-domain human–AI collaboration in the Enterprise.</p>
+
+        <h2>Mechanism</h2>
+
+        <p>Start with the plumbing, not the poetry. A Claude Skill is a folder with a <a href="https://github.com/anthropics/skills/blob/main/agent_skills_spec.md" target="_blank">SKILL.md</a> (purpose, triggers, inputs/outputs, steps, success checks) and optional support files (templates, fixtures, code, tests). Claude sees only the lightweight name/description up front; it "progressively discloses" the rest when a user request matches the skill's triggers. Multiple skills can be active at once—Claude coordinates them like a project manager. When determinism beats tokens, skills call small scripts (e.g., Python) to compute, transform, or validate.</p>
+
+        <p>Two things make this more than "prompt snippets":</p>
+
+        <ul>
+          <li><strong>Shareable by default.</strong> Skills are files—easy to fork, review, diff, and version. You don't need to stand up servers or ship thick prompt payloads for every call. This is where Skills outpace raw MCP server setups for day-one collaboration: zero infra, minimal context overhead, familiar Git workflows.</li>
+          <li><strong>Authorable by SMEs.</strong> Non-technical domain owners can write a great SKILL.md with examples and checklists. Engineers step in only when a tiny helper script or tooling glue is warranted. The cognitive shift is from "write code" to "write a spec."</li>
+        </ul>
+
+        <p>Two Socratic checks:</p>
+        <ul>
+          <li>If a new teammate could not execute your process from the SKILL.md alone, is it really ready for Claude?</li>
+          <li>If a process depends on tribal knowledge, why not encode it once and let everyone (humans and AI) benefit?</li>
+        </ul>
+
+        <h2>Where MCP servers and sub-agents fit</h2>
+
+        <ul>
+          <li><strong>Skills → knowledge & process plane.</strong> What to do, when, with what inputs/outputs, and how to judge success.</li>
+          <li><strong>Sub-agents → execution plane.</strong> Pre-configured specialists (separate contexts/tool scopes) that a coordinator can delegate to for parallel work.</li>
+          <li><strong>MCP servers → integration plane.</strong> The governed, auditable rails into ERPs, ticketing, BI, source control, etc.</li>
+        </ul>
+
+        <p>A quarterly close might load three skills (variance analysis, narrative drafting, figure-check), spin up two sub-agents for parallel data cleanup, and query the ERP via an MCP server with read-only scopes. Skills decide what and when; sub-agents do; MCP connects.</p>
+
+        <h2>The 'Skillplane' Operating Model</h2>
+
+        <p>Below is my proposal to deploy Claude Skills across departments, based on Anthropic's spec, <a href="https://github.com/obra/superpowers" target="_blank">Jesse Vincent's "superpowers"</a> patterns, and the concrete implementation in my own <a href="https://github.com/michellepellon/dotfiles/" target="_blank">dotfiles</a> (see <code>.claude/</code> and <code>docs/claude-code-setup.md</code>).</p>
+
+        <p><strong>Goal:</strong> <em>To make collaboration with AI agents routine for Finance/Ops/IT/HR without turning everyone into a programmer.</em></p>
+
+        <pre><code>acme-inc-skillplane/
+  README.md
+  GOVERNANCE.md           # decision rights, approvals, deprecation
+  SECURITY.md             # data classes, tool scopes, sandbox rules
+  CONTRIBUTING.md         # SME workflow (no-code), PR etiquette
+  CODEOWNERS              # owners per domain folder
+  registry.yaml           # canonical index (name, owner, triggers, status)
+  templates/
+    SKILL.md              # spec template: triggers, steps, checks, I/O
+    test_plan.md          # given/when/then; edge cases
+    checklist.md          # privacy, safety, PII, tool scopes
+  tooling/
+    validate_skill.py     # lint frontmatter, links, schema
+    run_tests.py          # execute scripted checks; collect KPIs
+  skills/
+    finance/close-quarterly/...
+    ops/ticket-triage/...
+    it/incident-response/...
+    hr/onboarding/...</code></pre>
+
+        <h3>Roles (no coding required for SMEs)</h3>
+
+        <ul>
+          <li><strong>Domain SME (Finance/Ops/HR/IT):</strong> writes SKILL.md using the template—triggers, inputs/outputs, step list, failure modes, success checks—plus examples/templates.</li>
+          <li><strong>Skill Steward (engineer or power user):</strong> reviews structure, adds minimal helper scripts if needed, wires tests, enforces progressive disclosure.</li>
+          <li><strong>Security Reviewer:</strong> validates tool scopes, data classification, sandbox rules.</li>
+          <li><strong>Maintainer:</strong> merges, versions, monitors telemetry.</li>
+        </ul>
+
+        <h3>Pull-request workflow</h3>
+
+        <ol>
+          <li>SME drafts <code>skills/&lt;domain&gt;/&lt;skill&gt;/SKILL.md</code>.</li>
+          <li>CI runs <code>validate_skill.py</code> (lint/schema) and <code>run_tests.py</code> (tabletop scenarios; scripted checks if present).</li>
+          <li>CODEOWNERS require Steward + Security approvals.</li>
+          <li>Merge updates <code>registry.yaml</code>; a bot posts release notes to Slack/Teams.</li>
+        </ol>
+
+        <h3>Versioning & deprecation</h3>
+
+        <ul>
+          <li>Tag skills <code>skill:&lt;domain&gt;/&lt;name&gt;@vMAJOR.MINOR</code>.</li>
+          <li>Maintain a CHANGELOG section at the bottom of each SKILL.md.</li>
+          <li>Deprecate via <code>registry.yaml</code> (with successor mapping) and a banner inside the skill.</li>
+        </ul>
+
+        <h3>Discovery & onboarding</h3>
+
+        <ul>
+          <li>Expose a simple web index from <code>registry.yaml</code>: search by domain, triggers, inputs/outputs, owner.</li>
+          <li>Run a 90-minute "Specs, not code" workshop for SMEs, plus a 60-minute Git 101.</li>
+          <li>Offer a "First Skill in 30 minutes" path: copy the template, fill triggers/steps/checks, attach a sample input/output.</li>
+        </ul>
+
+        <h3>KPIs to prove it's working</h3>
+
+        <ul>
+          <li><strong>Adoption:</strong> active skills; unique SME contributors; % of tasks routed via skills.</li>
+          <li><strong>Time-to-value:</strong> median PR lead time; time-to-first-skill per team (target ≤ 2 hours).</li>
+          <li><strong>Quality:</strong> task success rate; rework %; incident rate tied to skill misuse.</li>
+          <li><strong>Ops impact:</strong> cycle time deltas per workflow (e.g., ticket triage −60%); hours saved/quarter.</li>
+        </ul>
+
+        <h3>Why this is friendlier than pure MCP—and still plays nicely</h3>
+
+        <ul>
+          <li><strong>Sharing problem:</strong> Skills are files. Fork, review, and ship with zero server setup. MCP shines when you need governed API access to systems (ERP, BI, tickets). Use Skills to define process; use MCP to reach systems.</li>
+          <li><strong>Cost & complexity:</strong> Skills keep initial token overhead tiny until invoked. MCP descriptors can front-load chunky context; Skills avoid that and still call into MCP when needed.</li>
+          <li><strong>Teams, not just engineers:</strong> Skills let SMEs author specs and examples. Engineers add scripts sparingly. Everyone aligns on the same template and checks.</li>
+        </ul>
+
+        <h2>What non-engineers must learn (but not code)</h2>
+
+        <p>To scale this, SMEs need software engineering concepts:</p>
+
+        <ul>
+          <li><strong>Specs:</strong> write precise triggers, inputs/outputs, step lists, and measurable success checks.</li>
+          <li><strong>Planning:</strong> scope in/out, name common failure modes, define handoffs.</li>
+          <li><strong>Testing:</strong> draft Given/When/Then scenarios and golden examples.</li>
+          <li><strong>Version control:</strong> branch, PR, review, merge, changelog.</li>
+        </ul>
+
+        <p>That's the bar—not Python mastery. A well-written SKILL.md is the highest-leverage artifact in this system.</p>
+
+        <h2>Objections & limits</h2>
+
+        <ul>
+          <li><strong>"We'll drown in skills."</strong> You will—without governance. Start with a registry, CODEOWNERS, and explicit triggers; review for overlap; deprecate aggressively.</li>
+          <li><strong>"Security risk if skills run code."</strong> Treat scripts like any production change: scopes, sandbox, peer review, audit logs. Prefer declarative guidance; scripts only where determinism matters.</li>
+          <li><strong>"Model drift will break behavior."</strong> Tests are the guardrail. Keep tabletop scenarios current, run scripted checks in CI, and monitor telemetry for regressions.</li>
+        </ul>
+
+        <h2>Implications (Policy/Ops)</h2>
+
+        <ul>
+          <li><strong>Engineers:</strong> Ship the repo template, CI linters, and tiny helper libraries. Be the Steward—not the bottleneck.</li>
+          <li><strong>Leaders:</strong> Fund the skill catalog/UX and the enablement program ("SOP → Skill" workshops). Make skills a first-class artifact in reviews.</li>
+          <li><strong>Policymakers/Security:</strong> Define approval paths for code-running skills, data-class constraints, audit trails on skill loads/execs, and a prompt-injection checklist.</li>
+        </ul>
+
+        <h2>Next Steps</h2>
+
+        <p>Pick one high-friction workflow (Finance close step, Ops triage, IT incident runbook, HR onboarding). Write the SKILL.md with triggers, steps, success checks, and a sample input/output. PR it, test it, publish it to the catalog, and schedule a brown-bag for adoption. Repeat.</p>
+
+        <p>Skills are our first real peek at managing a fleet of agents: shared specs, delegated execution, and governed integrations across knowledge, execution, and integration planes.</p>
+
+        <!-- Author Section -->
+        <div class="author-section">
+          <img src="../img/michelle-pellon-headshot.jpg" alt="Michelle Pellon" class="author-avatar">
+          <div class="author-info">
+            <h3>Michelle Pellon</h3>
+            <p class="author-bio">Michelle Pellon writes at the intersection of technology, ethics, and human autonomy. She maintains that technical complexity should never preclude public understanding—and that such understanding is our strongest defense against technological determinism.</p>
+          </div>
+        </div>
+
+        <!-- Share Section -->
+        <div class="share-section">
+          <h3>Share this article</h3>
+          <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?url=https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise&text=Claude Skills in the Enterprise" class="share-button" target="_blank">Share on Twitter</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise" class="share-button" target="_blank">Share on LinkedIn</a>
+            <a href="mailto:?subject=Claude Skills in the Enterprise&body=https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise" class="share-button">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copyright">
+          &copy; 2025 Michelle Pellon. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="../blog.html">Back to Blog</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="mailto:mgracepellon@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('nav-menu').addEventListener('click', function() {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
