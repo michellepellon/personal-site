@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-09T11:27:48.196793",
+  "generated_at": "2025-11-09T15:53:13.209952",
   "current_week": 10,
   "ratings": [
     {
@@ -249,7 +249,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.3359428403073683
+      "confidence_adjusted": 0.3359428403073683,
+      "actual_home_score": 10,
+      "actual_away_score": 7
     },
     {
       "game_id": 137,
@@ -265,7 +267,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.14798300573694434
+      "confidence_adjusted": 0.14798300573694434,
+      "actual_home_score": 31,
+      "actual_away_score": 25
     },
     {
       "game_id": 138,
@@ -281,7 +285,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.28307744527474643
+      "confidence_adjusted": 0.28307744527474643,
+      "actual_home_score": 7,
+      "actual_away_score": 17
     },
     {
       "game_id": 139,
@@ -297,7 +303,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.24691292091006467
+      "confidence_adjusted": 0.24691292091006467,
+      "actual_home_score": 24,
+      "actual_away_score": 20
     },
     {
       "game_id": 140,
@@ -313,7 +321,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.1648579858942365
+      "confidence_adjusted": 0.1648579858942365,
+      "actual_home_score": 36,
+      "actual_away_score": 29
     },
     {
       "game_id": 141,
@@ -329,7 +339,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.27515287521788945
+      "confidence_adjusted": 0.27515287521788945,
+      "actual_home_score": 30,
+      "actual_away_score": 13
     },
     {
       "game_id": 142,
@@ -345,7 +357,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.023009586783984348
+      "confidence_adjusted": 0.023009586783984348,
+      "actual_home_score": 19,
+      "actual_away_score": 27
     },
     {
       "game_id": 143,
@@ -361,7 +375,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.020136722121455397
+      "confidence_adjusted": 0.020136722121455397,
+      "actual_home_score": 27,
+      "actual_away_score": 20
     },
     {
       "game_id": 144,
@@ -377,7 +393,9 @@
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.12265019643219432
+      "confidence_adjusted": 0.12265019643219432,
+      "actual_home_score": 23,
+      "actual_away_score": 28
     },
     {
       "game_id": 145,
