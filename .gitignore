@@ -1,2 +1,4 @@
 # macOS-related
 .DS_Store
+portfolio/*.log
+portfolio/venv/
