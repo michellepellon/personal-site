@@ -162,19 +162,18 @@
       color: var(--gray-700);
     }
 
-    /* Cards */
+    /* Cards - Tufte: maximize data-ink ratio */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
+      gap: 2rem;
       margin: 1.5rem 0;
     }
 
     .card {
-      background: var(--gray-50);
-      border: 1px solid var(--gray-200);
-      border-radius: 0.5rem;
-      padding: 1.25rem;
+      background: white;
+      border-left: 2px solid var(--gray-300);
+      padding: 0 0 0 1rem;
     }
 
     .card-title {
@@ -208,12 +207,10 @@
       font-variant-numeric: tabular-nums;
     }
 
-    /* Tables - Evidence.dev style */
+    /* Tables - Tufte: minimal lines, maximal clarity */
     .table-container {
       margin: 1.5rem 0;
       overflow-x: auto;
-      border: 1px solid var(--gray-200);
-      border-radius: 0.5rem;
     }
 
     table {
@@ -223,8 +220,7 @@
     }
 
     thead {
-      background: var(--gray-50);
-      border-bottom: 1px solid var(--gray-300);
+      border-bottom: 2px solid var(--gray-900);
     }
 
     th {
@@ -253,15 +249,11 @@
       font-variant-numeric: tabular-nums;
     }
 
-    tbody tr:hover {
-      background: var(--gray-50);
-    }
-
     tbody tr:last-child td {
       border-bottom: none;
     }
 
-    /* Probability bars - Evidence.dev style */
+    /* Probability bars - Tufte: simple, functional representation */
     .bar-container {
       display: inline-flex;
       align-items: center;
@@ -270,14 +262,13 @@
 
     .bar {
       display: inline-block;
-      height: 20px;
-      background: hsla(198, 56%, 56%, 0.8);
-      border-radius: 0.25rem;
+      height: 4px;
+      background: var(--gray-900);
       min-width: 2px;
     }
 
     .bar.home {
-      background: var(--blue-500);
+      background: var(--gray-900);
     }
 
     .bar.away {
@@ -285,7 +276,7 @@
     }
 
     .bar.playoff {
-      background: var(--green-500);
+      background: var(--gray-700);
     }
 
     /* Badges */
@@ -314,18 +305,16 @@
       color: white;
     }
 
-    /* Matchups */
+    /* Matchups - Tufte: minimal decoration, let data speak */
     .matchup {
-      padding: 1rem;
-      margin-bottom: 0.75rem;
-      border: 1px solid var(--gray-200);
-      border-radius: 0.5rem;
+      padding: 1rem 0;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--gray-200);
       background: white;
     }
 
-    .matchup:hover {
-      border-color: var(--gray-300);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    .matchup:last-child {
+      border-bottom: none;
     }
 
     .team-name {
@@ -385,9 +374,7 @@
 
     .game-result {
       margin-top: 0.5rem;
-      padding: 0.5rem;
-      background: var(--gray-50);
-      border-radius: 0.25rem;
+      padding: 0.5rem 0;
       font-size: 0.8125rem;
     }
 
@@ -421,8 +408,7 @@
     }
 
     .matchup.completed {
-      border-color: var(--gray-300);
-      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-300);
     }
 
     /* Footer */
@@ -452,15 +438,14 @@
       text-decoration: underline;
     }
 
-    /* Sidenotes - adapted for Evidence style */
+    /* Sidenotes - Tufte: subtle, informative margin notes */
     .sidenote {
-      background: var(--blue-50);
-      border-left: 3px solid var(--blue-500);
-      padding: 0.75rem 1rem;
+      border-left: 2px solid var(--gray-300);
+      padding: 0 0 0 1rem;
       margin: 1rem 0;
       font-size: 0.875rem;
-      color: var(--gray-700);
-      border-radius: 0.25rem;
+      color: var(--gray-600);
+      font-style: italic;
     }
 
     /* Responsive */
@@ -494,11 +479,14 @@
 
 <nav class="back-nav">
   <a href="../index.html">← Back to Portfolio</a>
-  <a href="https://github.com/michellepellon/nfl-data-stack" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="View source code on GitHub">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-    </svg>
-  </a>
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <span id="week-indicator" class="status-badge" style="background: var(--gray-700);">Week —</span>
+    <a href="https://github.com/michellepellon/nfl-data-stack" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="View source code on GitHub">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+  </div>
 </nav>
 
 <header>
@@ -577,14 +565,14 @@
 </section>
 
 <section>
-  <h2>Week 10 Predictions</h2>
+  <h2 id="predictions-header">Current Week Predictions</h2>
   <div class="sidenote">
-    Live predictions based on actual 2025 Weeks 1-9 results. Probabilities are <strong>isotonic-regression calibrated</strong>
+    Live predictions based on all completed 2025 games. Probabilities are <strong>isotonic-regression calibrated</strong>
     from raw ELO win probabilities, then incorporate home field advantage (+52 points),
     rest differentials (±5 pts/day), weather conditions, and injury reports.
   </div>
 
-  <div id="week10-predictions">
+  <div id="current-predictions">
     <p class="loading">Loading predictions...</p>
   </div>
 </section>
@@ -729,6 +717,15 @@ async function loadData() {
     const data = await oldDataResponse.json();
     const calibratedData = await calibratedResponse.json();
 
+    // Get current week
+    const currentWeek = data.current_week || 10;
+
+    // Update week indicator in nav
+    document.getElementById('week-indicator').textContent = `Week ${currentWeek}`;
+
+    // Update predictions header
+    document.getElementById('predictions-header').textContent = `Week ${currentWeek} Predictions`;
+
     // Update timestamp from calibrated data
     const updateTime = new Date(calibratedData.generated_at);
     document.getElementById('update-time').textContent =
@@ -739,7 +736,7 @@ async function loadData() {
 
     // Render sections - use calibrated metrics where available
     renderModelSummary(calibratedData);
-    renderWeek10Predictions(data.week10_predictions);
+    renderCurrentWeekPredictions(data.predictions || [], currentWeek);
     renderELORankings(data.ratings, data.playoffs);
     renderPlayoffProbabilities(data.playoffs);
     renderCalibration(calibratedData.calibration_bins);
@@ -771,8 +768,8 @@ function renderModelSummary(calibratedData) {
   }
 }
 
-function renderWeek10Predictions(predictions) {
-  const container = document.getElementById('week10-predictions');
+function renderCurrentWeekPredictions(predictions, currentWeek) {
+  const container = document.getElementById('current-predictions');
 
   if (!predictions || predictions.length === 0) {
     container.innerHTML = '<p class="loading">No upcoming predictions available.</p>';

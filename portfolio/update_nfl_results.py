@@ -244,7 +244,7 @@ def main() -> None:
         data = json.load(f)
 
     current_week = data.get("current_week", 10)
-    predictions = data.get("week10_predictions", [])
+    predictions = data.get("predictions", [])
 
     if not predictions:
         logger.warning("No predictions found to update")
@@ -264,7 +264,7 @@ def main() -> None:
         return
 
     # Update the data structure
-    data["week10_predictions"] = updated_predictions
+    data["predictions"] = updated_predictions
     data["generated_at"] = datetime.now().isoformat()
 
     # Write updated data back to file
