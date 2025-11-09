@@ -1,0 +1,107 @@
+{
+  "generated_at": "2025-11-09T02:53:39.160965",
+  "model_version": "Calibrated ELO v1.1",
+  "model_type": "isotonic_regression_calibrated",
+  "overall_metrics": {
+    "brier_score": 0.2203,
+    "log_loss": 0.6301,
+    "mae_pct": 44.3,
+    "calibration_r_squared": 0.1126,
+    "total_games": 1544,
+    "accuracy": 0.5420790155440415,
+    "rating": "Good"
+  },
+  "calibration_bins": [
+    {
+      "bin": "30-40%",
+      "bin_lower": 0.3,
+      "bin_upper": 0.4,
+      "n_games": 459,
+      "avg_predicted_pct": 34.4,
+      "actual_win_rate_pct": 34.0,
+      "calibration_error_pct": 0.4,
+      "quality": "Excellent",
+      "mean_predicted": 0.344,
+      "mean_observed": 0.34,
+      "n_predictions": 459
+    },
+    {
+      "bin": "40-50%",
+      "bin_lower": 0.4,
+      "bin_upper": 0.5,
+      "n_games": 212,
+      "avg_predicted_pct": 46.6,
+      "actual_win_rate_pct": 47.6,
+      "calibration_error_pct": 1.1,
+      "quality": "Excellent",
+      "mean_predicted": 0.466,
+      "mean_observed": 0.47600000000000003,
+      "n_predictions": 212
+    },
+    {
+      "bin": "50-60%",
+      "bin_lower": 0.5,
+      "bin_upper": 0.6,
+      "n_games": 326,
+      "avg_predicted_pct": 53.4,
+      "actual_win_rate_pct": 54.0,
+      "calibration_error_pct": 0.6,
+      "quality": "Excellent",
+      "mean_predicted": 0.534,
+      "mean_observed": 0.54,
+      "n_predictions": 326
+    },
+    {
+      "bin": "60-70%",
+      "bin_lower": 0.6,
+      "bin_upper": 0.7,
+      "n_games": 167,
+      "avg_predicted_pct": 67.3,
+      "actual_win_rate_pct": 68.3,
+      "calibration_error_pct": 0.9,
+      "quality": "Excellent",
+      "mean_predicted": 0.6729999999999999,
+      "mean_observed": 0.6829999999999999,
+      "n_predictions": 167
+    },
+    {
+      "bin": "70-80%",
+      "bin_lower": 0.7,
+      "bin_upper": 0.8,
+      "n_games": 286,
+      "avg_predicted_pct": 72.2,
+      "actual_win_rate_pct": 73.4,
+      "calibration_error_pct": 1.3,
+      "quality": "Excellent",
+      "mean_predicted": 0.722,
+      "mean_observed": 0.7340000000000001,
+      "n_predictions": 286
+    },
+    {
+      "bin": "80-90%",
+      "bin_lower": 0.8,
+      "bin_upper": 0.9,
+      "n_games": 83,
+      "avg_predicted_pct": 82.2,
+      "actual_win_rate_pct": 83.1,
+      "calibration_error_pct": 0.9,
+      "quality": "Excellent",
+      "mean_predicted": 0.8220000000000001,
+      "mean_observed": 0.831,
+      "n_predictions": 83
+    },
+    {
+      "bin": "90-100%",
+      "bin_lower": 1.0,
+      "bin_upper": 1.1,
+      "n_games": 11,
+      "avg_predicted_pct": 100.0,
+      "actual_win_rate_pct": 100.0,
+      "calibration_error_pct": 0.0,
+      "quality": "Excellent",
+      "mean_predicted": 1.0,
+      "mean_observed": 1.0,
+      "n_predictions": 11
+    }
+  ]
+}

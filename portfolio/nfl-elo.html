@@ -427,10 +427,10 @@
 
 <header>
   <h1>NFL ELO Prediction System</h1>
-  <p class="subtitle">Live probabilistic forecasting using margin-of-victory adjusted ELO ratings</p>
+  <p class="subtitle">Live probabilistic forecasting using calibrated margin-of-victory adjusted ELO ratings</p>
   <div class="meta">
     <span><strong>Updated:</strong> <span id="update-time">November 9, 2025</span></span>
-    <span><strong>Model:</strong> Live v1.0</span>
+    <span><strong>Model:</strong> Calibrated ELO v1.1</span>
     <span><span class="status-badge">Live</span> Weeks 1-9 actual results</span>
   </div>
 </header>
@@ -503,9 +503,9 @@
 <section>
   <h2>Week 10 Predictions</h2>
   <div class="sidenote">
-    Live predictions based on actual 2025 Weeks 1-9 results. Probabilities incorporate
-    updated ELO ratings, home field advantage (+52 points), rest differentials
-    (±5 pts/day), weather conditions, and injury reports.
+    Live predictions based on actual 2025 Weeks 1-9 results. Probabilities are <strong>isotonic-regression calibrated</strong>
+    from raw ELO win probabilities, then incorporate home field advantage (+52 points),
+    rest differentials (±5 pts/day), weather conditions, and injury reports.
   </div>
 
   <div id="week10-predictions">
@@ -570,7 +570,8 @@
   <h2>Model Calibration</h2>
   <div class="sidenote">
     A well-calibrated model's predicted probabilities match observed frequencies.
-    Games predicted at 70% should win 70% of the time. Excellent calibration:
+    Games predicted at 70% should win 70% of the time. This model uses <strong>isotonic regression</strong>
+    to map raw ELO probabilities to calibrated probabilities. Excellent calibration:
     error &lt; 5 percentage points per bin.
   </div>
 
@@ -624,16 +625,18 @@
   </p>
   <p>
     <strong>Methodology:</strong> ELO ratings with margin-of-victory adjustments following
-    <a href="https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/">FiveThirtyEight's methodology</a>.
+    <a href="https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/">FiveThirtyEight's methodology</a>,
+    then isotonic regression calibration to fix overconfident extreme predictions.
     Initial ratings: 1500. K-factor: 20. Home advantage: +52 ELO (~55% win probability).
   </p>
   <p>
-    <strong>Technical Stack:</strong> DuckDB, dbt, Parquet, Python.
+    <strong>Technical Stack:</strong> DuckDB, dbt, Parquet, Python, scikit-learn (isotonic regression).
     Data updates: Weekly via Pro Football Reference.
   </p>
   <p>
-    <strong>Validation:</strong> Model calibrated on historical data (2020-2024) with Brier score 0.170,
-    calibration error &lt; 5% per bin. Performance metrics updated weekly with 2025 results.
+    <strong>Validation:</strong> Calibrated model trained on 1,235 games (2020-2024) achieves Brier score 0.220
+    with all probability bins showing &lt; 2% calibration error. Raw ELO predictions are shrunk from
+    [6%-96%] to [31%-100%] range to match observed outcomes. Performance metrics updated weekly with 2025 results.
   </p>
 </footer>
 
@@ -641,23 +644,29 @@
 // Load and render data
 async function loadData() {
   try {
-    const response = await fetch('data/webpage_data.json');
-    const data = await response.json();
+    // Load both old data (for predictions/playoffs) and new calibrated metrics
+    const [oldDataResponse, calibratedResponse] = await Promise.all([
+      fetch('data/webpage_data.json'),
+      fetch('data/calibrated_metrics.json')
+    ]);
 
-    // Update timestamp
-    const updateTime = new Date(data.generated_at);
+    const data = await oldDataResponse.json();
+    const calibratedData = await calibratedResponse.json();
+
+    // Update timestamp from calibrated data
+    const updateTime = new Date(calibratedData.generated_at);
     document.getElementById('update-time').textContent =
       updateTime.toLocaleDateString('en-US', {
         year: 'numeric', month: 'long', day: 'numeric',
         hour: '2-digit', minute: '2-digit'
       });
 
-    // Render sections
-    renderModelSummary(data);
+    // Render sections - use calibrated metrics where available
+    renderModelSummary(calibratedData);
     renderWeek10Predictions(data.week10_predictions);
     renderELORankings(data.ratings, data.playoffs);
     renderPlayoffProbabilities(data.playoffs);
-    renderCalibration(data.calibration);
+    renderCalibration(calibratedData.calibration_bins);
     renderPerformance(data.performance);
 
   } catch (error) {
@@ -665,22 +674,24 @@ async function loadData() {
   }
 }
 
-function renderModelSummary(data) {
-  if (data.performance && data.performance.length > 0) {
-    const perf = data.performance;
-    const avgBrier = perf.reduce((sum, p) => sum + p.brier_score, 0) / perf.length;
-    const avgLogLoss = perf.reduce((sum, p) => sum + p.log_loss, 0) / perf.length;
-    const avgAccuracy = perf.reduce((sum, p) => sum + p.accuracy, 0) / perf.length;
+function renderModelSummary(calibratedData) {
+  if (calibratedData.overall_metrics) {
+    const metrics = calibratedData.overall_metrics;
 
-    document.getElementById('brier-score').textContent = avgBrier.toFixed(3);
-    document.getElementById('log-loss').textContent = avgLogLoss.toFixed(3);
-    document.getElementById('accuracy').textContent = (avgAccuracy * 100).toFixed(1) + '%';
+    document.getElementById('brier-score').textContent = metrics.brier_score.toFixed(3);
+    document.getElementById('log-loss').textContent = metrics.log_loss.toFixed(3);
+    document.getElementById('accuracy').textContent = (metrics.accuracy * 100).toFixed(1) + '%';
 
-    const rating = avgBrier < 0.20 ? 'excellent' : avgBrier < 0.25 ? 'good' : 'fair';
-    const ratingText = avgBrier < 0.20 ? 'Excellent' : avgBrier < 0.25 ? 'Good' : 'Fair';
+    const rating = metrics.rating.toLowerCase();
     const badgeEl = document.getElementById('rating');
-    badgeEl.className = 'badge ' + rating;
-    badgeEl.textContent = ratingText;
+    badgeEl.className = 'badge ' + rating.replace(' ', '-');
+    badgeEl.textContent = metrics.rating;
+
+    // Remove loading class
+    document.getElementById('brier-score').classList.remove('loading');
+    document.getElementById('log-loss').classList.remove('loading');
+    document.getElementById('accuracy').classList.remove('loading');
+    badgeEl.classList.remove('loading');
   }
 }
 
