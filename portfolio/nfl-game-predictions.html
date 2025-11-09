@@ -330,17 +330,28 @@
 
     .team-name {
       font-weight: 600;
-      color: var(--gray-900);
+      color: var(--gray-600);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s;
     }
 
     .team-name.favorite {
-      color: var(--blue-600);
+      color: var(--blue-700);
+      background: var(--blue-50);
+      font-weight: 700;
     }
 
     .probability-text {
       font-size: 0.875rem;
       color: var(--gray-600);
       font-variant-numeric: tabular-nums;
+      font-weight: 500;
+    }
+
+    .probability-text.favorite {
+      color: var(--blue-700);
+      font-weight: 700;
     }
 
     .adjustment-text {
@@ -729,12 +740,12 @@ function renderWeek10Predictions(predictions) {
         </div>
         <div style="display: flex; gap: 1.5rem; align-items: center;">
           <div class="bar-container">
-            <span class="probability-text" style="width: 45px;">${(awayProb * 100).toFixed(0)}%</span>
+            <span class="probability-text ${favorite === 'away' ? 'favorite' : ''}" style="width: 45px;">${(awayProb * 100).toFixed(0)}%</span>
             <span class="bar away" style="width: ${awayBarWidth}px;"></span>
           </div>
           <div class="bar-container">
             <span class="bar home" style="width: ${homeBarWidth}px;"></span>
-            <span class="probability-text" style="width: 45px; text-align: right;">${(homeProb * 100).toFixed(0)}%</span>
+            <span class="probability-text ${favorite === 'home' ? 'favorite' : ''}" style="width: 45px; text-align: right;">${(homeProb * 100).toFixed(0)}%</span>
           </div>
         </div>
         <div style="margin-top: 0.5rem; font-size: 0.8125rem; color: var(--gray-500);">
