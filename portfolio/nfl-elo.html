@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFL ELO Prediction System - Data Engineering Portfolio by Michelle Pellon</title>
+
+  <meta name="description" content="Live NFL prediction system using ELO ratings, margin-of-victory adjustments, and Monte Carlo simulations. Built with DuckDB, dbt, and Python. Created by Michelle Pellon." />
+  <meta name="keywords" content="NFL predictions, ELO ratings, data engineering, DuckDB, dbt, Monte Carlo simulation, sports analytics, Python data pipeline, Michelle Pellon" />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://michellepellon.com/portfolio/nfl-elo.html" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="NFL ELO Prediction System by Michelle Pellon" />
+  <meta property="og:description" content="Live probabilistic NFL forecasting using margin-of-victory adjusted ELO ratings. Built with modern data engineering tools." />
+  <meta property="og:url" content="https://michellepellon.com/portfolio/nfl-elo.html" />
+  <meta property="og:type" content="article" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Evidence.dev inspired styling with Tufte principles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --blue-50: #eff6ff;
+      --blue-100: #dbeafe;
+      --blue-500: #3b82f6;
+      --blue-600: #2563eb;
+      --blue-700: #1d4ed8;
+      --green-500: #10b981;
+      --green-600: #059669;
+      --red-500: #ef4444;
+      --red-600: #dc2626;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--gray-900);
+      background: white;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Back navigation */
+    .back-nav {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-nav a {
+      color: var(--blue-600);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .github-link {
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+
+    .github-link:hover {
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+
+    .github-link svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 2rem;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--gray-900);
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--gray-600);
+      margin-bottom: 0.75rem;
+    }
+
+    .meta {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-badge {
+      background: var(--green-500);
+      color: white;
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Section headers */
+    h2 {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin: 3rem 0 1rem 0;
+      color: var(--gray-900);
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 2rem 0 0.75rem 0;
+      color: var(--gray-700);
+    }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .stat-label {
+      color: var(--gray-600);
+      font-size: 0.875rem;
+    }
+
+    .stat-value {
+      font-weight: 600;
+      color: var(--gray-900);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Tables - Evidence.dev style */
+    .table-container {
+      margin: 1.5rem 0;
+      overflow-x: auto;
+      border: 1px solid var(--gray-200);
+      border-radius: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    thead {
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    th {
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      color: var(--gray-700);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    th.numeric {
+      text-align: right;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-900);
+    }
+
+    td.numeric {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    tbody tr:hover {
+      background: var(--gray-50);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Probability bars - Evidence.dev style */
+    .bar-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .bar {
+      display: inline-block;
+      height: 20px;
+      background: hsla(198, 56%, 56%, 0.8);
+      border-radius: 0.25rem;
+      min-width: 2px;
+    }
+
+    .bar.home {
+      background: var(--blue-500);
+    }
+
+    .bar.away {
+      background: var(--gray-400);
+    }
+
+    .bar.playoff {
+      background: var(--green-500);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+    }
+
+    .badge.excellent {
+      background: var(--green-500);
+      color: white;
+    }
+
+    .badge.good {
+      background: var(--blue-500);
+      color: white;
+    }
+
+    .badge.fair {
+      background: #f59e0b;
+      color: white;
+    }
+
+    /* Matchups */
+    .matchup {
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 0.5rem;
+      background: white;
+    }
+
+    .matchup:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .team-name {
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+
+    .team-name.favorite {
+      color: var(--blue-600);
+    }
+
+    .probability-text {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .adjustment-text {
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+      margin-top: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-200);
+      font-size: 0.8125rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    footer p {
+      margin-bottom: 1rem;
+    }
+
+    footer strong {
+      color: var(--gray-900);
+    }
+
+    footer a {
+      color: var(--blue-600);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sidenotes - adapted for Evidence style */
+    .sidenote {
+      background: var(--blue-50);
+      border-left: 3px solid var(--blue-500);
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      border-radius: 0.25rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    /* Loading state */
+    .loading {
+      color: var(--gray-500);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="back-nav">
+  <a href="../index.html">← Back to Portfolio</a>
+  <a href="https://github.com/michellepellon/nfl-data-stack" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="View source code on GitHub">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+    </svg>
+  </a>
+</nav>
+
+<header>
+  <h1>NFL ELO Prediction System</h1>
+  <p class="subtitle">Live probabilistic forecasting using margin-of-victory adjusted ELO ratings</p>
+  <div class="meta">
+    <span><strong>Updated:</strong> <span id="update-time">November 9, 2025</span></span>
+    <span><strong>Model:</strong> Live v1.0</span>
+    <span><span class="status-badge">Live</span> Weeks 1-9 actual results</span>
+  </div>
+</header>
+
+<section>
+  <h2>Model Summary</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Calibration Quality</div>
+      <div class="stat-row">
+        <span class="stat-label">Brier Score</span>
+        <span class="stat-value loading" id="brier-score">Loading...</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Log Loss</span>
+        <span class="stat-value loading" id="log-loss">Loading...</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Accuracy</span>
+        <span class="stat-value loading" id="accuracy">Loading...</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Rating</span>
+        <span class="stat-value"><span class="badge loading" id="rating">Loading...</span></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Model Configuration</div>
+      <div class="stat-row">
+        <span class="stat-label">K-Factor</span>
+        <span class="stat-value">20</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Home Advantage</span>
+        <span class="stat-value">+52 ELO</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">MOV Multiplier</span>
+        <span class="stat-value">FiveThirtyEight</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Simulations</span>
+        <span class="stat-value">10,000</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Data Coverage</div>
+      <div class="stat-row">
+        <span class="stat-label">2025 Games Completed</span>
+        <span class="stat-value">136</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Weeks Processed</span>
+        <span class="stat-value">1-9</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Historical Training</span>
+        <span class="stat-value">2020-2024</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Last Updated</span>
+        <span class="stat-value">Week 10</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Week 10 Predictions</h2>
+  <div class="sidenote">
+    Live predictions based on actual 2025 Weeks 1-9 results. Probabilities incorporate
+    updated ELO ratings, home field advantage (+52 points), rest differentials
+    (±5 pts/day), weather conditions, and injury reports.
+  </div>
+
+  <div id="week10-predictions">
+    <p class="loading">Loading predictions...</p>
+  </div>
+</section>
+
+<section>
+  <h2>Current ELO Rankings</h2>
+  <div class="sidenote">
+    ELO ratings update after each game using margin-of-victory multipliers.
+    Larger margins and upsets produce bigger rating changes. Average team: ~1500.
+  </div>
+
+  <div class="table-container">
+    <table id="elo-rankings">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team</th>
+          <th>Conference</th>
+          <th>Division</th>
+          <th class="numeric">ELO Rating</th>
+          <th class="numeric">Proj. Wins</th>
+          <th class="numeric">Playoff %</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Playoff Probabilities</h2>
+  <div class="sidenote">
+    Based on 10,000 Monte Carlo simulations of remaining 2025 games (Weeks 10-18).
+    Each simulation uses current ELO ratings to determine win probabilities,
+    then projects final standings and playoff seeding.
+  </div>
+
+  <div class="table-container">
+    <table id="playoff-probs">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th class="numeric">Make Playoffs</th>
+          <th class="numeric">First-Round Bye</th>
+          <th class="numeric">Proj. Wins</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Model Calibration</h2>
+  <div class="sidenote">
+    A well-calibrated model's predicted probabilities match observed frequencies.
+    Games predicted at 70% should win 70% of the time. Excellent calibration:
+    error &lt; 5 percentage points per bin.
+  </div>
+
+  <h3>Probability Bins vs. Actual Win Rate</h3>
+
+  <div class="table-container">
+    <table id="calibration-table">
+      <thead>
+        <tr>
+          <th>Predicted Range</th>
+          <th class="numeric">Games</th>
+          <th class="numeric">Avg Predicted</th>
+          <th class="numeric">Actual Win Rate</th>
+          <th class="numeric">Error</th>
+          <th>Quality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Historical Performance</h2>
+  <div class="table-container">
+    <table id="performance-table">
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th class="numeric">Brier Score</th>
+          <th class="numeric">Log Loss</th>
+          <th class="numeric">Accuracy</th>
+          <th>Assessment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <p>
+    <strong>Live Tracker:</strong> This model updates weekly with actual 2025 NFL game results.
+    ELO ratings are recalculated after each week based on game outcomes, margin of victory,
+    and contextual factors (rest, weather, injuries). Playoff probabilities simulate the
+    remaining season 10,000 times using current ratings.
+  </p>
+  <p>
+    <strong>Methodology:</strong> ELO ratings with margin-of-victory adjustments following
+    <a href="https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/">FiveThirtyEight's methodology</a>.
+    Initial ratings: 1500. K-factor: 20. Home advantage: +52 ELO (~55% win probability).
+  </p>
+  <p>
+    <strong>Technical Stack:</strong> DuckDB, dbt, Parquet, Python.
+    Data updates: Weekly via Pro Football Reference.
+  </p>
+  <p>
+    <strong>Validation:</strong> Model calibrated on historical data (2020-2024) with Brier score 0.170,
+    calibration error &lt; 5% per bin. Performance metrics updated weekly with 2025 results.
+  </p>
+</footer>
+
+<script>
+// Load and render data
+async function loadData() {
+  try {
+    const response = await fetch('data/webpage_data.json');
+    const data = await response.json();
+
+    // Update timestamp
+    const updateTime = new Date(data.generated_at);
+    document.getElementById('update-time').textContent =
+      updateTime.toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      });
+
+    // Render sections
+    renderModelSummary(data);
+    renderWeek10Predictions(data.week10_predictions);
+    renderELORankings(data.ratings, data.playoffs);
+    renderPlayoffProbabilities(data.playoffs);
+    renderCalibration(data.calibration);
+    renderPerformance(data.performance);
+
+  } catch (error) {
+    console.error('Error loading data:', error);
+  }
+}
+
+function renderModelSummary(data) {
+  if (data.performance && data.performance.length > 0) {
+    const perf = data.performance;
+    const avgBrier = perf.reduce((sum, p) => sum + p.brier_score, 0) / perf.length;
+    const avgLogLoss = perf.reduce((sum, p) => sum + p.log_loss, 0) / perf.length;
+    const avgAccuracy = perf.reduce((sum, p) => sum + p.accuracy, 0) / perf.length;
+
+    document.getElementById('brier-score').textContent = avgBrier.toFixed(3);
+    document.getElementById('log-loss').textContent = avgLogLoss.toFixed(3);
+    document.getElementById('accuracy').textContent = (avgAccuracy * 100).toFixed(1) + '%';
+
+    const rating = avgBrier < 0.20 ? 'excellent' : avgBrier < 0.25 ? 'good' : 'fair';
+    const ratingText = avgBrier < 0.20 ? 'Excellent' : avgBrier < 0.25 ? 'Good' : 'Fair';
+    const badgeEl = document.getElementById('rating');
+    badgeEl.className = 'badge ' + rating;
+    badgeEl.textContent = ratingText;
+  }
+}
+
+function renderWeek10Predictions(predictions) {
+  const container = document.getElementById('week10-predictions');
+
+  if (!predictions || predictions.length === 0) {
+    container.innerHTML = '<p class="loading">No upcoming predictions available.</p>';
+    return;
+  }
+
+  let html = '';
+  predictions.forEach(game => {
+    const homeProb = game.home_win_probability;
+    const awayProb = 1 - homeProb;
+    const favorite = homeProb > 0.5 ? 'home' : 'away';
+
+    const homeBarWidth = Math.min(Math.round(homeProb * 150), 150);
+    const awayBarWidth = Math.min(Math.round(awayProb * 150), 150);
+
+    // Build adjustments string
+    const adjs = [];
+    if (game.rest_adj && game.rest_adj !== 0) adjs.push(`Rest ${game.rest_adj > 0 ? '+' : ''}${game.rest_adj.toFixed(0)}`);
+    if (game.temp_adj && game.temp_adj !== 0) adjs.push(`Temp ${game.temp_adj.toFixed(0)}`);
+    if (game.wind_adj && game.wind_adj !== 0) adjs.push(`Wind ${game.wind_adj.toFixed(0)}`);
+    if (game.injury_adj && game.injury_adj !== 0) adjs.push(`Inj ${game.injury_adj > 0 ? '+' : ''}${game.injury_adj.toFixed(0)}`);
+    const adjText = adjs.length > 0 ? `<div class="adjustment-text">${adjs.join(' • ')}</div>` : '';
+
+    html += `
+      <div class="matchup">
+        <div style="margin-bottom: 0.5rem;">
+          <span class="team-name ${favorite === 'away' ? 'favorite' : ''}">${game.visiting_team}</span>
+          <span style="color: var(--gray-500);"> @ </span>
+          <span class="team-name ${favorite === 'home' ? 'favorite' : ''}">${game.home_team}</span>
+        </div>
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+          <div class="bar-container">
+            <span class="probability-text" style="width: 45px;">${(awayProb * 100).toFixed(0)}%</span>
+            <span class="bar away" style="width: ${awayBarWidth}px;"></span>
+          </div>
+          <div class="bar-container">
+            <span class="bar home" style="width: ${homeBarWidth}px;"></span>
+            <span class="probability-text" style="width: 45px; text-align: right;">${(homeProb * 100).toFixed(0)}%</span>
+          </div>
+        </div>
+        <div style="margin-top: 0.5rem; font-size: 0.8125rem; color: var(--gray-500);">
+          ELO: ${game.visiting_team_elo_rating.toFixed(0)} vs ${game.home_team_elo_rating.toFixed(0)}
+        </div>
+        ${adjText}
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function renderELORankings(ratings, playoffs) {
+  const tbody = document.querySelector('#elo-rankings tbody');
+
+  const playoffMap = {};
+  if (playoffs) {
+    playoffs.forEach(p => {
+      playoffMap[p.team] = p.playoff_prob_pct;
+    });
+  }
+
+  let html = '';
+  ratings.slice(0, 32).forEach((team, index) => {
+    const playoffProb = playoffMap[team.team] || 0;
+    html += `
+      <tr>
+        <td>${index + 1}</td>
+        <td><strong>${team.team}</strong></td>
+        <td>${team.conf}</td>
+        <td>${team.division}</td>
+        <td class="numeric">${team.elo_rating.toFixed(0)}</td>
+        <td class="numeric">${team.win_total ? team.win_total.toFixed(1) : '—'}</td>
+        <td class="numeric">${playoffProb.toFixed(1)}%</td>
+      </tr>
+    `;
+  });
+
+  tbody.innerHTML = html;
+}
+
+function renderPlayoffProbabilities(playoffs) {
+  const tbody = document.querySelector('#playoff-probs tbody');
+
+  if (!playoffs || playoffs.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5">No playoff data available</td></tr>';
+    return;
+  }
+
+  let html = '';
+  playoffs.slice(0, 16).forEach(team => {
+    const playoffProb = team.playoff_prob_pct || 0;
+    const byeProb = team.bye_prob_pct || 0;
+    const barWidth = Math.min(Math.round(playoffProb * 1.5), 150);
+
+    html += `
+      <tr>
+        <td><strong>${team.team}</strong></td>
+        <td class="numeric">${playoffProb.toFixed(1)}%</td>
+        <td class="numeric">${byeProb.toFixed(1)}%</td>
+        <td class="numeric">${team.avg_wins ? team.avg_wins.toFixed(1) : '—'}</td>
+        <td><span class="bar playoff" style="width: ${barWidth}px;"></span></td>
+      </tr>
+    `;
+  });
+
+  tbody.innerHTML = html;
+}
+
+function renderCalibration(calibration) {
+  const tbody = document.querySelector('#calibration-table tbody');
+
+  if (!calibration || calibration.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6">No calibration data available</td></tr>';
+    return;
+  }
+
+  let html = '';
+  calibration.forEach(bin => {
+    const predPct = (bin.mean_predicted || 0) * 100;
+    const actualPct = (bin.mean_observed || 0) * 100;
+    const error = Math.abs(predPct - actualPct);
+    const quality = error < 5 ? 'excellent' : error < 10 ? 'good' : 'fair';
+    const qualityText = error < 5 ? 'Excellent' : error < 10 ? 'Good' : 'Fair';
+
+    const binLabel = `${(bin.bin_lower * 100).toFixed(0)}-${(bin.bin_upper * 100).toFixed(0)}%`;
+
+    html += `
+      <tr>
+        <td>${binLabel}</td>
+        <td class="numeric">${bin.n_predictions}</td>
+        <td class="numeric">${predPct.toFixed(1)}%</td>
+        <td class="numeric">${actualPct.toFixed(1)}%</td>
+        <td class="numeric">${error.toFixed(1)}%</td>
+        <td><span class="badge ${quality}">${qualityText}</span></td>
+      </tr>
+    `;
+  });
+
+  tbody.innerHTML = html;
+}
+
+function renderPerformance(performance) {
+  const tbody = document.querySelector('#performance-table tbody');
+
+  if (!performance || performance.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5">No performance data available</td></tr>';
+    return;
+  }
+
+  let html = '';
+  performance.forEach(week => {
+    const rating = week.performance_rating || 'Unknown';
+    const badgeClass = rating.toLowerCase().replace(' ', '-');
+
+    html += `
+      <tr>
+        <td>Week ${week.week_number}</td>
+        <td class="numeric">${week.brier_score ? week.brier_score.toFixed(3) : '—'}</td>
+        <td class="numeric">${week.log_loss ? week.log_loss.toFixed(3) : '—'}</td>
+        <td class="numeric">${week.accuracy ? (week.accuracy * 100).toFixed(1) + '%' : '—'}</td>
+        <td><span class="badge ${badgeClass}">${rating}</span></td>
+      </tr>
+    `;
+  });
+
+  tbody.innerHTML = html;
+}
+
+// Load data on page load
+document.addEventListener('DOMContentLoaded', loadData);
+</script>
+
+</body>
+</html>
