@@ -866,13 +866,13 @@ function renderELORankings(ratings, playoffs) {
   const playoffMap = {};
   if (playoffs) {
     playoffs.forEach(p => {
-      playoffMap[p.team] = p.playoff_prob_pct;
+      playoffMap[p.team] = p;
     });
   }
 
   let html = '';
   ratings.slice(0, 32).forEach((team, index) => {
-    const playoffProb = playoffMap[team.team] || 0;
+    const playoffData = playoffMap[team.team] || {};
     html += `
       <tr>
         <td>${index + 1}</td>
@@ -880,8 +880,8 @@ function renderELORankings(ratings, playoffs) {
         <td>${team.conf}</td>
         <td>${team.division}</td>
         <td class="numeric">${team.elo_rating.toFixed(0)}</td>
-        <td class="numeric">${team.win_total ? team.win_total.toFixed(1) : '—'}</td>
-        <td class="numeric">${playoffProb.toFixed(1)}%</td>
+        <td class="numeric">${playoffData.avg_wins ? playoffData.avg_wins.toFixed(1) : '—'}</td>
+        <td class="numeric">${playoffData.playoff_prob_pct ? playoffData.playoff_prob_pct.toFixed(1) : '0.0'}%</td>
       </tr>
     `;
   });
