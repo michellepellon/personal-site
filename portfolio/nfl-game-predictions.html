@@ -360,6 +360,71 @@
       margin-top: 0.25rem;
     }
 
+    /* Result indicators */
+    .result-indicator {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-left: 0.5rem;
+    }
+
+    .result-indicator.correct {
+      background: var(--green-500);
+      color: white;
+    }
+
+    .result-indicator.incorrect {
+      background: var(--red-500);
+      color: white;
+    }
+
+    .game-result {
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      background: var(--gray-50);
+      border-radius: 0.25rem;
+      font-size: 0.8125rem;
+    }
+
+    .final-score {
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .accuracy-metrics {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+      font-size: 0.75rem;
+      color: var(--gray-600);
+    }
+
+    .accuracy-metric {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .accuracy-metric.good {
+      color: var(--green-600);
+    }
+
+    .accuracy-metric.poor {
+      color: var(--red-600);
+    }
+
+    .matchup.completed {
+      border-color: var(--gray-300);
+      background: var(--gray-50);
+    }
+
     /* Footer */
     footer {
       margin-top: 4rem;
@@ -731,12 +796,50 @@ function renderWeek10Predictions(predictions) {
     if (game.injury_adj && game.injury_adj !== 0) adjs.push(`Inj ${game.injury_adj > 0 ? '+' : ''}${game.injury_adj.toFixed(0)}`);
     const adjText = adjs.length > 0 ? `<div class="adjustment-text">${adjs.join(' • ')}</div>` : '';
 
+    // Check if game has result data
+    const hasResult = game.actual_home_score !== undefined && game.actual_away_score !== undefined;
+    const matchupClass = hasResult ? 'matchup completed' : 'matchup';
+
+    // Determine prediction correctness
+    let resultIndicator = '';
+    let resultDetails = '';
+
+    if (hasResult) {
+      const actualWinner = game.actual_home_score > game.actual_away_score ? 'home' : 'away';
+      const predictedWinner = game.predicted_winner === game.home_team ? 'home' : 'away';
+      const isCorrect = actualWinner === predictedWinner;
+
+      resultIndicator = `<span class="result-indicator ${isCorrect ? 'correct' : 'incorrect'}">${isCorrect ? '✓' : '✗'}</span>`;
+
+      // Calculate accuracy metrics
+      const pointDiff = Math.abs(game.actual_home_score - game.actual_away_score);
+      const predictedProb = actualWinner === 'home' ? homeProb : awayProb;
+      const probAccuracy = (predictedProb * 100).toFixed(0);
+
+      // Brier score for this game (0 = perfect, 1 = worst)
+      const actualOutcome = actualWinner === 'home' ? 1 : 0;
+      const brierScore = Math.pow(homeProb - actualOutcome, 2);
+      const brierClass = brierScore < 0.1 ? 'good' : brierScore > 0.5 ? 'poor' : '';
+
+      resultDetails = `
+        <div class="game-result">
+          <div class="final-score">Final: ${game.visiting_team} ${game.actual_away_score}, ${game.home_team} ${game.actual_home_score}</div>
+          <div class="accuracy-metrics">
+            <div class="accuracy-metric">Predicted probability: ${probAccuracy}%</div>
+            <div class="accuracy-metric ${brierClass}">Brier score: ${brierScore.toFixed(3)}</div>
+            <div class="accuracy-metric">Margin: ${pointDiff} pts</div>
+          </div>
+        </div>
+      `;
+    }
+
     html += `
-      <div class="matchup">
+      <div class="${matchupClass}">
         <div style="margin-bottom: 0.5rem;">
           <span class="team-name ${favorite === 'away' ? 'favorite' : ''}">${game.visiting_team}</span>
           <span style="color: var(--gray-500);"> @ </span>
           <span class="team-name ${favorite === 'home' ? 'favorite' : ''}">${game.home_team}</span>
+          ${resultIndicator}
         </div>
         <div style="display: flex; gap: 1.5rem; align-items: center;">
           <div class="bar-container">
@@ -752,6 +855,7 @@ function renderWeek10Predictions(predictions) {
           ELO: ${game.visiting_team_elo_rating.toFixed(0)} vs ${game.home_team_elo_rating.toFixed(0)}
         </div>
         ${adjText}
+        ${resultDetails}
       </div>
     `;
   });
