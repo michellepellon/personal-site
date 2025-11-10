@@ -90,19 +90,19 @@ def run_weekly_model_update() -> bool:
         logger.info(f"WEEKLY MODEL RUN - Current Week: {current_week}")
         logger.info("="*60)
 
-        # Step 1: Collect 2025 results
-        logger.info("Step 1: Collecting 2025 game results...")
+        # Step 1: Collect 2025 results from ESPN
+        logger.info("Step 1: Collecting 2025 game results from ESPN API...")
         result = subprocess.run(
             [
                 NFL_STACK_DIR / ".venv/bin/python",
-                NFL_STACK_DIR / "scripts/collect_2025_results.py"
+                NFL_STACK_DIR / "scripts/collect_espn_scores.py"
             ],
             cwd=NFL_STACK_DIR,
             capture_output=True,
             text=True,
             check=True,
         )
-        logger.info(f"Results collection output: {result.stdout}")
+        logger.info(f"ESPN score collection output: {result.stdout}")
 
         # Step 2: Collect enhanced features
         logger.info("Step 2: Collecting enhanced features (weather, injuries)...")
@@ -240,18 +240,23 @@ def run_live_score_update() -> bool:
     """
     Run live score updates for ongoing games.
 
+    Uses the hourly_update.py script which:
+    1. Collects latest scores from ESPN API
+    2. Re-runs dbt to update ELO ratings with new results
+    3. Regenerates predictions with updated ELO ratings
+
     Returns:
         True if successful, False otherwise
     """
     try:
-        logger.info("Running live score update...")
+        logger.info("Running hourly update (ESPN scores + model refresh)...")
 
         result = subprocess.run(
             [
-                PORTFOLIO_DIR / "venv/bin/python3",
-                PORTFOLIO_DIR / "update_nfl_results.py"
+                NFL_STACK_DIR / ".venv/bin/python",
+                NFL_STACK_DIR / "scripts/hourly_update.py"
             ],
-            cwd=PORTFOLIO_DIR,
+            cwd=NFL_STACK_DIR,
             capture_output=True,
             text=True,
             check=True,
@@ -261,7 +266,9 @@ def run_live_score_update() -> bool:
         return True
 
     except subprocess.CalledProcessError as e:
-        logger.error(f"Live score update failed: {e}")
+        logger.error(f"Hourly update failed: {e}")
+        logger.error(f"Output: {e.stdout}")
+        logger.error(f"Error: {e.stderr}")
         return False
 
 
