@@ -794,7 +794,7 @@ function renderCurrentWeekPredictions(predictions, currentWeek) {
     const adjText = adjs.length > 0 ? `<div class="adjustment-text">${adjs.join(' • ')}</div>` : '';
 
     // Check if game has result data
-    const hasResult = game.actual_home_score !== undefined && game.actual_away_score !== undefined;
+    const hasResult = game.actual_home_score != null && game.actual_away_score != null;
     const matchupClass = hasResult ? 'matchup completed' : 'matchup';
 
     // Determine prediction correctness
