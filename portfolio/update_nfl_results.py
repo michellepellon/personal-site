@@ -164,7 +164,7 @@ def update_predictions_with_results(
                 and prediction["visiting_team"] == away_team
             ):
                 # Update with actual scores if not already present
-                if "actual_home_score" not in prediction:
+                if prediction.get("actual_home_score") is None:
                     prediction["actual_home_score"] = home_score
                     prediction["actual_away_score"] = away_score
                     updated_count += 1
