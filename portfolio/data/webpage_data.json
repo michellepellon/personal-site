@@ -1,6 +1,6 @@
 {
-  "generated_at": "2025-11-11T08:33:02.165566",
-  "current_week": 10,
+  "generated_at": "2025-11-12T16:54:46.464328",
+  "current_week": 11,
   "ratings": [
     {
       "team": "Philadelphia Eagles",
@@ -229,256 +229,274 @@
   ],
   "predictions": [
     {
-      "game_id": 136,
-      "week_number": 10,
-      "visiting_team": "Las Vegas Raiders",
-      "home_team": "Denver Broncos",
-      "visiting_team_elo_rating": 1678.7527752018968,
-      "home_team_elo_rating": 1783.3023783872072,
-      "home_win_probability": 0.7064378982908621,
-      "predicted_winner": "Denver Broncos",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.20643789829086212,
-      "actual_home_score": 10,
-      "actual_away_score": 7
-    },
-    {
-      "game_id": 137,
-      "week_number": 10,
-      "visiting_team": "Atlanta Falcons",
-      "home_team": "Indianapolis Colts",
-      "visiting_team_elo_rating": 1642.177087648224,
-      "home_team_elo_rating": 1699.7824592494849,
-      "home_win_probability": 0.5821494059257621,
-      "predicted_winner": "Indianapolis Colts",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.08214940592576214,
-      "actual_home_score": 31,
-      "actual_away_score": 25
-    },
-    {
-      "game_id": 138,
-      "week_number": 10,
-      "visiting_team": "New Orleans Saints",
-      "home_team": "Carolina Panthers",
-      "visiting_team_elo_rating": 1622.4979172037727,
-      "home_team_elo_rating": 1639.4052354018377,
-      "home_win_probability": 0.5923374062060869,
-      "predicted_winner": "Carolina Panthers",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.09233740620608688,
-      "actual_home_score": 7,
-      "actual_away_score": 17
-    },
-    {
-      "game_id": 139,
-      "week_number": 10,
-      "visiting_team": "New York Giants",
-      "home_team": "Chicago Bears",
-      "visiting_team_elo_rating": 1455.4423583436421,
-      "home_team_elo_rating": 1603.9264237014868,
-      "home_win_probability": 0.7560332106838412,
-      "predicted_winner": "Chicago Bears",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.2560332106838412,
-      "actual_home_score": 24,
-      "actual_away_score": 20
-    },
-    {
-      "game_id": 140,
-      "week_number": 10,
-      "visiting_team": "Jacksonville Jaguars",
-      "home_team": "Houston Texans",
-      "visiting_team_elo_rating": 1580.5181069914067,
-      "home_team_elo_rating": 1668.7016105400103,
-      "home_win_probability": 0.6865276287915903,
-      "predicted_winner": "Houston Texans",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.18652762879159035,
-      "actual_home_score": 36,
-      "actual_away_score": 29
-    },
-    {
-      "game_id": 141,
-      "week_number": 10,
-      "visiting_team": "Buffalo Bills",
-      "home_team": "Miami Dolphins",
-      "visiting_team_elo_rating": 1675.365416394131,
-      "home_team_elo_rating": 1500.6685888206596,
-      "home_win_probability": 0.32534274792334583,
-      "predicted_winner": "Buffalo Bills",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.17465725207665417,
-      "actual_home_score": 30,
-      "actual_away_score": 13
-    },
-    {
-      "game_id": 142,
-      "week_number": 10,
-      "visiting_team": "Baltimore Ravens",
-      "home_team": "Minnesota Vikings",
-      "visiting_team_elo_rating": 1577.0542915894566,
-      "home_team_elo_rating": 1445.8831155998196,
-      "home_win_probability": 0.3825422014448563,
-      "predicted_winner": "Baltimore Ravens",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.11745779855514371,
-      "actual_home_score": 19,
-      "actual_away_score": 27
-    },
-    {
-      "game_id": 143,
-      "week_number": 10,
-      "visiting_team": "Cleveland Browns",
-      "home_team": "New York Jets",
-      "visiting_team_elo_rating": 1661.713239204492,
-      "home_team_elo_rating": 1623.2100469697666,
-      "home_win_probability": 0.5136636026649978,
-      "predicted_winner": "New York Jets",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.013663602664997776,
-      "actual_home_score": 27,
-      "actual_away_score": 20
-    },
-    {
-      "game_id": 144,
-      "week_number": 10,
-      "visiting_team": "New England Patriots",
-      "home_team": "Tampa Bay Buccaneers",
-      "visiting_team_elo_rating": 1730.9023277663025,
-      "home_team_elo_rating": 1447.2301464375873,
-      "home_win_probability": 0.2292189664687475,
+      "game_id": 150,
+      "week_number": 11,
+      "visiting_team": "New York Jets",
+      "home_team": "New England Patriots",
+      "visiting_team_elo_rating": 1680.7368415472306,
+      "home_team_elo_rating": 1682.770161112745,
+      "home_win_probability": 0.5715100871387733,
       "predicted_winner": "New England Patriots",
       "rest_adj": 0.0,
       "temp_adj": 0,
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.2707810335312525,
-      "actual_home_score": 23,
-      "actual_away_score": 28
+      "confidence_adjusted": 0.07151008713877327,
+      "actual_home_score": null,
+      "actual_away_score": null
     },
     {
-      "game_id": 145,
-      "week_number": 10,
-      "visiting_team": "Arizona Cardinals",
-      "home_team": "Seattle Seahawks",
-      "visiting_team_elo_rating": 1552.5163463385577,
-      "home_team_elo_rating": 1678.11923414172,
-      "home_win_probability": 0.7309285141411843,
-      "predicted_winner": "Seattle Seahawks",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.23092851414118432,
-      "actual_home_score": 44,
-      "actual_away_score": 22
-    },
-    {
-      "game_id": 146,
-      "week_number": 10,
-      "visiting_team": "Los Angeles Rams",
-      "home_team": "San Francisco 49ers",
-      "visiting_team_elo_rating": 1592.3303048514106,
-      "home_team_elo_rating": 1621.0468981733798,
-      "home_win_probability": 0.6086440692282677,
-      "predicted_winner": "San Francisco 49ers",
-      "rest_adj": 0.0,
-      "temp_adj": 0,
-      "wind_adj": 0,
-      "injury_adj": 0.0,
-      "total_adj": 0.0,
-      "confidence_adjusted": 0.10864406922826775,
-      "actual_home_score": 26,
-      "actual_away_score": 42
-    },
-    {
-      "game_id": 147,
-      "week_number": 10,
-      "visiting_team": "Detroit Lions",
-      "home_team": "Washington Commanders",
-      "visiting_team_elo_rating": 1647.719151867259,
-      "home_team_elo_rating": 1662.8749705680445,
-      "home_win_probability": 0.58990051140542,
+      "game_id": 151,
+      "week_number": 11,
+      "visiting_team": "Washington Commanders",
+      "home_team": "Miami Dolphins",
+      "visiting_team_elo_rating": 1595.9274944272863,
+      "home_team_elo_rating": 1396.1099800638244,
+      "home_win_probability": 0.24044486983138882,
       "predicted_winner": "Washington Commanders",
       "rest_adj": 0.0,
       "temp_adj": 0,
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.08990051140541999,
-      "actual_home_score": 22,
-      "actual_away_score": 44
+      "confidence_adjusted": 0.2595551301686112,
+      "actual_home_score": null,
+      "actual_away_score": null
     },
     {
-      "game_id": 148,
-      "week_number": 10,
-      "visiting_team": "Pittsburgh Steelers",
-      "home_team": "Los Angeles Chargers",
-      "visiting_team_elo_rating": 1467.0384771937183,
-      "home_team_elo_rating": 1473.6799611952908,
-      "home_win_probability": 0.5779934431941554,
-      "predicted_winner": "Los Angeles Chargers",
+      "game_id": 152,
+      "week_number": 11,
+      "visiting_team": "Carolina Panthers",
+      "home_team": "Atlanta Falcons",
+      "visiting_team_elo_rating": 1799.1801830210595,
+      "home_team_elo_rating": 1555.136064219918,
+      "home_win_probability": 0.24443421850078284,
+      "predicted_winner": "Carolina Panthers",
       "rest_adj": 0.0,
       "temp_adj": 0,
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.07799344319415535,
-      "actual_home_score": 25,
-      "actual_away_score": 10
+      "confidence_adjusted": 0.25556578149921716,
+      "actual_home_score": null,
+      "actual_away_score": null
     },
     {
-      "game_id": 149,
-      "week_number": 10,
-      "visiting_team": "Philadelphia Eagles",
-      "home_team": "Green Bay Packers",
-      "visiting_team_elo_rating": 1626.0096705616504,
-      "home_team_elo_rating": 1535.418182133712,
-      "home_win_probability": 0.4039368851213133,
-      "predicted_winner": "Philadelphia Eagles",
+      "game_id": 153,
+      "week_number": 11,
+      "visiting_team": "Tampa Bay Buccaneers",
+      "home_team": "Buffalo Bills",
+      "visiting_team_elo_rating": 1545.8478303611712,
+      "home_team_elo_rating": 1634.1475625869248,
+      "home_win_probability": 0.686671599283655,
+      "predicted_winner": "Buffalo Bills",
       "rest_adj": 0.0,
       "temp_adj": 0,
       "wind_adj": 0,
       "injury_adj": 0.0,
       "total_adj": 0.0,
-      "confidence_adjusted": 0.09606311487868668,
-      "actual_home_score": 7,
-      "actual_away_score": 10
+      "confidence_adjusted": 0.18667159928365495,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 154,
+      "week_number": 11,
+      "visiting_team": "Los Angeles Chargers",
+      "home_team": "Jacksonville Jaguars",
+      "visiting_team_elo_rating": 1622.2923272349667,
+      "home_team_elo_rating": 1577.4233044200887,
+      "home_win_probability": 0.5045057164631541,
+      "predicted_winner": "Jacksonville Jaguars",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.004505716463154119,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 155,
+      "week_number": 11,
+      "visiting_team": "Chicago Bears",
+      "home_team": "Minnesota Vikings",
+      "visiting_team_elo_rating": 1661.2227053504782,
+      "home_team_elo_rating": 1639.6108253706436,
+      "home_win_probability": 0.5379027047948521,
+      "predicted_winner": "Minnesota Vikings",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.03790270479485214,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 156,
+      "week_number": 11,
+      "visiting_team": "Green Bay Packers",
+      "home_team": "New York Giants",
+      "visiting_team_elo_rating": 1463.4849178095128,
+      "home_team_elo_rating": 1444.0494200275998,
+      "home_win_probability": 0.5410152548798925,
+      "predicted_winner": "New York Giants",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.04101525487989255,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 157,
+      "week_number": 11,
+      "visiting_team": "Houston Texans",
+      "home_team": "Tennessee Titans",
+      "visiting_team_elo_rating": 1385.197213066868,
+      "home_team_elo_rating": 1668.9582898335855,
+      "home_win_probability": 0.8863191185598746,
+      "predicted_winner": "Tennessee Titans",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.38631911855987455,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 158,
+      "week_number": 11,
+      "visiting_team": "Cincinnati Bengals",
+      "home_team": "Pittsburgh Steelers",
+      "visiting_team_elo_rating": 1649.8492470740314,
+      "home_team_elo_rating": 1541.2426876847478,
+      "home_win_probability": 0.37923631054523477,
+      "predicted_winner": "Cincinnati Bengals",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.12076368945476523,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 159,
+      "week_number": 11,
+      "visiting_team": "San Francisco 49ers",
+      "home_team": "Arizona Cardinals",
+      "visiting_team_elo_rating": 1525.8157926703345,
+      "home_team_elo_rating": 1530.1461458740646,
+      "home_win_probability": 0.5747450585174518,
+      "predicted_winner": "Arizona Cardinals",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.07474505851745183,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 160,
+      "week_number": 11,
+      "visiting_team": "Seattle Seahawks",
+      "home_team": "Los Angeles Rams",
+      "visiting_team_elo_rating": 1615.9649963406732,
+      "home_team_elo_rating": 1559.4524893797634,
+      "home_win_probability": 0.4877519689219232,
+      "predicted_winner": "Seattle Seahawks",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.012248031078076815,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 161,
+      "week_number": 11,
+      "visiting_team": "Baltimore Ravens",
+      "home_team": "Cleveland Browns",
+      "visiting_team_elo_rating": 1602.7198304025724,
+      "home_team_elo_rating": 1734.08305417629,
+      "home_win_probability": 0.7373998332012885,
+      "predicted_winner": "Cleveland Browns",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.23739983320128855,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 162,
+      "week_number": 11,
+      "visiting_team": "Kansas City Chiefs",
+      "home_team": "Denver Broncos",
+      "visiting_team_elo_rating": 1661.9829954457614,
+      "home_team_elo_rating": 1626.9994958893865,
+      "home_win_probability": 0.48276119317697086,
+      "predicted_winner": "Kansas City Chiefs",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.01723880682302914,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 163,
+      "week_number": 11,
+      "visiting_team": "Detroit Lions",
+      "home_team": "Philadelphia Eagles",
+      "visiting_team_elo_rating": 1689.3928927955299,
+      "home_team_elo_rating": 1580.3487362590447,
+      "home_win_probability": 0.4130433508870463,
+      "predicted_winner": "Detroit Lions",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.0869566491129537,
+      "actual_home_score": null,
+      "actual_away_score": null
+    },
+    {
+      "game_id": 164,
+      "week_number": 11,
+      "visiting_team": "Dallas Cowboys",
+      "home_team": "Las Vegas Raiders",
+      "visiting_team_elo_rating": 1633.0284667657456,
+      "home_team_elo_rating": 1635.6120600250279,
+      "home_win_probability": 0.5367513483378861,
+      "predicted_winner": "Las Vegas Raiders",
+      "rest_adj": 0.0,
+      "temp_adj": 0,
+      "wind_adj": 0,
+      "injury_adj": 0.0,
+      "total_adj": 0.0,
+      "confidence_adjusted": 0.03675134833788607,
+      "actual_home_score": null,
+      "actual_away_score": null
     }
   ],
   "calibration": [],
@@ -492,7 +510,7 @@
     },
     {
       "week_number": 2,
-      "brier_score": 0.24706127188921093,
+      "brier_score": 0.24706127188921095,
       "log_loss": 0.6810075328439629,
       "accuracy": 0.5,
       "performance_rating": "Good"
@@ -521,7 +539,7 @@
     {
       "week_number": 6,
       "brier_score": 0.25945877167210335,
-      "log_loss": 0.7100386416545901,
+      "log_loss": 0.71003864165459,
       "accuracy": 0.5333333333333333,
       "performance_rating": "Fair"
     },
@@ -534,15 +552,15 @@
     },
     {
       "week_number": 8,
-      "brier_score": 0.2477101903006065,
-      "log_loss": 0.6962768267902668,
+      "brier_score": 0.24771019030060648,
+      "log_loss": 0.6962768267902667,
       "accuracy": 0.6153846153846154,
       "performance_rating": "Good"
     },
     {
       "week_number": 9,
-      "brier_score": 0.2766056194239404,
-      "log_loss": 0.7484123962355372,
+      "brier_score": 0.27660561942394046,
+      "log_loss": 0.7484123962355375,
       "accuracy": 0.42857142857142855,
       "performance_rating": "Fair"
     },
@@ -580,7 +598,7 @@
       "seed_display": "2.3 [1.0 - 7.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Philadelphia Eagles",
@@ -607,7 +625,7 @@
       "seed_display": "2.6 [1.0 - 4.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Los Angeles Rams",
@@ -634,7 +652,7 @@
       "seed_display": "2.9 [1.0 - 7.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Denver Broncos",
@@ -661,7 +679,7 @@
       "seed_display": "3.4 [1.0 - 7.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Indianapolis Colts",
@@ -688,7 +706,7 @@
       "seed_display": "2.9 [1.0 - 8.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Seattle Seahawks",
@@ -715,7 +733,7 @@
       "seed_display": "4.4 [1.0 - 9.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Los Angeles Chargers",
@@ -742,7 +760,7 @@
       "seed_display": "4.7 [1.0 - 9.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Tampa Bay Buccaneers",
@@ -769,7 +787,7 @@
       "seed_display": "4.0 [1.0 - 10.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Buffalo Bills",
@@ -777,10 +795,10 @@
       "elo_rating": 1629.2244831981932,
       "playoff_prob_pct": 76.6,
       "playoff_ci_lower_pct": 75.8,
-      "playoff_ci_upper_pct": 77.4,
+      "playoff_ci_upper_pct": 77.5,
       "playoff_ci_width_pct": 1.7,
-      "bye_prob_pct": 2.5,
-      "bye_ci_lower_pct": 2.2,
+      "bye_prob_pct": 2.6,
+      "bye_ci_lower_pct": 2.3,
       "bye_ci_upper_pct": 2.9,
       "bye_ci_width_pct": 0.6,
       "avg_wins": 10.1,
@@ -790,13 +808,13 @@
       "avg_seed": 6.2,
       "seed_ci_lower": 1.0,
       "seed_ci_upper": 11.0,
-      "playoff_prob_display": "76.6% [75.8% - 77.4%]",
-      "bye_prob_display": "2.5% [2.2% - 2.9%]",
+      "playoff_prob_display": "76.6% [75.8% - 77.5%]",
+      "bye_prob_display": "2.6% [2.3% - 2.9%]",
       "wins_display": "10.1 [8.0 - 13.0]",
       "seed_display": "6.2 [1.0 - 11.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Chicago Bears",
@@ -823,7 +841,7 @@
       "seed_display": "5.8 [1.0 - 11.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Detroit Lions",
@@ -841,16 +859,16 @@
       "wins_ci_lower": 7.0,
       "wins_ci_upper": 13.0,
       "wins_ci_width": 6.0,
-      "avg_seed": 5.8,
+      "avg_seed": 5.9,
       "seed_ci_lower": 1.0,
       "seed_ci_upper": 11.0,
       "playoff_prob_display": "69.2% [68.3% - 70.1%]",
       "bye_prob_display": "5.5% [5.1% - 6.0%]",
       "wins_display": "10.0 [7.0 - 13.0]",
-      "seed_display": "5.8 [1.0 - 11.0]",
+      "seed_display": "5.9 [1.0 - 11.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Green Bay Packers",
@@ -877,7 +895,7 @@
       "seed_display": "6.6 [2.0 - 12.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "San Francisco 49ers",
@@ -904,7 +922,7 @@
       "seed_display": "7.5 [3.0 - 12.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Kansas City Chiefs",
@@ -931,7 +949,7 @@
       "seed_display": "7.4 [2.0 - 12.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Pittsburgh Steelers",
@@ -949,16 +967,16 @@
       "wins_ci_lower": 6.0,
       "wins_ci_upper": 11.0,
       "wins_ci_width": 5.0,
-      "avg_seed": 7.2,
+      "avg_seed": 7.1,
       "seed_ci_lower": 3.0,
       "seed_ci_upper": 13.0,
       "playoff_prob_display": "48.2% [47.3% - 49.2%]",
       "bye_prob_display": "0.3% [0.2% - 0.5%]",
       "wins_display": "8.7 [6.0 - 11.0]",
-      "seed_display": "7.2 [3.0 - 13.0]",
+      "seed_display": "7.1 [3.0 - 13.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Jacksonville Jaguars",
@@ -966,7 +984,7 @@
       "elo_rating": 1527.1989688355754,
       "playoff_prob_pct": 47.4,
       "playoff_ci_lower_pct": 46.4,
-      "playoff_ci_upper_pct": 48.4,
+      "playoff_ci_upper_pct": 48.3,
       "playoff_ci_width_pct": 2.0,
       "bye_prob_pct": 0.4,
       "bye_ci_lower_pct": 0.3,
@@ -979,13 +997,13 @@
       "avg_seed": 7.6,
       "seed_ci_lower": 3.0,
       "seed_ci_upper": 12.0,
-      "playoff_prob_display": "47.4% [46.4% - 48.4%]",
+      "playoff_prob_display": "47.4% [46.4% - 48.3%]",
       "bye_prob_display": "0.4% [0.3% - 0.5%]",
       "wins_display": "9.0 [7.0 - 11.0]",
       "seed_display": "7.6 [3.0 - 12.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Baltimore Ravens",
@@ -1012,7 +1030,7 @@
       "seed_display": "7.9 [3.0 - 14.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Houston Texans",
@@ -1039,7 +1057,7 @@
       "seed_display": "8.6 [3.0 - 13.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Carolina Panthers",
@@ -1066,7 +1084,7 @@
       "seed_display": "9.2 [4.0 - 14.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Minnesota Vikings",
@@ -1074,7 +1092,7 @@
       "elo_rating": 1544.752034520356,
       "playoff_prob_pct": 24.6,
       "playoff_ci_lower_pct": 23.8,
-      "playoff_ci_upper_pct": 25.5,
+      "playoff_ci_upper_pct": 25.4,
       "playoff_ci_width_pct": 1.7,
       "bye_prob_pct": 0.0,
       "bye_ci_lower_pct": 0.0,
@@ -1087,13 +1105,13 @@
       "avg_seed": 9.5,
       "seed_ci_lower": 3.0,
       "seed_ci_upper": 15.0,
-      "playoff_prob_display": "24.6% [23.8% - 25.5%]",
+      "playoff_prob_display": "24.6% [23.8% - 25.4%]",
       "bye_prob_display": "0.0% [0.0% - 0.1%]",
       "wins_display": "8.0 [5.0 - 11.0]",
       "seed_display": "9.5 [3.0 - 15.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Cincinnati Bengals",
@@ -1120,7 +1138,7 @@
       "seed_display": "10.4 [4.0 - 15.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Arizona Cardinals",
@@ -1147,7 +1165,7 @@
       "seed_display": "11.1 [7.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Dallas Cowboys",
@@ -1174,7 +1192,7 @@
       "seed_display": "11.8 [6.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Cleveland Browns",
@@ -1201,7 +1219,7 @@
       "seed_display": "12.6 [8.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Washington Commanders",
@@ -1220,15 +1238,15 @@
       "wins_ci_upper": 8.0,
       "wins_ci_width": 4.0,
       "avg_seed": 12.9,
-      "seed_ci_lower": 9.0,
+      "seed_ci_lower": 8.0,
       "seed_ci_upper": 16.0,
       "playoff_prob_display": "0.8% [0.6% - 1.0%]",
       "bye_prob_display": "0.0% [0.0% - 0.0%]",
       "wins_display": "6.2 [4.0 - 8.0]",
-      "seed_display": "12.9 [9.0 - 16.0]",
+      "seed_display": "12.9 [8.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Atlanta Falcons",
@@ -1255,7 +1273,7 @@
       "seed_display": "13.7 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "New York Jets",
@@ -1273,16 +1291,16 @@
       "wins_ci_lower": 3.0,
       "wins_ci_upper": 8.0,
       "wins_ci_width": 5.0,
-      "avg_seed": 13.1,
+      "avg_seed": 13.2,
       "seed_ci_lower": 9.0,
       "seed_ci_upper": 16.0,
       "playoff_prob_display": "0.6% [0.5% - 0.8%]",
       "bye_prob_display": "0.0% [0.0% - 0.0%]",
       "wins_display": "5.7 [3.0 - 8.0]",
-      "seed_display": "13.1 [9.0 - 16.0]",
+      "seed_display": "13.2 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "New York Giants",
@@ -1309,7 +1327,7 @@
       "seed_display": "13.4 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Miami Dolphins",
@@ -1336,7 +1354,7 @@
       "seed_display": "13.2 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "New Orleans Saints",
@@ -1363,7 +1381,7 @@
       "seed_display": "14.7 [11.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Tennessee Titans",
@@ -1390,7 +1408,7 @@
       "seed_display": "14.3 [10.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     },
     {
       "team": "Las Vegas Raiders",
@@ -1417,7 +1435,7 @@
       "seed_display": "14.3 [10.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-11 14:18:16.609000+00:00"
+      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
     }
   ]
 }
