@@ -493,9 +493,9 @@
   <h1>NFL Game Prediction System</h1>
   <p class="subtitle">Live probabilistic forecasting using calibrated margin-of-victory adjusted ELO ratings</p>
   <div class="meta">
-    <span><strong>Updated:</strong> <span id="update-time">November 9, 2025</span></span>
-    <span><strong>Model:</strong> Calibrated ELO v1.1</span>
-    <span><span class="status-badge">Live</span> Weeks 1-9 actual results</span>
+    <span><strong>Updated:</strong> <span id="update-time">November 13, 2025</span></span>
+    <span><strong>Model:</strong> Calibrated ELO v1.2</span>
+    <span><span class="status-badge">Live</span> Weeks 1-10 actual results</span>
   </div>
 </header>
 
@@ -692,6 +692,7 @@
     <a href="https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/">FiveThirtyEight's methodology</a>,
     then isotonic regression calibration to fix overconfident extreme predictions.
     Initial ratings: 1500. K-factor: 20. Home advantage: +52 ELO (~55% win probability).
+    Contextual adjustments: Travel distance (-4 ELO/1000 mi), altitude (-10 ELO at Denver), Thursday night (-5 ELO road).
   </p>
   <p>
     <strong>Technical Stack:</strong> DuckDB, dbt, Parquet, Python, scikit-learn (isotonic regression).
