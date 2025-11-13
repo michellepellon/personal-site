@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-12T16:54:46.464328",
+  "generated_at": "2025-11-13T11:01:17.823699",
   "current_week": 11,
   "ratings": [
     {
@@ -499,12 +499,133 @@
       "actual_away_score": null
     }
   ],
-  "calibration": [],
+  "calibration": [
+    {
+      "bin_lower": 0.1,
+      "bin_upper": 0.2,
+      "bin_midpoint": 0.15000000000000002,
+      "mean_predicted": 0.1748703694817888,
+      "mean_observed": 0.3333333333333333,
+      "n_predictions": 3,
+      "stddev_observed": 0.5773502691896257,
+      "se_observed": 0.3333333333333333,
+      "ci_lower": -0.32,
+      "ci_upper": 0.9866666666666666,
+      "perfect_calibration": 0.15000000000000002,
+      "calibration_error": 0.1584629638515445,
+      "ingested_at": "2025-11-13 16:58:11.348000+00:00"
+    },
+    {
+      "bin_lower": 0.2,
+      "bin_upper": 0.30000000000000004,
+      "bin_midpoint": 0.25,
+      "mean_predicted": 0.26191641221858164,
+      "mean_observed": 0.5,
+      "n_predictions": 8,
+      "stddev_observed": 0.5345224838248488,
+      "se_observed": 0.1889822365046136,
+      "ci_lower": 0.12959481645095733,
+      "ci_upper": 0.8704051835490427,
+      "perfect_calibration": 0.25,
+      "calibration_error": 0.23808358778141836,
+      "ingested_at": "2025-11-13 16:58:11.348000+00:00"
+    },
+    {
+      "bin_lower": 0.3,
+      "bin_upper": 0.4,
+      "bin_midpoint": 0.35,
+      "mean_predicted": 0.35862393963540407,
+      "mean_observed": 0.3684210526315789,
+      "n_predictions": 19,
+      "stddev_observed": 0.49559462778335206,
+      "se_observed": 0.1136972052352256,
+      "ci_lower": 0.14557453037053675,
+      "ci_upper": 0.591267574892621,
+      "perfect_calibration": 0.35,
+      "calibration_error": 0.009797112996174862,
+      "ingested_at": "2025-11-13 16:58:11.348000+00:00"
+    },
+    {
+      "bin_lower": 0.4,
+      "bin_upper": 0.5,
+      "bin_midpoint": 0.45,
+      "mean_predicted": 0.44708769089970646,
+      "mean_observed": 0.55,
+      "n_predictions": 20,
+      "stddev_observed": 0.5104177855340404,
+      "se_observed": 0.11413288653790231,
+      "ci_lower": 0.3262995423857115,
+      "ci_upper": 0.7737004576142885,
+      "perfect_calibration": 0.45,
+      "calibration_error": 0.10291230910029359,
+      "ingested_at": "2025-11-13 16:58:11.348000+00:00"
+    },
+    {
+      "bin_lower": 0.5,
+      "bin_upper": 0.6,
+      "bin_midpoint": 0.55,
+      "mean_predicted": 0.5602805564887289,
+      "mean_observed": 0.4722222222222222,
+      "n_predictions": 36,
+      "stddev_observed": 0.506309397848002,
+      "se_observed": 0.08438489964133367,
+      "ci_lower": 0.3068278189252082,
+      "ci_upper": 0.6376166255192361,
+      "perfect_calibration": 0.55,
+      "calibration_error": 0.08805833426650667,
+      "ingested_at": "2025-11-13 16:58:11.348000+00:00"
+    },
+    {
+      "bin_lower": 0.6,
+      "bin_upper": 0.7,
+      "bin_midpoint": 0.65,
+      "mean_predicted": 0.6534606704727994,
+      "mean_observed": 0.625,
+      "n_predictions": 32,
+      "stddev_observed": 0.4918693768379647,
+      "se_observed": 0.08695104295503155,
+      "ci_lower": 0.45457595580813814,
+      "ci_upper": 0.7954240441918619,
+      "perfect_calibration": 0.65,
+      "calibration_error": 0.028460670472799432,
+      "ingested_at": "2025-11-13 16:58:11.348000+00:00"
+    },
+    {
+      "bin_lower": 0.7,
+      "bin_upper": 0.7999999999999999,
+      "bin_midpoint": 0.75,
+      "mean_predicted": 0.7382486858992292,
+      "mean_observed": 0.6,
+      "n_predictions": 20,
+      "stddev_observed": 0.5026246899500346,
+      "se_observed": 0.11239029738980327,
+      "ci_lower": 0.37971501711598554,
+      "ci_upper": 0.8202849828840144,
+      "perfect_calibration": 0.75,
+      "calibration_error": 0.13824868589922923,
+      "ingested_at": "2025-11-13 16:58:11.348000+00:00"
+    },
+    {
+      "bin_lower": 0.8,
+      "bin_upper": 0.9,
+      "bin_midpoint": 0.8500000000000001,
+      "mean_predicted": 0.8517757665640306,
+      "mean_observed": 0.8181818181818182,
+      "n_predictions": 11,
+      "stddev_observed": 0.4045199174779453,
+      "se_observed": 0.12196734422726127,
+      "ci_lower": 0.5791258234963861,
+      "ci_upper": 1.0572378128672504,
+      "perfect_calibration": 0.8500000000000001,
+      "calibration_error": 0.03359394838221241,
+      "ingested_at": "2025-11-13 16:58:11.348000+00:00"
+    }
+  ],
   "performance": [
     {
       "week_number": 1,
       "brier_score": 0.27842382828436224,
-      "log_loss": 0.7529502976529368,
+      "log_loss": 0.7529502976529366,
       "accuracy": 0.375,
       "performance_rating": "Fair"
     },
@@ -525,7 +646,7 @@
     {
       "week_number": 4,
       "brier_score": 0.3077863090035621,
-      "log_loss": 0.8444641215725242,
+      "log_loss": 0.844464121572524,
       "accuracy": 0.4375,
       "performance_rating": "Needs improvement"
     },
@@ -552,15 +673,15 @@
     },
     {
       "week_number": 8,
-      "brier_score": 0.24771019030060648,
-      "log_loss": 0.6962768267902667,
+      "brier_score": 0.2477101903006065,
+      "log_loss": 0.6962768267902665,
       "accuracy": 0.6153846153846154,
       "performance_rating": "Good"
     },
     {
       "week_number": 9,
       "brier_score": 0.27660561942394046,
-      "log_loss": 0.7484123962355375,
+      "log_loss": 0.7484123962355372,
       "accuracy": 0.42857142857142855,
       "performance_rating": "Fair"
     },
@@ -598,7 +719,7 @@
       "seed_display": "2.3 [1.0 - 7.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Philadelphia Eagles",
@@ -625,7 +746,7 @@
       "seed_display": "2.6 [1.0 - 4.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Los Angeles Rams",
@@ -652,7 +773,7 @@
       "seed_display": "2.9 [1.0 - 7.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Denver Broncos",
@@ -679,7 +800,7 @@
       "seed_display": "3.4 [1.0 - 7.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Indianapolis Colts",
@@ -706,7 +827,7 @@
       "seed_display": "2.9 [1.0 - 8.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Seattle Seahawks",
@@ -733,7 +854,7 @@
       "seed_display": "4.4 [1.0 - 9.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Los Angeles Chargers",
@@ -760,7 +881,7 @@
       "seed_display": "4.7 [1.0 - 9.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Tampa Bay Buccaneers",
@@ -780,14 +901,14 @@
       "wins_ci_width": 5.0,
       "avg_seed": 4.0,
       "seed_ci_lower": 1.0,
-      "seed_ci_upper": 10.0,
+      "seed_ci_upper": 11.0,
       "playoff_prob_display": "90.2% [89.6% - 90.7%]",
       "bye_prob_display": "4.6% [4.2% - 5.1%]",
       "wins_display": "10.3 [8.0 - 13.0]",
-      "seed_display": "4.0 [1.0 - 10.0]",
+      "seed_display": "4.0 [1.0 - 11.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Buffalo Bills",
@@ -797,8 +918,8 @@
       "playoff_ci_lower_pct": 75.8,
       "playoff_ci_upper_pct": 77.5,
       "playoff_ci_width_pct": 1.7,
-      "bye_prob_pct": 2.6,
-      "bye_ci_lower_pct": 2.3,
+      "bye_prob_pct": 2.5,
+      "bye_ci_lower_pct": 2.2,
       "bye_ci_upper_pct": 2.9,
       "bye_ci_width_pct": 0.6,
       "avg_wins": 10.1,
@@ -809,12 +930,12 @@
       "seed_ci_lower": 1.0,
       "seed_ci_upper": 11.0,
       "playoff_prob_display": "76.6% [75.8% - 77.5%]",
-      "bye_prob_display": "2.6% [2.3% - 2.9%]",
+      "bye_prob_display": "2.5% [2.2% - 2.9%]",
       "wins_display": "10.1 [8.0 - 13.0]",
       "seed_display": "6.2 [1.0 - 11.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Chicago Bears",
@@ -841,7 +962,7 @@
       "seed_display": "5.8 [1.0 - 11.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Detroit Lions",
@@ -868,7 +989,7 @@
       "seed_display": "5.9 [1.0 - 11.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Green Bay Packers",
@@ -895,7 +1016,7 @@
       "seed_display": "6.6 [2.0 - 12.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "San Francisco 49ers",
@@ -922,7 +1043,7 @@
       "seed_display": "7.5 [3.0 - 12.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Kansas City Chiefs",
@@ -949,7 +1070,7 @@
       "seed_display": "7.4 [2.0 - 12.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Pittsburgh Steelers",
@@ -967,16 +1088,16 @@
       "wins_ci_lower": 6.0,
       "wins_ci_upper": 11.0,
       "wins_ci_width": 5.0,
-      "avg_seed": 7.1,
+      "avg_seed": 7.2,
       "seed_ci_lower": 3.0,
       "seed_ci_upper": 13.0,
       "playoff_prob_display": "48.2% [47.3% - 49.2%]",
       "bye_prob_display": "0.3% [0.2% - 0.5%]",
       "wins_display": "8.7 [6.0 - 11.0]",
-      "seed_display": "7.1 [3.0 - 13.0]",
+      "seed_display": "7.2 [3.0 - 13.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Jacksonville Jaguars",
@@ -1003,7 +1124,7 @@
       "seed_display": "7.6 [3.0 - 12.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Baltimore Ravens",
@@ -1030,7 +1151,7 @@
       "seed_display": "7.9 [3.0 - 14.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Houston Texans",
@@ -1057,7 +1178,7 @@
       "seed_display": "8.6 [3.0 - 13.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Carolina Panthers",
@@ -1084,7 +1205,7 @@
       "seed_display": "9.2 [4.0 - 14.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Minnesota Vikings",
@@ -1092,7 +1213,7 @@
       "elo_rating": 1544.752034520356,
       "playoff_prob_pct": 24.6,
       "playoff_ci_lower_pct": 23.8,
-      "playoff_ci_upper_pct": 25.4,
+      "playoff_ci_upper_pct": 25.5,
       "playoff_ci_width_pct": 1.7,
       "bye_prob_pct": 0.0,
       "bye_ci_lower_pct": 0.0,
@@ -1105,13 +1226,13 @@
       "avg_seed": 9.5,
       "seed_ci_lower": 3.0,
       "seed_ci_upper": 15.0,
-      "playoff_prob_display": "24.6% [23.8% - 25.4%]",
+      "playoff_prob_display": "24.6% [23.8% - 25.5%]",
       "bye_prob_display": "0.0% [0.0% - 0.1%]",
       "wins_display": "8.0 [5.0 - 11.0]",
       "seed_display": "9.5 [3.0 - 15.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Cincinnati Bengals",
@@ -1138,7 +1259,7 @@
       "seed_display": "10.4 [4.0 - 15.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Arizona Cardinals",
@@ -1165,7 +1286,7 @@
       "seed_display": "11.1 [7.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Dallas Cowboys",
@@ -1192,7 +1313,7 @@
       "seed_display": "11.8 [6.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Cleveland Browns",
@@ -1219,7 +1340,7 @@
       "seed_display": "12.6 [8.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Washington Commanders",
@@ -1238,15 +1359,15 @@
       "wins_ci_upper": 8.0,
       "wins_ci_width": 4.0,
       "avg_seed": 12.9,
-      "seed_ci_lower": 8.0,
+      "seed_ci_lower": 9.0,
       "seed_ci_upper": 16.0,
       "playoff_prob_display": "0.8% [0.6% - 1.0%]",
       "bye_prob_display": "0.0% [0.0% - 0.0%]",
       "wins_display": "6.2 [4.0 - 8.0]",
-      "seed_display": "12.9 [8.0 - 16.0]",
+      "seed_display": "12.9 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Atlanta Falcons",
@@ -1273,7 +1394,7 @@
       "seed_display": "13.7 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "New York Jets",
@@ -1300,7 +1421,7 @@
       "seed_display": "13.2 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "New York Giants",
@@ -1327,7 +1448,7 @@
       "seed_display": "13.4 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Miami Dolphins",
@@ -1354,7 +1475,7 @@
       "seed_display": "13.2 [9.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "New Orleans Saints",
@@ -1381,7 +1502,7 @@
       "seed_display": "14.7 [11.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Tennessee Titans",
@@ -1408,7 +1529,7 @@
       "seed_display": "14.3 [10.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     },
     {
       "team": "Las Vegas Raiders",
@@ -1435,7 +1556,7 @@
       "seed_display": "14.3 [10.0 - 16.0]",
       "n_scenarios": 10000,
       "sim_start_game_id": 0,
-      "ingested_at": "2025-11-12 22:50:07.015000+00:00"
+      "ingested_at": "2025-11-13 16:58:12.404000+00:00"
     }
   ]
 }
