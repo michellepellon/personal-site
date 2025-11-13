@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Build an NFL Prediction Model with ELO Ratings and DuckDB | Michelle Pellon</title>
+
+  <meta name="description" content="Build a sophisticated NFL prediction model achieving 57% accuracy using ELO ratings, DuckDB, and dbt. Complete technical guide with Python code, Monte Carlo simulations, and real-world results from 143 games. Step-by-step implementation for data engineers." />
+  <meta name="keywords" content="NFL prediction model, ELO rating system, sports analytics tutorial, data engineering project, DuckDB tutorial, dbt guide, Monte Carlo simulation, machine learning sports, predictive modeling, FiveThirtyEight NFL, Brier score, model calibration, Python sports analytics, NFL game predictions, football analytics" />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://michellepellon.com/blog/2025-11-13-building-an-nfl-prediction-model" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="How to Build an NFL Prediction Model with ELO Ratings and DuckDB" />
+  <meta property="og:description" content="Build a sophisticated NFL prediction model achieving 57% accuracy using ELO ratings, DuckDB, and dbt. Complete technical guide with Python code, Monte Carlo simulations, and real-world results from 143 games." />
+  <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://michellepellon.com/blog/2025-11-13-building-an-nfl-prediction-model" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Michelle Pellon" />
+  <meta property="og:article:author" content="Michelle Pellon" />
+  <meta property="og:article:published_time" content="2025-11-13T00:00:00Z" />
+  <meta property="og:article:tag" content="Data Engineering" />
+  <meta property="og:article:tag" content="Sports Analytics" />
+  <meta property="og:article:tag" content="Machine Learning" />
+  <meta property="og:article:tag" content="DuckDB" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Build an NFL Prediction Model with ELO Ratings and DuckDB" />
+  <meta name="twitter:description" content="Build a sophisticated NFL prediction model achieving 57% accuracy using ELO ratings, DuckDB, and dbt. Complete technical guide with Python code and real-world results from 143 games." />
+  <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta name="twitter:creator" content="@michellepellon" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Build an NFL Prediction Model with ELO Ratings and DuckDB",
+    "alternativeHeadline": "Mathematical Methodology and Data Engineering Architecture",
+    "image": "https://michellepellon.com/img/michelle-pellon-headshot.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "url": "https://michellepellon.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/michelle-pellon/",
+        "https://github.com/michellepellon"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://michellepellon.com/img/michelle-pellon-headshot.jpg"
+      }
+    },
+    "datePublished": "2025-11-13",
+    "dateModified": "2025-11-13",
+    "description": "Build a sophisticated NFL prediction model achieving 57% accuracy using ELO ratings, DuckDB, and dbt. Complete technical guide with Python code, Monte Carlo simulations, and real-world results from 143 games. Step-by-step implementation for data engineers.",
+    "keywords": "NFL prediction model, ELO rating system, sports analytics tutorial, data engineering project, DuckDB tutorial, dbt guide, Monte Carlo simulation, Python sports analytics, NFL game predictions, football analytics",
+    "url": "https://michellepellon.com/blog/2025-11-13-building-an-nfl-prediction-model",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://michellepellon.com/blog/2025-11-13-building-an-nfl-prediction-model"
+    },
+    "articleSection": "Data Engineering",
+    "wordCount": 6350,
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TPVXJT8FKZ');
+  </script>
+
+  <!-- Cookie Consent -->
+  <script src="../cookie-consent.min.js" defer></script>
+
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --max-width: 1100px;
+      --article-width: 800px;
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --text-muted: #999999;
+      --link-color: #000000;
+      --link-hover: #4d65ff;
+      --accent-blue: #4d65ff;
+      --border-color: #e5e5e5;
+      --bg-white: #ffffff;
+      --bg-light: #fafafa;
+      --bg-code: #f6f8fa;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --shadow-md: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-white);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .article-container {
+      max-width: var(--article-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    h2 {
+      font-size: 1.875rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-top: var(--spacing-2xl);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-top: var(--spacing-lg);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Navigation */
+    nav {
+      padding: var(--spacing-lg) 0;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.125rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-lg);
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* Article Header */
+    .article-header {
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-date {
+      color: var(--text-muted);
+    }
+
+    .reading-time {
+      color: var(--text-muted);
+    }
+
+    .article-tags {
+      display: flex;
+      gap: var(--spacing-xs);
+      flex-wrap: wrap;
+      margin-top: var(--spacing-md);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--bg-light);
+      color: var(--text-secondary);
+      font-size: 0.8125rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .tag:hover {
+      background: var(--bg-code);
+    }
+
+    /* Article Content */
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .article-content a {
+      color: var(--link-color);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-color);
+      transition: border-color 0.2s;
+    }
+
+    .article-content a:hover {
+      border-bottom-color: var(--link-hover);
+      color: var(--link-hover);
+    }
+
+    .article-content ul, .article-content ol {
+      margin: var(--spacing-md) 0;
+      padding-left: var(--spacing-lg);
+    }
+
+    .article-content li {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .article-content code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      background: var(--bg-code);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+    }
+
+    .article-content pre {
+      background: var(--bg-code);
+      padding: var(--spacing-md);
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: var(--spacing-md) 0;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .article-content blockquote {
+      border-left: 3px solid var(--accent-blue);
+      padding-left: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--spacing-md) 0;
+    }
+
+    .article-content th, .article-content td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    .article-content th {
+      background: var(--bg-light);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: var(--spacing-3xl);
+      padding: var(--spacing-2xl) 0;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: var(--spacing-2xl);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9375rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--text-primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      html {
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      .nav-links {
+        gap: var(--spacing-md);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <div class="nav-content">
+        <a href="../index.html" class="nav-brand">Michelle Pellon</a>
+        <ul class="nav-links">
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../services.html">Services</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="../blog.html" class="back-link">← Back to Blog</a>
+
+    <header class="article-header">
+      <h1>How to Build an NFL Prediction Model with ELO Ratings and DuckDB</h1>
+      <div class="article-meta">
+        <time class="article-date" datetime="2025-11-13">November 13, 2025</time>
+        <span class="reading-time">25 min read</span>
+      </div>
+      <div class="article-tags">
+        <span class="tag">Data Engineering</span>
+        <span class="tag">Sports Analytics</span>
+        <span class="tag">DuckDB</span>
+        <span class="tag">Machine Learning</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <p>I built an NFL prediction model that achieves 57% accuracy across 10 weeks of the 2025 season. The model uses <a href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO ratings</a> and <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo simulations</a> and runs on a modern data stack built with <a href="https://duckdb.org/">DuckDB</a> and <a href="https://www.getdbt.com/">dbt</a>. Week 10 scored 71% accuracy with a <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score</a> of 0.199. This post explains the mathematics, data engineering architecture, current results, and upcoming features.</p>
+
+      <h2>The ELO Rating System</h2>
+
+      <p>The ELO rating system, created by physicist Arpad Elo in the 1960s for chess, measures competitive strength on a single numerical scale. Originally designed to rank chess players, the system has proven remarkably adaptable: it now ranks everything from competitive video game players to NFL teams. The elegance lies in its simplicity: every contest between two competitors updates both ratings based on the expected versus actual outcome.</p>
+
+      <p>In my model, teams start at 1505 points (slightly above the league average of 1500 to account for expansion teams). Winning teams gain points; losing teams lose points. The system rewards upsets heavily: a weak team beating a strong team causes a large rating swing. Conversely, when favorites win as expected, ratings barely move. The formula also accounts for margin of victory: blowout wins matter more than narrow victories.</p>
+
+      <p>The core calculation updates ratings after each game:</p>
+
+      <p>$$\Delta_{\text{ELO}} = K \times \text{MOV}_{\text{multiplier}} \times (S - E)$$</p>
+
+      <p>Where:</p>
+      <ul>
+        <li>$K = 20$ (learning rate controlling how quickly ratings change)</li>
+        <li>$S$ = actual result: 1 (visiting win), 0 (home win), 0.5 (tie)</li>
+        <li>$E$ = expected result (win probability for the visiting team)</li>
+      </ul>
+
+      <p>The expected result uses the logistic function:</p>
+
+      <p>$$E = \frac{1}{1 + 10^{-(\text{ELO}_{\text{visiting}} - \text{ELO}_{\text{home}} - \text{HFA}) / 400}}$$</p>
+
+      <p>Where HFA is the home field advantage (48 ELO points).</p>
+
+      <p>The margin of victory multiplier scales the rating change based on point differential and the pre-game rating gap:</p>
+
+      <p>$$\text{MOV}_{\text{multiplier}} = \ln(|\text{margin}| + 1) \times \frac{2.2}{|\Delta_{\text{ELO}}| \times 0.001 + 2.2}$$</p>
+
+      <p>This ensures that blowouts between evenly matched teams move ratings more than blowouts where the favorite was expected to dominate.</p>
+
+      <h3>Home Field Advantage</h3>
+
+      <p>Home teams receive a 48 ELO point bonus before calculating win probabilities. This adjustment exists because home teams win more than 50% of NFL games—historically around 57% across the league. The causes are well documented: familiar facilities, supportive crowds, no travel fatigue, sleeping in your own bed, and officiating bias. By adding points to the home team's rating before running the prediction formula, the model accounts for this empirical reality without claiming the home team is genuinely "better."</p>
+
+      <p>For two evenly matched 1500-rated teams, home field advantage shifts the expected win probability from 50% to 57.5%—matching the historical data. I calibrated this value to <a href="https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/">FiveThirtyEight's rolling 10-year average</a> (48 points), down from an initial 52 points. Home field advantage has gradually declined across the NFL as teams invest in climate-controlled stadiums and improved travel logistics, reducing some of the environmental factors that once favored home teams.</p>
+
+      <h3>Margin of Victory Adjustments</h3>
+
+      <p>The margin-of-victory multiplier prevents the system from treating all wins equally. A narrow 3-point victory suggests the teams were evenly matched; ratings should barely change. A 30-point blowout reveals a significant talent gap; ratings should shift dramatically. The logarithmic scaling $\ln(|\text{margin}| + 1)$ prevents extreme outliers from dominating the system—a 50-point win doesn't count twice as much as a 25-point win.</p>
+
+      <p>The second term $\frac{2.2}{|\Delta_{\text{ELO}}| \times 0.001 + 2.2}$ adjusts for pre-game expectations. When a heavy favorite wins by 30 points, that outcome was expected; ratings barely move. When two evenly matched teams play and one dominates by 30 points, that outcome was surprising; ratings shift substantially. This prevents the system from overreacting to predictable blowouts while still capturing genuinely dominant performances.</p>
+
+      <h3>Bye Week Bonus</h3>
+
+      <p>Teams coming off a bye week receive a temporary 25 ELO point boost for that single game. The NFL schedules one bye week per team between Weeks 5-14, giving players physical recovery time and coaches extra days to game plan. The empirical data reveals a consistent pattern: rested teams win approximately 56-58% of their post-bye games, several percentage points above what their season-long ratings would predict.</p>
+
+      <p>This advantage stems from multiple factors. Players heal minor injuries that would otherwise accumulate across consecutive weeks. Coaches analyze more film, script additional plays, and install game-specific packages. The mental break reduces fatigue and restores focus. Meanwhile, opponents playing their standard weekly schedule face the usual six-day preparation window.</p>
+
+      <p>The 25-point adjustment translates to roughly a 3-4% win probability boost. For two evenly matched 1500-rated teams, the bye week shifts the expected outcome from 50-50 to approximately 54-46 in favor of the rested team. Critically, this boost applies only to the single post-bye game. After that contest, the bonus disappears entirely and the team's rating reverts to its true value. This prevents the temporary situational advantage from distorting long-term strength assessments.</p>
+
+      <p>The implementation treats bye weeks differently from permanent rating changes. When the model processes a post-bye game, it adds 25 points to the rested team's effective ELO for probability calculations but does not update the stored rating. This architectural choice recognizes that rest is ephemeral—a team is not genuinely "better" after a bye; they simply have a one-week edge.</p>
+
+      <h2>Calibration and Performance Metrics</h2>
+
+      <p>Predictions without validation are just guesses. Any model can claim accuracy; rigorous measurement proves it. I track three complementary metrics that evaluate different aspects of forecasting quality: how close predictions are to reality (Brier score), how harshly wrong confident predictions get punished (log loss), and how often the favored team wins (accuracy). Together, these metrics provide a complete picture of model performance.</p>
+
+      <h3>Brier Score</h3>
+
+      <p>The Brier score measures mean squared error for probabilistic predictions. For each game, the model outputs a probability (say, 65% chance the home team wins). The actual outcome is binary: home team wins (1) or loses (0). The Brier score squares the difference between prediction and reality, then averages across all games:</p>
+
+      <p>$$\text{Brier} = \frac{1}{N} \sum_{i=1}^{N} (p_i - o_i)^2$$</p>
+
+      <p>Where $p_i$ is the predicted probability and $o_i$ is the actual outcome (0 or 1).</p>
+
+      <p>Scores range from 0.0 (perfect predictions) to 1.0 (perfectly wrong predictions). Random guessing yields 0.25. Coin flips produce 0.5 if you always predict 50%. My model scores <strong>0.242 across the 2025 season</strong>—barely better than random in aggregate, but showing significant improvement week-by-week as the season progresses and ELO ratings stabilize. Week 10 alone scored 0.199, approaching the "excellent" threshold of 0.20.</p>
+
+      <h3>Log Loss</h3>
+
+      <p>Log loss (logarithmic loss, also called cross-entropy loss) penalizes confident mistakes far more severely than uncertain mistakes. The formula:</p>
+
+      <p>$$\text{LogLoss} = -\frac{1}{N} \sum_{i=1}^{N} [o_i \log(p_i) + (1 - o_i) \log(1 - p_i)]$$</p>
+
+      <p>Predicting 95% confidence and being wrong generates enormous penalty. Predicting 55% and being wrong barely registers. This asymmetry matters: overconfident models produce terrible decision-making even if they get most predictions directionally correct. A model that predicts 99% probability for 10 games and gets one wrong suffers massive log loss despite 90% accuracy.</p>
+
+      <p>Current model log loss: <strong>0.677</strong>. Lower is better. Perfect predictions score 0.0. For context, random guessing with 50-50 predictions yields approximately 0.693. The model beats random guessing, but not by much—indicating room for improvement in probability calibration.</p>
+
+      <h3>Accuracy</h3>
+
+      <p>Straight-up accuracy answers the simplest question: did the model pick the winner? For each game, convert probabilities to binary predictions (>50% = predicted winner) and count correct picks. This metric ignores confidence entirely—a 51% prediction counts the same as a 99% prediction if both teams win.</p>
+
+      <p>Current performance: <strong>57.4% accuracy across 10 weeks</strong> (82 correct predictions out of 143 games). This beats the naive "always pick the home team" baseline of 53-57% (historical home field advantage). Week-by-week variance is high: Week 10 hit 71.4% (10/14), while some earlier weeks dipped to 50%. As the season progresses and team ratings stabilize, accuracy should trend upward.</p>
+
+      <p>For comparison, FiveThirtyEight's NFL model typically achieves 60-65% accuracy. The 57.4% mark puts this model in the "useful but not elite" category—good enough to beat simple heuristics, not yet good enough to bet significant money.</p>
+
+      <h3>Confidence Intervals</h3>
+
+      <p>Point estimates without uncertainty bounds are incomplete. A 75% playoff probability could mean "definitely making playoffs" or "total coin flip depending on tiebreakers." Confidence intervals quantify this uncertainty.</p>
+
+      <p>Every prediction in the system includes 95% confidence intervals. A playoff probability displays as "75% [73% - 77%]" rather than just "75%". Tight intervals signal high confidence; wide intervals reveal uncertainty. For binary outcomes (playoff yes/no, game win/loss), the model uses the Wilson Score interval, which handles small sample sizes better than normal approximation. For continuous metrics (expected wins, average seed), empirical percentiles from the Monte Carlo simulation provide natural bounds: the 2.5th and 97.5th percentile values define the 95% interval.</p>
+
+      <p>These intervals serve two purposes. First, they communicate honest uncertainty to users—overconfident forecasts erode trust when they fail. Second, they enable calibration validation: if 95% intervals genuinely contain the true outcome 95% of the time, the model is well-calibrated. Systematic under-coverage (true values fall outside intervals more than 5% of the time) indicates overconfidence.</p>
+
+      <h2>Data Engineering Architecture</h2>
+
+      <p>The model runs on a modern, single-node data stack that proves you don't need distributed systems to build sophisticated analytics. No Spark clusters burning cloud credits. No Kubernetes orchestration adding operational overhead. No Airflow DAGs to debug at 2 AM. One laptop, one DuckDB database file, one dbt project. The entire pipeline—data ingestion, ELO calculations, Monte Carlo simulations, and analytics generation—completes in under 10 seconds.</p>
+
+      <p>This architecture embodies the "modern data stack" philosophy: simple, composable tools that maximize developer productivity. DuckDB handles analytical queries with Postgres-like SQL but 10-100x faster. <a href="https://parquet.apache.org/">Parquet</a> files eliminate ETL complexity—they serve as both storage and interchange format. dbt provides transformation logic, dependency management, and automated testing in one framework. Python fills gaps where SQL becomes unwieldy. The result is a codebase that one person can understand, maintain, and extend.</p>
+
+      <h3>Data Sources</h3>
+
+      <p>Three data sources feed the model, each serving a distinct purpose:</p>
+
+      <p><strong>ESPN API</strong> provides live game data. Every Sunday, Monday, and Thursday during the NFL season, a scheduled script polls ESPN's hidden JSON endpoints for real-time scores. When a game completes, the script captures final scores, updates ELO ratings, regenerates predictions for remaining games, and pushes updated HTML to the live site. This automation runs on a cron schedule—no manual intervention required.</p>
+
+      <p><strong>Pro Football Reference</strong> via <code><a href="https://github.com/nflverse/nflreadpy">nflreadpy</a></code> supplies historical data. The library wraps <code>nflverse</code> data releases, providing clean Parquet files with game results, schedules, team ratings, and contextual features dating back to 2002. For model development and backtesting, this historical data proved invaluable: I validated ELO calculations against 1,235 games from 2020-2024 before deploying predictions for the 2025 season.</p>
+
+      <p><strong>Vegas win totals</strong> from sportsbooks offer optional preseason calibration. Before Week 1, NFL teams have no game data—pure ELO would assign everyone 1500 points. Vegas over/under lines (e.g., "Kansas City Chiefs: 11.5 wins") reflect consensus expectations from professional bettors. I use these totals to seed initial ratings via mean reversion: strong teams start at ~1650, weak teams at ~1350. This prevents absurd Week 1 predictions.</p>
+
+      <p>All data lands in CSV files initially for human readability and debugging, then converts to Parquet for the pipeline. Parquet's columnar compression reduces file sizes by 80-90% while enabling DuckDB to query only necessary columns—critical for performance when processing millions of Monte Carlo scenario rows.</p>
+
+      <h3>Pipeline: Bronze, Silver, Gold</h3>
+
+      <p>The dbt pipeline follows the medallion architecture, a pattern popularized by Databricks that separates raw data, business logic, and analytics into distinct layers:</p>
+
+      <p><strong>Bronze Layer</strong> (raw data, no transformations) reads Parquet files as DuckDB external tables. External tables don't copy data into DuckDB—they query Parquet directly via file system reads. This keeps the database lightweight while preserving full SQL query capabilities. Four bronze tables exist:</p>
+
+      <ul>
+        <li><code>nfl_raw_results</code> - Game outcomes with scores, winners, and margins</li>
+        <li><code>nfl_raw_schedule</code> - Future games with dates, teams, and venues</li>
+        <li><code>nfl_raw_team_ratings</code> - Initial ELO ratings (preseason or carry-forward from prior season)</li>
+        <li><code>nfl_travel_primetime</code> - Contextual adjustments (travel distance, altitude, Thursday night games)</li>
+      </ul>
+
+      <p><strong>Silver Layer</strong> (business logic, transformations) calculates ELO ratings game-by-game. The core model is <code>nfl_elo_rollforward.py</code>, a dbt Python model that processes every completed game in chronological order. It maintains a dictionary of current ratings, iterates through games sorted by <code>game_id</code>, calculates win probabilities, compares predictions to actual outcomes, applies margin-of-victory multipliers, and updates both teams' ratings. Each output row captures pre-game state: visiting team ELO, home team ELO, contextual adjustments, predicted winner, actual winner, ELO change amount.</p>
+
+      <p>Why Python instead of SQL? The sequential nature of ELO updates—where game N+1 depends on game N's rating changes—creates awkward SQL recursive CTEs or window functions. Python's imperative style makes the logic clearer: a 100-line function replaces what would be 500 lines of convoluted SQL. dbt Python models run inside the dbt pipeline, access upstream tables via <code>dbt.ref()</code>, and materialize results back into DuckDB tables—best of both worlds.</p>
+
+      <p><strong>Gold Layer</strong> (analytics-ready aggregations) builds user-facing views and exports. These models consume silver-layer ELO ratings and generate:</p>
+
+      <ul>
+        <li><code>nfl_reg_season_simulator</code> - 10,000 Monte Carlo scenarios for remaining games</li>
+        <li><code>nfl_playoff_probabilities_ci</code> - Playoff chances with confidence intervals</li>
+        <li><code>nfl_calibration_curve</code> - Model calibration by prediction bucket</li>
+        <li><code>nfl_model_performance</code> - Weekly Brier score, log loss, accuracy</li>
+        <li><code>nfl_predictions_with_features</code> - Next week's games with win probabilities</li>
+      </ul>
+
+      <p>The final step exports gold-layer tables to JSON files that power the static prediction website. No backend server, no database queries at page load—just pre-computed JSON served via CDN.</p>
+
+      <h3>Monte Carlo Simulation</h3>
+
+      <p>Predicting single games is straightforward: calculate ELO-based win probabilities and output the favorite. Predicting playoff races requires simulation—too many outcomes to enumerate analytically. Which teams make the playoffs depends on who wins which games, which determines tiebreaker scenarios, which affect seeding, which changes playoff matchups.</p>
+
+      <p>The simulator runs 10,000 independent scenarios of the remaining regular season. Each scenario follows this process:</p>
+
+      <ol>
+        <li><strong>Generate game outcomes:</strong> For every unplayed game, draw a random number from [0, 1]. If the random number is less than the home team's win probability, the home team wins; otherwise, the visiting team wins. This produces one plausible version of the remaining season.</li>
+        <li><strong>Apply NFL tiebreaker rules:</strong> When multiple teams finish with identical records, the NFL uses an 8-step tiebreaker hierarchy: head-to-head record, divisional record, common opponents, conference record, strength of victory, strength of schedule, net points in conference games, net points in all games. The model implements all eight rules, handling intra-division ties, inter-division ties, and three-way ties correctly.</li>
+        <li><strong>Record final standings:</strong> Store which teams made playoffs (7 per conference), which got first-round byes (top seed per conference), final seeds (1-7), final win-loss records, and whether the team won their division.</li>
+      </ol>
+
+      <p>Aggregating across 10,000 scenarios yields probabilistic forecasts. A team making the playoffs in 7,500 scenarios gets a 75% playoff probability. A team earning the 1-seed in 200 scenarios gets a 2% bye probability. Average wins across all scenarios provide expected season outcomes (e.g., "10.3 wins [9.1 - 11.5]").</p>
+
+      <p>Why 10,000 scenarios? Convergence testing. I ran simulations with 1,000 / 10,000 / 100,000 scenarios and compared stability of playoff probabilities. At 10,000 runs, probabilities stabilized to within ±0.5 percentage points. Increasing to 100,000 improved precision to ±0.2 percentage points but increased runtime 10x. The cost-benefit analysis favored 10,000: good-enough precision, reasonable compute time (~5 seconds), easy to iterate during development.</p>
+
+      <h3>Technology Stack</h3>
+
+      <ul>
+        <li><strong><a href="https://duckdb.org/">DuckDB</a></strong> - Embedded analytical database. No server process, no network latency, no connection pooling. Pure in-process SQL queries against Parquet files. Joins, aggregations, and window functions run 10-100x faster than Postgres on comparable hardware. Single-file architecture means the entire database is one <code>.duckdb</code> file that can be versioned, backed up, or copied trivially.</li>
+        <li><strong><a href="https://www.getdbt.com/">dbt</a></strong> - Data transformation framework. Write SQL models with Jinja templating, define dependencies via <code>ref()</code> macros, and dbt handles execution order, incremental logic, and testing. Python models integrate seamlessly for complex logic. The command <code>dbt build</code> runs the entire pipeline—transformations and tests—in one command.</li>
+        <li><strong><a href="https://parquet.apache.org/">Parquet</a></strong> - Columnar storage format. Compressed binary files that DuckDB queries directly without loading into memory first. Schema evolution works naturally (add new columns without breaking old queries). Cross-language compatibility means Python scripts, dbt models, and DuckDB queries all read the same files.</li>
+        <li><strong>Python</strong> - Glue code and complex logic. Data collection scripts, ELO rollforward calculations, NFL tiebreaker implementations, and Monte Carlo simulations all live in Python. The language's expressiveness makes complex algorithms maintainable; its ecosystem (<code>pandas</code>, <code>polars</code>, <code>numpy</code>) provides fast numerical operations.</li>
+      </ul>
+
+      <h2>Week 10 Results</h2>
+
+      <p>Week 10 provided the first strong validation of the model's predictive power. Across 14 games, the model achieved its best weekly performance of the season:</p>
+
+      <ul>
+        <li><strong>Accuracy:</strong> 71.4% (10 correct predictions out of 14 games)</li>
+        <li><strong>Brier Score:</strong> 0.199 (approaching "excellent" threshold of 0.20)</li>
+        <li><strong>Log Loss:</strong> 0.584 (best weekly score, well below season average)</li>
+      </ul>
+
+      <p>This performance demonstrates the model's core strength: as the season progresses and ELO ratings stabilize around true team quality, prediction accuracy improves. Week 10's 0.199 Brier score represents a 35% improvement over early-season performance when ratings were still adjusting from preseason estimates.</p>
+
+      <h3>What the Model Got Right</h3>
+
+      <p>The model's ten correct predictions included several confident calls that validated the ELO methodology:</p>
+
+      <ul>
+        <li><strong>New England Patriots over Tampa Bay Buccaneers (77%)</strong> - Model identified the Patriots' home advantage and stronger recent form despite Tampa Bay's reputation. Final score confirmed the prediction.</li>
+        <li><strong>Chicago Bears over New York Giants (76%)</strong> - ELO ratings correctly captured the talent gap between these teams. The Bears dominated as expected.</li>
+        <li><strong>Seattle Seahawks over Arizona Cardinals (73%)</strong> - Divisional matchup where Seattle's consistent performance showed through in both ratings and outcome.</li>
+        <li><strong>Denver Broncos over Las Vegas Raiders (71%)</strong> - Contextual adjustments mattered here: Denver at home (altitude advantage) against a traveling division rival. The model's -10 ELO penalty for visitors at altitude helped calibrate this prediction correctly.</li>
+        <li><strong>Houston Texans over Jacksonville Jaguars (69%)</strong> - Another case where ELO ratings accurately reflected team quality after ten weeks of observations.</li>
+      </ul>
+
+      <p>These correct predictions share a pattern: the model performed best when confidence exceeded 70%, suggesting the ELO ratings provide reliable signals when teams show clear separation. The contextual adjustments (particularly altitude in Denver's case) contributed measurable value.</p>
+
+      <h3>What the Model Got Wrong</h3>
+
+      <p>The four misses reveal the model's current limitations and areas for improvement:</p>
+
+      <ul>
+        <li><strong>Miami Dolphins beat Buffalo Bills (model favored Buffalo, 68%)</strong> - The biggest miss of the week. Buffalo entered as a road favorite, but Miami won convincingly 30-13. This outcome suggests the model may underweight home field advantage in division rivalry games, where familiarity reduces the typical visiting team disadvantage. The 17-point margin indicates this wasn't a close upset—Miami genuinely outplayed Buffalo.</li>
+        <li><strong>New Orleans Saints beat Carolina Panthers (model favored Carolina, 59%)</strong> - A close call that went the other way. At 59% confidence, the model expressed significant uncertainty. These near-coin-flip predictions will inevitably split roughly 50-50 in outcomes, making this miss statistically expected rather than problematic.</li>
+        <li><strong>Los Angeles Rams beat San Francisco 49ers (model favored 49ers, 61%)</strong> - Another marginal prediction. The 49ers' ELO rating may not have fully captured season-long injury impacts, a known limitation of team-level models that don't adjust for quarterback or star player absences.</li>
+        <li><strong>Detroit Lions beat Washington Commanders (model favored Washington, 59%)</strong> - Third marginal miss. Like the Panthers-Saints game, a 59% prediction indicates the model saw these teams as roughly even. Getting this wrong doesn't signal model failure—it reflects genuine uncertainty in closely matched contests.</li>
+      </ul>
+
+      <p>Pattern analysis of the misses: Three of four occurred on predictions between 59-61% confidence, right at the edge of uncertainty. Only the Miami-Buffalo game (68% confidence) represents a clear model error. This distribution suggests appropriate calibration—when the model expresses uncertainty, outcomes genuinely are uncertain. The primary area for improvement is capturing quarterback-specific impacts, which would have helped the 49ers prediction account for injury-depleted rosters.</p>
+
+      <h3>Key Takeaways</h3>
+
+      <p>Week 10's performance validates several architectural decisions. The ELO system stabilizes meaningfully by mid-season, producing reliable predictions when teams show clear rating separation. Contextual adjustments (altitude, travel) contribute measurable accuracy improvements in applicable situations. The model appropriately expresses uncertainty through probability ranges—low-confidence predictions (59-61%) should miss roughly half the time, and they do.</p>
+
+      <p>The primary gap remains quarterback-specific adjustments. Adding QB VALUE tracking (detailed in "What's Coming Next") would address the 49ers miss and similar cases where star player absences shift team quality temporarily. Until then, expect the model to struggle with injury-impacted teams, particularly at the quarterback position where individual player impact dominates outcomes.</p>
+
+      <h2>Model Evolution: From Benchmark to Beyond</h2>
+
+      <p>FiveThirtyEight's NFL model provided the initial benchmark—a well-documented, battle-tested system that represented the state-of-the-art in publicly available sports forecasting. As of v1.2, this model achieves 85% feature parity with FiveThirtyEight's implementation. The core methodologies align: identical K-factor (20), ELO scale (400), margin-of-victory multiplier (2.2), home field advantage (48 points), and contextual adjustments (travel distance, altitude, prime time).</p>
+
+      <p>But reaching parity was never the end goal—it was the baseline. The model's roadmap extends beyond replicating FiveThirtyEight's approach to exploring improvements that enhance predictive accuracy and analytical depth.</p>
+
+      <h3>Current Feature Set</h3>
+
+      <p>The model's implemented features fall into three categories: core ELO mechanics, contextual adjustments, and probabilistic extensions.</p>
+
+      <p><strong>Core ELO mechanics:</strong></p>
+      <ul>
+        <li>Margin-of-victory adjustments with logarithmic scaling</li>
+        <li>Home field advantage (48 points, ~7.5% win probability boost)</li>
+        <li>Bye week rest advantage (+25 ELO temporary boost)</li>
+        <li>Preseason mean reversion calibrated with Vegas win totals</li>
+      </ul>
+
+      <p><strong>Contextual adjustments (v1.2):</strong></p>
+      <ul>
+        <li>Travel distance penalties (-4 ELO per 1,000 miles)</li>
+        <li>High altitude penalties (-10 ELO for visitors to Denver's 5,280 ft stadium)</li>
+        <li>Thursday night short rest (-5 ELO for road teams)</li>
+      </ul>
+
+      <p><strong>Probabilistic extensions:</strong></p>
+      <ul>
+        <li>Comprehensive NFL tiebreaker implementation (all 8 rules correctly sequenced)</li>
+        <li>Confidence intervals on all probability estimates (Wilson Score for binary, empirical percentiles for continuous)</li>
+        <li>Monte Carlo playoff simulations (10,000 scenarios with full season projection)</li>
+      </ul>
+
+      <p>These extensions represent areas where this model exceeds FiveThirtyEight's public-facing implementation. The tiebreaker logic handles three-way ties, division vs. wildcard scenarios, and conference-specific rules—edge cases that significantly affect late-season playoff races. Confidence intervals provide honest uncertainty quantification that improves decision-making for users.</p>
+
+      <h3>Closing the Gap: Three Core Features</h3>
+
+      <p>Three features remain to achieve full parity with FiveThirtyEight's methodology:</p>
+
+      <p><strong>QB VALUE System</strong> - The single largest gap. Quarterback performance drives NFL outcomes more than any other factor. Elite quarterbacks add 80+ ELO points; backups subtract 30-50 points. The current model treats the Kansas City Chiefs with Patrick Mahomes identically to the Chiefs with a backup quarterback—clearly wrong. FiveThirtyEight's VALUE formula quantifies QB performance through a weighted combination of passing, rushing, and turnover statistics:</p>
+
+      <pre><code>VALUE = -2.2×Attempts + 3.7×Completions + (Yards/5) +
+        11.3×TDs - 14.1×INTs - 8×Sacks - 1.1×RushAtt +
+        0.6×RushYds + 15.9×RushTDs</code></pre>
+
+      <p>QB ELO adjustment scales VALUE by 3.3. Implementation requires ESPN API integration for real-time quarterback statistics and game-by-game tracking. Estimated effort: 300 lines, 2-3 days. Impact: +10-20% accuracy improvement for games involving QB changes.</p>
+
+      <p><strong>Hot Simulations</strong> - Currently, Monte Carlo simulations use fixed ELO ratings. A team at 1650 ELO plays all remaining games in every scenario at exactly 1650, regardless of simulated wins and losses. Hot simulations update ratings within each scenario: a team winning its first simulated game gains ELO before its second simulated game. This captures momentum effects and more accurately reflects how late-season outcomes cascade into playoff probabilities. Implementation requires refactoring the SQL simulator into Python to maintain per-scenario state. Estimated effort: 500 lines, 2-3 days. Impact: +20% accuracy in playoff probability estimates during tight races.</p>
+
+      <p><strong>Locked Playoff Seed Detection</strong> - Teams clinching playoff positions before Week 18 often rest starters, effectively fielding weaker rosters. FiveThirtyEight applies a -250 ELO penalty to teams with locked seeds. The challenge: circular dependency. Simulations inform which teams clinch, which adjusts Week 18 predictions, which feeds back into simulations. Implementation requires iterative convergence logic. Estimated effort: 200 lines, 1-2 days. Impact: ~1% accuracy improvement in Week 18 predictions.</p>
+
+      <h3>Beyond FiveThirtyEight: Planned Extensions</h3>
+
+      <p>Achieving feature parity opens the door to genuine innovation—features that push beyond FiveThirtyEight's methodology into unexplored territory:</p>
+
+      <p><strong>Weather Impact Modeling</strong> - Current contextual adjustments ignore game-day weather. Rain, snow, and extreme cold measurably affect scoring and favor run-heavy teams. Historical weather data from NOAA combined with team offensive profiles (pass-heavy vs. run-heavy) could provide 2-3% accuracy gains in outdoor games during late season.</p>
+
+      <p><strong>Injury Severity Adjustments</strong> - The QB VALUE system addresses the most impactful position, but injuries affect multiple positions simultaneously. A team missing its top three offensive linemen suffers significantly beyond quarterback impacts alone. Severity-weighted injury indexes (starter vs. backup, defensive vs. offensive player) could refine predictions when multiple key players are out.</p>
+
+      <p><strong>Coaching Impact Factors</strong> - Head coaches matter. Andy Reid post-bye week: historically +12% win rate. Certain coaches excel after losses, others collapse under pressure. Quantifying coaching-specific factors through rolling averages in situational games (post-bye, after loss, playoff games) could capture edges invisible to team-level ELO.</p>
+
+      <p><strong>In-Game Win Probability</strong> - Currently the model only predicts pre-game outcomes. Live win probability updates during games—leveraging play-by-play data, down-and-distance, time remaining, and current ELO differentials—would enable real-time forecasting. This transforms the model from a weekly prediction tool into a live game tracker.</p>
+
+      <p>These extensions share a common theme: incorporating situational factors that standard ELO systems treat as noise. The goal isn't complexity for its own sake—it's targeted feature engineering where domain knowledge suggests measurable predictive value. Each addition must clear a high bar: demonstrable accuracy improvement validated through rigorous backtesting against historical data.</p>
+
+      <h2>Lessons Learned: Building Complex Systems Simply</h2>
+
+      <p>Building this model reinforced a counterintuitive truth: sophisticated analytics don't require sophisticated infrastructure. The lessons learned apply beyond sports prediction to any data-intensive project.</p>
+
+      <h3>Single-Node Performance Beats Distributed Complexity</h3>
+
+      <p>The entire pipeline—processing five years of historical data, running 10,000 Monte Carlo scenarios, calculating playoff probabilities, generating calibration curves—completes in under 10 seconds on a laptop. No Spark cluster. No Kubernetes pods. No distributed coordination overhead. Just DuckDB reading Parquet files with in-process queries.</p>
+
+      <p>This matters beyond speed. Single-node systems eliminate entire categories of failure modes: network partitions, task scheduling bugs, worker node crashes, inconsistent state across machines. Debugging becomes straightforward: set a breakpoint, step through the code, inspect local state. No distributed tracing required. The simplicity compounds: faster iteration, easier onboarding, lower operational costs, fewer production incidents.</p>
+
+      <p>When should you reach for distributed systems? When data genuinely exceeds single-machine memory (rare with modern columnar formats) or when query latency requirements demand parallelism. For analytics workloads processing gigabytes to low terabytes, single-node tools like DuckDB suffice—and deliver better developer experience.</p>
+
+      <h3>Choose the Right Tool for Each Job</h3>
+
+      <p>The "pure SQL" versus "pure Python" debate misses the point. SQL excels at set-based operations: joins, aggregations, filtering. Python excels at sequential logic: loops, conditionals, stateful transformations. The ELO rollforward demonstrates this: calculating ratings for one game updates state for the next game, creating dependencies that SQL recursive CTEs handle awkwardly. A 100-line Python function replaces 500 lines of unreadable SQL.</p>
+
+      <p>dbt Python models enable this polyglot approach without sacrificing pipeline consistency. Models declare dependencies via <code>ref()</code> regardless of implementation language. Tests run identically. Incremental logic works the same. The framework handles the complexity of mixing SQL and Python—developers just pick the better tool for each problem.</p>
+
+      <p>Practical guideline: Start with SQL. If you find yourself fighting the language (nested CTEs more than 3 deep, self-joins on self-joins, window functions stacked awkwardly), switch to Python. The code will be clearer and easier to maintain.</p>
+
+      <h3>Parquet Changed the Game</h3>
+
+      <p>The traditional data pipeline looked like: CSV files → ETL scripts → load into Postgres → query. Each step added latency and complexity. Parquet collapses this: CSV → convert to Parquet → query directly. DuckDB reads Parquet faster than Postgres reads from disk because columnar compression only loads relevant columns. A 10GB Parquet file with 50 columns? Querying 3 columns reads ~600MB. Postgres with the same data? Reads all 10GB.</p>
+
+      <p>The format also provides schema evolution for free. Add a new column to the Parquet file? Old queries continue working, ignoring columns they don't reference. Change a column type? Parquet stores schema metadata per row group, enabling gradual migrations. Cross-language compatibility means Python scripts, dbt models, and DuckDB queries all consume identical files without conversion.</p>
+
+      <p>If you're still using CSV as your primary data interchange format, switch to Parquet. The ecosystem maturity, compression ratios, and query performance make it a strict upgrade for any analytical workload.</p>
+
+      <h3>Technical Debt: The Testing Gap</h3>
+
+      <p>My biggest mistake: shipping a 20,000-line tiebreaker model with zero automated tests. I validated manually against 2020-2024 playoff scenarios, confirming correct seeding in past seasons. But manual validation doesn't catch regressions. Change one conditional in a three-way tie scenario? No test will fail. Discover the bug in production? Only after the simulation produces incorrect playoff probabilities for thousands of users.</p>
+
+      <p>This happened because I prioritized features over foundation. Adding new ELO adjustments felt more valuable than writing tests for existing logic. That calculus was wrong. Technical debt compounds: each new feature builds on untested foundations, making eventual refactoring riskier. The correct approach: pause feature development, write comprehensive test coverage, then resume building.</p>
+
+      <p>Future work includes full test coverage for ELO calculations (property-based tests that verify mathematical invariants) and tiebreaker logic (exhaustive tests covering all 8-rule combinations). Until then, the model remains fragile—accurate but vulnerable to subtle bugs introduced during maintenance.</p>
+
+      <h2>See It In Action</h2>
+
+      <p>The model runs live at <a href="https://michellepellon.com/portfolio/nfl-game-predictions.html">michellepellon.com/portfolio/nfl-game-predictions.html</a>. Predictions update automatically after every NFL game throughout the season. The site displays current week forecasts, team ELO ratings, playoff probabilities with confidence intervals, and historical performance metrics.</p>
+
+      <p>For those interested in the technical implementation: the codebase currently lives in a private repository but may open-source after the 2025 season concludes. The system architecture, data pipeline, and modeling approach described here represent production code running real predictions. If you're building sports analytics, exploring modern data stacks, or implementing prediction models, the patterns documented in this post transfer directly.</p>
+
+      <h2>Conclusion: Simple Tools, Sophisticated Outcomes</h2>
+
+      <p>Building an NFL prediction model from scratch taught lessons that extend beyond sports analytics. The mathematics proved elegant—ELO ratings capture team strength through a simple, well-understood algorithm. The architecture proved sufficient—DuckDB and dbt handle complex analytics without distributed systems. The results validated the approach—57% accuracy across ten weeks demonstrates the model works, with clear paths to improvement identified.</p>
+
+      <p>But the deeper lesson concerns capability democratization. A decade ago, building this system would have required a team: data engineers managing Hadoop clusters, data scientists training models on dedicated hardware, DevOps engineers maintaining servers. Today, one person working evenings and weekends produced a model approaching professional-grade forecasting, running entirely on a laptop, deployed via free CI/CD tools.</p>
+
+      <p>The tools evolved. DuckDB made analytical databases embeddable. Parquet made data interchange trivial. dbt made transformation pipelines maintainable. These tools share a philosophy: solve one problem exceptionally well, compose easily with other tools, minimize operational overhead. The result is a modern data stack where individual developers accomplish what previously required enterprise resources.</p>
+
+      <p>This model sits at 85% feature parity with FiveThirtyEight's implementation, with clear roadmap to full parity: QB VALUE adjustments, hot simulations, and playoff seed detection. Beyond parity, planned extensions into weather modeling, injury severity adjustments, coaching factors, and live win probability tracking push into unexplored territory. The foundation is solid. The architecture scales. The tooling enables rapid iteration.</p>
+
+      <p>The gap between individual developers and professional analytics teams continues narrowing. Not because individuals work harder, but because better tools multiply what one person can accomplish. That democratization—where sophisticated analytics become accessible to anyone willing to learn—represents the true achievement here. The NFL prediction model is proof of concept. The broader implication: if you can build this, you can build anything.</p>
+    </div>
+  </article>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Michelle Pellon. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
