@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-13T11:01:17.823699",
+  "generated_at": "2025-11-16T14:35:05.931488",
   "current_week": 11,
   "ratings": [
     {
@@ -243,8 +243,8 @@
       "injury_adj": 0.0,
       "total_adj": 0.0,
       "confidence_adjusted": 0.07151008713877327,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 27,
+      "actual_away_score": 14
     },
     {
       "game_id": 151,
@@ -261,8 +261,8 @@
       "injury_adj": 0.0,
       "total_adj": 0.0,
       "confidence_adjusted": 0.2595551301686112,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 16,
+      "actual_away_score": 13
     },
     {
       "game_id": 152,
