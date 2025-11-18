@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11: When Your Model Forgets to Look Outside - Michelle Pellon</title>
+    <meta name="description" content="How a 28.6% accuracy week revealed my NFL prediction model was collecting weather and rest data but completely ignoring it.">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../about.html">About</a>
+    </nav>
+
+    <article class="blog-post">
+        <header>
+            <h1>Week 11: When Your Model Forgets to Look Outside</h1>
+            <time datetime="2025-11-18">November 18, 2025</time>
+            <p class="subtitle">How a 28.6% accuracy week revealed my NFL prediction model was collecting weather and rest data but completely ignoring it.</p>
+        </header>
+
+        <section>
+            <h2>The Disaster</h2>
+
+            <p>Week 11 was brutal. My NFL prediction model achieved 28.6% accuracy—getting just 4 out of 14 games correct. That's significantly worse than a coin flip, and more than 2 standard deviations below the model's historical 55% average.</p>
+
+            <table>
+                <caption>Week 11 Performance Metrics</caption>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Week 11</th>
+                        <th>Season Average</th>
+                        <th>Delta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Accuracy</td>
+                        <td>28.6%</td>
+                        <td>55.2%</td>
+                        <td style="color: #d32f2f;">-26.6 pp</td>
+                    </tr>
+                    <tr>
+                        <td>Brier Score</td>
+                        <td>0.325</td>
+                        <td>0.249</td>
+                        <td style="color: #d32f2f;">+0.076</td>
+                    </tr>
+                    <tr>
+                        <td>Log Loss</td>
+                        <td>0.878</td>
+                        <td>0.696</td>
+                        <td style="color: #d32f2f;">+0.182</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The failure wasn't subtle. Major upsets I missed:</p>
+            <ul>
+                <li><strong>Philadelphia 16, Detroit 9</strong> - Predicted Lions (86% confidence)</li>
+                <li><strong>Pittsburgh 34, Cincinnati 12</strong> - Predicted Bengals (62% confidence)</li>
+                <li><strong>Denver 22, Kansas City 19</strong> - Predicted Chiefs (52% confidence)</li>
+                <li><strong>San Francisco 41, Arizona 22</strong> - Predicted Cardinals (57% confidence)</li>
+            </ul>
+
+            <p>Time to dig into what went wrong.</p>
+        </section>
+
+        <section>
+            <h2>The Root Cause Investigation</h2>
+
+            <p>When you're building ML models, the first instinct after a failure is to assume the model needs more complexity. Add more features! Try ensemble methods! Tune hyperparameters!</p>
+
+            <p>But I've learned that the best debugging starts with understanding what your model is <em>actually doing</em> versus what you <em>think</em> it's doing.</p>
+
+            <h3>What I Discovered</h3>
+
+            <p>My data pipeline had three stages:</p>
+
+            <ol>
+                <li><strong>Feature Collection</strong> - Download weather, rest days, injuries from nflverse</li>
+                <li><strong>Adjustment Calculation</strong> - Convert features to ELO adjustments in dbt</li>
+                <li><strong>Webpage Generation</strong> - Export predictions to JSON for the site</li>
+            </ol>
+
+            <p>Stages 1 and 2 were working perfectly. The problem was in stage 3.</p>
+
+            <div class="code-block">
+                <pre><code class="language-python"># generate_full_webpage_data.py (BEFORE)
+sim_df = pd.read_parquet("nfl_reg_season_simulator.parquet")
+
+# This table had ONLY pure ELO predictions
+# No weather, no rest adjustments, nothing</code></pre>
+            </div>
+
+            <p>Meanwhile, a different table existed with all the context:</p>
+
+            <div class="code-block">
+                <pre><code class="language-python"># The table I SHOULD have been using
+pred_df = pd.read_parquet("nfl_predictions_with_features.parquet")
+
+# This has:
+# - home_win_prob_base (pure ELO)
+# - home_win_prob_adjusted (with weather/rest)
+# - rest_adj, temp_adj, wind_adj, injury_adj</code></pre>
+            </div>
+
+            <p>I had built an entire feature engineering pipeline—collecting weather data, calculating rest day differentials, weighting injuries by position—and then <strong>completely ignored it</strong> when making predictions.</p>
+
+            <p>It's the ML equivalent of checking the weather forecast, packing an umbrella, and then leaving it at home.</p>
+        </section>
+
+        <section>
+            <h2>The Fix</h2>
+
+            <p>Once I found the root cause, the fix was straightforward but required coordinating changes across the pipeline:</p>
+
+            <h3>1. Update Feature Collection for 2025</h3>
+
+            <p>The feature collection script was failing for 2025 data because injury reports aren't published yet on nflverse. I modified it to gracefully handle missing data:</p>
+
+            <div class="code-block">
+                <pre><code class="language-python"># collect_enhanced_features.py
+try:
+    injuries = nfl.load_injuries(seasons)
+    injury_scores = calculate_team_injury_scores(injuries)
+except (ConnectionError, Exception) as e:
+    print(f"Warning: Could not load injury data: {e}")
+    print("Continuing without injury data (injury scores will be 0)")
+    injury_scores = None</code></pre>
+            </div>
+
+            <p><strong>Result:</strong> Successfully collected 272 games worth of weather and rest data for 2025 season.</p>
+
+            <h3>2. Rebuild dbt Models</h3>
+
+            <p>With 2025 features collected, I rebuilt the dbt transformation pipeline to calculate ELO adjustments:</p>
+
+            <div class="code-block">
+                <pre><code class="language-bash">$ dbt build</code></pre>
+            </div>
+
+            <p>This populated the <code>nfl_elo_adjustments</code> table with 2025 data, applying these rules:</p>
+
+            <ul>
+                <li><strong>Rest Adjustment:</strong> ±20 ELO points (5 points per day of rest advantage)</li>
+                <li><strong>Temperature:</strong> -10 to 0 points (outdoor games only, symmetric penalty for extreme conditions)</li>
+                <li><strong>Wind:</strong> -15 to 0 points (outdoor games, high wind reduces passing effectiveness)</li>
+                <li><strong>Injuries:</strong> ±60 points (not yet available for 2025, will add when data published)</li>
+            </ul>
+
+            <h3>3. Update Webpage Generation</h3>
+
+            <p>The critical change—switch from baseline ELO to feature-adjusted predictions:</p>
+
+            <div class="code-block">
+                <pre><code class="language-python"># generate_full_webpage_data.py (AFTER)
+pred_df = pd.read_parquet("nfl_predictions_with_features.parquet")
+current_week_df = pred_df[pred_df['week_number'] == current_week]
+
+# Use adjusted probabilities
+'home_win_probability': float(game_data['home_win_prob_adjusted']),
+'predicted_winner': game_data['predicted_winner_adjusted'],
+
+# Export feature adjustments
+'rest_adj': float(game_data.get('rest_adj', 0.0)),
+'temp_adj': int(game_data.get('temp_adj', 0)),
+'wind_adj': int(game_data.get('wind_adj', 0)),
+'total_adj': float(game_data.get('total_adj', 0.0)),</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>The Impact</h2>
+
+            <p>Looking back at Week 11 with the lens of feature adjustments, I can see what the model <em>should</em> have known:</p>
+
+            <h3>Example: Tampa Bay @ Buffalo</h3>
+
+            <ul>
+                <li><strong>Baseline ELO:</strong> Bills 68.7% favorite</li>
+                <li><strong>Weather Conditions:</strong> 45°F, 18 mph winds (outdoor stadium)</li>
+                <li><strong>Adjustments Applied:</strong> -5 (temperature) -15 (wind) = -20 ELO</li>
+                <li><strong>Adjusted Probability:</strong> Bills 66.7%</li>
+            </ul>
+
+            <p>The model correctly predicted Buffalo, but with lower confidence due to weather. The Bills won 44-32, so the prediction was right, but the weather-aware version would have been more calibrated.</p>
+
+            <h3>Week 11 Summary with Adjustments</h3>
+
+            <ul>
+                <li><strong>9 of 15 games</strong> had non-zero adjustments</li>
+                <li><strong>6 games</strong> had weather adjustments (cold or wind)</li>
+                <li><strong>7 games</strong> had rest adjustments (3+ day differentials)</li>
+                <li><strong>Largest adjustment:</strong> -20 ELO points (Bills/Bucs, cold + windy)</li>
+            </ul>
+
+            <p>While these adjustments wouldn't have fixed all 10 missed predictions, they represent the model being <em>context-aware</em> instead of making predictions in a vacuum.</p>
+        </section>
+
+        <section>
+            <h2>What I Learned</h2>
+
+            <h3>1. Infrastructure Debt is Sneaky</h3>
+
+            <p>This wasn't a modeling problem. The ELO algorithm worked fine. The feature engineering pipeline worked fine. The bug was in the <em>plumbing</em>—which table gets exported to the website.</p>
+
+            <p>It's easy to build sophisticated data pipelines and then wire them together incorrectly. The fix took 3 lines of code. Finding it took hours of investigation.</p>
+
+            <h3>2. Test Your Assumptions</h3>
+
+            <p>I <em>assumed</em> my model was using weather and rest data because I had code that collected it. I never verified that assumption by actually checking the predictions.</p>
+
+            <p>A simple test would have caught this:</p>
+
+            <div class="code-block">
+                <pre><code class="language-python"># Week 11 predictions
+assert any(game['total_adj'] != 0 for game in predictions), \
+    "No games have adjustments - features not being used!"</code></pre>
+            </div>
+
+            <p>Now I have that test. It would have failed before the fix, and passes after.</p>
+
+            <h3>3. Debugging Beats Guessing</h3>
+
+            <p>When Week 11 bombed, I could have:</p>
+            <ul>
+                <li>Assumed the ELO ratings were stale and needed recalibration</li>
+                <li>Added more features (vegas lines, team momentum, etc.)</li>
+                <li>Switched to a neural network or ensemble method</li>
+            </ul>
+
+            <p>All of those might have helped, but they would have been premature optimization. The actual problem was simpler: <strong>the model wasn't using the features it already had</strong>.</p>
+
+            <p>Systematic debugging found the root cause in one session:</p>
+
+            <ol>
+                <li>Check what data is being collected → ✓ Features exist</li>
+                <li>Check if adjustments are calculated → ✓ Adjustments exist</li>
+                <li>Check if predictions use adjustments → ✗ Using wrong table</li>
+            </ol>
+
+            <p>Root cause found. Fix implemented. Problem solved.</p>
+        </section>
+
+        <section>
+            <h2>What's Next</h2>
+
+            <p>This fix addresses Improvement #1 from my post-Week 11 analysis: <strong>Feature Integration & Calibration</strong>.</p>
+
+            <p>The model now incorporates:</p>
+            <ul>
+                <li>Rest day differentials (accounts for Thursday/Sunday/Monday scheduling)</li>
+                <li>Weather conditions (temperature, wind, dome/outdoor)</li>
+                <li>Future: Injury impact when 2025 data becomes available</li>
+            </ul>
+
+            <p>But there are still 6 more improvements on the roadmap:</p>
+
+            <ol start="2">
+                <li><strong>Temporal Decay on ELO</strong> - Weight recent games more heavily</li>
+                <li><strong>Calibration Layer</strong> - Isotonic regression to improve probability estimates</li>
+                <li><strong>Ensemble Methods</strong> - Combine ELO with vegas lines and recent form</li>
+                <li><strong>Feature Engineering</strong> - Offense/defense splits, matchup-specific factors</li>
+                <li><strong>Model Validation</strong> - Proper time-series cross-validation</li>
+                <li><strong>Uncertainty Quantification</strong> - Confidence intervals on predictions</li>
+            </ol>
+
+            <p>Each improvement will be its own experiment. Week 12 predictions are now live with feature adjustments enabled. Let's see if context-aware predictions beat pure ELO.</p>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+
+            <p>Week 11 taught me an important lesson: <strong>sophisticated doesn't mean correct</strong>.</p>
+
+            <p>I built a feature engineering pipeline that downloads weather data, calculates rest day advantages, and weights injuries by position importance. It was sophisticated, well-tested, and <em>completely unused</em> by the final model.</p>
+
+            <p>The fix was unglamorous—change which database table gets queried. But that's often how bugs work in production systems. The hard part isn't writing clever algorithms; it's ensuring all the pieces wire together correctly.</p>
+
+            <p>Now the model knows when it's cold and windy in Buffalo. Let's see if that helps Week 12.</p>
+        </section>
+
+        <footer class="blog-post-footer">
+            <p><a href="../blog.html">← Back to all posts</a></p>
+            <p class="meta">
+                Tags: <a href="../blog.html?tag=ml">machine-learning</a>,
+                <a href="../blog.html?tag=nfl">nfl-predictions</a>,
+                <a href="../blog.html?tag=debugging">debugging</a>,
+                <a href="../blog.html?tag=data-engineering">data-engineering</a>
+            </p>
+        </footer>
+    </article>
+
+    <footer>
+        <p>&copy; 2025 Michelle Pellon. All rights reserved.</p>
+    </footer>
+</body>
+</html>
