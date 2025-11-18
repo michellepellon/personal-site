@@ -509,9 +509,9 @@
       "injury_adj": 0.0,
       "total_adj": 0.0,
       "confidence_adjusted": 0.03675134833788607,
-      "actual_home_score": null,
-      "actual_away_score": null,
-      "is_correct": null
+      "actual_home_score": 36,
+      "actual_away_score": 33,
+      "is_correct": true
     }
   ],
   "calibration": [],
@@ -588,9 +588,9 @@
     },
     {
       "week_number": 11,
-      "brier_score": 0.33324667548897435,
-      "log_loss": 0.8958820315761287,
-      "accuracy": 0.2857142857142857,
+      "brier_score": 0.3253368513408272,
+      "log_loss": 0.8776379181500952,
+      "accuracy": 0.3333333333333333,
       "performance_rating": "Needs improvement"
     }
   ],
