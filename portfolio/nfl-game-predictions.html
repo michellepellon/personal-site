@@ -491,11 +491,11 @@
 
 <header>
   <h1>NFL Game Prediction System</h1>
-  <p class="subtitle">Live probabilistic forecasting using calibrated margin-of-victory adjusted ELO ratings</p>
+  <p class="subtitle">Live probabilistic forecasting using ensemble predictions (model + Vegas lines)</p>
   <div class="meta">
-    <span><strong>Updated:</strong> <span id="update-time">November 13, 2025</span></span>
-    <span><strong>Model:</strong> Calibrated ELO v1.2</span>
-    <span><span class="status-badge">Live</span> Weeks 1-10 actual results</span>
+    <span><strong>Updated:</strong> <span id="update-time">November 19, 2025</span></span>
+    <span><strong>Model:</strong> Ensemble v2.0 (ELO + Momentum + Vegas)</span>
+    <span><span class="status-badge">Live</span> Weeks 1-11 actual results</span>
   </div>
 </header>
 
@@ -529,16 +529,16 @@
         <span class="stat-value">20</span>
       </div>
       <div class="stat-row">
-        <span class="stat-label">Home Advantage</span>
-        <span class="stat-value">+52 ELO</span>
+        <span class="stat-label">Ensemble Weight</span>
+        <span class="stat-value">50% Model + 50% Vegas</span>
       </div>
       <div class="stat-row">
-        <span class="stat-label">MOV Multiplier</span>
-        <span class="stat-value">FiveThirtyEight</span>
+        <span class="stat-label">Momentum Window</span>
+        <span class="stat-value">Last 3 games</span>
       </div>
       <div class="stat-row">
-        <span class="stat-label">Simulations</span>
-        <span class="stat-value">10,000</span>
+        <span class="stat-label">Weather Adjustments</span>
+        <span class="stat-value">Asymmetric (outdoor advantage)</span>
       </div>
     </div>
 
@@ -546,11 +546,11 @@
       <div class="card-title">Data Coverage</div>
       <div class="stat-row">
         <span class="stat-label">2025 Games Completed</span>
-        <span class="stat-value">136</span>
+        <span class="stat-value">154</span>
       </div>
       <div class="stat-row">
         <span class="stat-label">Weeks Processed</span>
-        <span class="stat-value">1-9</span>
+        <span class="stat-value">1-11</span>
       </div>
       <div class="stat-row">
         <span class="stat-label">Historical Training</span>
@@ -558,7 +558,7 @@
       </div>
       <div class="stat-row">
         <span class="stat-label">Last Updated</span>
-        <span class="stat-value">Week 10</span>
+        <span class="stat-value">Week 11</span>
       </div>
     </div>
   </div>
@@ -567,9 +567,9 @@
 <section>
   <h2 id="predictions-header">Current Week Predictions</h2>
   <div class="sidenote">
-    Live predictions based on all completed 2025 games. Probabilities are <strong>isotonic-regression calibrated</strong>
-    from raw ELO win probabilities, then incorporate home field advantage (+52 points),
-    rest differentials (±5 pts/day), weather conditions, and injury reports.
+    <strong>Ensemble predictions</strong> combining our ELO model (50%) with Vegas betting lines (50%).
+    Model includes: base ELO ratings, 3-game momentum adjustments, home field advantage (+52 points),
+    rest differentials (±40 pts), live weather forecasts (asymmetric outdoor advantage), and injury reports.
   </div>
 
   <div id="current-predictions">
