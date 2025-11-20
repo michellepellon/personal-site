@@ -5,7 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 11: When Your Model Forgets to Look Outside - Michelle Pellon</title>
     <meta name="description" content="How a 28.6% accuracy week revealed my NFL prediction model was collecting weather and rest data but completely ignoring it.">
-    <link rel="stylesheet" href="../styles.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        nav a {
+            margin-right: 1.5rem;
+            text-decoration: none;
+            color: #666;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .blog-post header {
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        time {
+            color: #999;
+            font-size: 0.875rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: #000;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #000;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            color: #666;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: #000;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9375rem;
+        }
+
+        caption {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: left;
+            color: #000;
+        }
+
+        thead {
+            border-bottom: 2px solid #000;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.75rem;
+            font-weight: 600;
+            color: #000;
+        }
+
+        td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e5e5;
+            color: #666;
+        }
+
+        .code-block {
+            background: #f6f8fa;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            background: #f6f8fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+
+        .blog-post-footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .blog-post-footer a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .blog-post-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .meta {
+            color: #999;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        .meta a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .meta a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            color: #999;
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 <body>
     <nav>
