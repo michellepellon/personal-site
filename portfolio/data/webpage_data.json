@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-23T15:59:37.506671",
+  "generated_at": "2025-11-23T23:30:34.793919",
   "current_week": 12,
   "ratings": [
     {
@@ -441,8 +441,8 @@
       "away_momentum_adj": 26.5,
       "momentum_diff": -56.5,
       "confidence_ensemble": 0.18273509224535722,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 24,
+      "actual_away_score": 27
     },
     {
       "game_id": 174,
@@ -465,8 +465,8 @@
       "away_momentum_adj": -40.0,
       "momentum_diff": 0.0,
       "confidence_ensemble": 0.019675592050093282,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 10,
+      "actual_away_score": 24
     },
     {
       "game_id": 175,
@@ -489,8 +489,8 @@
       "away_momentum_adj": 39.0,
       "momentum_diff": -58.0,
       "confidence_ensemble": 0.010635763041245694,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 24,
+      "actual_away_score": 21
     },
     {
       "game_id": 176,
@@ -513,8 +513,8 @@
       "away_momentum_adj": -30.0,
       "momentum_diff": 0.0,
       "confidence_ensemble": 0.3880694902405111,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 10,
+      "actual_away_score": 24
     },
     {
       "game_id": 177,
@@ -537,8 +537,8 @@
       "away_momentum_adj": -13.5,
       "momentum_diff": 53.5,
       "confidence_ensemble": 0.3508057914534024,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 34,
+      "actual_away_score": 7
     },
     {
       "game_id": 178,
