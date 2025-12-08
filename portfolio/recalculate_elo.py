@@ -12,10 +12,11 @@ import json
 import logging
 import math
 import random
+import hashlib
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 import requests
 
@@ -35,6 +36,9 @@ PORTFOLIO_DIR = Path(__file__).parent
 DATA_DIR = PORTFOLIO_DIR / "data"
 WEBPAGE_DATA_FILE = DATA_DIR / "webpage_data.json"
 CALIBRATED_METRICS_FILE = DATA_DIR / "calibrated_metrics.json"
+HISTORICAL_GAMES_FILE = DATA_DIR / "historical_games.json"
+API_CACHE_FILE = DATA_DIR / "api_cache.json"
+CACHE_TTL_SECONDS = 300  # 5 minutes
 
 # ELO Configuration
 K_FACTOR = 20
@@ -96,6 +100,142 @@ ESPN_TEAM_MAPPING = {
 }
 
 
+def get_cache() -> dict:
+    """Load API cache from file."""
+    if API_CACHE_FILE.exists():
+        try:
+            with open(API_CACHE_FILE) as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            pass
+    return {}
+
+
+def save_cache(cache: dict) -> None:
+    """Save API cache to file."""
+    try:
+        with open(API_CACHE_FILE, "w") as f:
+            json.dump(cache, f, indent=2)
+    except IOError as e:
+        logger.warning(f"Could not save cache: {e}")
+
+
+def get_cached_response(url: str, params: Optional[dict] = None) -> Optional[dict]:
+    """Get cached API response if valid."""
+    cache = get_cache()
+    cache_key = hashlib.md5(f"{url}:{json.dumps(params or {}, sort_keys=True)}".encode()).hexdigest()
+
+    if cache_key in cache:
+        entry = cache[cache_key]
+        cached_time = datetime.fromisoformat(entry.get("timestamp", "2000-01-01"))
+        if (datetime.now() - cached_time).total_seconds() < CACHE_TTL_SECONDS:
+            logger.debug(f"Cache hit for {url}")
+            return entry.get("data")
+    return None
+
+
+def set_cached_response(url: str, params: Optional[dict], data: dict) -> None:
+    """Cache API response."""
+    cache = get_cache()
+    cache_key = hashlib.md5(f"{url}:{json.dumps(params or {}, sort_keys=True)}".encode()).hexdigest()
+    cache[cache_key] = {
+        "timestamp": datetime.now().isoformat(),
+        "data": data
+    }
+    save_cache(cache)
+
+
+def load_historical_games() -> list[dict]:
+    """Load historical games from file."""
+    if HISTORICAL_GAMES_FILE.exists():
+        try:
+            with open(HISTORICAL_GAMES_FILE) as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            pass
+    return []
+
+
+def save_historical_games(games: list[dict]) -> None:
+    """Save historical games to file."""
+    with open(HISTORICAL_GAMES_FILE, "w") as f:
+        json.dump(games, f, indent=2)
+
+
+def fetch_season_games(year: int = 2025) -> list[dict]:
+    """
+    Fetch all games for a season from ESPN API.
+
+    Returns list of games with teams, scores, and week numbers.
+    """
+    all_games = []
+
+    for week in range(1, 19):  # Weeks 1-18
+        try:
+            params = {"week": week, "seasontype": 2}  # seasontype 2 = regular season
+
+            # Check cache first
+            cached = get_cached_response(ESPN_SCHEDULE_URL, params)
+            if cached:
+                data = cached
+            else:
+                response = requests.get(ESPN_SCHEDULE_URL, params=params, timeout=10)
+                response.raise_for_status()
+                data = response.json()
+                set_cached_response(ESPN_SCHEDULE_URL, params, data)
+
+            for event in data.get("events", []):
+                status = event.get("status", {}).get("type", {}).get("state", "")
+
+                competitions = event.get("competitions", [])
+                if not competitions:
+                    continue
+
+                competition = competitions[0]
+                competitors = competition.get("competitors", [])
+
+                if len(competitors) != 2:
+                    continue
+
+                home_team_data = next(
+                    (c for c in competitors if c.get("homeAway") == "home"), None
+                )
+                away_team_data = next(
+                    (c for c in competitors if c.get("homeAway") == "away"), None
+                )
+
+                if not home_team_data or not away_team_data:
+                    continue
+
+                home_name = home_team_data["team"].get("displayName", "")
+                away_name = away_team_data["team"].get("displayName", "")
+
+                if home_name not in ESPN_TEAM_MAPPING or away_name not in ESPN_TEAM_MAPPING:
+                    continue
+
+                game = {
+                    "week": week,
+                    "home_team": ESPN_TEAM_MAPPING[home_name],
+                    "visiting_team": ESPN_TEAM_MAPPING[away_name],
+                    "status": status,
+                    "game_id": event.get("id"),
+                }
+
+                # Add scores if game is completed
+                if status == "post":
+                    game["home_score"] = int(home_team_data.get("score", 0))
+                    game["away_score"] = int(away_team_data.get("score", 0))
+
+                all_games.append(game)
+
+        except requests.RequestException as e:
+            logger.error(f"Error fetching week {week}: {e}")
+            continue
+
+    logger.info(f"Fetched {len(all_games)} total games for {year} season")
+    return all_games
+
+
 def fetch_nfl_standings() -> dict[str, dict]:
     """
     Fetch current NFL standings from ESPN API.
@@ -104,9 +244,15 @@ def fetch_nfl_standings() -> dict[str, dict]:
         Dictionary mapping team names to their records {wins, losses, ties}
     """
     try:
-        response = requests.get(ESPN_STANDINGS_URL, timeout=10)
-        response.raise_for_status()
-        data = response.json()
+        # Check cache first
+        cached = get_cached_response(ESPN_STANDINGS_URL, None)
+        if cached:
+            data = cached
+        else:
+            response = requests.get(ESPN_STANDINGS_URL, timeout=10)
+            response.raise_for_status()
+            data = response.json()
+            set_cached_response(ESPN_STANDINGS_URL, None, data)
 
         standings = {}
 
@@ -208,6 +354,80 @@ def fetch_remaining_schedule(current_week: int) -> list[dict]:
 
     logger.info(f"Fetched {len(remaining_games)} remaining games from ESPN")
     return remaining_games
+
+
+def calculate_elo_from_season_games(games: list[dict]) -> dict[str, float]:
+    """
+    Calculate ELO ratings from scratch using all completed season games.
+
+    Args:
+        games: List of games with home_team, visiting_team, home_score, away_score
+
+    Returns:
+        Dictionary mapping team names to ELO ratings
+    """
+    # Initialize all teams at 1500
+    team_elo = {team: INITIAL_ELO for team in TEAM_INFO.keys()}
+
+    # Sort games by week
+    completed_games = [g for g in games if g.get("status") == "post" and "home_score" in g]
+    completed_games.sort(key=lambda x: x.get("week", 0))
+
+    for game in completed_games:
+        home_team = game["home_team"]
+        away_team = game["visiting_team"]
+        home_score = game["home_score"]
+        away_score = game["away_score"]
+
+        if home_team not in team_elo or away_team not in team_elo:
+            continue
+
+        margin = abs(home_score - away_score)
+        home_won = home_score > away_score
+
+        if home_won:
+            new_home, new_away = update_elo(
+                team_elo[home_team], team_elo[away_team], margin, home_winner=True
+            )
+        else:
+            new_away, new_home = update_elo(
+                team_elo[away_team], team_elo[home_team], margin, home_winner=False
+            )
+
+        team_elo[home_team] = new_home
+        team_elo[away_team] = new_away
+
+    return team_elo
+
+
+def get_division_standings(standings: dict[str, dict]) -> dict[str, list[dict]]:
+    """
+    Organize standings by division.
+
+    Args:
+        standings: Dictionary of team records
+
+    Returns:
+        Dictionary mapping division names to sorted list of teams
+    """
+    division_standings = {div: [] for div in NFL_DIVISIONS.keys()}
+
+    for team, record in standings.items():
+        info = TEAM_INFO.get(team)
+        if info:
+            division_standings[info["division"]].append({
+                "team": team,
+                "wins": record.get("wins", 0),
+                "losses": record.get("losses", 0),
+                "ties": record.get("ties", 0),
+                "conf": info["conf"],
+            })
+
+    # Sort each division by wins (descending)
+    for div in division_standings:
+        division_standings[div].sort(key=lambda x: (x["wins"], -x["losses"]), reverse=True)
+
+    return division_standings
 
 
 def expected_score(rating_a: float, rating_b: float) -> float:
@@ -507,6 +727,73 @@ def run_playoff_simulation(
     return playoff_data
 
 
+def calculate_calibration(predictions: list[dict]) -> list[dict[str, Any]]:
+    """
+    Calculate calibration bins from all completed predictions.
+
+    Groups predictions into probability bins and compares predicted vs actual win rates.
+    """
+    # Get completed games
+    completed = [
+        p for p in predictions
+        if p.get("actual_home_score") is not None
+    ]
+
+    if not completed:
+        return []
+
+    # Define bins
+    bins = [
+        (0.0, 0.2),
+        (0.2, 0.3),
+        (0.3, 0.4),
+        (0.4, 0.5),
+        (0.5, 0.6),
+        (0.6, 0.7),
+        (0.7, 0.8),
+        (0.8, 1.0),
+    ]
+
+    calibration_data = []
+
+    for bin_lower, bin_upper in bins:
+        # Get predictions in this bin
+        bin_preds = [
+            p for p in completed
+            if bin_lower <= p.get("home_win_probability", 0.5) < bin_upper
+        ]
+
+        if not bin_preds:
+            continue
+
+        # Calculate stats
+        n_predictions = len(bin_preds)
+        mean_predicted = sum(p["home_win_probability"] for p in bin_preds) / n_predictions
+
+        # Calculate actual win rate
+        home_wins = sum(
+            1 for p in bin_preds
+            if p["actual_home_score"] > p["actual_away_score"]
+        )
+        mean_observed = home_wins / n_predictions
+
+        # Calculate calibration error
+        bin_midpoint = (bin_lower + bin_upper) / 2
+        calibration_error = abs(mean_predicted - mean_observed)
+
+        calibration_data.append({
+            "bin_lower": bin_lower,
+            "bin_upper": bin_upper,
+            "bin_midpoint": bin_midpoint,
+            "mean_predicted": mean_predicted,
+            "mean_observed": mean_observed,
+            "n_predictions": n_predictions,
+            "calibration_error": calibration_error,
+        })
+
+    return calibration_data
+
+
 def calculate_week_performance(predictions: list[dict], week: int) -> dict[str, Any]:
     """Calculate performance metrics for a specific week."""
     week_games = [
@@ -572,7 +859,7 @@ def recalculate_all(data: dict[str, Any]) -> dict[str, Any]:
     """
     Recalculate all ELO ratings, playoff probabilities, and performance metrics.
 
-    Uses pre-game ELO ratings stored in predictions to update post-game ratings.
+    Fetches full season data from ESPN for accurate calculations.
 
     Args:
         data: The webpage data dictionary
@@ -581,18 +868,66 @@ def recalculate_all(data: dict[str, Any]) -> dict[str, Any]:
         Updated data dictionary
     """
     predictions = data.get("predictions", [])
-    ratings = data.get("ratings", [])
     current_week = data.get("current_week", 14)
 
-    # Update ELO ratings based on completed game results
-    # Uses pre-game ELO from predictions, not resetting from scratch
-    logger.info("Updating ELO ratings from game results...")
-    ratings = recalculate_elo_from_results(ratings, predictions)
+    # Fetch and store all season games from ESPN
+    logger.info("Fetching full season game data from ESPN...")
+    season_games = fetch_season_games(2025)
+    save_historical_games(season_games)
+    data["historical_games_count"] = len([g for g in season_games if g.get("status") == "post"])
+
+    # Calculate ELO ratings from all completed season games
+    logger.info("Calculating ELO ratings from season games...")
+    team_elo = calculate_elo_from_season_games(season_games)
+
+    # Build ratings list sorted by ELO
+    ratings = []
+    for team, elo in team_elo.items():
+        info = TEAM_INFO.get(team, {})
+        ratings.append({
+            "team": team,
+            "conf": info.get("conf", "Unknown"),
+            "division": info.get("division", "Unknown"),
+            "elo_rating": elo,
+        })
+    ratings.sort(key=lambda x: x["elo_rating"], reverse=True)
     data["ratings"] = ratings
 
+    # Fetch current standings from ESPN
+    logger.info("Fetching current standings...")
+    espn_standings = fetch_nfl_standings()
+
+    # Get division standings
+    logger.info("Calculating division standings...")
+    division_standings = get_division_standings(espn_standings)
+    data["division_standings"] = division_standings
+
+    # Run playoff probability simulations
     logger.info("Running playoff probability simulations...")
     playoffs = run_playoff_simulation(ratings, current_week, n_simulations=10000)
     data["playoffs"] = playoffs
+
+    # Update calibration data from season games
+    logger.info("Calculating calibration metrics...")
+    # Convert season games to prediction-like format for calibration
+    completed_for_calibration = []
+    for game in season_games:
+        if game.get("status") == "post" and "home_score" in game:
+            home_elo = team_elo.get(game["home_team"], 1500)
+            away_elo = team_elo.get(game["visiting_team"], 1500)
+            home_prob = expected_score(home_elo + HOME_ADVANTAGE, away_elo)
+            completed_for_calibration.append({
+                "home_team": game["home_team"],
+                "visiting_team": game["visiting_team"],
+                "home_win_probability": home_prob,
+                "actual_home_score": game["home_score"],
+                "actual_away_score": game["away_score"],
+            })
+
+    calibration = calculate_calibration(completed_for_calibration)
+    if calibration:
+        data["calibration"] = calibration
+        logger.info(f"Updated calibration with {len(calibration)} bins from {len(completed_for_calibration)} games")
 
     # Update performance for current week if we have results
     logger.info(f"Calculating Week {current_week} performance metrics...")

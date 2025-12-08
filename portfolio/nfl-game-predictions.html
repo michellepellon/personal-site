@@ -448,6 +448,150 @@
       font-style: italic;
     }
 
+    /* Conference filter buttons */
+    .filter-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--gray-300);
+      background: white;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--gray-400);
+      background: var(--gray-50);
+    }
+
+    .filter-btn.active {
+      background: var(--gray-900);
+      color: white;
+      border-color: var(--gray-900);
+    }
+
+    /* Division standings grid */
+    .division-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .division-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    .division-header {
+      background: var(--gray-100);
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .division-header.afc {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .division-header.nfc {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .division-team {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 0.875rem;
+    }
+
+    .division-team:last-child {
+      border-bottom: none;
+    }
+
+    .division-team.leader {
+      background: var(--gray-50);
+      font-weight: 600;
+    }
+
+    /* Performance chart */
+    .chart-container {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: var(--gray-50);
+      border-radius: 0.5rem;
+    }
+
+    .chart-svg {
+      width: 100%;
+      height: 200px;
+    }
+
+    .chart-line {
+      fill: none;
+      stroke: var(--blue-500);
+      stroke-width: 2;
+    }
+
+    .chart-area {
+      fill: var(--blue-100);
+      opacity: 0.5;
+    }
+
+    .chart-dot {
+      fill: var(--blue-600);
+    }
+
+    .chart-grid {
+      stroke: var(--gray-200);
+      stroke-dasharray: 2,2;
+    }
+
+    .chart-label {
+      font-size: 0.75rem;
+      fill: var(--gray-500);
+    }
+
+    /* Confidence indicator */
+    .confidence-badge {
+      display: inline-block;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-left: 0.5rem;
+    }
+
+    .confidence-badge.high {
+      background: var(--green-500);
+      color: white;
+    }
+
+    .confidence-badge.medium {
+      background: #f59e0b;
+      color: white;
+    }
+
+    .confidence-badge.low {
+      background: var(--gray-400);
+      color: white;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       body {
@@ -465,6 +609,50 @@
       .meta {
         flex-direction: column;
         gap: 0.5rem;
+      }
+
+      /* Mobile table improvements */
+      .table-container {
+        margin: 1rem -1rem;
+        padding: 0 1rem;
+      }
+
+      table {
+        font-size: 0.8125rem;
+      }
+
+      th, td {
+        padding: 0.5rem 0.5rem;
+      }
+
+      /* Hide less important columns on mobile */
+      .hide-mobile {
+        display: none;
+      }
+
+      /* Stack division cards */
+      .division-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Smaller filter buttons */
+      .filter-buttons {
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8125rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      th, td {
+        padding: 0.375rem 0.25rem;
+      }
+
+      .bar {
+        max-width: 60px;
       }
     }
 
@@ -605,11 +793,34 @@
 </section>
 
 <section>
+  <h2>Division Standings</h2>
+  <div class="sidenote">
+    Current standings by division. Division leaders earn playoff berths, with the top team in each conference receiving a first-round bye.
+  </div>
+
+  <div class="filter-buttons" id="division-conference-filter">
+    <button class="filter-btn active" data-filter="all">All Divisions</button>
+    <button class="filter-btn" data-filter="AFC">AFC</button>
+    <button class="filter-btn" data-filter="NFC">NFC</button>
+  </div>
+
+  <div class="division-grid" id="division-standings">
+    <!-- Populated by JavaScript -->
+  </div>
+</section>
+
+<section>
   <h2>Playoff Probabilities</h2>
   <div class="sidenote">
     Based on 10,000 Monte Carlo simulations of remaining 2025 games (Weeks 15-18).
     Each simulation uses current ELO ratings to determine win probabilities,
     then projects final standings and playoff seeding.
+  </div>
+
+  <div class="filter-buttons" id="conference-filter">
+    <button class="filter-btn active" data-filter="all">All Teams</button>
+    <button class="filter-btn" data-filter="AFC">AFC</button>
+    <button class="filter-btn" data-filter="NFC">NFC</button>
   </div>
 
   <div class="table-container">
@@ -663,6 +874,15 @@
 
 <section>
   <h2>Historical Performance</h2>
+  <div class="sidenote">
+    Weekly model performance tracking accuracy, Brier score, and log loss across the 2025 season.
+    Lower Brier scores indicate better calibration; higher accuracy shows more correct predictions.
+  </div>
+
+  <div class="chart-container" id="performance-chart">
+    <!-- SVG chart rendered by JavaScript -->
+  </div>
+
   <div class="table-container">
     <table id="performance-table">
       <thead>
@@ -740,9 +960,13 @@ async function loadData() {
     renderModelSummary(calibratedData);
     renderCurrentWeekPredictions(data.predictions || [], currentWeek);
     renderELORankings(data.ratings, data.playoffs);
-    renderPlayoffProbabilities(data.playoffs);
+    renderDivisionStandings(data.division_standings, data.ratings);
+    renderPlayoffProbabilities(data.playoffs, data.ratings);
     renderCalibration(calibratedData.calibration_bins);
     renderPerformance(data.performance);
+
+    // Set up conference filter handlers
+    setupConferenceFilters(data.playoffs, data.ratings, data.division_standings);
 
   } catch (error) {
     console.error('Error loading data:', error);
@@ -832,12 +1056,28 @@ function renderCurrentWeekPredictions(predictions, currentWeek) {
       `;
     }
 
+    // Calculate confidence level based on probability spread
+    const maxProb = Math.max(homeProb, awayProb);
+    let confidenceLevel, confidenceText;
+    if (maxProb >= 0.75) {
+      confidenceLevel = 'high';
+      confidenceText = 'High';
+    } else if (maxProb >= 0.60) {
+      confidenceLevel = 'medium';
+      confidenceText = 'Medium';
+    } else {
+      confidenceLevel = 'low';
+      confidenceText = 'Toss-up';
+    }
+    const confidenceBadge = `<span class="confidence-badge ${confidenceLevel}">${confidenceText}</span>`;
+
     html += `
       <div class="${matchupClass}">
         <div style="margin-bottom: 0.5rem;">
           <span class="team-name ${favorite === 'away' ? 'favorite' : ''}">${game.visiting_team}</span>
           <span style="color: var(--gray-500);"> @ </span>
           <span class="team-name ${favorite === 'home' ? 'favorite' : ''}">${game.home_team}</span>
+          ${confidenceBadge}
           ${resultIndicator}
         </div>
         <div style="display: flex; gap: 1.5rem; align-items: center;">
@@ -891,7 +1131,7 @@ function renderELORankings(ratings, playoffs) {
   tbody.innerHTML = html;
 }
 
-function renderPlayoffProbabilities(playoffs) {
+function renderPlayoffProbabilities(playoffs, ratings, conferenceFilter = 'all') {
   const tbody = document.querySelector('#playoff-probs tbody');
 
   if (!playoffs || playoffs.length === 0) {
@@ -899,17 +1139,32 @@ function renderPlayoffProbabilities(playoffs) {
     return;
   }
 
+  // Build conference map from ratings
+  const confMap = {};
+  if (ratings) {
+    ratings.forEach(r => {
+      confMap[r.team] = r.conf;
+    });
+  }
+
+  // Filter by conference if needed
+  let filtered = playoffs;
+  if (conferenceFilter !== 'all') {
+    filtered = playoffs.filter(team => confMap[team.team] === conferenceFilter);
+  }
+
   let html = '';
-  playoffs.slice(0, 16).forEach(team => {
+  filtered.slice(0, conferenceFilter === 'all' ? 16 : 14).forEach(team => {
     const playoffProb = team.playoff_prob_pct || 0;
     const byeProb = team.bye_prob_pct || 0;
     const barWidth = Math.min(Math.round(playoffProb * 1.5), 150);
     const wins = team.current_wins || 0;
     const losses = team.current_losses || 0;
     const record = `${wins}-${losses}`;
+    const conf = confMap[team.team] || '';
 
     html += `
-      <tr>
+      <tr data-conf="${conf}">
         <td><strong>${team.team}</strong></td>
         <td class="numeric">${record}</td>
         <td class="numeric">${playoffProb.toFixed(1)}%</td>
@@ -958,12 +1213,15 @@ function renderCalibration(calibration) {
 
 function renderPerformance(performance) {
   const tbody = document.querySelector('#performance-table tbody');
+  const chartContainer = document.getElementById('performance-chart');
 
   if (!performance || performance.length === 0) {
     tbody.innerHTML = '<tr><td colspan="5">No performance data available</td></tr>';
+    chartContainer.innerHTML = '<p class="loading">No chart data available</p>';
     return;
   }
 
+  // Render table
   let html = '';
   performance.forEach(week => {
     const rating = week.performance_rating || 'Unknown';
@@ -979,8 +1237,226 @@ function renderPerformance(performance) {
       </tr>
     `;
   });
-
   tbody.innerHTML = html;
+
+  // Render chart
+  renderPerformanceChart(performance, chartContainer);
+}
+
+function renderPerformanceChart(performance, container) {
+  const width = 700;
+  const height = 200;
+  const padding = { top: 20, right: 60, bottom: 30, left: 50 };
+  const chartWidth = width - padding.left - padding.right;
+  const chartHeight = height - padding.top - padding.bottom;
+
+  // Filter to weeks with data
+  const validWeeks = performance.filter(w => w.accuracy != null);
+  if (validWeeks.length < 2) {
+    container.innerHTML = '<p class="loading">Not enough data for chart</p>';
+    return;
+  }
+
+  // Calculate scales
+  const xScale = (i) => padding.left + (i / (validWeeks.length - 1)) * chartWidth;
+  const accuracyScale = (v) => padding.top + chartHeight - (v * chartHeight);
+  const brierScale = (v) => padding.top + chartHeight - ((1 - v) * chartHeight);
+
+  // Build accuracy line path
+  let accuracyPath = '';
+  validWeeks.forEach((week, i) => {
+    const x = xScale(i);
+    const y = accuracyScale(week.accuracy);
+    if (i === 0) accuracyPath += `M ${x} ${y}`;
+    else accuracyPath += ` L ${x} ${y}`;
+  });
+
+  // Build Brier score line path
+  let brierPath = '';
+  validWeeks.forEach((week, i) => {
+    const x = xScale(i);
+    const y = brierScale(week.brier_score || 0.25);
+    if (i === 0) brierPath += `M ${x} ${y}`;
+    else brierPath += ` L ${x} ${y}`;
+  });
+
+  // Build dots for accuracy
+  let accuracyDots = '';
+  validWeeks.forEach((week, i) => {
+    const x = xScale(i);
+    const y = accuracyScale(week.accuracy);
+    accuracyDots += `<circle cx="${x}" cy="${y}" r="4" class="chart-dot" fill="var(--blue-600)"/>`;
+  });
+
+  // Build dots for Brier
+  let brierDots = '';
+  validWeeks.forEach((week, i) => {
+    const x = xScale(i);
+    const y = brierScale(week.brier_score || 0.25);
+    brierDots += `<circle cx="${x}" cy="${y}" r="4" class="chart-dot" fill="var(--green-600)"/>`;
+  });
+
+  // X-axis labels (week numbers)
+  let xLabels = '';
+  validWeeks.forEach((week, i) => {
+    const x = xScale(i);
+    xLabels += `<text x="${x}" y="${height - 8}" text-anchor="middle" class="chart-label">${week.week_number}</text>`;
+  });
+
+  // Y-axis labels
+  const yLabels = `
+    <text x="${padding.left - 10}" y="${padding.top}" text-anchor="end" class="chart-label">100%</text>
+    <text x="${padding.left - 10}" y="${padding.top + chartHeight / 2}" text-anchor="end" class="chart-label">50%</text>
+    <text x="${padding.left - 10}" y="${padding.top + chartHeight}" text-anchor="end" class="chart-label">0%</text>
+  `;
+
+  // Grid lines
+  const gridLines = `
+    <line x1="${padding.left}" y1="${padding.top + chartHeight / 2}" x2="${width - padding.right}" y2="${padding.top + chartHeight / 2}" class="chart-grid"/>
+    <line x1="${padding.left}" y1="${padding.top + chartHeight / 4}" x2="${width - padding.right}" y2="${padding.top + chartHeight / 4}" class="chart-grid"/>
+    <line x1="${padding.left}" y1="${padding.top + 3 * chartHeight / 4}" x2="${width - padding.right}" y2="${padding.top + 3 * chartHeight / 4}" class="chart-grid"/>
+  `;
+
+  // Legend
+  const legend = `
+    <g transform="translate(${width - padding.right + 10}, ${padding.top})">
+      <line x1="0" y1="5" x2="15" y2="5" stroke="var(--blue-600)" stroke-width="2"/>
+      <text x="20" y="9" class="chart-label" fill="var(--gray-700)">Accuracy</text>
+      <line x1="0" y1="25" x2="15" y2="25" stroke="var(--green-600)" stroke-width="2"/>
+      <text x="20" y="29" class="chart-label" fill="var(--gray-700)">1-Brier</text>
+    </g>
+  `;
+
+  container.innerHTML = `
+    <svg class="chart-svg" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet">
+      ${gridLines}
+      <path d="${accuracyPath}" class="chart-line" stroke="var(--blue-500)"/>
+      <path d="${brierPath}" class="chart-line" stroke="var(--green-500)"/>
+      ${accuracyDots}
+      ${brierDots}
+      ${xLabels}
+      ${yLabels}
+      ${legend}
+      <text x="${padding.left + chartWidth / 2}" y="${height - 2}" text-anchor="middle" class="chart-label" fill="var(--gray-500)">Week</text>
+    </svg>
+  `;
+}
+
+function renderDivisionStandings(divisionStandings, ratings, conferenceFilter = 'all') {
+  const container = document.getElementById('division-standings');
+
+  if (!divisionStandings || Object.keys(divisionStandings).length === 0) {
+    // Fall back to building from ratings if no division standings data
+    if (!ratings || ratings.length === 0) {
+      container.innerHTML = '<p class="loading">No standings data available</p>';
+      return;
+    }
+
+    // Group teams by division from ratings
+    const divisions = {};
+    ratings.forEach(team => {
+      const divKey = `${team.conf} ${team.division}`;
+      if (!divisions[divKey]) {
+        divisions[divKey] = { conf: team.conf, division: team.division, teams: [] };
+      }
+      divisions[divKey].teams.push(team);
+    });
+
+    divisionStandings = divisions;
+  }
+
+  // Filter by conference if needed
+  let divisionsToShow = Object.entries(divisionStandings);
+  if (conferenceFilter !== 'all') {
+    divisionsToShow = divisionsToShow.filter(([key, div]) => {
+      return div.conf === conferenceFilter || key.startsWith(conferenceFilter);
+    });
+  }
+
+  // Sort divisions: AFC first, then NFC; within conference: East, North, South, West
+  const divOrder = { 'East': 1, 'North': 2, 'South': 3, 'West': 4 };
+  divisionsToShow.sort((a, b) => {
+    const aConf = a[1].conf || (a[0].startsWith('AFC') ? 'AFC' : 'NFC');
+    const bConf = b[1].conf || (b[0].startsWith('AFC') ? 'AFC' : 'NFC');
+    if (aConf !== bConf) return aConf === 'AFC' ? -1 : 1;
+    const aDiv = a[1].division || a[0].split(' ')[1];
+    const bDiv = b[1].division || b[0].split(' ')[1];
+    return (divOrder[aDiv] || 5) - (divOrder[bDiv] || 5);
+  });
+
+  let html = '';
+  divisionsToShow.forEach(([divName, divData]) => {
+    const conf = divData.conf || (divName.startsWith('AFC') ? 'AFC' : 'NFC');
+    const confClass = conf.toLowerCase();
+    const teams = divData.teams || [];
+
+    // Sort teams by wins (descending), then by win percentage
+    teams.sort((a, b) => {
+      const aWins = a.wins || 0;
+      const bWins = b.wins || 0;
+      if (bWins !== aWins) return bWins - aWins;
+      const aWinPct = aWins / (aWins + (a.losses || 0) + 0.001);
+      const bWinPct = bWins / (bWins + (b.losses || 0) + 0.001);
+      return bWinPct - aWinPct;
+    });
+
+    html += `
+      <div class="division-card" data-conf="${conf}">
+        <div class="division-header ${confClass}">${divName}</div>
+    `;
+
+    teams.forEach((team, idx) => {
+      const wins = team.wins || team.current_wins || 0;
+      const losses = team.losses || team.current_losses || 0;
+      const leaderClass = idx === 0 ? ' leader' : '';
+      const teamName = team.team || team.name;
+
+      html += `
+        <div class="division-team${leaderClass}">
+          <span>${teamName}</span>
+          <span>${wins}-${losses}</span>
+        </div>
+      `;
+    });
+
+    html += '</div>';
+  });
+
+  container.innerHTML = html || '<p class="loading">No standings data available</p>';
+}
+
+function setupConferenceFilters(playoffs, ratings, divisionStandings) {
+  // Playoff Probabilities filter
+  const playoffFilter = document.getElementById('conference-filter');
+  if (playoffFilter) {
+    playoffFilter.addEventListener('click', (e) => {
+      if (e.target.classList.contains('filter-btn')) {
+        // Update active state
+        playoffFilter.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+
+        // Re-render with filter
+        const filter = e.target.dataset.filter;
+        renderPlayoffProbabilities(playoffs, ratings, filter);
+      }
+    });
+  }
+
+  // Division Standings filter
+  const divisionFilter = document.getElementById('division-conference-filter');
+  if (divisionFilter) {
+    divisionFilter.addEventListener('click', (e) => {
+      if (e.target.classList.contains('filter-btn')) {
+        // Update active state
+        divisionFilter.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+
+        // Re-render with filter
+        const filter = e.target.dataset.filter;
+        renderDivisionStandings(divisionStandings, ratings, filter);
+      }
+    });
+  }
 }
 
 // Load data on page load

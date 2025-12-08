@@ -1,230 +1,198 @@
 {
-  "generated_at": "2025-12-07T21:27:41.738370",
+  "generated_at": "2025-12-07T21:50:11.569959",
   "current_week": 14,
   "ratings": [
     {
-      "team": "Minnesota Vikings",
+      "team": "Seattle Seahawks",
       "conf": "NFC",
-      "division": "NFC North",
-      "elo_rating": 1771.8787946655852,
-      "vegas_preseason_total": 9.1
-    },
-    {
-      "team": "Philadelphia Eagles",
-      "conf": "NFC",
-      "division": "NFC East",
-      "elo_rating": 1749.800464038243,
-      "vegas_preseason_total": 11.1
-    },
-    {
-      "team": "Houston Texans",
-      "conf": "AFC",
-      "division": "AFC South",
-      "elo_rating": 1726.7670509523,
-      "vegas_preseason_total": 9.2
-    },
-    {
-      "team": "New England Patriots",
-      "conf": "AFC",
-      "division": "AFC East",
-      "elo_rating": 1718.5449424416427,
-      "vegas_preseason_total": 8.3
-    },
-    {
-      "team": "Cincinnati Bengals",
-      "conf": "AFC",
-      "division": "AFC North",
-      "elo_rating": 1715.3721903090357,
-      "vegas_preseason_total": 9.4
+      "division": "NFC West",
+      "elo_rating": 1653.6669083213512
     },
     {
       "team": "Los Angeles Rams",
       "conf": "NFC",
       "division": "NFC West",
-      "elo_rating": 1706.5329047473033,
-      "vegas_preseason_total": 10.0
+      "elo_rating": 1648.5342941686463
     },
     {
-      "team": "Jacksonville Jaguars",
-      "conf": "AFC",
-      "division": "AFC South",
-      "elo_rating": 1680.8868466827728,
-      "vegas_preseason_total": 7.6
-    },
-    {
-      "team": "Buffalo Bills",
+      "team": "New England Patriots",
       "conf": "AFC",
       "division": "AFC East",
-      "elo_rating": 1677.1290631592751,
-      "vegas_preseason_total": 12.0
-    },
-    {
-      "team": "Tennessee Titans",
-      "conf": "AFC",
-      "division": "AFC South",
-      "elo_rating": 1675.603636727139,
-      "vegas_preseason_total": 6.1
-    },
-    {
-      "team": "Chicago Bears",
-      "conf": "NFC",
-      "division": "NFC North",
-      "elo_rating": 1672.1980982456523,
-      "vegas_preseason_total": 8.0
-    },
-    {
-      "team": "Seattle Seahawks",
-      "conf": "NFC",
-      "division": "NFC West",
-      "elo_rating": 1666.272106420622,
-      "vegas_preseason_total": 8.2
-    },
-    {
-      "team": "Miami Dolphins",
-      "conf": "AFC",
-      "division": "AFC East",
-      "elo_rating": 1659.7834540361496,
-      "vegas_preseason_total": 7.4
+      "elo_rating": 1627.8642556876896
     },
     {
       "team": "Denver Broncos",
       "conf": "AFC",
       "division": "AFC West",
-      "elo_rating": 1659.481214486219,
-      "vegas_preseason_total": 9.5
-    },
-    {
-      "team": "Kansas City Chiefs",
-      "conf": "AFC",
-      "division": "AFC West",
-      "elo_rating": 1657.7484731699274,
-      "vegas_preseason_total": 10.9
-    },
-    {
-      "team": "Baltimore Ravens",
-      "conf": "AFC",
-      "division": "AFC North",
-      "elo_rating": 1648.66156567694,
-      "vegas_preseason_total": 11.6
-    },
-    {
-      "team": "San Francisco 49ers",
-      "conf": "NFC",
-      "division": "NFC West",
-      "elo_rating": 1646.9872337823551,
-      "vegas_preseason_total": 10.4
-    },
-    {
-      "team": "Dallas Cowboys",
-      "conf": "NFC",
-      "division": "NFC East",
-      "elo_rating": 1645.668507099402,
-      "vegas_preseason_total": 7.2
-    },
-    {
-      "team": "Los Angeles Chargers",
-      "conf": "AFC",
-      "division": "AFC West",
-      "elo_rating": 1643.5730420694683,
-      "vegas_preseason_total": 9.3
-    },
-    {
-      "team": "Detroit Lions",
-      "conf": "NFC",
-      "division": "NFC North",
-      "elo_rating": 1642.376300437812,
-      "vegas_preseason_total": 9.9
-    },
-    {
-      "team": "Tampa Bay Buccaneers",
-      "conf": "NFC",
-      "division": "NFC South",
-      "elo_rating": 1625.319923012215,
-      "vegas_preseason_total": 9.3
-    },
-    {
-      "team": "Las Vegas Raiders",
-      "conf": "AFC",
-      "division": "AFC West",
-      "elo_rating": 1616.1620344967196,
-      "vegas_preseason_total": 7.0
+      "elo_rating": 1624.1085695948548
     },
     {
       "team": "Green Bay Packers",
       "conf": "NFC",
       "division": "NFC North",
-      "elo_rating": 1605.6368378756715,
-      "vegas_preseason_total": 10.1
+      "elo_rating": 1617.5594728159674
     },
     {
-      "team": "Pittsburgh Steelers",
+      "team": "Buffalo Bills",
       "conf": "AFC",
-      "division": "AFC North",
-      "elo_rating": 1572.0934821492845,
-      "vegas_preseason_total": 8.5
+      "division": "AFC East",
+      "elo_rating": 1584.7622036222365
     },
     {
-      "team": "Cleveland Browns",
-      "conf": "AFC",
-      "division": "AFC North",
-      "elo_rating": 1558.8956457062066,
-      "vegas_preseason_total": 5.2
-    },
-    {
-      "team": "Atlanta Falcons",
+      "team": "San Francisco 49ers",
       "conf": "NFC",
-      "division": "NFC South",
-      "elo_rating": 1553.8500651281586,
-      "vegas_preseason_total": 8.2
+      "division": "NFC West",
+      "elo_rating": 1579.0557514787502
+    },
+    {
+      "team": "Houston Texans",
+      "conf": "AFC",
+      "division": "AFC South",
+      "elo_rating": 1577.7745293450532
+    },
+    {
+      "team": "Jacksonville Jaguars",
+      "conf": "AFC",
+      "division": "AFC South",
+      "elo_rating": 1576.8174636892734
+    },
+    {
+      "team": "Detroit Lions",
+      "conf": "NFC",
+      "division": "NFC North",
+      "elo_rating": 1566.6701541735515
+    },
+    {
+      "team": "Kansas City Chiefs",
+      "conf": "AFC",
+      "division": "AFC West",
+      "elo_rating": 1552.3072659495451
+    },
+    {
+      "team": "Chicago Bears",
+      "conf": "NFC",
+      "division": "NFC North",
+      "elo_rating": 1547.026551166882
+    },
+    {
+      "team": "Philadelphia Eagles",
+      "conf": "NFC",
+      "division": "NFC East",
+      "elo_rating": 1541.8386426816157
     },
     {
       "team": "Indianapolis Colts",
       "conf": "AFC",
       "division": "AFC South",
-      "elo_rating": 1546.8303403605214,
-      "vegas_preseason_total": 7.2
+      "elo_rating": 1534.3843415336592
     },
     {
-      "team": "New York Jets",
+      "team": "Los Angeles Chargers",
+      "conf": "AFC",
+      "division": "AFC West",
+      "elo_rating": 1529.31673375906
+    },
+    {
+      "team": "Miami Dolphins",
       "conf": "AFC",
       "division": "AFC East",
-      "elo_rating": 1513.2982857249485,
-      "vegas_preseason_total": 6.2
+      "elo_rating": 1504.794966831629
     },
     {
-      "team": "New York Giants",
+      "team": "Dallas Cowboys",
       "conf": "NFC",
       "division": "NFC East",
-      "elo_rating": 1509.4770582185163,
-      "vegas_preseason_total": 5.7
+      "elo_rating": 1501.01266705657
+    },
+    {
+      "team": "Pittsburgh Steelers",
+      "conf": "AFC",
+      "division": "AFC North",
+      "elo_rating": 1496.7002302447638
+    },
+    {
+      "team": "Tampa Bay Buccaneers",
+      "conf": "NFC",
+      "division": "NFC South",
+      "elo_rating": 1477.270744429247
     },
     {
       "team": "Carolina Panthers",
       "conf": "NFC",
       "division": "NFC South",
-      "elo_rating": 1508.0406859581735,
-      "vegas_preseason_total": 6.7
+      "elo_rating": 1475.5668610751725
     },
     {
-      "team": "New Orleans Saints",
+      "team": "Baltimore Ravens",
+      "conf": "AFC",
+      "division": "AFC North",
+      "elo_rating": 1466.2668581224616
+    },
+    {
+      "team": "Minnesota Vikings",
+      "conf": "NFC",
+      "division": "NFC North",
+      "elo_rating": 1452.4120577598399
+    },
+    {
+      "team": "Atlanta Falcons",
       "conf": "NFC",
       "division": "NFC South",
-      "elo_rating": 1506.0230327182815,
-      "vegas_preseason_total": 4.8
+      "elo_rating": 1425.268551548865
+    },
+    {
+      "team": "Cincinnati Bengals",
+      "conf": "AFC",
+      "division": "AFC North",
+      "elo_rating": 1423.1391633342937
     },
     {
       "team": "Arizona Cardinals",
       "conf": "NFC",
       "division": "NFC West",
-      "elo_rating": 1495.3314603709596,
-      "vegas_preseason_total": 8.8
+      "elo_rating": 1414.9477054715019
+    },
+    {
+      "team": "New Orleans Saints",
+      "conf": "NFC",
+      "division": "NFC South",
+      "elo_rating": 1399.267021230499
+    },
+    {
+      "team": "Cleveland Browns",
+      "conf": "AFC",
+      "division": "AFC North",
+      "elo_rating": 1391.2301482773378
     },
     {
       "team": "Washington Commanders",
       "conf": "NFC",
       "division": "NFC East",
-      "elo_rating": 1466.4186674021414,
-      "vegas_preseason_total": 9.4
+      "elo_rating": 1385.2589073318186
+    },
+    {
+      "team": "New York Giants",
+      "conf": "NFC",
+      "division": "NFC East",
+      "elo_rating": 1378.06238222746
+    },
+    {
+      "team": "New York Jets",
+      "conf": "AFC",
+      "division": "AFC East",
+      "elo_rating": 1370.5292464034799
+    },
+    {
+      "team": "Las Vegas Raiders",
+      "conf": "AFC",
+      "division": "AFC West",
+      "elo_rating": 1343.7669983983355
+    },
+    {
+      "team": "Tennessee Titans",
+      "conf": "AFC",
+      "division": "AFC South",
+      "elo_rating": 1332.8183522685888
     }
   ],
   "predictions": [
@@ -567,124 +535,76 @@
   ],
   "calibration": [
     {
-      "bin_lower": 0.1,
+      "bin_lower": 0.0,
       "bin_upper": 0.2,
-      "bin_midpoint": 0.15000000000000002,
-      "mean_predicted": 0.1748703694817888,
-      "mean_observed": 0.3333333333333333,
+      "bin_midpoint": 0.1,
+      "mean_predicted": 0.1843793026177181,
+      "mean_observed": 0.0,
       "n_predictions": 3,
-      "stddev_observed": 0.5773502691896257,
-      "se_observed": 0.3333333333333333,
-      "ci_lower": -0.32,
-      "ci_upper": 0.9866666666666666,
-      "perfect_calibration": 0.15000000000000002,
-      "calibration_error": 0.1584629638515445,
-      "ingested_at": "2025-12-04 00:51:45.257000+00:00"
+      "calibration_error": 0.1843793026177181
     },
     {
       "bin_lower": 0.2,
-      "bin_upper": 0.30000000000000004,
+      "bin_upper": 0.3,
       "bin_midpoint": 0.25,
-      "mean_predicted": 0.2578181400649109,
-      "mean_observed": 0.5,
-      "n_predictions": 12,
-      "stddev_observed": 0.5222329678670935,
-      "se_observed": 0.15075567228888181,
-      "ci_lower": 0.20451888231379167,
-      "ci_upper": 0.7954811176862083,
-      "perfect_calibration": 0.25,
-      "calibration_error": 0.24218185993508912,
-      "ingested_at": "2025-12-04 00:51:45.257000+00:00"
+      "mean_predicted": 0.26394126163961956,
+      "mean_observed": 0.05263157894736842,
+      "n_predictions": 19,
+      "calibration_error": 0.21130968269225114
     },
     {
       "bin_lower": 0.3,
       "bin_upper": 0.4,
       "bin_midpoint": 0.35,
-      "mean_predicted": 0.3585892435200844,
-      "mean_observed": 0.44,
-      "n_predictions": 25,
-      "stddev_observed": 0.5066228051190221,
-      "se_observed": 0.10132456102380442,
-      "ci_lower": 0.24140386039334333,
-      "ci_upper": 0.6385961396066566,
-      "perfect_calibration": 0.35,
-      "calibration_error": 0.08141075647991558,
-      "ingested_at": "2025-12-04 00:51:45.257000+00:00"
+      "mean_predicted": 0.35081794634312163,
+      "mean_observed": 0.20833333333333334,
+      "n_predictions": 24,
+      "calibration_error": 0.1424846130097883
     },
     {
       "bin_lower": 0.4,
       "bin_upper": 0.5,
       "bin_midpoint": 0.45,
-      "mean_predicted": 0.45178314763588834,
-      "mean_observed": 0.6071428571428571,
-      "n_predictions": 28,
-      "stddev_observed": 0.4973474613934381,
-      "se_observed": 0.0939898355740239,
-      "ci_lower": 0.42292277941777023,
-      "ci_upper": 0.791362934867944,
-      "perfect_calibration": 0.45,
-      "calibration_error": 0.15535970950696876,
-      "ingested_at": "2025-12-04 00:51:45.257000+00:00"
+      "mean_predicted": 0.45095382163069087,
+      "mean_observed": 0.3448275862068966,
+      "n_predictions": 29,
+      "calibration_error": 0.10612623542379429
     },
     {
       "bin_lower": 0.5,
       "bin_upper": 0.6,
       "bin_midpoint": 0.55,
-      "mean_predicted": 0.5592139249341792,
-      "mean_observed": 0.46808510638297873,
-      "n_predictions": 47,
-      "stddev_observed": 0.5043749394606821,
-      "se_observed": 0.07357064625618348,
-      "ci_lower": 0.3238866397208591,
-      "ci_upper": 0.6122835730450984,
-      "perfect_calibration": 0.55,
-      "calibration_error": 0.09112881855120047,
-      "ingested_at": "2025-12-04 00:51:45.257000+00:00"
+      "mean_predicted": 0.545505746422231,
+      "mean_observed": 0.5151515151515151,
+      "n_predictions": 33,
+      "calibration_error": 0.030354231270715903
     },
     {
       "bin_lower": 0.6,
       "bin_upper": 0.7,
-      "bin_midpoint": 0.65,
-      "mean_predicted": 0.6543067372084693,
-      "mean_observed": 0.6111111111111112,
-      "n_predictions": 36,
-      "stddev_observed": 0.4944132324730442,
-      "se_observed": 0.08240220541217404,
-      "ci_lower": 0.4496027885032501,
-      "ci_upper": 0.7726194337189722,
-      "perfect_calibration": 0.65,
-      "calibration_error": 0.043195626097358164,
-      "ingested_at": "2025-12-04 00:51:45.257000+00:00"
+      "bin_midpoint": 0.6499999999999999,
+      "mean_predicted": 0.6518541013921905,
+      "mean_observed": 0.6976744186046512,
+      "n_predictions": 43,
+      "calibration_error": 0.045820317212460715
     },
     {
       "bin_lower": 0.7,
-      "bin_upper": 0.7999999999999999,
+      "bin_upper": 0.8,
       "bin_midpoint": 0.75,
-      "mean_predicted": 0.7414328586081155,
-      "mean_observed": 0.5714285714285714,
-      "n_predictions": 28,
-      "stddev_observed": 0.5039526306789697,
-      "se_observed": 0.09523809523809525,
-      "ci_lower": 0.38476190476190475,
-      "ci_upper": 0.758095238095238,
-      "perfect_calibration": 0.75,
-      "calibration_error": 0.17000428717954408,
-      "ingested_at": "2025-12-04 00:51:45.257000+00:00"
+      "mean_predicted": 0.747608791598684,
+      "mean_observed": 0.8333333333333334,
+      "n_predictions": 36,
+      "calibration_error": 0.08572454173464938
     },
     {
       "bin_lower": 0.8,
-      "bin_upper": 0.9,
-      "bin_midpoint": 0.8500000000000001,
-      "mean_predicted": 0.8549155429271708,
-      "mean_observed": 0.7142857142857143,
-      "n_predictions": 14,
-      "stddev_observed": 0.4688072309384954,
-      "se_observed": 0.12529400275814703,
-      "ci_lower": 0.4687094688797461,
-      "ci_upper": 0.9598619596916824,
-      "perfect_calibration": 0.8500000000000001,
-      "calibration_error": 0.14062982864145646,
-      "ingested_at": "2025-12-04 00:51:45.257000+00:00"
+      "bin_upper": 1.0,
+      "bin_midpoint": 0.9,
+      "mean_predicted": 0.8377561914650204,
+      "mean_observed": 0.9473684210526315,
+      "n_predictions": 19,
+      "calibration_error": 0.10961222958761108
     }
   ],
   "performance": [
@@ -791,10 +711,10 @@
     {
       "team": "New England Patriots",
       "conf": "AFC",
-      "elo_rating": 1718.5449424416427,
+      "elo_rating": 1627.8642556876896,
       "playoff_prob_pct": 100.0,
-      "bye_prob_pct": 71.0,
-      "avg_wins": 13.5,
+      "bye_prob_pct": 72.7,
+      "avg_wins": 13.8,
       "current_wins": 11,
       "current_losses": 2,
       "n_scenarios": 10000
@@ -802,10 +722,10 @@
     {
       "team": "Denver Broncos",
       "conf": "AFC",
-      "elo_rating": 1659.481214486219,
+      "elo_rating": 1624.1085695948548,
       "playoff_prob_pct": 100.0,
-      "bye_prob_pct": 25.8,
-      "avg_wins": 13.2,
+      "bye_prob_pct": 26.6,
+      "avg_wins": 13.5,
       "current_wins": 11,
       "current_losses": 2,
       "n_scenarios": 10000
@@ -813,10 +733,10 @@
     {
       "team": "Los Angeles Rams",
       "conf": "NFC",
-      "elo_rating": 1706.5329047473033,
+      "elo_rating": 1648.5342941686463,
       "playoff_prob_pct": 100.0,
-      "bye_prob_pct": 53.0,
-      "avg_wins": 12.6,
+      "bye_prob_pct": 39.1,
+      "avg_wins": 12.7,
       "current_wins": 10,
       "current_losses": 3,
       "n_scenarios": 10000
@@ -824,10 +744,10 @@
     {
       "team": "Seattle Seahawks",
       "conf": "NFC",
-      "elo_rating": 1666.272106420622,
+      "elo_rating": 1653.6669083213512,
       "playoff_prob_pct": 100.0,
-      "bye_prob_pct": 24.1,
-      "avg_wins": 12.3,
+      "bye_prob_pct": 54.7,
+      "avg_wins": 12.5,
       "current_wins": 10,
       "current_losses": 3,
       "n_scenarios": 10000
@@ -835,10 +755,10 @@
     {
       "team": "Buffalo Bills",
       "conf": "AFC",
-      "elo_rating": 1677.1290631592751,
+      "elo_rating": 1584.7622036222365,
       "playoff_prob_pct": 99.6,
-      "bye_prob_pct": 1.3,
-      "avg_wins": 11.2,
+      "bye_prob_pct": 0.5,
+      "avg_wins": 11.5,
       "current_wins": 9,
       "current_losses": 4,
       "n_scenarios": 10000
@@ -846,31 +766,9 @@
     {
       "team": "Jacksonville Jaguars",
       "conf": "AFC",
-      "elo_rating": 1680.8868466827728,
-      "playoff_prob_pct": 99.5,
-      "bye_prob_pct": 1.5,
-      "avg_wins": 11.4,
-      "current_wins": 9,
-      "current_losses": 4,
-      "n_scenarios": 10000
-    },
-    {
-      "team": "Philadelphia Eagles",
-      "conf": "NFC",
-      "elo_rating": 1749.800464038243,
-      "playoff_prob_pct": 98.8,
-      "bye_prob_pct": 16.0,
-      "avg_wins": 11.5,
-      "current_wins": 8,
-      "current_losses": 4,
-      "n_scenarios": 10000
-    },
-    {
-      "team": "Chicago Bears",
-      "conf": "NFC",
-      "elo_rating": 1672.1980982456523,
-      "playoff_prob_pct": 98.3,
-      "bye_prob_pct": 4.5,
+      "elo_rating": 1576.8174636892734,
+      "playoff_prob_pct": 99.6,
+      "bye_prob_pct": 0.2,
       "avg_wins": 11.5,
       "current_wins": 9,
       "current_losses": 4,
@@ -879,76 +777,87 @@
     {
       "team": "San Francisco 49ers",
       "conf": "NFC",
-      "elo_rating": 1646.9872337823551,
-      "playoff_prob_pct": 98.0,
-      "bye_prob_pct": 2.2,
-      "avg_wins": 11.2,
+      "elo_rating": 1579.0557514787502,
+      "playoff_prob_pct": 99.0,
+      "bye_prob_pct": 2.6,
+      "avg_wins": 11.4,
       "current_wins": 9,
-      "current_losses": 4,
-      "n_scenarios": 10000
-    },
-    {
-      "team": "Houston Texans",
-      "conf": "AFC",
-      "elo_rating": 1726.7670509523,
-      "playoff_prob_pct": 94.2,
-      "bye_prob_pct": 0.2,
-      "avg_wins": 10.4,
-      "current_wins": 7,
-      "current_losses": 5,
-      "n_scenarios": 10000
-    },
-    {
-      "team": "Los Angeles Chargers",
-      "conf": "AFC",
-      "elo_rating": 1643.5730420694683,
-      "playoff_prob_pct": 78.0,
-      "bye_prob_pct": 0.1,
-      "avg_wins": 10.1,
-      "current_wins": 8,
       "current_losses": 4,
       "n_scenarios": 10000
     },
     {
       "team": "Green Bay Packers",
       "conf": "NFC",
-      "elo_rating": 1605.6368378756715,
-      "playoff_prob_pct": 73.7,
-      "bye_prob_pct": 0.2,
-      "avg_wins": 10.4,
+      "elo_rating": 1617.5594728159674,
+      "playoff_prob_pct": 98.8,
+      "bye_prob_pct": 1.9,
+      "avg_wins": 11.4,
       "current_wins": 9,
       "current_losses": 3,
       "n_scenarios": 10000
     },
     {
+      "team": "Chicago Bears",
+      "conf": "NFC",
+      "elo_rating": 1547.026551166882,
+      "playoff_prob_pct": 96.7,
+      "bye_prob_pct": 1.2,
+      "avg_wins": 11.2,
+      "current_wins": 9,
+      "current_losses": 4,
+      "n_scenarios": 10000
+    },
+    {
+      "team": "Philadelphia Eagles",
+      "conf": "NFC",
+      "elo_rating": 1541.8386426816157,
+      "playoff_prob_pct": 94.3,
+      "bye_prob_pct": 0.5,
+      "avg_wins": 11.0,
+      "current_wins": 8,
+      "current_losses": 4,
+      "n_scenarios": 10000
+    },
+    {
+      "team": "Houston Texans",
+      "conf": "AFC",
+      "elo_rating": 1577.7745293450532,
+      "playoff_prob_pct": 86.5,
+      "bye_prob_pct": 0.0,
+      "avg_wins": 10.2,
+      "current_wins": 7,
+      "current_losses": 5,
+      "n_scenarios": 10000
+    },
+    {
       "team": "Detroit Lions",
       "conf": "NFC",
-      "elo_rating": 1642.376300437812,
-      "playoff_prob_pct": 58.5,
+      "elo_rating": 1566.6701541735515,
+      "playoff_prob_pct": 78.2,
       "bye_prob_pct": 0.0,
-      "avg_wins": 9.6,
+      "avg_wins": 10.0,
       "current_wins": 8,
       "current_losses": 5,
       "n_scenarios": 10000
     },
     {
-      "team": "Tampa Bay Buccaneers",
-      "conf": "NFC",
-      "elo_rating": 1625.319923012215,
-      "playoff_prob_pct": 40.3,
+      "team": "Los Angeles Chargers",
+      "conf": "AFC",
+      "elo_rating": 1529.31673375906,
+      "playoff_prob_pct": 72.3,
       "bye_prob_pct": 0.0,
-      "avg_wins": 9.4,
-      "current_wins": 7,
-      "current_losses": 6,
+      "avg_wins": 10.2,
+      "current_wins": 8,
+      "current_losses": 4,
       "n_scenarios": 10000
     },
     {
       "team": "Indianapolis Colts",
       "conf": "AFC",
-      "elo_rating": 1546.8303403605214,
-      "playoff_prob_pct": 36.4,
+      "elo_rating": 1534.3843415336592,
+      "playoff_prob_pct": 64.6,
       "bye_prob_pct": 0.0,
-      "avg_wins": 9.3,
+      "avg_wins": 9.7,
       "current_wins": 8,
       "current_losses": 5,
       "n_scenarios": 10000
@@ -956,10 +865,10 @@
     {
       "team": "Kansas City Chiefs",
       "conf": "AFC",
-      "elo_rating": 1657.7484731699274,
-      "playoff_prob_pct": 34.0,
+      "elo_rating": 1552.3072659495451,
+      "playoff_prob_pct": 49.2,
       "bye_prob_pct": 0.0,
-      "avg_wins": 8.5,
+      "avg_wins": 9.1,
       "current_wins": 6,
       "current_losses": 6,
       "n_scenarios": 10000
@@ -967,30 +876,41 @@
     {
       "team": "Pittsburgh Steelers",
       "conf": "AFC",
-      "elo_rating": 1572.0934821492845,
-      "playoff_prob_pct": 25.4,
+      "elo_rating": 1496.7002302447638,
+      "playoff_prob_pct": 23.3,
       "bye_prob_pct": 0.0,
-      "avg_wins": 8.7,
+      "avg_wins": 9.1,
       "current_wins": 7,
       "current_losses": 6,
       "n_scenarios": 10000
     },
     {
-      "team": "Miami Dolphins",
-      "conf": "AFC",
-      "elo_rating": 1659.7834540361496,
-      "playoff_prob_pct": 21.4,
+      "team": "Tampa Bay Buccaneers",
+      "conf": "NFC",
+      "elo_rating": 1477.270744429247,
+      "playoff_prob_pct": 16.4,
       "bye_prob_pct": 0.0,
-      "avg_wins": 8.0,
-      "current_wins": 6,
-      "current_losses": 7,
+      "avg_wins": 9.0,
+      "current_wins": 7,
+      "current_losses": 6,
+      "n_scenarios": 10000
+    },
+    {
+      "team": "Carolina Panthers",
+      "conf": "NFC",
+      "elo_rating": 1475.5668610751725,
+      "playoff_prob_pct": 11.5,
+      "bye_prob_pct": 0.0,
+      "avg_wins": 8.9,
+      "current_wins": 7,
+      "current_losses": 6,
       "n_scenarios": 10000
     },
     {
       "team": "Dallas Cowboys",
       "conf": "NFC",
-      "elo_rating": 1645.668507099402,
-      "playoff_prob_pct": 14.5,
+      "elo_rating": 1501.01266705657,
+      "playoff_prob_pct": 5.0,
       "bye_prob_pct": 0.0,
       "avg_wins": 8.3,
       "current_wins": 6,
@@ -998,12 +918,23 @@
       "n_scenarios": 10000
     },
     {
+      "team": "Miami Dolphins",
+      "conf": "AFC",
+      "elo_rating": 1504.794966831629,
+      "playoff_prob_pct": 3.8,
+      "bye_prob_pct": 0.0,
+      "avg_wins": 8.0,
+      "current_wins": 6,
+      "current_losses": 7,
+      "n_scenarios": 10000
+    },
+    {
       "team": "Baltimore Ravens",
       "conf": "AFC",
-      "elo_rating": 1648.66156567694,
-      "playoff_prob_pct": 10.7,
+      "elo_rating": 1466.2668581224616,
+      "playoff_prob_pct": 1.1,
       "bye_prob_pct": 0.0,
-      "avg_wins": 7.8,
+      "avg_wins": 7.5,
       "current_wins": 6,
       "current_losses": 7,
       "n_scenarios": 10000
@@ -1011,32 +942,21 @@
     {
       "team": "Minnesota Vikings",
       "conf": "NFC",
-      "elo_rating": 1771.8787946655852,
-      "playoff_prob_pct": 10.3,
+      "elo_rating": 1452.4120577598399,
+      "playoff_prob_pct": 0.0,
       "bye_prob_pct": 0.0,
-      "avg_wins": 7.9,
+      "avg_wins": 6.7,
       "current_wins": 5,
       "current_losses": 8,
       "n_scenarios": 10000
     },
     {
-      "team": "Carolina Panthers",
-      "conf": "NFC",
-      "elo_rating": 1508.0406859581735,
-      "playoff_prob_pct": 7.6,
-      "bye_prob_pct": 0.0,
-      "avg_wins": 8.4,
-      "current_wins": 7,
-      "current_losses": 6,
-      "n_scenarios": 10000
-    },
-    {
       "team": "Cincinnati Bengals",
       "conf": "AFC",
-      "elo_rating": 1715.3721903090357,
-      "playoff_prob_pct": 0.9,
+      "elo_rating": 1423.1391633342937,
+      "playoff_prob_pct": 0.0,
       "bye_prob_pct": 0.0,
-      "avg_wins": 6.8,
+      "avg_wins": 6.0,
       "current_wins": 4,
       "current_losses": 9,
       "n_scenarios": 10000
@@ -1044,10 +964,10 @@
     {
       "team": "Atlanta Falcons",
       "conf": "NFC",
-      "elo_rating": 1553.8500651281586,
+      "elo_rating": 1425.268551548865,
       "playoff_prob_pct": 0.0,
       "bye_prob_pct": 0.0,
-      "avg_wins": 5.8,
+      "avg_wins": 5.7,
       "current_wins": 4,
       "current_losses": 9,
       "n_scenarios": 10000
@@ -1055,43 +975,10 @@
     {
       "team": "New Orleans Saints",
       "conf": "NFC",
-      "elo_rating": 1506.0230327182815,
+      "elo_rating": 1399.267021230499,
       "playoff_prob_pct": 0.0,
       "bye_prob_pct": 0.0,
-      "avg_wins": 4.7,
-      "current_wins": 3,
-      "current_losses": 10,
-      "n_scenarios": 10000
-    },
-    {
-      "team": "Cleveland Browns",
-      "conf": "AFC",
-      "elo_rating": 1558.8956457062066,
-      "playoff_prob_pct": 0.0,
-      "bye_prob_pct": 0.0,
-      "avg_wins": 4.5,
-      "current_wins": 3,
-      "current_losses": 10,
-      "n_scenarios": 10000
-    },
-    {
-      "team": "Tennessee Titans",
-      "conf": "AFC",
-      "elo_rating": 1675.603636727139,
-      "playoff_prob_pct": 0.0,
-      "bye_prob_pct": 0.0,
-      "avg_wins": 4.3,
-      "current_wins": 2,
-      "current_losses": 11,
-      "n_scenarios": 10000
-    },
-    {
-      "team": "New York Jets",
-      "conf": "AFC",
-      "elo_rating": 1513.2982857249485,
-      "playoff_prob_pct": 0.0,
-      "bye_prob_pct": 0.0,
-      "avg_wins": 4.2,
+      "avg_wins": 5.0,
       "current_wins": 3,
       "current_losses": 10,
       "n_scenarios": 10000
@@ -1099,10 +986,10 @@
     {
       "team": "Arizona Cardinals",
       "conf": "NFC",
-      "elo_rating": 1495.3314603709596,
+      "elo_rating": 1414.9477054715019,
       "playoff_prob_pct": 0.0,
       "bye_prob_pct": 0.0,
-      "avg_wins": 4.0,
+      "avg_wins": 4.4,
       "current_wins": 3,
       "current_losses": 10,
       "n_scenarios": 10000
@@ -1110,7 +997,29 @@
     {
       "team": "Washington Commanders",
       "conf": "NFC",
-      "elo_rating": 1466.4186674021414,
+      "elo_rating": 1385.2589073318186,
+      "playoff_prob_pct": 0.0,
+      "bye_prob_pct": 0.0,
+      "avg_wins": 4.4,
+      "current_wins": 3,
+      "current_losses": 10,
+      "n_scenarios": 10000
+    },
+    {
+      "team": "Cleveland Browns",
+      "conf": "AFC",
+      "elo_rating": 1391.2301482773378,
+      "playoff_prob_pct": 0.0,
+      "bye_prob_pct": 0.0,
+      "avg_wins": 4.3,
+      "current_wins": 3,
+      "current_losses": 10,
+      "n_scenarios": 10000
+    },
+    {
+      "team": "New York Jets",
+      "conf": "AFC",
+      "elo_rating": 1370.5292464034799,
       "playoff_prob_pct": 0.0,
       "bye_prob_pct": 0.0,
       "avg_wins": 4.0,
@@ -1119,26 +1028,280 @@
       "n_scenarios": 10000
     },
     {
-      "team": "Las Vegas Raiders",
-      "conf": "AFC",
-      "elo_rating": 1616.1620344967196,
+      "team": "New York Giants",
+      "conf": "NFC",
+      "elo_rating": 1378.06238222746,
       "playoff_prob_pct": 0.0,
       "bye_prob_pct": 0.0,
-      "avg_wins": 3.8,
+      "avg_wins": 3.9,
       "current_wins": 2,
       "current_losses": 11,
       "n_scenarios": 10000
     },
     {
-      "team": "New York Giants",
-      "conf": "NFC",
-      "elo_rating": 1509.4770582185163,
+      "team": "Las Vegas Raiders",
+      "conf": "AFC",
+      "elo_rating": 1343.7669983983355,
       "playoff_prob_pct": 0.0,
       "bye_prob_pct": 0.0,
-      "avg_wins": 3.5,
+      "avg_wins": 3.2,
+      "current_wins": 2,
+      "current_losses": 11,
+      "n_scenarios": 10000
+    },
+    {
+      "team": "Tennessee Titans",
+      "conf": "AFC",
+      "elo_rating": 1332.8183522685888,
+      "playoff_prob_pct": 0.0,
+      "bye_prob_pct": 0.0,
+      "avg_wins": 3.1,
       "current_wins": 2,
       "current_losses": 11,
       "n_scenarios": 10000
     }
-  ]
+  ],
+  "historical_games_count": 206,
+  "division_standings": {
+    "AFC East": [
+      {
+        "team": "New England Patriots",
+        "wins": 11,
+        "losses": 2,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Buffalo Bills",
+        "wins": 9,
+        "losses": 4,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Miami Dolphins",
+        "wins": 6,
+        "losses": 7,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "New York Jets",
+        "wins": 3,
+        "losses": 10,
+        "ties": 0,
+        "conf": "AFC"
+      }
+    ],
+    "AFC North": [
+      {
+        "team": "Pittsburgh Steelers",
+        "wins": 7,
+        "losses": 6,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Baltimore Ravens",
+        "wins": 6,
+        "losses": 7,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Cincinnati Bengals",
+        "wins": 4,
+        "losses": 9,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Cleveland Browns",
+        "wins": 3,
+        "losses": 10,
+        "ties": 0,
+        "conf": "AFC"
+      }
+    ],
+    "AFC South": [
+      {
+        "team": "Jacksonville Jaguars",
+        "wins": 9,
+        "losses": 4,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Indianapolis Colts",
+        "wins": 8,
+        "losses": 5,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Houston Texans",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Tennessee Titans",
+        "wins": 2,
+        "losses": 11,
+        "ties": 0,
+        "conf": "AFC"
+      }
+    ],
+    "AFC West": [
+      {
+        "team": "Denver Broncos",
+        "wins": 11,
+        "losses": 2,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Los Angeles Chargers",
+        "wins": 8,
+        "losses": 4,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Kansas City Chiefs",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "conf": "AFC"
+      },
+      {
+        "team": "Las Vegas Raiders",
+        "wins": 2,
+        "losses": 11,
+        "ties": 0,
+        "conf": "AFC"
+      }
+    ],
+    "NFC East": [
+      {
+        "team": "Philadelphia Eagles",
+        "wins": 8,
+        "losses": 4,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "Dallas Cowboys",
+        "wins": 6,
+        "losses": 6,
+        "ties": 1,
+        "conf": "NFC"
+      },
+      {
+        "team": "Washington Commanders",
+        "wins": 3,
+        "losses": 10,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "New York Giants",
+        "wins": 2,
+        "losses": 11,
+        "ties": 0,
+        "conf": "NFC"
+      }
+    ],
+    "NFC North": [
+      {
+        "team": "Green Bay Packers",
+        "wins": 9,
+        "losses": 3,
+        "ties": 1,
+        "conf": "NFC"
+      },
+      {
+        "team": "Chicago Bears",
+        "wins": 9,
+        "losses": 4,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "Detroit Lions",
+        "wins": 8,
+        "losses": 5,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "Minnesota Vikings",
+        "wins": 5,
+        "losses": 8,
+        "ties": 0,
+        "conf": "NFC"
+      }
+    ],
+    "NFC South": [
+      {
+        "team": "Tampa Bay Buccaneers",
+        "wins": 7,
+        "losses": 6,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "Carolina Panthers",
+        "wins": 7,
+        "losses": 6,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "Atlanta Falcons",
+        "wins": 4,
+        "losses": 9,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "New Orleans Saints",
+        "wins": 3,
+        "losses": 10,
+        "ties": 0,
+        "conf": "NFC"
+      }
+    ],
+    "NFC West": [
+      {
+        "team": "Los Angeles Rams",
+        "wins": 10,
+        "losses": 3,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "Seattle Seahawks",
+        "wins": 10,
+        "losses": 3,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "San Francisco 49ers",
+        "wins": 9,
+        "losses": 4,
+        "ties": 0,
+        "conf": "NFC"
+      },
+      {
+        "team": "Arizona Cardinals",
+        "wins": 3,
+        "losses": 10,
+        "ties": 0,
+        "conf": "NFC"
+      }
+    ]
+  }
 }

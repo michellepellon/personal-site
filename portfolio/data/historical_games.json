@@ -1,0 +1,2318 @@
+[
+  {
+    "week": 1,
+    "home_team": "Philadelphia Eagles",
+    "visiting_team": "Dallas Cowboys",
+    "status": "post",
+    "game_id": "401772510",
+    "home_score": 24,
+    "away_score": 20
+  },
+  {
+    "week": 1,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Kansas City Chiefs",
+    "status": "post",
+    "game_id": "401772714",
+    "home_score": 27,
+    "away_score": 21
+  },
+  {
+    "week": 1,
+    "home_team": "Atlanta Falcons",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "post",
+    "game_id": "401772830",
+    "home_score": 20,
+    "away_score": 23
+  },
+  {
+    "week": 1,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "Cincinnati Bengals",
+    "status": "post",
+    "game_id": "401772829",
+    "home_score": 16,
+    "away_score": 17
+  },
+  {
+    "week": 1,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "Miami Dolphins",
+    "status": "post",
+    "game_id": "401772719",
+    "home_score": 33,
+    "away_score": 8
+  },
+  {
+    "week": 1,
+    "home_team": "New England Patriots",
+    "visiting_team": "Las Vegas Raiders",
+    "status": "post",
+    "game_id": "401772720",
+    "home_score": 13,
+    "away_score": 20
+  },
+  {
+    "week": 1,
+    "home_team": "New Orleans Saints",
+    "visiting_team": "Arizona Cardinals",
+    "status": "post",
+    "game_id": "401772718",
+    "home_score": 13,
+    "away_score": 20
+  },
+  {
+    "week": 1,
+    "home_team": "New York Jets",
+    "visiting_team": "Pittsburgh Steelers",
+    "status": "post",
+    "game_id": "401772721",
+    "home_score": 32,
+    "away_score": 34
+  },
+  {
+    "week": 1,
+    "home_team": "Washington Commanders",
+    "visiting_team": "New York Giants",
+    "status": "post",
+    "game_id": "401772827",
+    "home_score": 21,
+    "away_score": 6
+  },
+  {
+    "week": 1,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "Carolina Panthers",
+    "status": "post",
+    "game_id": "401772828",
+    "home_score": 26,
+    "away_score": 10
+  },
+  {
+    "week": 1,
+    "home_team": "Denver Broncos",
+    "visiting_team": "Tennessee Titans",
+    "status": "post",
+    "game_id": "401772832",
+    "home_score": 20,
+    "away_score": 12
+  },
+  {
+    "week": 1,
+    "home_team": "Seattle Seahawks",
+    "visiting_team": "San Francisco 49ers",
+    "status": "post",
+    "game_id": "401772831",
+    "home_score": 13,
+    "away_score": 17
+  },
+  {
+    "week": 1,
+    "home_team": "Green Bay Packers",
+    "visiting_team": "Detroit Lions",
+    "status": "post",
+    "game_id": "401772722",
+    "home_score": 27,
+    "away_score": 13
+  },
+  {
+    "week": 1,
+    "home_team": "Los Angeles Rams",
+    "visiting_team": "Houston Texans",
+    "status": "post",
+    "game_id": "401772723",
+    "home_score": 14,
+    "away_score": 9
+  },
+  {
+    "week": 1,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "Baltimore Ravens",
+    "status": "post",
+    "game_id": "401772918",
+    "home_score": 41,
+    "away_score": 40
+  },
+  {
+    "week": 1,
+    "home_team": "Chicago Bears",
+    "visiting_team": "Minnesota Vikings",
+    "status": "post",
+    "game_id": "401772810",
+    "home_score": 24,
+    "away_score": 27
+  },
+  {
+    "week": 2,
+    "home_team": "Green Bay Packers",
+    "visiting_team": "Washington Commanders",
+    "status": "post",
+    "game_id": "401772936",
+    "home_score": 27,
+    "away_score": 18
+  },
+  {
+    "week": 2,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "Jacksonville Jaguars",
+    "status": "post",
+    "game_id": "401772725",
+    "home_score": 31,
+    "away_score": 27
+  },
+  {
+    "week": 2,
+    "home_team": "Dallas Cowboys",
+    "visiting_team": "New York Giants",
+    "status": "post",
+    "game_id": "401772834",
+    "home_score": 40,
+    "away_score": 37
+  },
+  {
+    "week": 2,
+    "home_team": "Detroit Lions",
+    "visiting_team": "Chicago Bears",
+    "status": "post",
+    "game_id": "401772835",
+    "home_score": 52,
+    "away_score": 21
+  },
+  {
+    "week": 2,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "Los Angeles Rams",
+    "status": "post",
+    "game_id": "401772724",
+    "home_score": 19,
+    "away_score": 33
+  },
+  {
+    "week": 2,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "New England Patriots",
+    "status": "post",
+    "game_id": "401772728",
+    "home_score": 27,
+    "away_score": 33
+  },
+  {
+    "week": 2,
+    "home_team": "New Orleans Saints",
+    "visiting_team": "San Francisco 49ers",
+    "status": "post",
+    "game_id": "401772833",
+    "home_score": 21,
+    "away_score": 26
+  },
+  {
+    "week": 2,
+    "home_team": "New York Jets",
+    "visiting_team": "Buffalo Bills",
+    "status": "post",
+    "game_id": "401772727",
+    "home_score": 10,
+    "away_score": 30
+  },
+  {
+    "week": 2,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Seattle Seahawks",
+    "status": "post",
+    "game_id": "401772836",
+    "home_score": 17,
+    "away_score": 31
+  },
+  {
+    "week": 2,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "Cleveland Browns",
+    "status": "post",
+    "game_id": "401772726",
+    "home_score": 41,
+    "away_score": 17
+  },
+  {
+    "week": 2,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "Denver Broncos",
+    "status": "post",
+    "game_id": "401772729",
+    "home_score": 29,
+    "away_score": 28
+  },
+  {
+    "week": 2,
+    "home_team": "Arizona Cardinals",
+    "visiting_team": "Carolina Panthers",
+    "status": "post",
+    "game_id": "401772730",
+    "home_score": 27,
+    "away_score": 22
+  },
+  {
+    "week": 2,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "post",
+    "game_id": "401772837",
+    "home_score": 17,
+    "away_score": 20
+  },
+  {
+    "week": 2,
+    "home_team": "Minnesota Vikings",
+    "visiting_team": "Atlanta Falcons",
+    "status": "post",
+    "game_id": "401772919",
+    "home_score": 6,
+    "away_score": 22
+  },
+  {
+    "week": 2,
+    "home_team": "Houston Texans",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "post",
+    "game_id": "401772715",
+    "home_score": 19,
+    "away_score": 20
+  },
+  {
+    "week": 2,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "Los Angeles Chargers",
+    "status": "post",
+    "game_id": "401772811",
+    "home_score": 9,
+    "away_score": 20
+  },
+  {
+    "week": 3,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "Miami Dolphins",
+    "status": "post",
+    "game_id": "401772937",
+    "home_score": 31,
+    "away_score": 21
+  },
+  {
+    "week": 3,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "Green Bay Packers",
+    "status": "post",
+    "game_id": "401772842",
+    "home_score": 13,
+    "away_score": 10
+  },
+  {
+    "week": 3,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "Indianapolis Colts",
+    "status": "post",
+    "game_id": "401772733",
+    "home_score": 20,
+    "away_score": 41
+  },
+  {
+    "week": 3,
+    "home_team": "Minnesota Vikings",
+    "visiting_team": "Cincinnati Bengals",
+    "status": "post",
+    "game_id": "401772731",
+    "home_score": 48,
+    "away_score": 10
+  },
+  {
+    "week": 3,
+    "home_team": "New England Patriots",
+    "visiting_team": "Pittsburgh Steelers",
+    "status": "post",
+    "game_id": "401772732",
+    "home_score": 14,
+    "away_score": 21
+  },
+  {
+    "week": 3,
+    "home_team": "Philadelphia Eagles",
+    "visiting_team": "Los Angeles Rams",
+    "status": "post",
+    "game_id": "401772839",
+    "home_score": 33,
+    "away_score": 26
+  },
+  {
+    "week": 3,
+    "home_team": "Tampa Bay Buccaneers",
+    "visiting_team": "New York Jets",
+    "status": "post",
+    "game_id": "401772840",
+    "home_score": 29,
+    "away_score": 27
+  },
+  {
+    "week": 3,
+    "home_team": "Washington Commanders",
+    "visiting_team": "Las Vegas Raiders",
+    "status": "post",
+    "game_id": "401772841",
+    "home_score": 41,
+    "away_score": 24
+  },
+  {
+    "week": 3,
+    "home_team": "Carolina Panthers",
+    "visiting_team": "Atlanta Falcons",
+    "status": "post",
+    "game_id": "401772838",
+    "home_score": 30,
+    "away_score": 0
+  },
+  {
+    "week": 3,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "Houston Texans",
+    "status": "post",
+    "game_id": "401772734",
+    "home_score": 17,
+    "away_score": 10
+  },
+  {
+    "week": 3,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Denver Broncos",
+    "status": "post",
+    "game_id": "401772735",
+    "home_score": 23,
+    "away_score": 20
+  },
+  {
+    "week": 3,
+    "home_team": "Seattle Seahawks",
+    "visiting_team": "New Orleans Saints",
+    "status": "post",
+    "game_id": "401772736",
+    "home_score": 44,
+    "away_score": 13
+  },
+  {
+    "week": 3,
+    "home_team": "Chicago Bears",
+    "visiting_team": "Dallas Cowboys",
+    "status": "post",
+    "game_id": "401772844",
+    "home_score": 31,
+    "away_score": 14
+  },
+  {
+    "week": 3,
+    "home_team": "San Francisco 49ers",
+    "visiting_team": "Arizona Cardinals",
+    "status": "post",
+    "game_id": "401772843",
+    "home_score": 16,
+    "away_score": 15
+  },
+  {
+    "week": 3,
+    "home_team": "New York Giants",
+    "visiting_team": "Kansas City Chiefs",
+    "status": "post",
+    "game_id": "401772920",
+    "home_score": 9,
+    "away_score": 22
+  },
+  {
+    "week": 3,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "Detroit Lions",
+    "status": "post",
+    "game_id": "401772812",
+    "home_score": 30,
+    "away_score": 38
+  },
+  {
+    "week": 4,
+    "home_team": "Arizona Cardinals",
+    "visiting_team": "Seattle Seahawks",
+    "status": "post",
+    "game_id": "401772938",
+    "home_score": 20,
+    "away_score": 23
+  },
+  {
+    "week": 4,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Minnesota Vikings",
+    "status": "post",
+    "game_id": "401772632",
+    "home_score": 24,
+    "away_score": 21
+  },
+  {
+    "week": 4,
+    "home_team": "Atlanta Falcons",
+    "visiting_team": "Washington Commanders",
+    "status": "post",
+    "game_id": "401772739",
+    "home_score": 34,
+    "away_score": 27
+  },
+  {
+    "week": 4,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "New Orleans Saints",
+    "status": "post",
+    "game_id": "401772740",
+    "home_score": 31,
+    "away_score": 19
+  },
+  {
+    "week": 4,
+    "home_team": "Detroit Lions",
+    "visiting_team": "Cleveland Browns",
+    "status": "post",
+    "game_id": "401772846",
+    "home_score": 34,
+    "away_score": 10
+  },
+  {
+    "week": 4,
+    "home_team": "New England Patriots",
+    "visiting_team": "Carolina Panthers",
+    "status": "post",
+    "game_id": "401772847",
+    "home_score": 42,
+    "away_score": 13
+  },
+  {
+    "week": 4,
+    "home_team": "New York Giants",
+    "visiting_team": "Los Angeles Chargers",
+    "status": "post",
+    "game_id": "401772737",
+    "home_score": 21,
+    "away_score": 18
+  },
+  {
+    "week": 4,
+    "home_team": "Tampa Bay Buccaneers",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "post",
+    "game_id": "401772845",
+    "home_score": 25,
+    "away_score": 31
+  },
+  {
+    "week": 4,
+    "home_team": "Houston Texans",
+    "visiting_team": "Tennessee Titans",
+    "status": "post",
+    "game_id": "401772738",
+    "home_score": 26,
+    "away_score": 0
+  },
+  {
+    "week": 4,
+    "home_team": "Los Angeles Rams",
+    "visiting_team": "Indianapolis Colts",
+    "status": "post",
+    "game_id": "401772849",
+    "home_score": 27,
+    "away_score": 20
+  },
+  {
+    "week": 4,
+    "home_team": "San Francisco 49ers",
+    "visiting_team": "Jacksonville Jaguars",
+    "status": "post",
+    "game_id": "401772848",
+    "home_score": 21,
+    "away_score": 26
+  },
+  {
+    "week": 4,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Baltimore Ravens",
+    "status": "post",
+    "game_id": "401772741",
+    "home_score": 37,
+    "away_score": 20
+  },
+  {
+    "week": 4,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "Chicago Bears",
+    "status": "post",
+    "game_id": "401772742",
+    "home_score": 24,
+    "away_score": 25
+  },
+  {
+    "week": 4,
+    "home_team": "Dallas Cowboys",
+    "visiting_team": "Green Bay Packers",
+    "status": "post",
+    "game_id": "401772921",
+    "home_score": 40,
+    "away_score": 40
+  },
+  {
+    "week": 4,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "New York Jets",
+    "status": "post",
+    "game_id": "401772813",
+    "home_score": 27,
+    "away_score": 21
+  },
+  {
+    "week": 4,
+    "home_team": "Denver Broncos",
+    "visiting_team": "Cincinnati Bengals",
+    "status": "post",
+    "game_id": "401772716",
+    "home_score": 28,
+    "away_score": 3
+  },
+  {
+    "week": 5,
+    "home_team": "Los Angeles Rams",
+    "visiting_team": "San Francisco 49ers",
+    "status": "post",
+    "game_id": "401772939",
+    "home_score": 23,
+    "away_score": 26
+  },
+  {
+    "week": 5,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "Minnesota Vikings",
+    "status": "post",
+    "game_id": "401772633",
+    "home_score": 17,
+    "away_score": 21
+  },
+  {
+    "week": 5,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "Las Vegas Raiders",
+    "status": "post",
+    "game_id": "401772851",
+    "home_score": 40,
+    "away_score": 6
+  },
+  {
+    "week": 5,
+    "home_team": "New Orleans Saints",
+    "visiting_team": "New York Giants",
+    "status": "post",
+    "game_id": "401772744",
+    "home_score": 26,
+    "away_score": 14
+  },
+  {
+    "week": 5,
+    "home_team": "New York Jets",
+    "visiting_team": "Dallas Cowboys",
+    "status": "post",
+    "game_id": "401772850",
+    "home_score": 22,
+    "away_score": 37
+  },
+  {
+    "week": 5,
+    "home_team": "Philadelphia Eagles",
+    "visiting_team": "Denver Broncos",
+    "status": "post",
+    "game_id": "401772745",
+    "home_score": 17,
+    "away_score": 21
+  },
+  {
+    "week": 5,
+    "home_team": "Carolina Panthers",
+    "visiting_team": "Miami Dolphins",
+    "status": "post",
+    "game_id": "401772852",
+    "home_score": 27,
+    "away_score": 24
+  },
+  {
+    "week": 5,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "Houston Texans",
+    "status": "post",
+    "game_id": "401772743",
+    "home_score": 10,
+    "away_score": 44
+  },
+  {
+    "week": 5,
+    "home_team": "Arizona Cardinals",
+    "visiting_team": "Tennessee Titans",
+    "status": "post",
+    "game_id": "401772747",
+    "home_score": 21,
+    "away_score": 22
+  },
+  {
+    "week": 5,
+    "home_team": "Seattle Seahawks",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "post",
+    "game_id": "401772746",
+    "home_score": 35,
+    "away_score": 38
+  },
+  {
+    "week": 5,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "Detroit Lions",
+    "status": "post",
+    "game_id": "401772854",
+    "home_score": 24,
+    "away_score": 37
+  },
+  {
+    "week": 5,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Washington Commanders",
+    "status": "post",
+    "game_id": "401772853",
+    "home_score": 10,
+    "away_score": 27
+  },
+  {
+    "week": 5,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "New England Patriots",
+    "status": "post",
+    "game_id": "401772922",
+    "home_score": 20,
+    "away_score": 23
+  },
+  {
+    "week": 5,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "Kansas City Chiefs",
+    "status": "post",
+    "game_id": "401772814",
+    "home_score": 31,
+    "away_score": 28
+  },
+  {
+    "week": 6,
+    "home_team": "New York Giants",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "post",
+    "game_id": "401772940",
+    "home_score": 34,
+    "away_score": 17
+  },
+  {
+    "week": 6,
+    "home_team": "New York Jets",
+    "visiting_team": "Denver Broncos",
+    "status": "post",
+    "game_id": "401772634",
+    "home_score": 11,
+    "away_score": 13
+  },
+  {
+    "week": 6,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "Arizona Cardinals",
+    "status": "post",
+    "game_id": "401772856",
+    "home_score": 31,
+    "away_score": 27
+  },
+  {
+    "week": 6,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "Los Angeles Chargers",
+    "status": "post",
+    "game_id": "401772750",
+    "home_score": 27,
+    "away_score": 29
+  },
+  {
+    "week": 6,
+    "home_team": "New Orleans Saints",
+    "visiting_team": "New England Patriots",
+    "status": "post",
+    "game_id": "401772751",
+    "home_score": 19,
+    "away_score": 25
+  },
+  {
+    "week": 6,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Cleveland Browns",
+    "status": "post",
+    "game_id": "401772748",
+    "home_score": 23,
+    "away_score": 9
+  },
+  {
+    "week": 6,
+    "home_team": "Carolina Panthers",
+    "visiting_team": "Dallas Cowboys",
+    "status": "post",
+    "game_id": "401772858",
+    "home_score": 30,
+    "away_score": 27
+  },
+  {
+    "week": 6,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "Seattle Seahawks",
+    "status": "post",
+    "game_id": "401772857",
+    "home_score": 12,
+    "away_score": 20
+  },
+  {
+    "week": 6,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "Los Angeles Rams",
+    "status": "post",
+    "game_id": "401772855",
+    "home_score": 3,
+    "away_score": 17
+  },
+  {
+    "week": 6,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "Tennessee Titans",
+    "status": "post",
+    "game_id": "401772859",
+    "home_score": 20,
+    "away_score": 10
+  },
+  {
+    "week": 6,
+    "home_team": "Green Bay Packers",
+    "visiting_team": "Cincinnati Bengals",
+    "status": "post",
+    "game_id": "401772752",
+    "home_score": 27,
+    "away_score": 18
+  },
+  {
+    "week": 6,
+    "home_team": "Tampa Bay Buccaneers",
+    "visiting_team": "San Francisco 49ers",
+    "status": "post",
+    "game_id": "401772749",
+    "home_score": 30,
+    "away_score": 19
+  },
+  {
+    "week": 6,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Detroit Lions",
+    "status": "post",
+    "game_id": "401772923",
+    "home_score": 30,
+    "away_score": 17
+  },
+  {
+    "week": 6,
+    "home_team": "Atlanta Falcons",
+    "visiting_team": "Buffalo Bills",
+    "status": "post",
+    "game_id": "401772815",
+    "home_score": 24,
+    "away_score": 14
+  },
+  {
+    "week": 6,
+    "home_team": "Washington Commanders",
+    "visiting_team": "Chicago Bears",
+    "status": "post",
+    "game_id": "401772717",
+    "home_score": 24,
+    "away_score": 25
+  },
+  {
+    "week": 7,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "Pittsburgh Steelers",
+    "status": "post",
+    "game_id": "401772941",
+    "home_score": 33,
+    "away_score": 31
+  },
+  {
+    "week": 7,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "Los Angeles Rams",
+    "status": "post",
+    "game_id": "401772635",
+    "home_score": 7,
+    "away_score": 35
+  },
+  {
+    "week": 7,
+    "home_team": "Chicago Bears",
+    "visiting_team": "New Orleans Saints",
+    "status": "post",
+    "game_id": "401772861",
+    "home_score": 26,
+    "away_score": 14
+  },
+  {
+    "week": 7,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "Miami Dolphins",
+    "status": "post",
+    "game_id": "401772754",
+    "home_score": 31,
+    "away_score": 6
+  },
+  {
+    "week": 7,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "New England Patriots",
+    "status": "post",
+    "game_id": "401772755",
+    "home_score": 13,
+    "away_score": 31
+  },
+  {
+    "week": 7,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Las Vegas Raiders",
+    "status": "post",
+    "game_id": "401772753",
+    "home_score": 31,
+    "away_score": 0
+  },
+  {
+    "week": 7,
+    "home_team": "Minnesota Vikings",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "post",
+    "game_id": "401772862",
+    "home_score": 22,
+    "away_score": 28
+  },
+  {
+    "week": 7,
+    "home_team": "New York Jets",
+    "visiting_team": "Carolina Panthers",
+    "status": "post",
+    "game_id": "401772860",
+    "home_score": 6,
+    "away_score": 13
+  },
+  {
+    "week": 7,
+    "home_team": "Denver Broncos",
+    "visiting_team": "New York Giants",
+    "status": "post",
+    "game_id": "401772757",
+    "home_score": 33,
+    "away_score": 32
+  },
+  {
+    "week": 7,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Indianapolis Colts",
+    "status": "post",
+    "game_id": "401772756",
+    "home_score": 24,
+    "away_score": 38
+  },
+  {
+    "week": 7,
+    "home_team": "Dallas Cowboys",
+    "visiting_team": "Washington Commanders",
+    "status": "post",
+    "game_id": "401772864",
+    "home_score": 44,
+    "away_score": 22
+  },
+  {
+    "week": 7,
+    "home_team": "Arizona Cardinals",
+    "visiting_team": "Green Bay Packers",
+    "status": "post",
+    "game_id": "401772863",
+    "home_score": 23,
+    "away_score": 27
+  },
+  {
+    "week": 7,
+    "home_team": "San Francisco 49ers",
+    "visiting_team": "Atlanta Falcons",
+    "status": "post",
+    "game_id": "401772924",
+    "home_score": 20,
+    "away_score": 10
+  },
+  {
+    "week": 7,
+    "home_team": "Detroit Lions",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "post",
+    "game_id": "401772816",
+    "home_score": 24,
+    "away_score": 9
+  },
+  {
+    "week": 7,
+    "home_team": "Seattle Seahawks",
+    "visiting_team": "Houston Texans",
+    "status": "post",
+    "game_id": "401772826",
+    "home_score": 27,
+    "away_score": 19
+  },
+  {
+    "week": 8,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Minnesota Vikings",
+    "status": "post",
+    "game_id": "401772942",
+    "home_score": 37,
+    "away_score": 10
+  },
+  {
+    "week": 8,
+    "home_team": "Atlanta Falcons",
+    "visiting_team": "Miami Dolphins",
+    "status": "post",
+    "game_id": "401772760",
+    "home_score": 10,
+    "away_score": 34
+  },
+  {
+    "week": 8,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "New York Jets",
+    "status": "post",
+    "game_id": "401772758",
+    "home_score": 38,
+    "away_score": 39
+  },
+  {
+    "week": 8,
+    "home_team": "New England Patriots",
+    "visiting_team": "Cleveland Browns",
+    "status": "post",
+    "game_id": "401772868",
+    "home_score": 32,
+    "away_score": 13
+  },
+  {
+    "week": 8,
+    "home_team": "Philadelphia Eagles",
+    "visiting_team": "New York Giants",
+    "status": "post",
+    "game_id": "401772867",
+    "home_score": 38,
+    "away_score": 20
+  },
+  {
+    "week": 8,
+    "home_team": "Carolina Panthers",
+    "visiting_team": "Buffalo Bills",
+    "status": "post",
+    "game_id": "401772865",
+    "home_score": 9,
+    "away_score": 40
+  },
+  {
+    "week": 8,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "Chicago Bears",
+    "status": "post",
+    "game_id": "401772759",
+    "home_score": 30,
+    "away_score": 16
+  },
+  {
+    "week": 8,
+    "home_team": "Houston Texans",
+    "visiting_team": "San Francisco 49ers",
+    "status": "post",
+    "game_id": "401772866",
+    "home_score": 26,
+    "away_score": 15
+  },
+  {
+    "week": 8,
+    "home_team": "New Orleans Saints",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "post",
+    "game_id": "401772869",
+    "home_score": 3,
+    "away_score": 23
+  },
+  {
+    "week": 8,
+    "home_team": "Denver Broncos",
+    "visiting_team": "Dallas Cowboys",
+    "status": "post",
+    "game_id": "401772762",
+    "home_score": 44,
+    "away_score": 24
+  },
+  {
+    "week": 8,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "Tennessee Titans",
+    "status": "post",
+    "game_id": "401772761",
+    "home_score": 38,
+    "away_score": 14
+  },
+  {
+    "week": 8,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Green Bay Packers",
+    "status": "post",
+    "game_id": "401772925",
+    "home_score": 25,
+    "away_score": 35
+  },
+  {
+    "week": 8,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Washington Commanders",
+    "status": "post",
+    "game_id": "401772817",
+    "home_score": 28,
+    "away_score": 7
+  },
+  {
+    "week": 9,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "Baltimore Ravens",
+    "status": "post",
+    "game_id": "401772943",
+    "home_score": 6,
+    "away_score": 28
+  },
+  {
+    "week": 9,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "Chicago Bears",
+    "status": "post",
+    "game_id": "401772765",
+    "home_score": 42,
+    "away_score": 47
+  },
+  {
+    "week": 9,
+    "home_team": "Detroit Lions",
+    "visiting_team": "Minnesota Vikings",
+    "status": "post",
+    "game_id": "401772871",
+    "home_score": 24,
+    "away_score": 27
+  },
+  {
+    "week": 9,
+    "home_team": "Green Bay Packers",
+    "visiting_team": "Carolina Panthers",
+    "status": "post",
+    "game_id": "401772872",
+    "home_score": 13,
+    "away_score": 16
+  },
+  {
+    "week": 9,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "Los Angeles Chargers",
+    "status": "post",
+    "game_id": "401772764",
+    "home_score": 20,
+    "away_score": 27
+  },
+  {
+    "week": 9,
+    "home_team": "New England Patriots",
+    "visiting_team": "Atlanta Falcons",
+    "status": "post",
+    "game_id": "401772763",
+    "home_score": 24,
+    "away_score": 23
+  },
+  {
+    "week": 9,
+    "home_team": "New York Giants",
+    "visiting_team": "San Francisco 49ers",
+    "status": "post",
+    "game_id": "401772767",
+    "home_score": 24,
+    "away_score": 34
+  },
+  {
+    "week": 9,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Indianapolis Colts",
+    "status": "post",
+    "game_id": "401772766",
+    "home_score": 27,
+    "away_score": 20
+  },
+  {
+    "week": 9,
+    "home_team": "Houston Texans",
+    "visiting_team": "Denver Broncos",
+    "status": "post",
+    "game_id": "401772870",
+    "home_score": 15,
+    "away_score": 18
+  },
+  {
+    "week": 9,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "Jacksonville Jaguars",
+    "status": "post",
+    "game_id": "401772873",
+    "home_score": 29,
+    "away_score": 30
+  },
+  {
+    "week": 9,
+    "home_team": "Los Angeles Rams",
+    "visiting_team": "New Orleans Saints",
+    "status": "post",
+    "game_id": "401772874",
+    "home_score": 34,
+    "away_score": 10
+  },
+  {
+    "week": 9,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "Kansas City Chiefs",
+    "status": "post",
+    "game_id": "401772768",
+    "home_score": 28,
+    "away_score": 21
+  },
+  {
+    "week": 9,
+    "home_team": "Washington Commanders",
+    "visiting_team": "Seattle Seahawks",
+    "status": "post",
+    "game_id": "401772926",
+    "home_score": 14,
+    "away_score": 38
+  },
+  {
+    "week": 9,
+    "home_team": "Dallas Cowboys",
+    "visiting_team": "Arizona Cardinals",
+    "status": "post",
+    "game_id": "401772818",
+    "home_score": 17,
+    "away_score": 27
+  },
+  {
+    "week": 10,
+    "home_team": "Denver Broncos",
+    "visiting_team": "Las Vegas Raiders",
+    "status": "post",
+    "game_id": "401772944",
+    "home_score": 10,
+    "away_score": 7
+  },
+  {
+    "week": 10,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "Atlanta Falcons",
+    "status": "post",
+    "game_id": "401772636",
+    "home_score": 31,
+    "away_score": 25
+  },
+  {
+    "week": 10,
+    "home_team": "Chicago Bears",
+    "visiting_team": "New York Giants",
+    "status": "post",
+    "game_id": "401772875",
+    "home_score": 24,
+    "away_score": 20
+  },
+  {
+    "week": 10,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "Buffalo Bills",
+    "status": "post",
+    "game_id": "401772771",
+    "home_score": 30,
+    "away_score": 13
+  },
+  {
+    "week": 10,
+    "home_team": "Minnesota Vikings",
+    "visiting_team": "Baltimore Ravens",
+    "status": "post",
+    "game_id": "401772876",
+    "home_score": 19,
+    "away_score": 27
+  },
+  {
+    "week": 10,
+    "home_team": "New York Jets",
+    "visiting_team": "Cleveland Browns",
+    "status": "post",
+    "game_id": "401772769",
+    "home_score": 27,
+    "away_score": 20
+  },
+  {
+    "week": 10,
+    "home_team": "Tampa Bay Buccaneers",
+    "visiting_team": "New England Patriots",
+    "status": "post",
+    "game_id": "401772772",
+    "home_score": 23,
+    "away_score": 28
+  },
+  {
+    "week": 10,
+    "home_team": "Carolina Panthers",
+    "visiting_team": "New Orleans Saints",
+    "status": "post",
+    "game_id": "401772877",
+    "home_score": 7,
+    "away_score": 17
+  },
+  {
+    "week": 10,
+    "home_team": "Houston Texans",
+    "visiting_team": "Jacksonville Jaguars",
+    "status": "post",
+    "game_id": "401772770",
+    "home_score": 36,
+    "away_score": 29
+  },
+  {
+    "week": 10,
+    "home_team": "Seattle Seahawks",
+    "visiting_team": "Arizona Cardinals",
+    "status": "post",
+    "game_id": "401772773",
+    "home_score": 44,
+    "away_score": 22
+  },
+  {
+    "week": 10,
+    "home_team": "San Francisco 49ers",
+    "visiting_team": "Los Angeles Rams",
+    "status": "post",
+    "game_id": "401772879",
+    "home_score": 26,
+    "away_score": 42
+  },
+  {
+    "week": 10,
+    "home_team": "Washington Commanders",
+    "visiting_team": "Detroit Lions",
+    "status": "post",
+    "game_id": "401772878",
+    "home_score": 22,
+    "away_score": 44
+  },
+  {
+    "week": 10,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Pittsburgh Steelers",
+    "status": "post",
+    "game_id": "401772927",
+    "home_score": 25,
+    "away_score": 10
+  },
+  {
+    "week": 10,
+    "home_team": "Green Bay Packers",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "post",
+    "game_id": "401772630",
+    "home_score": 7,
+    "away_score": 10
+  },
+  {
+    "week": 11,
+    "home_team": "New England Patriots",
+    "visiting_team": "New York Jets",
+    "status": "post",
+    "game_id": "401772945",
+    "home_score": 27,
+    "away_score": 14
+  },
+  {
+    "week": 11,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "Washington Commanders",
+    "status": "post",
+    "game_id": "401772631",
+    "home_score": 16,
+    "away_score": 13
+  },
+  {
+    "week": 11,
+    "home_team": "Atlanta Falcons",
+    "visiting_team": "Carolina Panthers",
+    "status": "post",
+    "game_id": "401772882",
+    "home_score": 27,
+    "away_score": 30
+  },
+  {
+    "week": 11,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "post",
+    "game_id": "401772776",
+    "home_score": 44,
+    "away_score": 32
+  },
+  {
+    "week": 11,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "Houston Texans",
+    "status": "post",
+    "game_id": "401772881",
+    "home_score": 13,
+    "away_score": 16
+  },
+  {
+    "week": 11,
+    "home_team": "Minnesota Vikings",
+    "visiting_team": "Chicago Bears",
+    "status": "post",
+    "game_id": "401772880",
+    "home_score": 17,
+    "away_score": 19
+  },
+  {
+    "week": 11,
+    "home_team": "New York Giants",
+    "visiting_team": "Green Bay Packers",
+    "status": "post",
+    "game_id": "401772883",
+    "home_score": 20,
+    "away_score": 27
+  },
+  {
+    "week": 11,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Cincinnati Bengals",
+    "status": "post",
+    "game_id": "401772774",
+    "home_score": 34,
+    "away_score": 12
+  },
+  {
+    "week": 11,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "Los Angeles Chargers",
+    "status": "post",
+    "game_id": "401772775",
+    "home_score": 35,
+    "away_score": 6
+  },
+  {
+    "week": 11,
+    "home_team": "Los Angeles Rams",
+    "visiting_team": "Seattle Seahawks",
+    "status": "post",
+    "game_id": "401772884",
+    "home_score": 21,
+    "away_score": 19
+  },
+  {
+    "week": 11,
+    "home_team": "Arizona Cardinals",
+    "visiting_team": "San Francisco 49ers",
+    "status": "post",
+    "game_id": "401772885",
+    "home_score": 22,
+    "away_score": 41
+  },
+  {
+    "week": 11,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "Baltimore Ravens",
+    "status": "post",
+    "game_id": "401772777",
+    "home_score": 16,
+    "away_score": 23
+  },
+  {
+    "week": 11,
+    "home_team": "Denver Broncos",
+    "visiting_team": "Kansas City Chiefs",
+    "status": "post",
+    "game_id": "401772778",
+    "home_score": 22,
+    "away_score": 19
+  },
+  {
+    "week": 11,
+    "home_team": "Philadelphia Eagles",
+    "visiting_team": "Detroit Lions",
+    "status": "post",
+    "game_id": "401772928",
+    "home_score": 16,
+    "away_score": 9
+  },
+  {
+    "week": 11,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "Dallas Cowboys",
+    "status": "post",
+    "game_id": "401772819",
+    "home_score": 16,
+    "away_score": 33
+  },
+  {
+    "week": 12,
+    "home_team": "Houston Texans",
+    "visiting_team": "Buffalo Bills",
+    "status": "post",
+    "game_id": "401772946",
+    "home_score": 23,
+    "away_score": 19
+  },
+  {
+    "week": 12,
+    "home_team": "Chicago Bears",
+    "visiting_team": "Pittsburgh Steelers",
+    "status": "post",
+    "game_id": "401772780",
+    "home_score": 31,
+    "away_score": 28
+  },
+  {
+    "week": 12,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "New England Patriots",
+    "status": "post",
+    "game_id": "401772781",
+    "home_score": 20,
+    "away_score": 26
+  },
+  {
+    "week": 12,
+    "home_team": "Detroit Lions",
+    "visiting_team": "New York Giants",
+    "status": "post",
+    "game_id": "401772888",
+    "home_score": 34,
+    "away_score": 27
+  },
+  {
+    "week": 12,
+    "home_team": "Green Bay Packers",
+    "visiting_team": "Minnesota Vikings",
+    "status": "post",
+    "game_id": "401772887",
+    "home_score": 23,
+    "away_score": 6
+  },
+  {
+    "week": 12,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "Seattle Seahawks",
+    "status": "post",
+    "game_id": "401772886",
+    "home_score": 24,
+    "away_score": 30
+  },
+  {
+    "week": 12,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Indianapolis Colts",
+    "status": "post",
+    "game_id": "401772779",
+    "home_score": 23,
+    "away_score": 20
+  },
+  {
+    "week": 12,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "New York Jets",
+    "status": "post",
+    "game_id": "401772782",
+    "home_score": 23,
+    "away_score": 10
+  },
+  {
+    "week": 12,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "Cleveland Browns",
+    "status": "post",
+    "game_id": "401772784",
+    "home_score": 10,
+    "away_score": 24
+  },
+  {
+    "week": 12,
+    "home_team": "Arizona Cardinals",
+    "visiting_team": "Jacksonville Jaguars",
+    "status": "post",
+    "game_id": "401772783",
+    "home_score": 24,
+    "away_score": 27
+  },
+  {
+    "week": 12,
+    "home_team": "Dallas Cowboys",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "post",
+    "game_id": "401772890",
+    "home_score": 24,
+    "away_score": 21
+  },
+  {
+    "week": 12,
+    "home_team": "New Orleans Saints",
+    "visiting_team": "Atlanta Falcons",
+    "status": "post",
+    "game_id": "401772889",
+    "home_score": 10,
+    "away_score": 24
+  },
+  {
+    "week": 12,
+    "home_team": "Los Angeles Rams",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "post",
+    "game_id": "401772929",
+    "home_score": 34,
+    "away_score": 7
+  },
+  {
+    "week": 12,
+    "home_team": "San Francisco 49ers",
+    "visiting_team": "Carolina Panthers",
+    "status": "post",
+    "game_id": "401772820",
+    "home_score": 20,
+    "away_score": 9
+  },
+  {
+    "week": 13,
+    "home_team": "Detroit Lions",
+    "visiting_team": "Green Bay Packers",
+    "status": "post",
+    "game_id": "401772891",
+    "home_score": 24,
+    "away_score": 31
+  },
+  {
+    "week": 13,
+    "home_team": "Dallas Cowboys",
+    "visiting_team": "Kansas City Chiefs",
+    "status": "post",
+    "game_id": "401772694",
+    "home_score": 31,
+    "away_score": 28
+  },
+  {
+    "week": 13,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "Cincinnati Bengals",
+    "status": "post",
+    "game_id": "401772930",
+    "home_score": 14,
+    "away_score": 32
+  },
+  {
+    "week": 13,
+    "home_team": "Philadelphia Eagles",
+    "visiting_team": "Chicago Bears",
+    "status": "post",
+    "game_id": "401772621",
+    "home_score": 15,
+    "away_score": 24
+  },
+  {
+    "week": 13,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "San Francisco 49ers",
+    "status": "post",
+    "game_id": "401772785",
+    "home_score": 8,
+    "away_score": 26
+  },
+  {
+    "week": 13,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "Jacksonville Jaguars",
+    "status": "post",
+    "game_id": "401772786",
+    "home_score": 3,
+    "away_score": 25
+  },
+  {
+    "week": 13,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "Houston Texans",
+    "status": "post",
+    "game_id": "401772787",
+    "home_score": 16,
+    "away_score": 20
+  },
+  {
+    "week": 13,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "New Orleans Saints",
+    "status": "post",
+    "game_id": "401772892",
+    "home_score": 21,
+    "away_score": 17
+  },
+  {
+    "week": 13,
+    "home_team": "New York Jets",
+    "visiting_team": "Atlanta Falcons",
+    "status": "post",
+    "game_id": "401772893",
+    "home_score": 27,
+    "away_score": 24
+  },
+  {
+    "week": 13,
+    "home_team": "Tampa Bay Buccaneers",
+    "visiting_team": "Arizona Cardinals",
+    "status": "post",
+    "game_id": "401772895",
+    "home_score": 20,
+    "away_score": 17
+  },
+  {
+    "week": 13,
+    "home_team": "Carolina Panthers",
+    "visiting_team": "Los Angeles Rams",
+    "status": "post",
+    "game_id": "401772894",
+    "home_score": 31,
+    "away_score": 28
+  },
+  {
+    "week": 13,
+    "home_team": "Seattle Seahawks",
+    "visiting_team": "Minnesota Vikings",
+    "status": "post",
+    "game_id": "401772896",
+    "home_score": 26,
+    "away_score": 0
+  },
+  {
+    "week": 13,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Buffalo Bills",
+    "status": "post",
+    "game_id": "401772789",
+    "home_score": 7,
+    "away_score": 26
+  },
+  {
+    "week": 13,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Las Vegas Raiders",
+    "status": "post",
+    "game_id": "401772788",
+    "home_score": 31,
+    "away_score": 14
+  },
+  {
+    "week": 13,
+    "home_team": "Washington Commanders",
+    "visiting_team": "Denver Broncos",
+    "status": "post",
+    "game_id": "401772931",
+    "home_score": 26,
+    "away_score": 27
+  },
+  {
+    "week": 13,
+    "home_team": "New England Patriots",
+    "visiting_team": "New York Giants",
+    "status": "post",
+    "game_id": "401772821",
+    "home_score": 33,
+    "away_score": 15
+  },
+  {
+    "week": 14,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Houston Texans",
+    "status": "in",
+    "game_id": "401772932"
+  },
+  {
+    "week": 14,
+    "home_team": "Atlanta Falcons",
+    "visiting_team": "Seattle Seahawks",
+    "status": "post",
+    "game_id": "401772900",
+    "home_score": 9,
+    "away_score": 37
+  },
+  {
+    "week": 14,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "Cincinnati Bengals",
+    "status": "post",
+    "game_id": "401772902",
+    "home_score": 39,
+    "away_score": 34
+  },
+  {
+    "week": 14,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "Tennessee Titans",
+    "status": "post",
+    "game_id": "401772898",
+    "home_score": 29,
+    "away_score": 31
+  },
+  {
+    "week": 14,
+    "home_team": "Minnesota Vikings",
+    "visiting_team": "Washington Commanders",
+    "status": "post",
+    "game_id": "401772899",
+    "home_score": 31,
+    "away_score": 0
+  },
+  {
+    "week": 14,
+    "home_team": "New York Jets",
+    "visiting_team": "Miami Dolphins",
+    "status": "post",
+    "game_id": "401772790",
+    "home_score": 10,
+    "away_score": 34
+  },
+  {
+    "week": 14,
+    "home_team": "Tampa Bay Buccaneers",
+    "visiting_team": "New Orleans Saints",
+    "status": "post",
+    "game_id": "401772792",
+    "home_score": 20,
+    "away_score": 24
+  },
+  {
+    "week": 14,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "Indianapolis Colts",
+    "status": "post",
+    "game_id": "401772793",
+    "home_score": 36,
+    "away_score": 19
+  },
+  {
+    "week": 14,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "Pittsburgh Steelers",
+    "status": "post",
+    "game_id": "401772791",
+    "home_score": 22,
+    "away_score": 27
+  },
+  {
+    "week": 14,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "Denver Broncos",
+    "status": "post",
+    "game_id": "401772794",
+    "home_score": 17,
+    "away_score": 24
+  },
+  {
+    "week": 14,
+    "home_team": "Green Bay Packers",
+    "visiting_team": "Chicago Bears",
+    "status": "post",
+    "game_id": "401772897",
+    "home_score": 28,
+    "away_score": 21
+  },
+  {
+    "week": 14,
+    "home_team": "Arizona Cardinals",
+    "visiting_team": "Los Angeles Rams",
+    "status": "post",
+    "game_id": "401772901",
+    "home_score": 17,
+    "away_score": 45
+  },
+  {
+    "week": 14,
+    "home_team": "Detroit Lions",
+    "visiting_team": "Dallas Cowboys",
+    "status": "post",
+    "game_id": "401772947",
+    "home_score": 44,
+    "away_score": 30
+  },
+  {
+    "week": 14,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "pre",
+    "game_id": "401772822"
+  },
+  {
+    "week": 15,
+    "home_team": "Tampa Bay Buccaneers",
+    "visiting_team": "Atlanta Falcons",
+    "status": "pre",
+    "game_id": "401772948"
+  },
+  {
+    "week": 15,
+    "home_team": "Chicago Bears",
+    "visiting_team": "Cleveland Browns",
+    "status": "pre",
+    "game_id": "401772904"
+  },
+  {
+    "week": 15,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "Baltimore Ravens",
+    "status": "pre",
+    "game_id": "401772796"
+  },
+  {
+    "week": 15,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Los Angeles Chargers",
+    "status": "pre",
+    "game_id": "401772798"
+  },
+  {
+    "week": 15,
+    "home_team": "New England Patriots",
+    "visiting_team": "Buffalo Bills",
+    "status": "pre",
+    "game_id": "401772795"
+  },
+  {
+    "week": 15,
+    "home_team": "New York Giants",
+    "visiting_team": "Washington Commanders",
+    "status": "pre",
+    "game_id": "401772905"
+  },
+  {
+    "week": 15,
+    "home_team": "Philadelphia Eagles",
+    "visiting_team": "Las Vegas Raiders",
+    "status": "pre",
+    "game_id": "401772906"
+  },
+  {
+    "week": 15,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "New York Jets",
+    "status": "pre",
+    "game_id": "401772797"
+  },
+  {
+    "week": 15,
+    "home_team": "Houston Texans",
+    "visiting_team": "Arizona Cardinals",
+    "status": "pre",
+    "game_id": "401772903"
+  },
+  {
+    "week": 15,
+    "home_team": "Denver Broncos",
+    "visiting_team": "Green Bay Packers",
+    "status": "pre",
+    "game_id": "401772800"
+  },
+  {
+    "week": 15,
+    "home_team": "Los Angeles Rams",
+    "visiting_team": "Detroit Lions",
+    "status": "pre",
+    "game_id": "401772909"
+  },
+  {
+    "week": 15,
+    "home_team": "New Orleans Saints",
+    "visiting_team": "Carolina Panthers",
+    "status": "pre",
+    "game_id": "401772908"
+  },
+  {
+    "week": 15,
+    "home_team": "San Francisco 49ers",
+    "visiting_team": "Tennessee Titans",
+    "status": "pre",
+    "game_id": "401772907"
+  },
+  {
+    "week": 15,
+    "home_team": "Seattle Seahawks",
+    "visiting_team": "Indianapolis Colts",
+    "status": "pre",
+    "game_id": "401772799"
+  },
+  {
+    "week": 15,
+    "home_team": "Dallas Cowboys",
+    "visiting_team": "Minnesota Vikings",
+    "status": "pre",
+    "game_id": "401772933"
+  },
+  {
+    "week": 15,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Miami Dolphins",
+    "status": "pre",
+    "game_id": "401772823"
+  },
+  {
+    "week": 16,
+    "home_team": "Seattle Seahawks",
+    "visiting_team": "Los Angeles Rams",
+    "status": "pre",
+    "game_id": "401772949"
+  },
+  {
+    "week": 16,
+    "home_team": "Washington Commanders",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "pre",
+    "game_id": "401772612"
+  },
+  {
+    "week": 16,
+    "home_team": "Chicago Bears",
+    "visiting_team": "Green Bay Packers",
+    "status": "pre",
+    "game_id": "401772613"
+  },
+  {
+    "week": 16,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "Buffalo Bills",
+    "status": "pre",
+    "game_id": "401772802"
+  },
+  {
+    "week": 16,
+    "home_team": "Dallas Cowboys",
+    "visiting_team": "Los Angeles Chargers",
+    "status": "pre",
+    "game_id": "401772910"
+  },
+  {
+    "week": 16,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "Kansas City Chiefs",
+    "status": "pre",
+    "game_id": "401772803"
+  },
+  {
+    "week": 16,
+    "home_team": "New Orleans Saints",
+    "visiting_team": "New York Jets",
+    "status": "pre",
+    "game_id": "401772801"
+  },
+  {
+    "week": 16,
+    "home_team": "New York Giants",
+    "visiting_team": "Minnesota Vikings",
+    "status": "pre",
+    "game_id": "401772911"
+  },
+  {
+    "week": 16,
+    "home_team": "Carolina Panthers",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "pre",
+    "game_id": "401772912"
+  },
+  {
+    "week": 16,
+    "home_team": "Baltimore Ravens",
+    "visiting_team": "New England Patriots",
+    "status": "pre",
+    "game_id": "401772804"
+  },
+  {
+    "week": 16,
+    "home_team": "Denver Broncos",
+    "visiting_team": "Jacksonville Jaguars",
+    "status": "pre",
+    "game_id": "401772913"
+  },
+  {
+    "week": 16,
+    "home_team": "Arizona Cardinals",
+    "visiting_team": "Atlanta Falcons",
+    "status": "pre",
+    "game_id": "401772914"
+  },
+  {
+    "week": 16,
+    "home_team": "Detroit Lions",
+    "visiting_team": "Pittsburgh Steelers",
+    "status": "pre",
+    "game_id": "401772806"
+  },
+  {
+    "week": 16,
+    "home_team": "Houston Texans",
+    "visiting_team": "Las Vegas Raiders",
+    "status": "pre",
+    "game_id": "401772805"
+  },
+  {
+    "week": 16,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "Cincinnati Bengals",
+    "status": "pre",
+    "game_id": "401772934"
+  },
+  {
+    "week": 16,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "San Francisco 49ers",
+    "status": "pre",
+    "game_id": "401772824"
+  },
+  {
+    "week": 17,
+    "home_team": "Washington Commanders",
+    "visiting_team": "Dallas Cowboys",
+    "status": "pre",
+    "game_id": "401772710"
+  },
+  {
+    "week": 17,
+    "home_team": "Minnesota Vikings",
+    "visiting_team": "Detroit Lions",
+    "status": "pre",
+    "game_id": "401772711"
+  },
+  {
+    "week": 17,
+    "home_team": "Kansas City Chiefs",
+    "visiting_team": "Denver Broncos",
+    "status": "pre",
+    "game_id": "401772622"
+  },
+  {
+    "week": 17,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "Arizona Cardinals",
+    "status": "pre",
+    "game_id": "401772954"
+  },
+  {
+    "week": 17,
+    "home_team": "Green Bay Packers",
+    "visiting_team": "Baltimore Ravens",
+    "status": "pre",
+    "game_id": "401772953"
+  },
+  {
+    "week": 17,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "New York Giants",
+    "status": "pre",
+    "game_id": "401772950"
+  },
+  {
+    "week": 17,
+    "home_team": "Los Angeles Chargers",
+    "visiting_team": "Houston Texans",
+    "status": "pre",
+    "game_id": "401772951"
+  },
+  {
+    "week": 17,
+    "home_team": "Carolina Panthers",
+    "visiting_team": "Seattle Seahawks",
+    "status": "pre",
+    "game_id": "401772952"
+  },
+  {
+    "week": 17,
+    "home_team": "Cleveland Browns",
+    "visiting_team": "Pittsburgh Steelers",
+    "status": "pre",
+    "game_id": "401772807"
+  },
+  {
+    "week": 17,
+    "home_team": "Tennessee Titans",
+    "visiting_team": "New Orleans Saints",
+    "status": "pre",
+    "game_id": "401772809"
+  },
+  {
+    "week": 17,
+    "home_team": "Indianapolis Colts",
+    "visiting_team": "Jacksonville Jaguars",
+    "status": "pre",
+    "game_id": "401772915"
+  },
+  {
+    "week": 17,
+    "home_team": "Miami Dolphins",
+    "visiting_team": "Tampa Bay Buccaneers",
+    "status": "pre",
+    "game_id": "401772916"
+  },
+  {
+    "week": 17,
+    "home_team": "New York Jets",
+    "visiting_team": "New England Patriots",
+    "status": "pre",
+    "game_id": "401772808"
+  },
+  {
+    "week": 17,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "Philadelphia Eagles",
+    "status": "pre",
+    "game_id": "401772917"
+  },
+  {
+    "week": 17,
+    "home_team": "San Francisco 49ers",
+    "visiting_team": "Chicago Bears",
+    "status": "pre",
+    "game_id": "401772935"
+  },
+  {
+    "week": 17,
+    "home_team": "Atlanta Falcons",
+    "visiting_team": "Los Angeles Rams",
+    "status": "pre",
+    "game_id": "401772825"
+  },
+  {
+    "week": 18,
+    "home_team": "Atlanta Falcons",
+    "visiting_team": "New Orleans Saints",
+    "status": "pre",
+    "game_id": "401772966"
+  },
+  {
+    "week": 18,
+    "home_team": "Buffalo Bills",
+    "visiting_team": "New York Jets",
+    "status": "pre",
+    "game_id": "401772967"
+  },
+  {
+    "week": 18,
+    "home_team": "Chicago Bears",
+    "visiting_team": "Detroit Lions",
+    "status": "pre",
+    "game_id": "401772965"
+  },
+  {
+    "week": 18,
+    "home_team": "Cincinnati Bengals",
+    "visiting_team": "Cleveland Browns",
+    "status": "pre",
+    "game_id": "401772964"
+  },
+  {
+    "week": 18,
+    "home_team": "Denver Broncos",
+    "visiting_team": "Los Angeles Chargers",
+    "status": "pre",
+    "game_id": "401772956"
+  },
+  {
+    "week": 18,
+    "home_team": "Las Vegas Raiders",
+    "visiting_team": "Kansas City Chiefs",
+    "status": "pre",
+    "game_id": "401772957"
+  },
+  {
+    "week": 18,
+    "home_team": "Los Angeles Rams",
+    "visiting_team": "Arizona Cardinals",
+    "status": "pre",
+    "game_id": "401772955"
+  },
+  {
+    "week": 18,
+    "home_team": "Minnesota Vikings",
+    "visiting_team": "Green Bay Packers",
+    "status": "pre",
+    "game_id": "401772968"
+  },
+  {
+    "week": 18,
+    "home_team": "New England Patriots",
+    "visiting_team": "Miami Dolphins",
+    "status": "pre",
+    "game_id": "401772958"
+  },
+  {
+    "week": 18,
+    "home_team": "New York Giants",
+    "visiting_team": "Dallas Cowboys",
+    "status": "pre",
+    "game_id": "401772963"
+  },
+  {
+    "week": 18,
+    "home_team": "Philadelphia Eagles",
+    "visiting_team": "Washington Commanders",
+    "status": "pre",
+    "game_id": "401772959"
+  },
+  {
+    "week": 18,
+    "home_team": "Pittsburgh Steelers",
+    "visiting_team": "Baltimore Ravens",
+    "status": "pre",
+    "game_id": "401772960"
+  },
+  {
+    "week": 18,
+    "home_team": "San Francisco 49ers",
+    "visiting_team": "Seattle Seahawks",
+    "status": "pre",
+    "game_id": "401772961"
+  },
+  {
+    "week": 18,
+    "home_team": "Tampa Bay Buccaneers",
+    "visiting_team": "Carolina Panthers",
+    "status": "pre",
+    "game_id": "401772969"
+  },
+  {
+    "week": 18,
+    "home_team": "Jacksonville Jaguars",
+    "visiting_team": "Tennessee Titans",
+    "status": "pre",
+    "game_id": "401772970"
+  },
+  {
+    "week": 18,
+    "home_team": "Houston Texans",
+    "visiting_team": "Indianapolis Colts",
+    "status": "pre",
+    "game_id": "401772962"
+  }
+]
