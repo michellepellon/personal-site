@@ -617,6 +617,7 @@
       <thead>
         <tr>
           <th>Team</th>
+          <th class="numeric">Record</th>
           <th class="numeric">Make Playoffs</th>
           <th class="numeric">First-Round Bye</th>
           <th class="numeric">Proj. Wins</th>
@@ -894,7 +895,7 @@ function renderPlayoffProbabilities(playoffs) {
   const tbody = document.querySelector('#playoff-probs tbody');
 
   if (!playoffs || playoffs.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="5">No playoff data available</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6">No playoff data available</td></tr>';
     return;
   }
 
@@ -903,10 +904,14 @@ function renderPlayoffProbabilities(playoffs) {
     const playoffProb = team.playoff_prob_pct || 0;
     const byeProb = team.bye_prob_pct || 0;
     const barWidth = Math.min(Math.round(playoffProb * 1.5), 150);
+    const wins = team.current_wins || 0;
+    const losses = team.current_losses || 0;
+    const record = `${wins}-${losses}`;
 
     html += `
       <tr>
         <td><strong>${team.team}</strong></td>
+        <td class="numeric">${record}</td>
         <td class="numeric">${playoffProb.toFixed(1)}%</td>
         <td class="numeric">${byeProb.toFixed(1)}%</td>
         <td class="numeric">${team.avg_wins ? team.avg_wins.toFixed(1) : '—'}</td>
