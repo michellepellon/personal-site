@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-03T18:59:06.463045",
+  "generated_at": "2025-12-07T15:30:00.000000",
   "current_week": 14,
   "ratings": [
     {
@@ -249,8 +249,8 @@
       "away_momentum_adj": 36.5,
       "momentum_diff": -55.0,
       "confidence_ensemble": 0.05575172475702628,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 44,
+      "actual_away_score": 30
     },
     {
       "game_id": 196,
@@ -273,8 +273,8 @@
       "away_momentum_adj": 30.0,
       "momentum_diff": -41.0,
       "confidence_ensemble": 0.10567998670343925,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 9,
+      "actual_away_score": 37
     },
     {
       "game_id": 197,
@@ -297,8 +297,8 @@
       "away_momentum_adj": -40.0,
       "momentum_diff": 19.5,
       "confidence_ensemble": 0.006040183538654542,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 29,
+      "actual_away_score": 31
     },
     {
       "game_id": 198,
@@ -321,8 +321,8 @@
       "away_momentum_adj": 32.0,
       "momentum_diff": 8.0,
       "confidence_ensemble": 0.0074217628711008565,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 28,
+      "actual_away_score": 21
     },
     {
       "game_id": 199,
@@ -345,8 +345,8 @@
       "away_momentum_adj": -15.5,
       "momentum_diff": 55.5,
       "confidence_ensemble": 0.27713815291016974,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 36,
+      "actual_away_score": 19
     },
     {
       "game_id": 200,
@@ -369,8 +369,8 @@
       "away_momentum_adj": -38.0,
       "momentum_diff": -2.0,
       "confidence_ensemble": 0.386063097831173,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 31,
+      "actual_away_score": 0
     },
     {
       "game_id": 201,
@@ -393,8 +393,8 @@
       "away_momentum_adj": 37.0,
       "momentum_diff": -63.5,
       "confidence_ensemble": 0.15384873692329437,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 10,
+      "actual_away_score": 34
     },
     {
       "game_id": 202,
@@ -417,8 +417,8 @@
       "away_momentum_adj": -15.0,
       "momentum_diff": 31.0,
       "confidence_ensemble": 0.3721598115473759,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 22,
+      "actual_away_score": 27
     },
     {
       "game_id": 203,
@@ -441,8 +441,8 @@
       "away_momentum_adj": -19.0,
       "momentum_diff": -11.0,
       "confidence_ensemble": 0.3566269171897618,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 20,
+      "actual_away_score": 24
     },
     {
       "game_id": 204,
@@ -465,8 +465,8 @@
       "away_momentum_adj": 28.5,
       "momentum_diff": -68.5,
       "confidence_ensemble": 0.07954690387436836,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 17,
+      "actual_away_score": 24
     },
     {
       "game_id": 205,
@@ -489,8 +489,8 @@
       "away_momentum_adj": -20.0,
       "momentum_diff": 48.5,
       "confidence_ensemble": 0.04902993033594738,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 39,
+      "actual_away_score": 34
     },
     {
       "game_id": 206,
@@ -513,8 +513,8 @@
       "away_momentum_adj": 28.0,
       "momentum_diff": -65.5,
       "confidence_ensemble": 0.30683576640317645,
-      "actual_home_score": null,
-      "actual_away_score": null
+      "actual_home_score": 17,
+      "actual_away_score": 45
     },
     {
       "game_id": 207,
@@ -778,6 +778,13 @@
       "log_loss": 0.7238525560394736,
       "accuracy": 0.5,
       "performance_rating": "Fair"
+    },
+    {
+      "week_number": 14,
+      "brier_score": 0.2134,
+      "log_loss": 0.6127,
+      "accuracy": 0.6666666666666666,
+      "performance_rating": "Good"
     }
   ],
   "playoffs": [
