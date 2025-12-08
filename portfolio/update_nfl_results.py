@@ -15,6 +15,8 @@ from typing import Any, Optional
 
 import requests
 
+from recalculate_elo import recalculate_all
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -209,9 +211,8 @@ def commit_and_push_changes(message: str) -> bool:
         )
 
         # Commit with message
-        commit_message = f"{message}\n\n🤖 Generated with Claude Code\n\nCo-Authored-By: Claude <noreply@anthropic.com>"
         subprocess.run(
-            ["git", "commit", "-m", commit_message],
+            ["git", "commit", "-m", message],
             cwd=PORTFOLIO_DIR.parent,
             check=True,
         )
@@ -266,6 +267,10 @@ def main() -> None:
     # Update the data structure
     data["predictions"] = updated_predictions
     data["generated_at"] = datetime.now().isoformat()
+
+    # Recalculate ELO ratings and playoff probabilities
+    logger.info("Recalculating ELO ratings and playoff probabilities...")
+    data = recalculate_all(data)
 
     # Write updated data back to file
     with open(WEBPAGE_DATA_FILE, "w") as f:
