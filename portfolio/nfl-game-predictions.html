@@ -1369,26 +1369,27 @@ function renderDivisionStandings(divisionStandings, ratings, conferenceFilter = 
   let divisionsToShow = Object.entries(divisionStandings);
   if (conferenceFilter !== 'all') {
     divisionsToShow = divisionsToShow.filter(([key, div]) => {
-      return div.conf === conferenceFilter || key.startsWith(conferenceFilter);
+      return key.startsWith(conferenceFilter);
     });
   }
 
   // Sort divisions: AFC first, then NFC; within conference: East, North, South, West
   const divOrder = { 'East': 1, 'North': 2, 'South': 3, 'West': 4 };
   divisionsToShow.sort((a, b) => {
-    const aConf = a[1].conf || (a[0].startsWith('AFC') ? 'AFC' : 'NFC');
-    const bConf = b[1].conf || (b[0].startsWith('AFC') ? 'AFC' : 'NFC');
+    const aConf = a[0].startsWith('AFC') ? 'AFC' : 'NFC';
+    const bConf = b[0].startsWith('AFC') ? 'AFC' : 'NFC';
     if (aConf !== bConf) return aConf === 'AFC' ? -1 : 1;
-    const aDiv = a[1].division || a[0].split(' ')[1];
-    const bDiv = b[1].division || b[0].split(' ')[1];
+    const aDiv = a[0].split(' ')[1];
+    const bDiv = b[0].split(' ')[1];
     return (divOrder[aDiv] || 5) - (divOrder[bDiv] || 5);
   });
 
   let html = '';
   divisionsToShow.forEach(([divName, divData]) => {
-    const conf = divData.conf || (divName.startsWith('AFC') ? 'AFC' : 'NFC');
+    const conf = divName.startsWith('AFC') ? 'AFC' : 'NFC';
     const confClass = conf.toLowerCase();
-    const teams = divData.teams || [];
+    // divData could be an array of teams directly, or an object with a teams property
+    const teams = Array.isArray(divData) ? divData : (divData.teams || []);
 
     // Sort teams by wins (descending), then by win percentage
     teams.sort((a, b) => {
