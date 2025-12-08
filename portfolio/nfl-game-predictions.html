@@ -1245,8 +1245,8 @@ function renderPerformance(performance) {
 
 function renderPerformanceChart(performance, container) {
   const width = 700;
-  const height = 200;
-  const padding = { top: 20, right: 60, bottom: 30, left: 50 };
+  const height = 220;
+  const padding = { top: 30, right: 20, bottom: 40, left: 50 };
   const chartWidth = width - padding.left - padding.right;
   const chartHeight = height - padding.top - padding.bottom;
 
@@ -1257,88 +1257,84 @@ function renderPerformanceChart(performance, container) {
     return;
   }
 
-  // Calculate scales
+  // Calculate scales - accuracy from 0% to 100%, but focus on 20%-100% range for better visibility
+  const minY = 0.2;  // 20%
+  const maxY = 1.0;  // 100%
   const xScale = (i) => padding.left + (i / (validWeeks.length - 1)) * chartWidth;
-  const accuracyScale = (v) => padding.top + chartHeight - (v * chartHeight);
-  const brierScale = (v) => padding.top + chartHeight - ((1 - v) * chartHeight);
+  const yScale = (v) => padding.top + chartHeight - ((v - minY) / (maxY - minY)) * chartHeight;
 
   // Build accuracy line path
   let accuracyPath = '';
   validWeeks.forEach((week, i) => {
     const x = xScale(i);
-    const y = accuracyScale(week.accuracy);
+    const y = yScale(Math.max(week.accuracy, minY));
     if (i === 0) accuracyPath += `M ${x} ${y}`;
     else accuracyPath += ` L ${x} ${y}`;
   });
 
-  // Build Brier score line path
-  let brierPath = '';
-  validWeeks.forEach((week, i) => {
-    const x = xScale(i);
-    const y = brierScale(week.brier_score || 0.25);
-    if (i === 0) brierPath += `M ${x} ${y}`;
-    else brierPath += ` L ${x} ${y}`;
-  });
-
-  // Build dots for accuracy
+  // Build dots for accuracy with tooltips
   let accuracyDots = '';
   validWeeks.forEach((week, i) => {
     const x = xScale(i);
-    const y = accuracyScale(week.accuracy);
-    accuracyDots += `<circle cx="${x}" cy="${y}" r="4" class="chart-dot" fill="var(--blue-600)"/>`;
-  });
-
-  // Build dots for Brier
-  let brierDots = '';
-  validWeeks.forEach((week, i) => {
-    const x = xScale(i);
-    const y = brierScale(week.brier_score || 0.25);
-    brierDots += `<circle cx="${x}" cy="${y}" r="4" class="chart-dot" fill="var(--green-600)"/>`;
+    const y = yScale(Math.max(week.accuracy, minY));
+    const pct = (week.accuracy * 100).toFixed(0);
+    accuracyDots += `<circle cx="${x}" cy="${y}" r="5" fill="var(--blue-600)"><title>Week ${week.week_number}: ${pct}%</title></circle>`;
   });
 
   // X-axis labels (week numbers)
   let xLabels = '';
   validWeeks.forEach((week, i) => {
     const x = xScale(i);
-    xLabels += `<text x="${x}" y="${height - 8}" text-anchor="middle" class="chart-label">${week.week_number}</text>`;
+    xLabels += `<text x="${x}" y="${height - 10}" text-anchor="middle" class="chart-label">${week.week_number}</text>`;
   });
 
   // Y-axis labels
   const yLabels = `
-    <text x="${padding.left - 10}" y="${padding.top}" text-anchor="end" class="chart-label">100%</text>
-    <text x="${padding.left - 10}" y="${padding.top + chartHeight / 2}" text-anchor="end" class="chart-label">50%</text>
-    <text x="${padding.left - 10}" y="${padding.top + chartHeight}" text-anchor="end" class="chart-label">0%</text>
+    <text x="${padding.left - 10}" y="${yScale(1.0) + 4}" text-anchor="end" class="chart-label">100%</text>
+    <text x="${padding.left - 10}" y="${yScale(0.8) + 4}" text-anchor="end" class="chart-label">80%</text>
+    <text x="${padding.left - 10}" y="${yScale(0.6) + 4}" text-anchor="end" class="chart-label">60%</text>
+    <text x="${padding.left - 10}" y="${yScale(0.4) + 4}" text-anchor="end" class="chart-label">40%</text>
+    <text x="${padding.left - 10}" y="${yScale(0.2) + 4}" text-anchor="end" class="chart-label">20%</text>
   `;
 
   // Grid lines
   const gridLines = `
-    <line x1="${padding.left}" y1="${padding.top + chartHeight / 2}" x2="${width - padding.right}" y2="${padding.top + chartHeight / 2}" class="chart-grid"/>
-    <line x1="${padding.left}" y1="${padding.top + chartHeight / 4}" x2="${width - padding.right}" y2="${padding.top + chartHeight / 4}" class="chart-grid"/>
-    <line x1="${padding.left}" y1="${padding.top + 3 * chartHeight / 4}" x2="${width - padding.right}" y2="${padding.top + 3 * chartHeight / 4}" class="chart-grid"/>
+    <line x1="${padding.left}" y1="${yScale(1.0)}" x2="${width - padding.right}" y2="${yScale(1.0)}" class="chart-grid"/>
+    <line x1="${padding.left}" y1="${yScale(0.8)}" x2="${width - padding.right}" y2="${yScale(0.8)}" class="chart-grid"/>
+    <line x1="${padding.left}" y1="${yScale(0.6)}" x2="${width - padding.right}" y2="${yScale(0.6)}" class="chart-grid"/>
+    <line x1="${padding.left}" y1="${yScale(0.4)}" x2="${width - padding.right}" y2="${yScale(0.4)}" class="chart-grid"/>
+    <line x1="${padding.left}" y1="${yScale(0.2)}" x2="${width - padding.right}" y2="${yScale(0.2)}" class="chart-grid"/>
   `;
 
-  // Legend
-  const legend = `
-    <g transform="translate(${width - padding.right + 10}, ${padding.top})">
-      <line x1="0" y1="5" x2="15" y2="5" stroke="var(--blue-600)" stroke-width="2"/>
-      <text x="20" y="9" class="chart-label" fill="var(--gray-700)">Accuracy</text>
-      <line x1="0" y1="25" x2="15" y2="25" stroke="var(--green-600)" stroke-width="2"/>
-      <text x="20" y="29" class="chart-label" fill="var(--gray-700)">1-Brier</text>
-    </g>
+  // 50% reference line (random baseline)
+  const baselineLine = `
+    <line x1="${padding.left}" y1="${yScale(0.5)}" x2="${width - padding.right}" y2="${yScale(0.5)}"
+          stroke="var(--gray-400)" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="${width - padding.right + 5}" y="${yScale(0.5) + 4}" class="chart-label" fill="var(--gray-400)">50%</text>
+  `;
+
+  // Calculate average accuracy
+  const avgAccuracy = validWeeks.reduce((sum, w) => sum + w.accuracy, 0) / validWeeks.length;
+  const avgLine = `
+    <line x1="${padding.left}" y1="${yScale(avgAccuracy)}" x2="${width - padding.right}" y2="${yScale(avgAccuracy)}"
+          stroke="var(--blue-300)" stroke-width="1" stroke-dasharray="2,2"/>
   `;
 
   container.innerHTML = `
     <svg class="chart-svg" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet">
       ${gridLines}
-      <path d="${accuracyPath}" class="chart-line" stroke="var(--blue-500)"/>
-      <path d="${brierPath}" class="chart-line" stroke="var(--green-500)"/>
+      ${baselineLine}
+      ${avgLine}
+      <path d="${accuracyPath}" class="chart-line" stroke="var(--blue-500)" stroke-width="2"/>
       ${accuracyDots}
-      ${brierDots}
       ${xLabels}
       ${yLabels}
-      ${legend}
       <text x="${padding.left + chartWidth / 2}" y="${height - 2}" text-anchor="middle" class="chart-label" fill="var(--gray-500)">Week</text>
+      <text x="${padding.left - 35}" y="${padding.top - 10}" class="chart-label" fill="var(--gray-600)">Accuracy</text>
     </svg>
+    <div style="text-align: center; font-size: 0.75rem; color: var(--gray-500); margin-top: 0.5rem;">
+      Season average: ${(avgAccuracy * 100).toFixed(1)}% · Dashed line = 50% baseline (random)
+    </div>
   `;
 }
 
