@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michelle Pellon | CTO & Technology Executive</title>
+  <title>Michelle Pellon | Vice President, IT & Data Strategy</title>
 
-  <meta name="description" content="CTO candidate with 15+ years building data platforms, leading engineering teams, and driving technical strategy for PE-backed healthcare and retail companies. Proven track record delivering scalable systems for high-stakes decisions." />
-  <meta name="keywords" content="CTO, Chief Technology Officer, VP Engineering, Technology Executive, Data Platform, Technical Leadership, Engineering Management, Digital Transformation, Healthcare Technology, Retail Technology, PE Portfolio, Private Equity" />
+  <meta name="description" content="Technology executive building data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations. 15+ M&A integrations across organizations with $250M+ in annual revenue." />
+  <meta name="keywords" content="Vice President, VP Technology, VP Data, IT Strategy, Data Strategy, Technology Executive, Data Platform, AI Implementation, Digital Transformation, Healthcare Technology, PE Portfolio, Private Equity, M&A Integration" />
   <meta name="author" content="Michelle Pellon" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://michellepellon.com/" />
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Michelle Pellon | CTO & Technology Executive" />
-  <meta property="og:description" content="CTO candidate with 15+ years building data platforms, leading engineering teams, and driving technical strategy. Proven track record delivering scalable systems for high-stakes decisions." />
+  <meta property="og:title" content="Michelle Pellon | Vice President, IT & Data Strategy" />
+  <meta property="og:description" content="Technology executive building data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations." />
   <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
   <meta property="og:url" content="https://michellepellon.com" />
   <meta property="og:type" content="profile" />
 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Michelle Pellon | CTO & Technology Executive" />
-  <meta name="twitter:description" content="CTO candidate with 15+ years building data platforms, leading engineering teams, and driving technical strategy for PE-backed companies." />
+  <meta name="twitter:title" content="Michelle Pellon | Vice President, IT & Data Strategy" />
+  <meta name="twitter:description" content="Technology executive building data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations." />
   <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
 
   <!-- Favicon -->
@@ -29,7 +29,7 @@
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
   <!-- Structured Data -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Michelle Pellon","jobTitle":["Chief Technology Officer","CTO","Technology Executive","VP Engineering"],"description":"CTO candidate with 15+ years building data platforms, leading engineering teams, and driving technical strategy for PE-backed healthcare and retail companies.","url":"https://michellepellon.com","image":"https://michellepellon.com/img/michelle-pellon-headshot.jpg","sameAs":["https://www.linkedin.com/in/michelle-pellon/","https://github.com/michellepellon"],"email":"mgracepellon@gmail.com","knowsAbout":["Technical Strategy","Data Platforms","Engineering Leadership","Digital Transformation","Scalable Systems","Healthcare Technology","Retail Technology"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Michelle Pellon","jobTitle":["Vice President, IT & Data Strategy","VP Technology","Technology Executive"],"description":"Technology executive building data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations.","url":"https://michellepellon.com","image":"https://michellepellon.com/img/michelle-pellon-headshot.jpg","sameAs":["https://www.linkedin.com/in/michelle-pellon/","https://github.com/michellepellon"],"email":"mgracepellon@gmail.com","knowsAbout":["Data Strategy","AI/ML Implementation","Digital Transformation","Healthcare IT","Cloud Architecture","Lakehouse & Data Platforms","DevOps & CI/CD","Cybersecurity & Compliance","M&A Technology Integration","PE Portfolio Operations"]}</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +67,7 @@
       --text-muted: #999;
       --border-color: #e5e5e5;
       --bg-white: #fff;
-      --max-width: 720px;
+      --max-width: 780px;
       --spacing-sm: 0.5rem;
       --spacing-md: 1rem;
       --spacing-lg: 1.5rem;
@@ -209,6 +209,32 @@
       line-height: 1.7;
     }
 
+    .experience-title {
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .experience-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .experience-bullets li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .experience-bullets li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
     /* Writings */
     .writings-list {
       display: flex;
@@ -311,7 +337,7 @@
     <!-- Hero -->
     <section class="hero">
       <p class="hero-intro fade-up">
-        I am Michelle, a technology executive building data strategies and systems that drive high-stakes decisions. Currently leading digital transformation at <a href="https://www.bluesprig.com/">BlueSprig</a>.
+        I am Michelle, a technology executive who builds data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations. Currently VP of Technology at <a href="https://www.bluesprig.com/">BlueSprig Pediatrics</a>.
       </p>
     </section>
 
@@ -322,11 +348,16 @@
         <div class="experience-list">
           <div class="experience-item">
             <div class="experience-meta">
-              <div class="experience-company">BlueSprig</div>
+              <div class="experience-company">BlueSprig Pediatrics</div>
               <div class="experience-period">2024 — Present</div>
             </div>
             <div class="experience-description">
-              Leading data strategy for a multi-state autism therapy provider—turning clinical + operational data into outcome insights and $200M+ revenue performance.
+              <div class="experience-title">VP, Technology</div>
+              <ul class="experience-bullets">
+                <li>Replatformed legacy data infrastructure to a modern lakehouse architecture, cutting annual platform costs by 75%+</li>
+                <li>Designed and deployed production AI systems across Finance, Clinical Operations, and Analytics—including automated SOAP note compliance validation—protecting $15M+ in annual revenue</li>
+                <li>Lead a 12-person team managing a $7M technology portfolio supporting 3,000+ clinicians and 160+ sites</li>
+              </ul>
             </div>
           </div>
 
@@ -336,7 +367,26 @@
               <div class="experience-period">2022 — 2024</div>
             </div>
             <div class="experience-description">
-              Built unified data platforms across chiropractic, optometry, behavioral health, and orthodontics, delivering real-time BI and scalable revenue optimization analytics.
+              <div class="experience-title">Director, DevOps</div>
+              <ul class="experience-bullets">
+                <li>Led a 15-person DevOps organization through modernization of deployment pipelines, reducing production downtime from 8 hours to &lt;1 hour across four SaaS EHR platforms</li>
+                <li>Established FinOps controls and a 3-year COGS model for $4M in cloud spend</li>
+                <li>Delivered Walmart Supply Chain Cybersecurity compliance in 45 days with zero findings, unblocking vendor access to 3,000+ Vision Centers</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-meta">
+              <div class="experience-company">W Energy Software</div>
+              <div class="experience-period">2021 — 2022</div>
+            </div>
+            <div class="experience-description">
+              <div class="experience-title">Director, DevOps</div>
+              <ul class="experience-bullets">
+                <li>Built and led an 8-person DevOps team; introduced Infrastructure as Code to standardize AWS environments, improving audit readiness and reducing cloud costs by 25%</li>
+                <li>Resolved critical performance bottlenecks during enterprise customer migrations through SQL optimization and caching strategies, preventing churn among major accounts including IKAV Energy, XTO (ExxonMobil), and Repsol</li>
+              </ul>
             </div>
           </div>
 
@@ -346,7 +396,12 @@
               <div class="experience-period">2019 — 2021</div>
             </div>
             <div class="experience-description">
-              Directed IT strategy and execution across three mergers—evaluated 100+ enterprise applications, drove platform standardization, and strengthened functionality and supportability post-integration.
+              <div class="experience-title">Director, Technology</div>
+              <ul class="experience-bullets">
+                <li>Managed a 4-person team through end-to-end IT infrastructure deployment for a 250-person HQ facility within $2.5M capex</li>
+                <li>Built a repeatable security assurance function supporting $16M in ARR across Fortune 100 customers including Zoom, Slack, Johnson & Johnson, and Starbucks</li>
+                <li>Supported M&A technical diligence during the iOFFICE-SpaceIQ merger that formed Eptura</li>
+              </ul>
             </div>
           </div>
 
@@ -356,7 +411,10 @@
               <div class="experience-period">2017 — 2019</div>
             </div>
             <div class="experience-description">
-              Developed real-time monitoring systems and predictive maintenance analytics for power generation facilities.
+              <div class="experience-title">Cybersecurity Engineer</div>
+              <ul class="experience-bullets">
+                <li>Led a 2-person team through NERC CIP audit preparation; passed the organization's first WECC audit by securing mission-critical control systems across two 24/7 control rooms, safeguarding $5M in annual revenue</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -380,6 +438,22 @@
           </div>
         </div>
       </section>
+
+      <!-- Education -->
+      <section class="section fade-up fade-up-delay-2">
+        <h2 class="section-title">Education</h2>
+        <div class="experience-list">
+          <div class="experience-item">
+            <div class="experience-meta">
+              <div class="experience-company">Trinity University</div>
+              <div class="experience-period">San Antonio, TX</div>
+            </div>
+            <div class="experience-description">
+              Bachelor of Science, Computer Science — Cum Laude, 2008
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -390,7 +464,7 @@
         <a href="mailto:mgracepellon@gmail.com">Email</a>
       </div>
       <div class="footer-copyright">
-        &copy; 2025 Michelle Pellon. All rights reserved.
+        &copy; 2026 Michelle Pellon. All rights reserved.
       </div>
     </footer>
   </div>
