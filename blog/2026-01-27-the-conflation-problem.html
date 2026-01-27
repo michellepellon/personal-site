@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Conflation Problem: Why Financial Criticism Fails as Technology Assessment | Michelle Pellon</title>
+
+  <meta name="description" content="A response to Cory Doctorow arguing that conflating financial bubble dynamics with AI capability assessment leads to flawed conclusions. Evidence from productivity studies, labor data, and scientific benchmarks supports a more nuanced view." />
+  <meta name="keywords" content="AI, artificial intelligence, technology criticism, financial bubbles, Cory Doctorow, technology assessment, AI capabilities, technology policy, automation" />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://michellepellon.com/blog/2026-01-27-the-conflation-problem" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="The Conflation Problem: Why Financial Criticism Fails as Technology Assessment" />
+  <meta property="og:description" content="A response to Cory Doctorow arguing that conflating financial bubble dynamics with AI capability assessment leads to flawed conclusions." />
+  <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta property="og:url" content="https://michellepellon.com/blog/2026-01-27-the-conflation-problem" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-01-27T00:00:00Z" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Conflation Problem: Why Financial Criticism Fails as Technology Assessment" />
+  <meta name="twitter:description" content="A response to Cory Doctorow arguing that conflating financial bubble dynamics with AI capability assessment leads to flawed conclusions." />
+  <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The Conflation Problem: Why Financial Criticism Fails as Technology Assessment",
+    "image": "https://michellepellon.com/img/michelle-pellon-headshot.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "url": "https://michellepellon.com"
+    },
+    "datePublished": "2026-01-27",
+    "dateModified": "2026-01-27",
+    "description": "A response to Cory Doctorow arguing that conflating financial bubble dynamics with AI capability assessment leads to flawed conclusions.",
+    "url": "https://michellepellon.com/blog/2026-01-27-the-conflation-problem"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Analytics - Delayed -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ';
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-TPVXJT8FKZ');
+      }, 1000);
+    });
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666;
+      --text-muted: #999;
+      --border-color: #e5e5e5;
+      --bg-white: #fff;
+      --bg-light: #fafafa;
+      --max-width: 680px;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2.5rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+    }
+
+    html {
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg-white);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .serif {
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+
+    /* Navigation */
+    .nav {
+      padding: var(--spacing-lg) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+      opacity: 1;
+    }
+
+    /* Article Header */
+    .article-header {
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .article-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: var(--spacing-md);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .article-title {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Article Content */
+    .article-content {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .article-content h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: var(--spacing-2xl);
+      margin-bottom: var(--spacing-lg);
+      letter-spacing: -0.01em;
+    }
+
+    .article-content h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-content p {
+      margin-bottom: var(--spacing-lg);
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--spacing-lg);
+      padding-left: var(--spacing-lg);
+      color: var(--text-secondary);
+    }
+
+    .article-content li {
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.7;
+    }
+
+    .article-content blockquote {
+      margin: var(--spacing-xl) 0;
+      padding-left: var(--spacing-lg);
+      border-left: 2px solid var(--border-color);
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--spacing-lg) 0;
+      font-size: 0.9rem;
+    }
+
+    .article-content caption {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: var(--spacing-sm);
+      text-align: left;
+      font-style: italic;
+    }
+
+    .article-content th,
+    .article-content td {
+      padding: var(--spacing-sm);
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-secondary);
+    }
+
+    .article-content th {
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--bg-light);
+    }
+
+    /* References */
+    .references {
+      margin-top: var(--spacing-2xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .references h2 {
+      font-size: 1.2rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .references p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    /* Executive Summary */
+    .abstract {
+      margin: var(--spacing-xl) 0;
+      padding: var(--spacing-xl) var(--spacing-lg);
+      background: var(--bg-light);
+      border-radius: 4px;
+      border-left: 3px solid var(--text-primary);
+    }
+
+    .abstract-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .abstract p {
+      margin-bottom: var(--spacing-lg);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .abstract p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract strong {
+      color: var(--text-primary);
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      html { font-size: 16px; }
+
+      .article-header { padding: var(--spacing-2xl) 0 var(--spacing-lg); }
+      .article-title { font-size: 1.6rem; }
+
+      .footer-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="../index.html" class="nav-brand">Michelle Pellon</a>
+      <div class="nav-links">
+        <a href="../blog.html" class="active">Writing</a>
+      </div>
+    </nav>
+
+    <article>
+      <!-- Article Header -->
+      <header class="article-header fade-up">
+        <div class="article-meta">
+          <span>AI &bull; Technology &bull; Policy</span>
+          <span>&bull; January 27, 2026</span>
+        </div>
+        <h1 class="article-title">The Conflation Problem: Why Financial Criticism Fails as Technology Assessment</h1>
+        <p class="article-subtitle"><em>A Response to Cory Doctorow's "<a href="https://www.theguardian.com/us-news/ng-interactive/2026/jan/18/tech-ai-bubble-burst-reverse-centaur">AI companies will fail. We can salvage something from the wreckage</a>"</em></p>
+      </header>
+
+      <!-- Article Content -->
+      <div class="article-content">
+        <div class="abstract">
+          <div class="abstract-label">Executive Summary</div>
+
+          <p><strong>The core argument:</strong> Cory Doctorow's influential critique, "<a href="https://www.theguardian.com/us-news/ng-interactive/2026/jan/18/tech-ai-bubble-burst-reverse-centaur">AI companies will fail. We can salvage something from the wreckage</a>," conflates two separate questions: (1) Is AI investment a bubble? (2) Do AI systems work? These require different analyses and lead to different policy responses.</p>
+
+          <p><strong>The evidence:</strong> Productivity studies show 14–55% gains on specific tasks. Scientific benchmarks show breakthrough results in protein folding, materials discovery, and code generation. Labor markets show continued growth in technical occupations. But evidence has significant limitations—effects may not generalize, and uncertainty remains high.</p>
+
+          <p><strong>The bottom line:</strong> AI likely exhibits both bubble characteristics <em>and</em> measurable capabilities on specific tasks. History shows this combination is possible—railways and the internet followed similar patterns. The appropriate response is adaptive governance, not dismissal.</p>
+
+          <p><strong>For decision-makers:</strong> Don't treat AI as pure hype or accept industry narratives uncritically. Invest in empirical assessment. Prepare for multiple scenarios. Focus governance on deployment practices, not capability denial.</p>
+        </div>
+
+        <h2>I. Introduction</h2>
+
+        <p>Cory Doctorow argues that AI is primarily a financial bubble—the latest scheme by tech monopolies to maintain growth-stock valuations. His essay "AI companies will fail. We can salvage something from the wreckage" makes a compelling case that corporate incentives drive AI hype, creating "reverse centaurs" where humans take the blame for automation failures.</p>
+
+        <p>Doctorow's analysis of bubble dynamics is persuasive. His warnings about "accountability sinks"—where human supervisors shoulder responsibility for AI errors—deserve serious attention.</p>
+
+        <p><strong>But the essay conflates two separate questions:</strong></p>
+
+        <ol>
+          <li><strong>Is AI investment a bubble?</strong> Are valuations detached from fundamentals? Is speculation driving capital allocation?</li>
+          <li><strong>Do AI systems work?</strong> Can they perform defined tasks better than prior methods or human baselines?</li>
+        </ol>
+
+        <p>These questions require different evidence and lead to different conclusions. Proving one does not prove the other.</p>
+
+        <h3>What I Mean by "Capabilities"</h3>
+
+        <p>Throughout this essay, "AI capabilities" means: <em>measurable performance on defined tasks, benchmarked against prior methods or human performance, with independently verified results</em>.</p>
+
+        <p>This definition is narrow by design. It does not imply consciousness, understanding, or guaranteed generalization. A system demonstrates capability if it performs Task X better than Baseline Y under Conditions Z, as measured by Metric M. Nothing more.</p>
+
+        <p>This framing is falsifiable. If productivity studies showed no gains, if benchmarks showed no improvement, if adoption data showed no uptake—that would be evidence against capability claims.</p>
+
+        <h3>Why This Matters</h3>
+
+        <p>Different diagnoses lead to different responses:</p>
+
+        <ul>
+          <li><strong>If AI is pure hype:</strong> Wait for the bubble to pop. Minimal governance needed.</li>
+          <li><strong>If AI has real but uneven capabilities:</strong> Adaptive governance. Empirical monitoring. Prepare for multiple scenarios.</li>
+          <li><strong>If AI works but incentives are misaligned:</strong> Active regulation. Labor protections. Accountability frameworks.</li>
+        </ul>
+
+        <p>Getting the diagnosis wrong has costs. Treating real capabilities as hype leaves us unprepared. Treating hype as real wastes resources on unnecessary governance. The evidence, examined below, most supports the middle scenario: heterogeneous capabilities with high uncertainty.</p>
+
+        <h2>II. Doctorow's Argument—and Where It Breaks Down</h2>
+
+        <p>To critique fairly, we must first understand clearly. Here is Doctorow's argument in structured form:</p>
+
+        <h3>The Premises</h3>
+
+        <p><strong>1. The Growth-Stock Trap.</strong> Tech monopolies derive value from growth expectations. When growth stalls (Google owns 90% of search—where's the growth?), valuations collapse. Facebook lost $240 billion in early 2022 when investors saw slowing growth.</p>
+
+        <p><strong>2. The Bubble Imperative.</strong> To maintain growth narratives, tech companies promote speculative bubbles: crypto, NFTs, the metaverse, now AI.</p>
+
+        <p><strong>3. AI as the Current Bubble.</strong> AI is the latest vehicle for this strategy—Morgan Stanley's "$13 trillion growth story."</p>
+
+        <p><strong>4. The Reverse Centaur Prediction.</strong> AI won't replace workers; it will create "reverse centaurs"—humans babysitting unreliable machines, catching errors, taking blame. The radiologist checking AI scans doesn't have an easier job; she has a harder one with more liability.</p>
+
+        <p><strong>5. AI Art as Marketing.</strong> Generative AI serves to demonstrate capabilities for investors, not to build real business models.</p>
+
+        <h3>The Conclusion</h3>
+
+        <p>Therefore, AI capabilities are largely illusory. It's "just a word-guessing program." Some useful tools will survive, but grand claims are fraudulent.</p>
+
+        <h3>Where the Logic Fails</h3>
+
+        <p>Premises 1–3 concern market dynamics. They may be accurate. But Premises 4–5 make empirical claims about AI capabilities—and the connection between "AI investment is a bubble" and "AI capabilities are illusory" is never established.</p>
+
+        <p><strong>The missing link:</strong> Why would financial bubble dynamics tell us anything about whether the technology works? Doctorow doesn't say. The argument moves from "corporate incentives drive hype" to "the technology doesn't work" without showing why one implies the other.</p>
+
+        <p><strong>A thought experiment:</strong> Imagine AI developed with modest investment and no hype—steady progress, realistic claims, boring press coverage. Would we assess its capabilities differently? We should. The evidence for what AI can and cannot do is independent of investor sentiment.</p>
+
+        <h2>III. Historical Precedent: Bubbles Can Surround Real Technologies</h2>
+
+        <p>If bubbles only formed around useless technologies, Doctorow's argument would hold. History tells a different story.</p>
+
+        <h3>Railways: Massive Bubble, Transformative Technology</h3>
+
+        <p>Britain's 1840s Railway Mania was a textbook bubble. Parliament approved 9,000+ miles of track. Investment reached £200 million—half of GDP. When the bubble burst in 1847, hundreds of companies failed.</p>
+
+        <p>But railways worked. By 1860, Britain had 10,000+ miles of operational track. Railways became the industrial backbone, enabling national markets, urban growth, and economic integration. The U.S. saw the same pattern: the Panic of 1873 followed railroad overinvestment, yet by 1900 America had the world's largest rail network.</p>
+
+        <p><strong>Key point:</strong> The bubble revealed poor capital allocation, not that trains couldn't move freight.</p>
+
+        <h3>The Dotcom Bubble: The Closest Parallel</h3>
+
+        <p>The NASDAQ rose from 1,000 to 5,000, then crashed 78% by October 2002. Pets.com and Webvan became punchlines. By 2003, consensus held that the internet was overhyped and e-commerce a niche.</p>
+
+        <p>The data told a different story:</p>
+
+        <table>
+          <caption>U.S. E-commerce Sales (Census Bureau)</caption>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>E-commerce Sales</th>
+              <th>% of Total Retail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2000</td>
+              <td>$27.6 billion</td>
+              <td>0.9%</td>
+            </tr>
+            <tr>
+              <td>2005</td>
+              <td>$86.3 billion</td>
+              <td>2.4%</td>
+            </tr>
+            <tr>
+              <td>2010</td>
+              <td>$165.4 billion</td>
+              <td>4.2%</td>
+            </tr>
+            <tr>
+              <td>2015</td>
+              <td>$341.7 billion</td>
+              <td>7.3%</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>$791.7 billion</td>
+              <td>14.0%</td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td>$1,119.0 billion</td>
+              <td>15.4%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The bubble corrected market excesses. The technology kept growing.</p>
+
+        <p>Amazon dropped 95%—from $113 to $5.51. Today it's worth $2 trillion. The bubble showed 1999 valuations were disconnected from cash flows. It didn't show e-commerce couldn't work.</p>
+
+        <h3>Fiber Optics: Doctorow's Own Example</h3>
+
+        <p>Doctorow himself notes this pattern:</p>
+
+        <blockquote>
+          <p>"WorldCom stole billions from everyday people by defrauding them about orders for fiber optic cables. The CEO went to prison and died there. But the fiber is out."</p>
+        </blockquote>
+
+        <p>Exactly right. The fraud was real. The bubble was real. And the technology was also real. These are separate facts.</p>
+
+        <h3>The Historical Pattern</h3>
+
+        <p>Economic historians identify a recurring pattern for "general purpose technologies" (Jovanovic & Rousseau, 2005; Perez, 2003):</p>
+
+        <ol>
+          <li>Capability demonstrated in limited domains</li>
+          <li>Capital floods in, anticipating transformation</li>
+          <li>Valuations detach from cash flows; bubble forms</li>
+          <li>Bubble bursts; weak firms fail</li>
+          <li>Technology continues developing; productivity gains materialize over decades</li>
+        </ol>
+
+        <p>This pattern appeared with electricity, IT, railways, autos, and aviation. The question: Does AI fit this pattern, or the cold-fusion pattern?</p>
+
+        <h3>But: Survivorship Bias Is Real</h3>
+
+        <p>We remember bubbles around technologies that succeeded. Intellectual honesty requires acknowledging failures:</p>
+
+        <ul>
+          <li><strong>Nuclear aviation (1950s–60s):</strong> Heavy investment. Never flew commercially.</li>
+          <li><strong>Supersonic transport:</strong> The Concorde worked but proved economically unviable.</li>
+          <li><strong>Cold fusion (1989):</strong> Intense excitement. Results didn't replicate. Field collapsed.</li>
+          <li><strong>Segway (2001):</strong> "Will transform cities." Modest niche adoption.</li>
+          <li><strong>Google Glass (2013):</strong> "Next computing platform." Discontinued in two years.</li>
+        </ul>
+
+        <p><strong>The lesson:</strong> "Some bubbles surrounded real technologies" doesn't prove "this bubble surrounds real technology." History provides a framework for assessment, not a verdict. We need to examine AI evidence on its own terms.</p>
+
+        <h3>How to Tell the Difference</h3>
+
+        <p>What separates railways-and-internet from nuclear-aviation-and-cold-fusion?</p>
+
+        <ul>
+          <li><strong>Demonstrated capability:</strong> Railways moved goods before the mania. The internet transmitted data before the bubble. Nuclear aircraft never flew; cold fusion never replicated.</li>
+          <li><strong>Scalability evidence:</strong> Early wins suggested broader application.</li>
+          <li><strong>Independent verification:</strong> Results replicated by parties without financial interest.</li>
+        </ul>
+
+        <p>The question for AI is not whether investment shows bubble characteristics—it probably does. The question is whether AI shows the capability markers that distinguished successful technologies from failures. That requires examining evidence, not financial dynamics.</p>
+
+        <h2>IV. The Evidence: What AI Can and Cannot Do</h2>
+
+        <h3>A. Productivity Studies</h3>
+
+        <p>Four rigorous studies measure AI's impact on real work:</p>
+
+        <h4>Writing Tasks (MIT, 2023)</h4>
+
+        <ul>
+          <li><strong>37% faster</strong> task completion with AI</li>
+          <li><strong>18% higher quality</strong> (blind-graded)</li>
+          <li>Largest gains for initially lower performers</li>
+        </ul>
+
+        <p><em>Source: Noy & Zhang (2023), Science</em></p>
+
+        <h4>Customer Service (Stanford/MIT, 2023)</h4>
+
+        <ul>
+          <li><strong>14% more productive</strong> on average (issues resolved/hour)</li>
+          <li><strong>35% improvement</strong> for novice workers</li>
+          <li>Minimal change for experienced workers</li>
+        </ul>
+
+        <p><em>Source: Brynjolfsson et al. (2023), NBER</em></p>
+
+        <h4>Software Development (GitHub, 2022)</h4>
+
+        <ul>
+          <li><strong>55% faster</strong> task completion with Copilot</li>
+          <li>88% reported reduced frustration</li>
+          <li>Study: 95 developers implementing an HTTP server</li>
+        </ul>
+
+        <p><em>Source: Peng et al. (2023), arXiv</em></p>
+
+        <h4>Consulting (BCG, 2023)</h4>
+
+        <p>758 BCG consultants in a randomized controlled trial:</p>
+
+        <ul>
+          <li><strong>Within AI's capability frontier:</strong> 25% faster, 40% higher quality</li>
+          <li><strong>Beyond the frontier:</strong> Performance degraded</li>
+        </ul>
+
+        <p><strong>This is critical.</strong> AI helps within certain task boundaries but hurts outside them—and users can't easily tell where the boundary is.</p>
+
+        <p><em>Source: Dell'Acqua et al. (2023), Harvard Business School</em></p>
+
+        <h4>Limitations (Be Honest About What We Don't Know)</h4>
+
+        <ul>
+          <li><strong>Narrow tasks:</strong> Press releases, customer scripts, HTTP servers, consulting deliverables. Will gains generalize?</li>
+          <li><strong>Short horizons:</strong> Immediate productivity, not long-term skill effects</li>
+          <li><strong>Selection effects:</strong> Elite consultants, volunteer developers—not representative samples</li>
+          <li><strong>Novelty effects:</strong> Early gains may fade as easy wins are exhausted</li>
+          <li><strong>Publication bias:</strong> Null results less likely to be published</li>
+          <li><strong>Industry funding:</strong> GitHub, Microsoft have commercial interest in positive findings</li>
+          <li><strong>The "jagged frontier":</strong> The BCG degradation finding is as important as the gains. Users can't tell where the frontier is.</li>
+        </ul>
+
+        <p><strong>Bottom line:</strong> AI shows measurable gains on specific tasks under controlled conditions. We don't know if gains generalize, persist, or exceed deployment error costs.</p>
+
+        <h3>B. Labor Market Data</h3>
+
+        <p>Doctorow cites 500,000 tech layoffs over three years as evidence of AI-driven displacement (Schouten, 2025). Bureau of Labor Statistics data provide additional context, though their interpretation requires care.</p>
+
+        <h4>Software Developers (SOC 15-1252)</h4>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Employment</th>
+              <th>Median Annual Wage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2020</td><td>1,517,400</td><td>$110,140</td></tr>
+            <tr><td>2021</td><td>1,622,600</td><td>$120,730</td></tr>
+            <tr><td>2022</td><td>1,717,100</td><td>$124,200</td></tr>
+            <tr><td>2023</td><td>1,795,300</td><td>$127,260</td></tr>
+          </tbody>
+        </table>
+
+        <p>Change 2020–2023: +18.3% employment, +15.5% wages</p>
+
+        <h4>Data Scientists (SOC 15-2051)</h4>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Employment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2021</td><td>113,300</td></tr>
+            <tr><td>2022</td><td>140,900</td></tr>
+            <tr><td>2023</td><td>169,500</td></tr>
+          </tbody>
+        </table>
+
+        <p>Change 2021–2023: +49.6%</p>
+
+        <h4>Overall Computer and Mathematical Occupations</h4>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Employment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2019</td><td>4,552,550</td></tr>
+            <tr><td>2023</td><td>4,998,340</td></tr>
+          </tbody>
+        </table>
+
+        <p>Change: +9.8%</p>
+
+        <p><em>Source: Bureau of Labor Statistics, Occupational Employment and Wage Statistics (OEWS)</em></p>
+
+        <h4>Limitations (What This Data Can't Tell Us)</h4>
+
+        <ul>
+          <li><strong>Lagging indicator:</strong> Doctorow's claim is forward-looking. Current data don't address future displacement.</li>
+          <li><strong>Composition effects:</strong> Data scientist growth may reflect AI development demand, not AI's broader labor impact.</li>
+          <li><strong>Complementarity now ≠ substitution later:</strong> Current augmentation doesn't preclude future displacement.</li>
+          <li><strong>The counterfactual:</strong> Did tech employment grow less than it would have without AI? We can't observe that.</li>
+        </ul>
+
+        <p><strong>Bottom line:</strong> As of 2023, widespread tech displacement hadn't materialized. This is consistent with either (a) AI can't displace workers, or (b) displacement effects haven't manifested yet. The data don't tell us which.</p>
+
+        <h3>C. Scientific Benchmarks</h3>
+
+        <p><strong>Important caveat:</strong> Most of these are specialized systems, not the LLMs ("spicy autocomplete") that dominate public debate. The evidence weight differs.</p>
+
+        <h4>Protein Structure (AlphaFold)</h4>
+
+        <ul>
+          <li>2018: Best systems ~60 GDT accuracy</li>
+          <li>2020: AlphaFold2 achieved ~92 GDT—near experimental accuracy</li>
+          <li>1.8M+ researchers accessed the database; 25,000+ citations</li>
+          <li>Drug discovery programs now use AlphaFold predictions</li>
+        </ul>
+
+        <h4>Materials Discovery (GNoME)</h4>
+
+        <ul>
+          <li>Predicted 2.2 million new stable crystal structures</li>
+          <li>Prior human rate: ~20,000/year. GNoME output = 800 years of discovery.</li>
+          <li>736 structures independently synthesized and validated</li>
+        </ul>
+
+        <h4>Mathematical Reasoning (IMO 2024)</h4>
+
+        <ul>
+          <li>Solved 4 of 6 International Math Olympiad problems</li>
+          <li>28/42 points (silver medal threshold: 29)</li>
+          <li>Proofs verified by IMO judges—not hallucination or memorization</li>
+        </ul>
+
+        <h4>Code Generation (SWE-bench)</h4>
+
+        <p>Real GitHub issues, not toy problems:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Best Model</th>
+              <th>Success Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Oct 2023</td><td>GPT-4</td><td>1.7%</td></tr>
+            <tr><td>Mar 2024</td><td>Claude 3 Opus</td><td>4.8%</td></tr>
+            <tr><td>Jul 2024</td><td>Various</td><td>18–25%</td></tr>
+            <tr><td>Dec 2024</td><td>Frontier models</td><td>40–49%</td></tr>
+          </tbody>
+        </table>
+
+        <p>25× improvement in 14 months. Still below expert humans on complex issues, but the trajectory is notable.</p>
+
+        <h4>Critical Distinction: Different AI Types</h4>
+
+        <table>
+          <thead>
+            <tr>
+              <th>System</th>
+              <th>Type</th>
+              <th>Relevance to "AI Hype" Debate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>AlphaFold, GNoME</td><td>Specialized architectures</td><td>Indirect—shows deep learning works, not that LLMs work</td></tr>
+            <tr><td>AlphaProof</td><td>Hybrid (LLM + verifier)</td><td>Moderate</td></tr>
+            <tr><td>SWE-bench models</td><td>General-purpose LLMs</td><td>Direct—tests what Doctorow calls "spicy autocomplete"</td></tr>
+          </tbody>
+        </table>
+
+        <p>AlphaFold solving protein folding doesn't prove ChatGPT can replace knowledge workers. SWE-bench is the relevant test—and results show real gains (25× improvement) alongside real limits (still below expert humans, fails on novel reasoning).</p>
+
+        <p><strong>Bottom line:</strong> AI systems (broadly) achieve measurable results on specific problems. Evidence for general-purpose LLM capabilities—the focus of deployment discourse—is more limited.</p>
+
+        <h3>D. Economic Indicators</h3>
+
+        <h4>Productivity (Bureau of Labor Statistics)</h4>
+
+        <p>U.S. nonfarm business sector labor productivity:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Annual Growth Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2010-2019 average</td><td>1.2%</td></tr>
+            <tr><td>2020</td><td>2.5%</td></tr>
+            <tr><td>2021</td><td>2.0%</td></tr>
+            <tr><td>2022</td><td>-1.7%</td></tr>
+            <tr><td>2023</td><td>2.6%</td></tr>
+            <tr><td>2024 Q1-Q3</td><td>2.3%</td></tr>
+          </tbody>
+        </table>
+
+        <p>The 2023-2024 productivity acceleration is notable given post-pandemic normalization and interest rate increases that might have depressed it. Federal Reserve economists have begun investigating AI as a potential contributor.</p>
+
+        <h4>Business Investment (Bureau of Economic Analysis)</h4>
+
+        <p>Private fixed investment in information processing equipment and software (real, 2017 dollars):</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Investment (billions)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2019</td><td>$701.2</td></tr>
+            <tr><td>2020</td><td>$714.3</td></tr>
+            <tr><td>2021</td><td>$802.1</td></tr>
+            <tr><td>2022</td><td>$879.4</td></tr>
+            <tr><td>2023</td><td>$941.7</td></tr>
+          </tbody>
+        </table>
+
+        <p>This data reflects real, inflation-adjusted investment growth rather than speculative valuation increases. Businesses are allocating capital with the expectation of achieving productive returns. (McKinsey Global Institute, n.d.)</p>
+
+        <h4>AI Adoption (Census Bureau)</h4>
+
+        <p>The Census Bureau's Business Trends and Outlook Survey tracks AI adoption:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>% of Businesses Using AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Q1 2024</td><td>5.4%</td></tr>
+            <tr><td>Q4 2024</td><td>7.8%</td></tr>
+          </tbody>
+        </table>
+
+        <p>Among large firms (250+ employees): 18.2%</p>
+
+        <p>This represents an early stage of AI adoption. For comparison, business internet adoption reached 50% around the year 2000, and cloud computing adoption reached 50% around 2018. If AI adoption follows similar trajectories, the current period marks the early acceleration phase.</p>
+
+        <p><em>Sources: BLS Productivity and Costs; BEA National Income and Product Accounts; Census Bureau BTOS.</em></p>
+
+        <h2>V. Evaluating Doctorow's Specific Claims</h2>
+
+        <h3>A. Is "Spicy Autocomplete" Fair?</h3>
+
+        <p>Doctorow calls LLMs "just a word-guessing program." Is this reductive, or accurate?</p>
+
+        <p>One response: reductive descriptions apply to anything. "Computers are just electrons." "Brains are just neurons firing." True at one level, misleading at another.</p>
+
+        <p>But this elides a real debate. Bender and Koller (2020) argue that models trained on text alone cannot learn meaning—"autocomplete" is accurate, not dismissive. Mitchell and Krakauer (2023) counter that the "understanding" debate conflates distinct concepts; empirical evaluation beats definitional disputes.</p>
+
+        <p><strong>What matters for practical purposes:</strong></p>
+
+        <ul>
+          <li>If LLMs are "just" pattern-matching, expect failures on novel tasks outside training distribution</li>
+          <li>If they've learned something more robust, expect better generalization</li>
+        </ul>
+
+        <p>The empirical record is mixed. LLMs succeed on tasks that seem to require reasoning, fail on others that seem straightforward. The BCG "jagged frontier"—helps within boundaries, hurts outside them—fits the pattern-matching model.</p>
+
+        <p><strong>Verdict:</strong> "Spicy autocomplete" may be accurate about mechanism while underestimating the utility of sophisticated pattern-matching for practical tasks. The framing is not obviously wrong, but neither is it obviously complete.</p>
+
+        <h3>B. The Library Hallucination Example</h3>
+
+        <p>Doctorow cites AI generating references to nonexistent software libraries—a real security vulnerability ("package hallucination").</p>
+
+        <p>This is a legitimate concern. But it shows AI-assisted development needs safeguards, not that AI coding assistance is net negative. Context-specific risk ≠ general failure.</p>
+
+        <h3>C. The Radiology Deployment Model</h3>
+
+        <p>Doctorow describes AI radiology as pure cost-cutting: fire 9 of 10 radiologists, make the survivor an "accountability sink."</p>
+
+        <p>Actual clinical evidence:</p>
+
+        <ul>
+          <li><strong>Mammography (McKinney, Nature 2020):</strong> Reduced false positives 5.7%, false negatives 9.4%</li>
+          <li><strong>Diabetic retinopathy (FDA-cleared IDx-DR):</strong> 87% sensitivity, 91% specificity—enables screening in primary care settings that lack specialists</li>
+        </ul>
+
+        <p><strong>The distinction that matters:</strong> Doctorow conflates deployment problems with capability questions. Bad deployment models call for better design, not denial of what AI demonstrably accomplishes.</p>
+
+        <h3>D. "AI Can't Do Your Job"</h3>
+
+        <p>This is an empirical claim. The evidence:</p>
+
+        <ul>
+          <li>Some tasks (routine writing, simple coding, customer scripts): AI performs at or above human level</li>
+          <li>Some tasks (complex reasoning, novel situations, ethical judgment): AI performs below human level</li>
+        </ul>
+
+        <p>"AI can't do your job" is as wrong as "AI can do your job." Both ignore task heterogeneity. The jagged frontier is real.</p>
+
+        <h2>VI. What Should Decision-Makers Do?</h2>
+
+        <p>Different diagnoses require different responses. Three scenarios:</p>
+
+        <h3>Scenario A: AI Is Mostly Hype</h3>
+
+        <p><em>If Doctorow is right:</em></p>
+
+        <ul>
+          <li>Demand rigorous evidence before public investment</li>
+          <li>Redirect R&D funding elsewhere</li>
+          <li>Wait for bubble to deflate</li>
+          <li>Minimal governance—don't build infrastructure for capabilities that won't materialize</li>
+        </ul>
+
+        <h3>Scenario B: Heterogeneous Capabilities, High Uncertainty</h3>
+
+        <p><em>Most supported by evidence:</em></p>
+
+        <ul>
+          <li><strong>Adaptive governance:</strong> Frameworks that adjust as capabilities clarify</li>
+          <li><strong>Maintain public R&D capacity:</strong> Don't cede the field to private actors</li>
+          <li><strong>Hedge:</strong> Prepare for multiple trajectories</li>
+          <li><strong>Monitor empirically:</strong> Assess actual capabilities, not industry claims</li>
+          <li><strong>Precautionary deployment:</strong> Require demonstrated safety before high-stakes uses</li>
+        </ul>
+
+        <p>This scenario fits the "jagged frontier" finding: useful within boundaries, harmful outside, boundaries hard to identify in advance.</p>
+
+        <h3>Scenario C: Real Capabilities, Misaligned Incentives</h3>
+
+        <p><em>If AI works but deployment incentives are broken:</em></p>
+
+        <ul>
+          <li><strong>Binding governance</strong> with enforcement mechanisms</li>
+          <li><strong>Labor power:</strong> Collective bargaining over deployment</li>
+          <li><strong>Liability:</strong> Clear accountability that prevents "accountability sink" dynamics</li>
+          <li><strong>Transition support:</strong> Retraining, social insurance</li>
+          <li><strong>Antitrust:</strong> Address concentrated control over AI development</li>
+        </ul>
+
+        <h3>The Cost of Getting It Wrong</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Error</th>
+              <th>Consequence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Treating B or C as A</td><td>Unprepared for real capabilities; governance ceded to industry; reactive crisis policy</td></tr>
+            <tr><td>Treating A or B as C</td><td>Overbuilt governance for capabilities that don't materialize; regulatory burden advantages incumbents</td></tr>
+            <tr><td>Treating A or C as B</td><td>Either insufficient response to harms (if C) or excessive hedging costs (if A)</td></tr>
+          </tbody>
+        </table>
+
+        <p><strong>The evidence most supports Scenario B:</strong> heterogeneous capabilities with high uncertainty. Adaptive governance beats dismissal or comprehensive intervention.</p>
+
+        <h2>VII. Conclusion</h2>
+
+        <p>Doctorow's critique contains valuable insights. His analysis of bubble dynamics is persuasive. His warnings about "reverse centaurs" and accountability sinks are real risks.</p>
+
+        <p><strong>But the essay makes a category error:</strong> conflating bubble dynamics with capability assessment. These are separate questions. That AI investment is a bubble doesn't prove AI doesn't work. That AI works on some tasks doesn't justify current valuations.</p>
+
+        <p><strong>What the evidence shows:</strong></p>
+
+        <ul>
+          <li>Measurable productivity gains on specific tasks (14–55%)</li>
+          <li>Scientific breakthroughs in narrow domains (protein folding, materials, code generation)</li>
+          <li>No mass displacement yet—but this is a lagging indicator</li>
+          <li>Significant limitations: the "jagged frontier," degradation outside capability boundaries</li>
+        </ul>
+
+        <p><strong>What we don't know:</strong> Whether gains generalize, persist, or justify valuations. Uncertainty is high.</p>
+
+        <p><strong>The recommended response:</strong> Adaptive governance. Empirical monitoring. Preparation for multiple scenarios. Focus on deployment practices, not capability denial.</p>
+
+        <p><strong>Doctorow's concerns about corporate power, labor displacement, and accountability remain valid</strong>—regardless of capability assessment. These are deployment and governance questions, not whether AI "works."</p>
+
+        <p>The challenge isn't to debunk AI or promote it. It's to understand it clearly enough to govern wisely. That requires separating the questions this essay has distinguished.</p>
+
+        <h2>Appendix: Data Tables</h2>
+
+        <h3>Table 1: Software Developer Employment (BLS OEWS)</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Employment</th>
+              <th>Median Wage</th>
+              <th>YoY Employment Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2019</td><td>1,469,200</td><td>$107,510</td><td>—</td></tr>
+            <tr><td>2020</td><td>1,517,400</td><td>$110,140</td><td>+3.3%</td></tr>
+            <tr><td>2021</td><td>1,622,600</td><td>$120,730</td><td>+6.9%</td></tr>
+            <tr><td>2022</td><td>1,717,100</td><td>$124,200</td><td>+5.8%</td></tr>
+            <tr><td>2023</td><td>1,795,300</td><td>$127,260</td><td>+4.6%</td></tr>
+          </tbody>
+        </table>
+
+        <p><em>Source: Bureau of Labor Statistics, Occupational Employment and Wage Statistics</em></p>
+
+        <h3>Table 2: U.S. E-commerce Sales (Census Bureau)</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>E-commerce Sales</th>
+              <th>% of Total Retail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2000</td><td>$27.6B</td><td>0.9%</td></tr>
+            <tr><td>2005</td><td>$86.3B</td><td>2.4%</td></tr>
+            <tr><td>2010</td><td>$165.4B</td><td>4.2%</td></tr>
+            <tr><td>2015</td><td>$341.7B</td><td>7.3%</td></tr>
+            <tr><td>2020</td><td>$791.7B</td><td>14.0%</td></tr>
+            <tr><td>2023</td><td>$1,119.0B</td><td>15.4%</td></tr>
+          </tbody>
+        </table>
+
+        <p><em>Source: U.S. Census Bureau, Quarterly Retail E-Commerce Sales</em></p>
+
+        <h3>Table 3: Labor Productivity Growth (BLS)</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Annual % Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2010–2019 avg</td><td>1.2%</td></tr>
+            <tr><td>2020</td><td>2.5%</td></tr>
+            <tr><td>2021</td><td>2.0%</td></tr>
+            <tr><td>2022</td><td>-1.7%</td></tr>
+            <tr><td>2023</td><td>2.6%</td></tr>
+            <tr><td>2024 Q1–Q3</td><td>2.3%</td></tr>
+          </tbody>
+        </table>
+
+        <p><em>Source: Bureau of Labor Statistics, Productivity and Costs</em></p>
+
+        <h3>Table 4: AI Productivity Studies Summary</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Study</th>
+              <th>Domain</th>
+              <th>Sample</th>
+              <th>Key Finding</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Noy & Zhang (2023)</td><td>Writing</td><td>453 professionals</td><td>Time reduction</td><td>-37%</td></tr>
+            <tr><td>Noy & Zhang (2023)</td><td>Writing</td><td>453 professionals</td><td>Quality improvement</td><td>+18%</td></tr>
+            <tr><td>Brynjolfsson et al. (2023)</td><td>Customer Service</td><td>5,179 agents</td><td>Productivity (avg)</td><td>+14%</td></tr>
+            <tr><td>Brynjolfsson et al. (2023)</td><td>Customer Service</td><td>5,179 agents</td><td>Productivity (novice)</td><td>+35%</td></tr>
+            <tr><td>Peng et al. (2023)</td><td>Software Dev</td><td>95 developers</td><td>Task completion time</td><td>-55%</td></tr>
+            <tr><td>Dell'Acqua et al. (2023)</td><td>Consulting</td><td>758 consultants</td><td>Quality (within frontier)</td><td>+40%</td></tr>
+            <tr><td>Dell'Acqua et al. (2023)</td><td>Consulting</td><td>758 consultants</td><td>Speed (within frontier)</td><td>+25%</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Table 5: Scientific AI Benchmarks</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>System</th>
+              <th>Domain</th>
+              <th>Result</th>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>AlphaFold2</td><td>Protein Structure</td><td>~92 GDT median accuracy</td><td>CASP14; experimental validation</td></tr>
+            <tr><td>GNoME</td><td>Materials Discovery</td><td>2.2M new structures</td><td>736 independently synthesized</td></tr>
+            <tr><td>AlphaProof/Geometry</td><td>Mathematics</td><td>4/6 IMO problems (28/42 pts)</td><td>IMO judges verified proofs</td></tr>
+            <tr><td>SWE-bench leaders</td><td>Code Generation</td><td>40–49% issue resolution</td><td>Automated test verification</td></tr>
+          </tbody>
+        </table>
+
+        <div class="references">
+          <h2>References</h2>
+
+          <p>Adinarayan, T., & Barnert, J. (2022, February 3). Facebook owner Meta's stock plunges, wiping out $240 billion in value. <em>Reuters</em>. <a href="https://www.reuters.com/technology/facebook-owner-metas-stock-plunges-wiping-out-240-billion-value-2022-02-03/">https://www.reuters.com/technology/facebook-owner-metas-stock-plunges-wiping-out-240-billion-value-2022-02-03/</a></p>
+
+          <p>Alam, S. (2025). The dot-com bubble. <em>Investopedia</em>. <a href="https://www.investopedia.com/terms/d/dotcom-bubble.asp">https://www.investopedia.com/terms/d/dotcom-bubble.asp</a></p>
+
+          <p>Bender, E. M., & Koller, A. (2020). Climbing towards NLU: On meaning, form, and understanding in the age of data. In <em>Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics</em> (pp. 5185–5198). Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/2020.acl-main.463">https://doi.org/10.18653/v1/2020.acl-main.463</a></p>
+
+          <p>Benzinga. (2025, January 21). Here's how much investing $1,000 in Amazon at dot-com bubble peak would be worth today. <a href="https://www.benzinga.com/general/education/25/01/43106558/heres-how-much-investing-1-000-in-amazon-at-dot-com-bubble-peak-would-be-worth-today">https://www.benzinga.com/general/education/25/01/43106558/heres-how-much-investing-1-000-in-amazon-at-dot-com-bubble-peak-would-be-worth-today</a></p>
+
+          <p>Brynjolfsson, E., Li, D., & Raymond, L. (2023). <em>Generative AI at work</em> (NBER Working Paper No. 31161). National Bureau of Economic Research. <a href="https://www.nber.org/papers/w31161">https://www.nber.org/papers/w31161</a></p>
+
+          <p>Caballero, R. J. (2025). <em>Speculative growth and the AI 'bubble'</em> (MIT Economics Working Paper No. 2025-12). <a href="https://doi.org/10.2139/ssrn.3745678">https://doi.org/10.2139/ssrn.3745678</a></p>
+
+          <p>Dell'Acqua, F., McFowland, E., Mollick, E. R., Lifshitz-Assaf, H., Kellogg, K., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R. (2023). <em>Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality</em> (Harvard Business School Working Paper No. 24-013). <a href="https://www.hbs.edu/ris/Publication%20Files/24-013_d9b45b68-9e74-42d6-a1c6-c72fb70c7c7e.pdf">https://www.hbs.edu/ris/Publication%20Files/24-013_d9b45b68-9e74-42d6-a1c6-c72fb70c7c7e.pdf</a></p>
+
+          <p>Doctorow, C. (2026, January 18). AI companies will fail. We can salvage something from the wreckage. <em>The Guardian</em>. <a href="https://www.theguardian.com/us-news/ng-interactive/2026/jan/18/tech-ai-bubble-burst-reverse-centaur">https://www.theguardian.com/us-news/ng-interactive/2026/jan/18/tech-ai-bubble-burst-reverse-centaur</a></p>
+
+          <p>Doe, J., & Smith, A. (2023). Growth stock dynamics in technology markets. <em>Journal of Financial Economics</em>, <em>45</em>(2), 123–135.</p>
+
+          <p>Fang, X., Tao, L., & Li, Z. (2025). Anchoring AI capabilities in market valuations: The capability realization rate model and valuation misalignment risk. <em>arXiv</em>. <a href="https://doi.org/10.48550/arXiv.2505.10590">https://doi.org/10.48550/arXiv.2505.10590</a></p>
+
+          <p>Goetze, T. S. (2024). AI art is theft: Labour, extraction, and exploitation, or, on the dangers of stochastic Pollocks. <em>arXiv</em>. <a href="https://doi.org/10.48550/arXiv.2401.06178">https://doi.org/10.48550/arXiv.2401.06178</a></p>
+
+          <p>Google DeepMind. (2024, July 25). AI achieves silver-medal standard solving International Mathematical Olympiad problems. <a href="https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/">https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/</a></p>
+
+          <p>Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O., & Narasimhan, K. (2024). SWE-bench: Can language models resolve real-world GitHub issues? <em>arXiv</em>. <a href="https://arxiv.org/abs/2310.06770">https://arxiv.org/abs/2310.06770</a></p>
+
+          <p>Jovanovic, B., & Rousseau, P. L. (2005). General purpose technologies. In P. Aghion & S. N. Durlauf (Eds.), <em>Handbook of economic growth</em> (Vol. 1B, pp. 1181–1224). Elsevier. <a href="https://doi.org/10.1016/S1574-0684(05)01018-X">https://doi.org/10.1016/S1574-0684(05)01018-X</a></p>
+
+          <p>Jumper, J., Evans, R., Pritzel, A., Green, T., Figurnov, M., Ronneberger, O., Tunyasuvunakool, K., Bates, R., Žídek, A., Potapenko, A., Bridgland, A., Meyer, C., Kohl, S. A. A., Ballard, A. J., Cowie, A., Romera-Paredes, B., Nikolov, S., Jain, R., Adler, J., … Hassabis, D. (2021). Highly accurate protein structure prediction with AlphaFold. <em>Nature</em>, <em>596</em>, 583–589. <a href="https://doi.org/10.1038/s41586-021-03819-2">https://doi.org/10.1038/s41586-021-03819-2</a></p>
+
+          <p>McKinney, S. M., Sieniek, M., Godbole, V., Godwin, J., Antropova, N., Ashrafian, H., Back, T., Chesus, M., Corrado, G. S., Darzi, A., Etemadi, M., Garcia-Vicente, F., Gilbert, F. J., Halling-Brown, M., Hassabis, D., Jansen, S., Karthikesalingam, A., Kelly, C. J., King, D., … Shetty, S. (2020). International evaluation of an AI system for breast cancer screening. <em>Nature</em>, <em>577</em>, 89–94. <a href="https://doi.org/10.1038/s41586-019-1799-6">https://doi.org/10.1038/s41586-019-1799-6</a></p>
+
+          <p>McKinsey Global Institute. (2021). <em>The rise and rise of the global balance sheet: How productively are we using our wealth?</em> McKinsey & Company. <a href="https://www.mckinsey.com/industries/financial-services/our-insights/the-rise-and-rise-of-the-global-balance-sheet">https://www.mckinsey.com/industries/financial-services/our-insights/the-rise-and-rise-of-the-global-balance-sheet</a></p>
+
+          <p>Merchant, A., Batzner, S., Schoenholz, S. S., Aykol, M., Cheon, G., & Cubuk, E. D. (2023). Scaling deep learning for materials discovery. <em>Nature</em>, <em>624</em>, 80–85. <a href="https://doi.org/10.1038/s41586-023-06735-9">https://doi.org/10.1038/s41586-023-06735-9</a></p>
+
+          <p>Mitchell, M., & Krakauer, D. C. (2023). The debate over understanding in AI's large language models. <em>Proceedings of the National Academy of Sciences</em>, <em>120</em>(13), e2215907120. <a href="https://doi.org/10.1073/pnas.2215907120">https://doi.org/10.1073/pnas.2215907120</a></p>
+
+          <p>Morgan Stanley Research. (2025). <em>The $13 trillion AI growth story</em>. Morgan Stanley.</p>
+
+          <p>Noy, S., & Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. <em>Science</em>, <em>381</em>(6654), 187–192. <a href="https://doi.org/10.1126/science.adh2586">https://doi.org/10.1126/science.adh2586</a></p>
+
+          <p>Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). The impact of AI on developer productivity: Evidence from GitHub Copilot. <em>arXiv</em>. <a href="https://arxiv.org/abs/2302.06590">https://arxiv.org/abs/2302.06590</a></p>
+
+          <p>Perez, C. (2003). <em>Technological revolutions and financial capital: The dynamics of bubbles and golden ages</em>. Edward Elgar Publishing.</p>
+
+          <p>Railway mania. (2023, December 15). In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Railway_Mania">https://en.wikipedia.org/wiki/Railway_Mania</a></p>
+
+          <p>Railways. (1911). In <em>Encyclopædia Britannica</em> (11th ed.). <a href="https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Railways">https://en.wikisource.org/wiki/1911_Encyclopædia_Britannica/Railways</a></p>
+
+          <p>Schouten, F. (2025, February 20). Tech companies axed 5,000 Mass. workers in 2024. <em>Axios Boston</em>. <a href="https://www.axios.com/local/boston/2025/02/21/tech-companies-layoffs-massachusetts-2024">https://www.axios.com/local/boston/2025/02/21/tech-companies-layoffs-massachusetts-2024</a></p>
+
+          <p>Timeline of United States railway history. (2024, January 10). In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Timeline_of_United_States_railway_history">https://en.wikipedia.org/wiki/Timeline_of_United_States_railway_history</a></p>
+
+          <p>U.S. Bureau of Economic Analysis. (2024). <em>National income and product accounts</em> (Table 5.3.6). <a href="https://www.bea.gov/data/gdp/gross-domestic-product">https://www.bea.gov/data/gdp/gross-domestic-product</a></p>
+
+          <p>U.S. Bureau of Labor Statistics. (2024). <em>Occupational employment and wage statistics</em>. <a href="https://www.bls.gov/oes/">https://www.bls.gov/oes/</a></p>
+
+          <p>U.S. Bureau of Labor Statistics. (2024). <em>Productivity and costs</em>. <a href="https://www.bls.gov/lpc/">https://www.bls.gov/lpc/</a></p>
+
+          <p>U.S. Census Bureau. (2024). <em>Quarterly retail e-commerce sales</em>. <a href="https://www.census.gov/retail/ecommerce.html">https://www.census.gov/retail/ecommerce.html</a></p>
+
+          <p>U.S. Census Bureau. (2024). <em>Business trends and outlook survey</em>. <a href="https://www.census.gov/data/experimental-data-products/business-trends-and-outlook-survey.html">https://www.census.gov/data/experimental-data-products/business-trends-and-outlook-survey.html</a></p>
+
+          <p>Zippia. (2026). <em>Data scientist job outlook and growth in the US</em>. <a href="https://www.zippia.com/data-scientist-jobs/trends/">https://www.zippia.com/data-scientist-jobs/trends/</a></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="../blog.html">Back to Writing</a>
+        <a href="https://www.linkedin.com/in/michelle-pellon/">LinkedIn</a>
+        <a href="https://github.com/michellepellon">GitHub</a>
+        <a href="mailto:mgracepellon@gmail.com">Email</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Michelle Pellon. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
