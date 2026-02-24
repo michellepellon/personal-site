@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cognitive Debt: The AI Risk Nobody's Measuring | Michelle Pellon</title>
+
+  <meta name="description" content="AI-generated code is eroding the shared mental models teams need to maintain their systems. Research from neuroscience, productivity measurement, and code quality analysis converges on the same conclusion: we are trading understanding for velocity." />
+  <meta name="keywords" content="cognitive debt, AI, software engineering, technical debt, code quality, developer productivity, AI-assisted development, team knowledge, mental models, Margaret-Anne Storey, METR study" />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://michellepellon.com/blog/2026-02-23-cognitive-debt" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Cognitive Debt: The AI Risk Nobody's Measuring" />
+  <meta property="og:description" content="AI-generated code is eroding the shared mental models teams need to maintain their systems. Research from neuroscience, productivity measurement, and code quality analysis converges on the same conclusion." />
+  <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta property="og:url" content="https://michellepellon.com/blog/2026-02-23-cognitive-debt" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-02-23T00:00:00Z" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cognitive Debt: The AI Risk Nobody's Measuring" />
+  <meta name="twitter:description" content="AI-generated code is eroding the shared mental models teams need to maintain their systems. Research from neuroscience, productivity measurement, and code quality analysis converges on the same conclusion." />
+  <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Cognitive Debt: The AI Risk Nobody's Measuring",
+    "image": "https://michellepellon.com/img/michelle-pellon-headshot.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Michelle Pellon",
+      "url": "https://michellepellon.com"
+    },
+    "datePublished": "2026-02-23",
+    "dateModified": "2026-02-23",
+    "description": "AI-generated code is eroding the shared mental models teams need to maintain their systems. Research from neuroscience, productivity measurement, and code quality analysis converges on the same conclusion.",
+    "url": "https://michellepellon.com/blog/2026-02-23-cognitive-debt"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Analytics - Delayed -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ';
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-TPVXJT8FKZ');
+      }, 1000);
+    });
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666;
+      --text-muted: #999;
+      --border-color: #e5e5e5;
+      --bg-white: #fff;
+      --bg-light: #fafafa;
+      --max-width: 680px;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2.5rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+    }
+
+    html {
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg-white);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .serif {
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+
+    /* Navigation */
+    .nav {
+      padding: var(--spacing-lg) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+      opacity: 1;
+    }
+
+    /* Article Header */
+    .article-header {
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .article-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: var(--spacing-md);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .article-title {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Article Content */
+    .article-content {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .article-content h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: var(--spacing-2xl);
+      margin-bottom: var(--spacing-lg);
+      letter-spacing: -0.01em;
+    }
+
+    .article-content h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-content p {
+      margin-bottom: var(--spacing-lg);
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--spacing-lg);
+      padding-left: var(--spacing-lg);
+      color: var(--text-secondary);
+    }
+
+    .article-content li {
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.7;
+    }
+
+    .article-content blockquote {
+      margin: var(--spacing-xl) 0;
+      padding-left: var(--spacing-lg);
+      border-left: 2px solid var(--border-color);
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--spacing-lg) 0;
+      font-size: 0.9rem;
+    }
+
+    .article-content caption {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: var(--spacing-sm);
+      text-align: left;
+      font-style: italic;
+    }
+
+    .article-content th,
+    .article-content td {
+      padding: var(--spacing-sm);
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-secondary);
+    }
+
+    .article-content th {
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--bg-light);
+    }
+
+    .article-content hr {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: var(--spacing-2xl) 0;
+    }
+
+    /* References */
+    .references {
+      margin-top: var(--spacing-2xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .references h2 {
+      font-size: 1.2rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .references p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      html { font-size: 16px; }
+
+      .article-header { padding: var(--spacing-2xl) 0 var(--spacing-lg); }
+      .article-title { font-size: 1.6rem; }
+
+      .footer-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="../index.html" class="nav-brand">Michelle Pellon</a>
+      <div class="nav-links">
+        <a href="../blog.html" class="active">Writing</a>
+      </div>
+    </nav>
+
+    <article>
+      <!-- Article Header -->
+      <header class="article-header fade-up">
+        <div class="article-meta">
+          <span>AI &bull; Software Engineering</span>
+          <span>&bull; February 23, 2026</span>
+        </div>
+        <h1 class="article-title">Cognitive Debt: The AI Risk Nobody's Measuring</h1>
+        <p class="article-subtitle">Your developers are shipping code they don't understand. The research says it's worse than you think.</p>
+      </header>
+
+      <!-- Article Content -->
+      <div class="article-content">
+
+        <p>Technical debt is familiar territory for any technology leader. But as AI-generated code becomes the norm, a subtler and more serious liability is emerging: <strong>cognitive debt</strong> — the erosion of the shared mental models your team needs to maintain, adapt, and safely evolve your systems over time.</p>
+
+        <p>Margaret-Anne Storey coined the term at a recent Thoughtworks retreat, calling it a silent drain on collective system knowledge — one that accumulates <em>even when the AI-produced code is flawless</em>. This isn't a code quality problem. It's a comprehension problem. And it threatens your team's ability to respond when something inevitably breaks.</p>
+
+        <p>What caught my attention wasn't just Storey's framing — it's how rapidly the research is converging from multiple directions. Neuroscience, productivity measurement, code quality analysis, and cognitive psychology are all arriving at the same conclusion: <strong>we are trading understanding for velocity, and the cost is compounding.</strong></p>
+
+        <h2>The Neuroscience: AI Use Weakens the Neural Pathways You Need Most</h2>
+
+        <p>MIT Media Lab's "Your Brain on ChatGPT" study (<a href="https://arxiv.org/abs/2506.08872">Kosmyna et al., 2025</a>) used EEG to measure brain connectivity during writing tasks across three conditions: unassisted, search-engine-assisted, and LLM-assisted. Neural coupling dropped with tool use across the board, but LLM users showed the weakest connectivity, the least ownership of their output, and the poorest recall.</p>
+
+        <p>The most striking finding: participants who built understanding first and <em>then</em> used AI outperformed on every measure. Those who started with AI lost ground — and couldn't recover it later.</p>
+
+        <h2>The Productivity Illusion: Slower, and They Don't Know It</h2>
+
+        <p>METR's 2025 randomized controlled trial (<a href="https://arxiv.org/abs/2507.09089">METR, 2025</a>) is the most rigorous field study available on AI-assisted development productivity. They tracked 16 experienced open-source developers across 246 real-world tasks in large, mature codebases.</p>
+
+        <p>The result: developers using AI tools took <strong>19% longer</strong>, not faster. Before the study, they predicted AI would save them 24%. After experiencing the slowdown firsthand, they <em>still</em> believed it helped by 20%.</p>
+
+        <p>Developers were slower, and they didn't know it.</p>
+
+        <p>The researchers attributed the gap to several factors — AI's lack of implicit repository knowledge, time spent reviewing and correcting suggestions, and the overhead of context-switching between human reasoning and AI output. This doesn't mean AI tools are useless. But the "just ship faster" narrative deserves far more scrutiny than it's getting.</p>
+
+        <h2>The Code Quality Signal: Refactoring Is Disappearing</h2>
+
+        <p>GitClear's longitudinal analysis of 211 million lines of code (2020–2024) found that refactoring dropped from 25% of changed lines in 2021 to under 10% by 2024, while code duplication roughly quadrupled. A separate CodeRabbit analysis of 470 GitHub pull requests found AI-co-authored code contained <strong>1.7× more major issues</strong> and <strong>2.74× more security vulnerabilities</strong> than human-written code.</p>
+
+        <p>This is where cognitive debt meets technical debt and compounds it. Kent Beck's "<a href="https://www.oreilly.com/library/view/tidy-first/9781098151232/">Tidy First?</a>" principle is instructive: refactoring isn't just cleanup — it's where developers consolidate their mental models of a system. When AI eliminates that step, teams lose both the structural improvement <em>and</em> the understanding that comes with it.</p>
+
+        <h2>The Cognitive Offloading Effect</h2>
+
+        <p>Gerlich (<a href="https://doi.org/10.3390/soc15010006">2025</a>) surveyed 666 participants and found cognitive offloading strongly correlated with AI use (<em>r</em> = +0.72) and inversely correlated with critical thinking (<em>r</em> = −0.75). Younger participants showed higher dependence and lower critical thinking scores. This isn't software-specific, but it maps directly to Storey's framework: more offloading, less independent reasoning, weaker shared understanding.</p>
+
+        <p>None of this is entirely new. In 1985, Peter Naur argued that a program isn't its code — it's a <em>theory</em> held by its developers (<a href="https://doi.org/10.1016/0165-6074(85)90032-7">Naur, 1985</a>). Code is only a partial representation. If the people who hold the theory leave, the program effectively dies. In the AI era, Naur's insight takes on new urgency: if developers never build the theory in the first place, cognitive debt starts at commit zero.</p>
+
+        <hr>
+
+        <h2>What to Do About It</h2>
+
+        <p>Martin Fowler, writing from the same retreat where Storey presented, posed the right question (<a href="https://martinfowler.com/">Fowler, 2026</a>): do we need a refactoring-like discipline — not for the code, but for the team's understanding?</p>
+
+        <p>I believe we do. Here's a structured approach, sequenced by priority and scaled by the maturity of your AI adoption.</p>
+
+        <h3>Layer 1: Change the Culture (Start Here)</h3>
+
+        <p>The single most important finding across all of this research is the METR perception gap. Your developers think AI is making them faster. The data says otherwise. That isn't an individual failing — it's a leadership problem.</p>
+
+        <p>If your culture celebrates velocity above all else and treats AI as a pure accelerant, your team has no incentive to slow down and comprehend what's being generated. They'll accept the output, ship it, and move on — accumulating cognitive debt they cannot see.</p>
+
+        <p>The first intervention isn't a process or a template. It's <strong>explicit permission from leadership to spend time understanding.</strong></p>
+
+        <p><strong>Budget for comprehension.</strong> When estimating AI-assisted work, add 20–30% for the team to actually understand what was produced. If a feature normally takes 10 hours and half the work comes from AI, estimate 12–13. Across a sprint, that means budgeting 8–12 additional hours for deeper review, walkthroughs, and documentation. This isn't overhead. This is the work.</p>
+
+        <p><strong>Protect refactoring time.</strong> The GitClear data — refactoring collapsing from 25% to under 10% — is the canary in the coal mine. If AI is eliminating the step where developers build mental models, you need to reintroduce it deliberately.</p>
+
+        <p><strong>Stop treating AI adoption as a success metric.</strong> "Percentage of code generated by AI" tells you nothing about whether your team understands what they're shipping. It's the equivalent of measuring a writer's productivity by word count.</p>
+
+        <p><strong>Name the problem.</strong> Most teams don't have language for what they're experiencing — they just know certain systems feel opaque and changes feel risky. Giving your team the concept of cognitive debt creates shared vocabulary for a real phenomenon.</p>
+
+        <h3>Layer 2: Lightweight Practices for Every Team</h3>
+
+        <p>These two habits have the highest ratio of value to ceremony. They work at any scale.</p>
+
+        <p><strong>Decision logs.</strong> For each significant change — especially AI-generated — capture what changed, why this approach over alternatives, and what you expect going forward. This is a lightweight version of Architecture Decision Records. Naur argued that a program's theory can never be fully documented, but documentation serves as scaffolding for rebuilding theory when needed. In fast-moving AI environments with limited human deliberation, that scaffolding becomes essential. A shared doc, a thorough PR description, a Notion page — format matters less than the habit.</p>
+
+        <p><strong>Ownership, not just review.</strong> Code review catches bugs. What you need is a <em>theory review</em> — someone who can answer three questions about any significant change: <em>What does this do and why? What did we intentionally leave out? How would this change if requirements shifted?</em> If no one on the team can answer all three, the change isn't ready — regardless of whether tests pass. Reserve this for critical systems, data pipelines, and integrations. Let low-risk changes flow with standard review. The goal is building a habit of ownership, not creating bottlenecks.</p>
+
+        <h3>Layer 3: The Full Discipline (For High-Stakes Systems)</h3>
+
+        <p>These practices add friction, which means they need to earn their place. Apply them selectively — to the systems where a failure of understanding would be most costly.</p>
+
+        <p><strong>Design intent before generation.</strong> Before prompting AI to build anything significant, articulate the mental model: what is this component supposed to do, what are its boundaries, what assumptions are we making? Even three bullet points. This is Beck's "make the hard change easy" applied to AI workflows — you build the theory first so the generated code has something to attach to.</p>
+
+        <p>A tension worth naming: much of AI's value is exploratory. Sometimes you prompt to discover what's possible, not to implement a plan. Beck's own Explore/Expand/Extract model acknowledges this. So apply design intent to <em>implementation</em>, not exploration. When prototyping, let the AI run. When building for production, slow down and articulate intent first. The MIT study's clearest finding supports this literally — understanding first, AI second.</p>
+
+        <p><strong>Structured comprehension loops.</strong> After any non-trivial AI generation, run a deliberate cycle: (1) ask the AI to explain the logic and tradeoffs in plain language, (2) have the developer restate the explanation in their own words, and (3) document gaps between expectation and output. Step 2 is critical. Neuroscience is clear: passively reading an AI explanation doesn't build neural pathways. You have to actively reconstruct the reasoning. This is the difference between reading a textbook and solving the problem set.</p>
+
+        <p><strong>Monthly theory rebuilds.</strong> Pick a critical system component each month and walk through it as a team: how does it work, what design decisions were made, what's changed, what assumptions are we still relying on? Storey calls these "knowledge-sharing checkpoints." Think of them as disaster recovery drills for understanding. If the team can't reconstruct the theory of a system without referring to the AI that built it, cognitive debt has crossed into dangerous territory.</p>
+
+        <hr>
+
+        <h2>How to Know You're Already in Trouble</h2>
+
+        <p>Cognitive debt doesn't announce itself through failing builds. It surfaces as a pattern of subtle signals.</p>
+
+        <p><strong>Hesitation.</strong> Developers avoid touching certain components — not due to technical complexity, but because nobody is confident they understand the ripple effects.</p>
+
+        <p><strong>The AI-first reflex.</strong> When the default response to "how does this work?" is pasting code into an LLM rather than reading it or asking a teammate, the team's internal theory is already eroding.</p>
+
+        <p><strong>Knowledge concentration.</strong> System understanding collapses to one or two people — usually whoever prompted the AI in the first place. In AI-augmented environments, this happens faster because the prompter is often the only person who understands the intent behind the code.</p>
+
+        <p><strong>Rising change cost.</strong> Modifications that should be straightforward take longer than expected. Debugging time increases. Side effects surface in unexpected places. The system is becoming a black box the team routes around rather than reasons about.</p>
+
+        <p>If you're seeing two or more of these, you're carrying meaningful cognitive debt. The question is whether you address it deliberately or wait for the incident that forces you to.</p>
+
+        <hr>
+
+        <h2>The Bottom Line</h2>
+
+        <p>This isn't an anti-AI argument. I use these tools daily, and they make certain work dramatically more efficient. It's an argument for applying the same discipline to AI that we'd apply to any powerful capability with hidden costs.</p>
+
+        <p>Start with the culture — give your team permission and time to understand what they're shipping. Add decision logs and ownership practices to catch the worst gaps. Layer in the heavier disciplines where stakes justify them.</p>
+
+        <p>The teams that thrive over the next few years won't be the ones that ship fastest. They'll be the ones that maintain a living, shared theory of their systems while moving at speed.</p>
+
+        <p>Cognitive debt is real. The research is converging. And unlike technical debt, it won't show up in your build logs.</p>
+
+        <div class="references">
+          <h2>References</h2>
+
+          <p>1. Storey, M.-A. (2026). "<a href="https://margaretstorey.com">How Generative and Agentic AI Shift Concern from Technical Debt to Cognitive Debt</a>." margaretstorey.com.</p>
+
+          <p>2. Kosmyna, N., et al. (2025). "<a href="https://arxiv.org/abs/2506.08872">Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a>." arXiv:2506.08872.</p>
+
+          <p>3. METR (2025). "<a href="https://arxiv.org/abs/2507.09089">Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity</a>." arXiv:2507.09089.</p>
+
+          <p>4. Gerlich, M. (2025). "<a href="https://doi.org/10.3390/soc15010006">AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking</a>." <em>Societies</em>, 15(1), 6.</p>
+
+          <p>5. Naur, P. (1985). "<a href="https://doi.org/10.1016/0165-6074(85)90032-7">Programming as Theory Building</a>." <em>Microprocessing and Microprogramming</em>, 15(5), 253–261.</p>
+
+          <p>6. Fowler, M. (2026). "<a href="https://martinfowler.com">Fragments: February 9</a>." martinfowler.com.</p>
+
+          <p>7. Beck, K. (2023). <em><a href="https://www.oreilly.com/library/view/tidy-first/9781098151232/">Tidy First? A Personal Exercise in Empirical Software Design</a></em>. O'Reilly Media.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="../blog.html">Back to Writing</a>
+        <a href="https://www.linkedin.com/in/michelle-pellon/">LinkedIn</a>
+        <a href="https://github.com/michellepellon">GitHub</a>
+        <a href="mailto:mgracepellon@gmail.com">Email</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Michelle Pellon. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
