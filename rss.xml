@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Michelle Pellon's Blog</title>
-    <description>Insights on healthcare technology, digital transformation, IT leadership, and building high-performing teams</description>
+    <description>Essays on technology, AI, digital autonomy, and practice</description>
     <link>https://michellepellon.com/blog.html</link>
     <atom:link href="https://michellepellon.com/rss.xml" rel="self" type="application/rss+xml" />
     <language>en-us</language>
     <managingEditor>mgracepellon@gmail.com (Michelle Pellon)</managingEditor>
     <webMaster>mgracepellon@gmail.com (Michelle Pellon)</webMaster>
-    <lastBuildDate>Sat, 24 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <pubDate>Sat, 24 Aug 2025 00:00:00 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
     <generator>Hand-crafted RSS by Michelle Pellon</generator>
     <image>
@@ -19,7 +19,83 @@
       <width>144</width>
       <height>144</height>
     </image>
-    
+
+    <item>
+      <title>Rooted and Reachable: On Practice in the Age of Simulation</title>
+      <description><![CDATA[
+        On Arendt, Scheler, and the bodhisattva vow — keeping the higher things alive in an age when machines can simulate nearly everything that matters.
+      ]]></description>
+      <link>https://michellepellon.com/blog/2026-04-20-rooted-and-reachable.html</link>
+      <guid>https://michellepellon.com/blog/2026-04-20-rooted-and-reachable.html</guid>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+      <author>mgracepellon@gmail.com (Michelle Pellon)</author>
+      <category>Practice</category>
+      <category>Contemplation</category>
+      <category>AI</category>
+    </item>
+
+    <item>
+      <title>Cognitive Debt: The AI Risk Nobody's Measuring</title>
+      <description><![CDATA[
+        AI-generated code is eroding the shared mental models teams need to maintain their systems. Research from neuroscience, productivity measurement, and code quality analysis converges on the same conclusion.
+      ]]></description>
+      <link>https://michellepellon.com/blog/2026-02-23-cognitive-debt.html</link>
+      <guid>https://michellepellon.com/blog/2026-02-23-cognitive-debt.html</guid>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+      <author>mgracepellon@gmail.com (Michelle Pellon)</author>
+      <category>AI</category>
+      <category>Software Engineering</category>
+    </item>
+
+    <item>
+      <title>The Conflation Problem: Why Financial Criticism Fails as Technology Assessment</title>
+      <description><![CDATA[
+        A response to Cory Doctorow arguing that conflating financial bubble dynamics with AI capability assessment leads to flawed conclusions.
+      ]]></description>
+      <link>https://michellepellon.com/blog/2026-01-27-the-conflation-problem.html</link>
+      <guid>https://michellepellon.com/blog/2026-01-27-the-conflation-problem.html</guid>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <author>mgracepellon@gmail.com (Michelle Pellon)</author>
+      <category>AI</category>
+    </item>
+
+    <item>
+      <title>Week 11: When Your Model Forgets to Look Outside</title>
+      <description><![CDATA[
+        How a 28.6% accuracy week revealed my NFL prediction model was collecting weather and rest data but completely ignoring it.
+      ]]></description>
+      <link>https://michellepellon.com/blog/2025-11-18-week-11-failure-feature-integration.html</link>
+      <guid>https://michellepellon.com/blog/2025-11-18-week-11-failure-feature-integration.html</guid>
+      <pubDate>Tue, 18 Nov 2025 00:00:00 +0000</pubDate>
+      <author>mgracepellon@gmail.com (Michelle Pellon)</author>
+      <category>Data Engineering</category>
+    </item>
+
+    <item>
+      <title>How to Build an NFL Prediction Model with ELO Ratings and DuckDB</title>
+      <description><![CDATA[
+        Build a sophisticated NFL prediction model achieving 57% accuracy using ELO ratings, DuckDB, and dbt. Complete technical guide with Python code and real-world results.
+      ]]></description>
+      <link>https://michellepellon.com/blog/2025-11-13-building-an-nfl-prediction-model.html</link>
+      <guid>https://michellepellon.com/blog/2025-11-13-building-an-nfl-prediction-model.html</guid>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <author>mgracepellon@gmail.com (Michelle Pellon)</author>
+      <category>Data Engineering</category>
+    </item>
+
+    <item>
+      <title>Claude Skills in the Enterprise</title>
+      <description><![CDATA[
+        Claude Skills, packaged as a governed, repo-first library, are the practical path to scalable, cross-domain human-AI collaboration in the Enterprise.
+      ]]></description>
+      <link>https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise.html</link>
+      <guid>https://michellepellon.com/blog/2025-10-20-claude-skills-in-the-enterprise.html</guid>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      <author>mgracepellon@gmail.com (Michelle Pellon)</author>
+      <category>AI</category>
+      <category>Enterprise</category>
+    </item>
+
     <item>
       <title>AI-Facilitated Delusional Ideation: Rethinking "AI Psychosis"</title>
       <description><![CDATA[
@@ -27,13 +103,13 @@
       ]]></description>
       <link>https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation.html</link>
       <guid>https://michellepellon.com/blog/2025-08-24-ai-facilitated-delusional-ideation.html</guid>
-      <pubDate>Sat, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
       <author>mgracepellon@gmail.com (Michelle Pellon)</author>
       <category>AI Safety</category>
       <category>Mental Health</category>
       <category>Digital Psychiatry</category>
     </item>
-    
+
     <item>
       <title>A Case for Digital National Parks</title>
       <description><![CDATA[
@@ -41,7 +117,7 @@
       ]]></description>
       <link>https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks.html</link>
       <guid>https://michellepellon.com/blog/2025-08-18-a-case-for-digital-national-parks.html</guid>
-      <pubDate>Sun, 18 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
       <author>mgracepellon@gmail.com (Michelle Pellon)</author>
       <category>AI Privacy Risk</category>
       <category>Digital Autonomy</category>
