@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI-Assisted Analytics Layer | Michelle Pellon</title>
 
-  <meta name="description" content="An AI-assisted analytics layer for a PE-backed healthcare provider: Claude, a custom MCP server, governed semantic access, and a text-to-SQL eval harness in Python." />
+  <meta name="description" content="How a PE-backed healthcare provider put production AI on governed data: Claude, a custom MCP server, and a text-to-SQL eval harness." />
   <meta name="author" content="Michelle Pellon" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://michellepellon.com/portfolio/ai-analytics-layer" />
@@ -284,22 +284,22 @@
 
     <main>
       <article class="article-body fade-up">
-        <h2>The problem</h2>
-        <p>A modern lakehouse fixes the data platform; it does not fix the queue of people waiting on analysts. At BlueSprig, stakeholders in Finance and Clinical Ops had questions the data could answer, but every question still needed someone fluent in SQL and the semantics of clinical operations data. The <a href="lakehouse-replatform.html">replatform</a> removed the infrastructure bottleneck. This layer removed the human one.</p>
+        <h2>The bottleneck after the bottleneck</h2>
+        <p>A modern lakehouse fixes the data platform. It does nothing about the queue of people waiting on analysts. At BlueSprig, stakeholders in Finance and Clinical Ops had questions the data could answer, but every question still needed someone fluent in SQL and the semantics of clinical operations data. The <a href="lakehouse-replatform.html">replatform</a> removed the infrastructure bottleneck. This layer removed the human one.</p>
 
         <h2>The design</h2>
         <ul>
-          <li>Claude connected to the lakehouse through a custom MCP (Model Context Protocol) server — not raw database access, but a governed interface</li>
+          <li>Claude reaches the lakehouse only through a custom MCP (Model Context Protocol) server, a governed interface with the access rules built in</li>
           <li>Semantic access layer: canonical metric definitions, standard filters, and curated context, so the model answers with the organization's definitions rather than improvising its own</li>
-          <li>A text-to-SQL eval harness, built in Python, that scores generated queries against known-good answers — trust is measured, not assumed</li>
-          <li>Guardrails aligned with the company's AI governance framework, which I authored alongside the vendor-assessment framework</li>
+          <li>A text-to-SQL eval harness, built in Python, scores generated queries against known-good answers, so we know the accuracy number before stakeholders bet on it</li>
+          <li>Guardrails from the company's AI governance framework, which I wrote, along with the vendor-assessment framework beside it</li>
         </ul>
 
         <h2>The outcome</h2>
         <p>Non-technical stakeholders in Finance and Clinical Ops query the lakehouse directly, in plain language, and get answers grounded in governed definitions. Analyst time moved from servicing report requests to improving the semantic layer itself — every definition added makes every future answer better.</p>
 
         <h2>Why it matters beyond one company</h2>
-        <p>Most enterprise AI analytics fails in one of two ways: ungoverned access that produces confident nonsense, or governance so heavy nobody uses it. The pattern here — MCP as the governed gateway, a semantic layer as the source of truth, and an eval harness as the continuous proof — is a repeatable playbook for putting AI on top of enterprise data in a regulated environment.</p>
+        <p>Most enterprise AI analytics fails in one of two ways: ungoverned access that produces confident nonsense, or governance so heavy nobody uses it. The pattern here is repeatable: MCP as the governed gateway, a semantic layer as the source of truth, an eval harness as the running proof. That's the playbook for putting AI on top of enterprise data in a regulated environment.</p>
 
         <p><a href="../index.html#projects">← Back to Projects</a></p>
       </article>
