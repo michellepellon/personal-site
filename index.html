@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michelle Pellon | Vice President, IT & Data Strategy</title>
+  <title>Michelle Pellon | VP, AI & Analytics — PE-Backed Healthcare</title>
 
-  <meta name="description" content="Technology executive building data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations. 15+ M&A integrations across organizations with $250M+ in annual revenue." />
-  <meta name="keywords" content="Vice President, VP Technology, VP Data, IT Strategy, Data Strategy, Technology Executive, Data Platform, AI Implementation, Digital Transformation, Healthcare Technology, PE Portfolio, Private Equity, M&A Integration" />
+  <meta name="description" content="AI transformation executive for PE-backed healthcare. VP, AI & Analytics at BlueSprig: lakehouse replatform, production AI, board reporting to PE sponsors." />
+  <meta name="keywords" content="VP AI & Analytics, Chief Data and AI Officer, AI transformation, PE-backed healthcare, private equity value creation, enterprise data strategy, AI governance, healthcare analytics, lakehouse architecture, MCP server, M&A integration" />
   <meta name="author" content="Michelle Pellon" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://michellepellon.com/" />
+  <link rel="alternate" type="application/rss+xml" title="Michelle Pellon's Blog" href="https://michellepellon.com/rss.xml" />
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Michelle Pellon | Vice President, IT & Data Strategy" />
-  <meta property="og:description" content="Technology executive building data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations." />
+  <meta property="og:title" content="Michelle Pellon | VP, AI & Analytics — PE-Backed Healthcare" />
+  <meta property="og:description" content="AI transformation executive for PE-backed healthcare. Lakehouse replatform, production AI, board reporting to PE sponsors — and I still ship." />
   <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
   <meta property="og:url" content="https://michellepellon.com" />
   <meta property="og:type" content="profile" />
 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Michelle Pellon | Vice President, IT & Data Strategy" />
-  <meta name="twitter:description" content="Technology executive building data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations." />
+  <meta name="twitter:title" content="Michelle Pellon | VP, AI & Analytics — PE-Backed Healthcare" />
+  <meta name="twitter:description" content="AI transformation executive for PE-backed healthcare. Lakehouse replatform, production AI, board reporting to PE sponsors — and I still ship." />
   <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
 
   <!-- Favicon -->
@@ -29,7 +30,7 @@
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
   <!-- Structured Data -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Michelle Pellon","jobTitle":["Vice President, Data & Analytics","VP Data & Analytics","Technology Executive"],"description":"Technology executive building data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations.","url":"https://michellepellon.com","image":"https://michellepellon.com/img/michelle-pellon-headshot.jpg","sameAs":["https://www.linkedin.com/in/michelle-pellon/","https://github.com/michellepellon"],"email":"mgracepellon@gmail.com","knowsAbout":["Data Strategy","AI/ML Implementation","Digital Transformation","Healthcare IT","Cloud Architecture","Lakehouse & Data Platforms","DevOps & CI/CD","Cybersecurity & Compliance","M&A Technology Integration","PE Portfolio Operations"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://michellepellon.com/#person","name":"Michelle Pellon","jobTitle":"VP, AI & Analytics","worksFor":{"@type":"Organization","name":"BlueSprig Pediatrics","url":"https://www.bluesprig.com/"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Trinity University"},"description":"AI transformation executive for PE-backed healthcare. Builds data platforms and production AI that convert technical capability into financial outcomes.","url":"https://michellepellon.com","image":"https://michellepellon.com/img/michelle-pellon-headshot.jpg","sameAs":["https://www.linkedin.com/in/michelle-pellon/","https://github.com/michellepellon"],"email":"mgracepellon@gmail.com","knowsAbout":["Enterprise Data & AI Strategy","AI Governance & Responsible AI","Healthcare Analytics","HIPAA Compliance","Lakehouse Architecture","DuckDB & MotherDuck","LLM & Agentic Applications","Private Equity Value Creation","M&A Technology Integration","Board Reporting"]},{"@type":"WebSite","@id":"https://michellepellon.com/#website","url":"https://michellepellon.com","name":"Michelle Pellon","publisher":{"@id":"https://michellepellon.com/#person"}}]}</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,12 +152,37 @@
 
     .hero-intro {
       font-size: 1.75rem;
-      line-height: 1.5;
-      max-width: 600px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      max-width: 640px;
+      margin-bottom: var(--spacing-lg);
     }
 
     .hero-intro .serif {
       font-size: 1.85rem;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+
+    .experience-intro {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      max-width: 640px;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .experience-mandate {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-sm);
     }
 
     /* Section styling */
@@ -291,6 +317,7 @@
 
       .hero-intro { font-size: 1.4rem; }
       .hero-intro .serif { font-size: 1.5rem; }
+      .hero-sub { font-size: 1rem; }
 
       .experience-item {
         grid-template-columns: 1fr;
@@ -331,13 +358,19 @@
       <a href="/" class="nav-brand">Michelle Pellon</a>
       <div class="nav-links">
         <a href="blog.html">Writing</a>
+        <a href="#projects">Projects</a>
+        <a href="books.html">Reading</a>
+        <a href="zen-cv.html">Practice</a>
       </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
-      <p class="hero-intro fade-up">
-        I am Michelle, a technology executive who builds data platforms and embedded AI capabilities that protect revenue and accelerate growth for PE-backed healthcare organizations. Currently VP of Data & Analytics at <a href="https://www.bluesprig.com/">BlueSprig Pediatrics</a>.
+      <h1 class="hero-intro fade-up">
+        I turn AI capability into <span class="serif">financial outcomes</span> for PE-backed healthcare.
+      </h1>
+      <p class="hero-sub fade-up">
+        I am Michelle Pellon, VP, AI & Analytics at <a href="https://www.bluesprig.com/">BlueSprig Pediatrics</a>, a KKR-backed provider of pediatric ABA therapy. I lead technology and data platforms — a 12-person team and a $7M portfolio supporting 3,000+ clinicians across 160+ sites — and report monthly to the board and PE sponsors. My team replatformed a legacy stack to a MotherDuck (DuckDB) lakehouse, cutting platform and staffing costs by more than 75%, and shipped AI that Finance and Clinical Ops use in production every day. Unlike most executives at this level, I still ship: MCP servers, eval harnesses, clinical AI tools — live on <a href="https://github.com/michellepellon">GitHub</a>.
       </p>
     </section>
 
@@ -345,6 +378,7 @@
       <!-- Experience -->
       <section class="section fade-up fade-up-delay-1">
         <h2 class="section-title">Experience</h2>
+        <p class="experience-intro">Every role below was a defined mandate: take it, deliver it, hand it off. Along the way I have supported 15+ M&A integrations across four organizations.</p>
         <div class="experience-list">
           <div class="experience-item">
             <div class="experience-meta">
@@ -352,11 +386,13 @@
               <div class="experience-period">2024 — Present</div>
             </div>
             <div class="experience-description">
-              <div class="experience-title">VP, Data & Analytics</div>
+              <div class="experience-title">VP, AI & Analytics</div>
+              <p class="experience-mandate">Mandate: modernize the data estate and embed AI in clinical operations for a KKR-backed provider.</p>
               <ul class="experience-bullets">
-                <li>Lead a small team to replatform a legacy SQL Server/Power BI stack to a modern lakehouse on MotherDuck (DuckDB), orchestrated with Prefect Cloud, data validated continuously via Soda, and version-controlled in GitHub with CI/CD. Cut annual platform costs and staffing costs by >75% and replaced weeks-long manual reporting with self-service analytics.</li>
-                <li>Architected an AI-assisted analytics layer (Claude, MCP servers, Python notebooks) that enables non-technical stakeholders to query, validate, and build trustworthy reporting directly against the lakehouse—eliminating analyst bottlenecks and putting production-quality insights in the hands of Finance, Clinical Ops, and business leaders.</li>
                 <li>Lead a 12-person team (internal and external) managing a $7M technology portfolio supporting 3,000+ clinicians and 160+ sites; deliver monthly board reporting on technology roadmap, risk posture, and operational KPIs to PE sponsors.</li>
+                <li>Replatformed a legacy SQL Server/Power BI stack to a <a href="portfolio/lakehouse-replatform.html">MotherDuck (DuckDB) lakehouse</a> — Prefect Cloud orchestration, continuous Soda validation, GitHub CI/CD — cutting platform and staffing costs by more than 75% and replacing weeks-long manual reporting with self-service analytics.</li>
+                <li>Architected an <a href="portfolio/ai-analytics-layer.html">AI-assisted analytics layer</a> (Claude, MCP server, governed semantic access) that lets non-technical stakeholders in Finance and Clinical Ops query the lakehouse directly; built the companion text-to-SQL eval harness in Python.</li>
+                <li>Ship applied AI into clinical operations — an AI note-audit tool for RBTs and a Chrome extension automating clinical note authoring inside CentralReach — and authored the company's AI governance and vendor-assessment framework.</li>
               </ul>
             </div>
           </div>
@@ -368,9 +404,10 @@
             </div>
             <div class="experience-description">
               <div class="experience-title">Director, DevOps</div>
+              <p class="experience-mandate">Mandate: make four SaaS EHR platforms ready for recapitalization. Delivered in two years.</p>
               <ul class="experience-bullets">
-                <li>Led a 15-person DevOps organization through modernization of deployment pipelines, reducing production downtime from 8 hours to &lt;1 hour across four SaaS EHR platforms</li>
-                <li>Established FinOps controls and a 3-year COGS model for $4M in cloud spend</li>
+                <li>Led a 15-person DevOps organization across four SaaS EHR platforms, cutting production downtime from 8 hours to under 1 and introducing safe rollbacks — directly protecting customer retention through a growth phase</li>
+                <li>Established FinOps controls and a 3-year COGS model for $4M in cloud spend, improving margin predictability ahead of the company's recapitalization</li>
                 <li>Delivered Walmart Supply Chain Cybersecurity compliance in 45 days with zero findings, unblocking vendor access to 3,000+ Vision Centers</li>
               </ul>
             </div>
@@ -383,6 +420,7 @@
             </div>
             <div class="experience-description">
               <div class="experience-title">Director, DevOps</div>
+              <p class="experience-mandate">Mandate: build the DevOps function from zero. Built and handed off in 13 months.</p>
               <ul class="experience-bullets">
                 <li>Built and led an 8-person DevOps team; introduced Infrastructure as Code to standardize AWS environments, improving audit readiness and reducing cloud costs by 25%</li>
                 <li>Resolved critical performance bottlenecks during enterprise customer migrations through SQL optimization and caching strategies, preventing churn among major accounts including IKAV Energy, XTO (ExxonMobil), and Repsol</li>
@@ -397,10 +435,10 @@
             </div>
             <div class="experience-description">
               <div class="experience-title">Director, Technology</div>
+              <p class="experience-mandate">Mandate: stand up security assurance for Fortune 100 sales and carry technical diligence through the merger. Departed at merger completion.</p>
               <ul class="experience-bullets">
-                <li>Managed a 4-person team through end-to-end IT infrastructure deployment for a 250-person HQ facility within $2.5M capex</li>
                 <li>Built a repeatable security assurance function supporting $16M in ARR across Fortune 100 customers including Zoom, Slack, Johnson & Johnson, and Starbucks</li>
-                <li>Supported M&A technical diligence during the iOFFICE-SpaceIQ merger that formed Eptura</li>
+                <li>Supported M&A technical diligence during the iOFFICE-SpaceIQ merger that formed Eptura; also delivered HQ infrastructure for a 250-person facility on time within $2.5M capex</li>
               </ul>
             </div>
           </div>
@@ -412,10 +450,34 @@
             </div>
             <div class="experience-description">
               <div class="experience-title">Cybersecurity Engineer</div>
+              <p class="experience-mandate">Mandate: pass the organization's first WECC audit. Passed, with the compliance foundation handed off.</p>
               <ul class="experience-bullets">
                 <li>Led a 2-person team through NERC CIP audit preparation; passed the organization's first WECC audit by securing mission-critical control systems across two 24/7 control rooms, safeguarding $5M in annual revenue</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section fade-up fade-up-delay-2" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="writings-list">
+          <div class="writing-item">
+            <a href="portfolio/lakehouse-replatform.html">Lakehouse Replatform — SQL Server to MotherDuck (DuckDB), platform costs down 75%</a>
+            <span class="writing-meta">BlueSprig</span>
+          </div>
+          <div class="writing-item">
+            <a href="portfolio/ai-analytics-layer.html">AI-Assisted Analytics Layer — Claude, MCP server, and a text-to-SQL eval harness</a>
+            <span class="writing-meta">BlueSprig</span>
+          </div>
+          <div class="writing-item">
+            <a href="portfolio/nfl-game-predictions.html">NFL Game Prediction System — ELO ratings and Monte Carlo on DuckDB and dbt</a>
+            <span class="writing-meta">Personal</span>
+          </div>
+          <div class="writing-item">
+            <a href="portfolio/moment.html">Moment — a Zen breathing Chrome extension, live in the Chrome Web Store</a>
+            <span class="writing-meta">Personal</span>
           </div>
         </div>
       </section>
@@ -435,6 +497,14 @@
           <div class="writing-item">
             <a href="blog/2026-01-27-the-conflation-problem.html">The Conflation Problem: Why Financial Criticism Fails as Technology Assessment</a>
             <span class="writing-meta">Jan 2026</span>
+          </div>
+          <div class="writing-item">
+            <a href="blog/2025-11-18-week-11-failure-feature-integration.html">Week 11: When Your Model Forgets to Look Outside</a>
+            <span class="writing-meta">Nov 2025</span>
+          </div>
+          <div class="writing-item">
+            <a href="blog/2025-11-13-building-an-nfl-prediction-model.html">How to Build an NFL Prediction Model with ELO Ratings and DuckDB</a>
+            <span class="writing-meta">Nov 2025</span>
           </div>
           <div class="writing-item">
             <a href="blog/2025-10-20-claude-skills-in-the-enterprise.html">Claude Skills in the Enterprise</a>
