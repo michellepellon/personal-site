@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Michelle Pellon</title>
+  <meta name="robots" content="noindex" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666;
+      --border-color: #e5e5e5;
+      --max-width: 720px;
+      --spacing-lg: 1.5rem;
+      --spacing-3xl: 6rem;
+    }
+
+    html { font-size: 17px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: #fff;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .serif { font-family: var(--font-serif); font-style: italic; }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .nav { padding: var(--spacing-lg) 0; }
+    .nav-brand { font-weight: 600; text-decoration: none; }
+
+    .content { padding: var(--spacing-3xl) 0; }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    p { color: var(--text-secondary); margin-bottom: 1rem; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-brand">Michelle Pellon</a>
+    </nav>
+    <main class="content">
+      <h1>Page not found</h1>
+      <p>This page does not exist — or it did, and <span class="serif">its mandate is complete</span>.</p>
+      <p>Try the <a href="/">homepage</a> or the <a href="/blog.html">writing archive</a>.</p>
+    </main>
+  </div>
+</body>
+</html>
