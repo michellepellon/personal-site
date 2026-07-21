@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lakehouse Replatform | Michelle Pellon</title>
 
-  <meta name="description" content="Replatforming a healthcare data estate from SQL Server and Power BI to a MotherDuck (DuckDB) lakehouse — Prefect, Soda, CI/CD — cutting platform and staffing costs by more than 75%." />
+  <meta name="description" content="We moved a healthcare data estate from SQL Server to a MotherDuck (DuckDB) lakehouse and cut platform and staffing costs by more than 75%. Here's how." />
   <meta name="author" content="Michelle Pellon" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://michellepellon.com/portfolio/lakehouse-replatform" />
@@ -291,12 +291,12 @@
         </div>
 
         <h2>The problem</h2>
-        <p>BlueSprig Pediatrics ran its reporting on a legacy SQL Server and Power BI stack. Producing routine operational reporting took weeks of manual work, the platform carried heavy licensing and support costs, and every new question from Finance or Clinical Ops queued behind an analyst. For a KKR-backed provider reporting monthly to PE sponsors, that latency was a business problem, not just a technical one.</p>
+        <p>BlueSprig Pediatrics ran its reporting on a legacy SQL Server and Power BI stack. Routine operational reporting took weeks of manual work. The platform carried heavy licensing and support costs, and every new question from Finance or Clinical Ops queued behind an analyst. For a KKR-backed provider reporting monthly to PE sponsors, weeks of latency is a business problem.</p>
 
         <h2>The approach</h2>
         <p>Instead of a conventional cloud-warehouse migration, my team rebuilt the estate as a lakehouse on MotherDuck (DuckDB):</p>
         <ul>
-          <li>MotherDuck (DuckDB) as the analytical engine — serverless economics sized to actual workload, not peak licensing tiers</li>
+          <li>MotherDuck (DuckDB) as the analytical engine, with serverless economics sized to the workload we actually have</li>
           <li>Prefect Cloud for orchestration, replacing hand-run refresh jobs with observable, scheduled pipelines</li>
           <li>Soda for continuous data validation, so quality failures surface before stakeholders see them</li>
           <li>Everything version-controlled in GitHub with CI/CD — the data platform ships like software, because it is software</li>
@@ -306,7 +306,7 @@
         <p>Platform and staffing costs fell by more than 75%. Reporting that took weeks became self-service. The board package draws from governed, continuously validated data, and the platform now underpins an <a href="ai-analytics-layer.html">AI-assisted analytics layer</a> that lets non-technical stakeholders query the lakehouse directly.</p>
 
         <h2>Why it worked</h2>
-        <p>Two decisions mattered. First, choosing boring-but-modern components sized to the actual workload rather than to a vendor's reference architecture. Second, treating the migration as a product with users — Finance and Clinical Ops — rather than an infrastructure project, so adoption was designed in from the start.</p>
+        <p>Two decisions mattered. We sized boring, proven components to our actual workload and ignored the vendor reference architectures. And we ran the migration like a product launch for Finance and Clinical Ops, so adoption was built in from day one.</p>
 
         <p><a href="../index.html#projects">← Back to Projects</a></p>
       </article>
