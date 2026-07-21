@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Assisted Analytics Layer | Michelle Pellon</title>
+
+  <meta name="description" content="An AI-assisted analytics layer for a PE-backed healthcare provider: Claude, a custom MCP server, governed semantic access, and a text-to-SQL eval harness in Python." />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://michellepellon.com/portfolio/ai-analytics-layer" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="AI-Assisted Analytics Layer | Michelle Pellon" />
+  <meta property="og:description" content="Claude, a custom MCP server, and governed semantic access let Finance and Clinical Ops query the lakehouse directly — with an eval harness keeping text-to-SQL honest." />
+  <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta property="og:url" content="https://michellepellon.com/portfolio/ai-analytics-layer" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AI-Assisted Analytics Layer | Michelle Pellon" />
+  <meta name="twitter:description" content="Claude, a custom MCP server, and governed semantic access let Finance and Clinical Ops query the lakehouse directly — with an eval harness keeping text-to-SQL honest." />
+  <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI-Assisted Analytics Layer: Claude, MCP, and Governed Semantic Access","description":"An AI-assisted analytics layer built on Claude and a custom MCP server, with governed semantic access and a text-to-SQL eval harness in Python.","author":{"@type":"Person","@id":"https://michellepellon.com/#person","name":"Michelle Pellon","jobTitle":"VP, AI & Analytics","url":"https://michellepellon.com"},"url":"https://michellepellon.com/portfolio/ai-analytics-layer"}</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Analytics - Delayed -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ';
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-TPVXJT8FKZ');
+      }, 1000);
+    });
+  </script>
+
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666;
+      --text-muted: #999;
+      --border-color: #e5e5e5;
+      --bg-white: #fff;
+      --max-width: 720px;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2.5rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+    }
+
+    html {
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg-white);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .serif {
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s;
+    }
+
+    a:hover { opacity: 0.6; }
+
+    /* Navigation */
+    .nav {
+      padding: var(--spacing-lg) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+      opacity: 1;
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    /* Article body */
+    .article-body {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .article-body h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: var(--spacing-xl) 0 var(--spacing-md);
+    }
+
+    .article-body h2:first-child { margin-top: 0; }
+
+    .article-body p {
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--spacing-md);
+    }
+
+    .article-body ul li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-secondary);
+    }
+
+    .article-body ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .stat-row {
+      display: flex;
+      gap: var(--spacing-xl);
+      flex-wrap: wrap;
+      padding: var(--spacing-lg) 0;
+      margin-bottom: var(--spacing-md);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stat .stat-value {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .stat .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      html { font-size: 16px; }
+      .page-header { padding: var(--spacing-2xl) 0 var(--spacing-lg); }
+      .page-header h1 { font-size: 1.7rem; }
+      .footer-links { flex-direction: column; gap: var(--spacing-sm); }
+      .stat-row { gap: var(--spacing-lg); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="../index.html" class="nav-brand">Michelle Pellon</a>
+      <div class="nav-links">
+        <a href="../blog.html">Writing</a>
+        <a href="../index.html#projects" class="active">Projects</a>
+        <a href="../books.html">Reading</a>
+        <a href="../zen-cv.html">Practice</a>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header fade-up">
+      <h1>AI-Assisted Analytics Layer</h1>
+      <p class="page-subtitle">Claude, a custom MCP server, and <span class="serif">governed</span> semantic access — production AI for the people who actually have the questions.</p>
+    </header>
+
+    <main>
+      <article class="article-body fade-up">
+        <h2>The problem</h2>
+        <p>A modern lakehouse fixes the data platform; it does not fix the queue of people waiting on analysts. At BlueSprig, stakeholders in Finance and Clinical Ops had questions the data could answer, but every question still needed someone fluent in SQL and the semantics of clinical operations data. The <a href="lakehouse-replatform.html">replatform</a> removed the infrastructure bottleneck. This layer removed the human one.</p>
+
+        <h2>The design</h2>
+        <ul>
+          <li>Claude connected to the lakehouse through a custom MCP (Model Context Protocol) server — not raw database access, but a governed interface</li>
+          <li>Semantic access layer: canonical metric definitions, standard filters, and curated context, so the model answers with the organization's definitions rather than improvising its own</li>
+          <li>A text-to-SQL eval harness, built in Python, that scores generated queries against known-good answers — trust is measured, not assumed</li>
+          <li>Guardrails aligned with the company's AI governance framework, which I authored alongside the vendor-assessment framework</li>
+        </ul>
+
+        <h2>The outcome</h2>
+        <p>Non-technical stakeholders in Finance and Clinical Ops query the lakehouse directly, in plain language, and get answers grounded in governed definitions. Analyst time moved from servicing report requests to improving the semantic layer itself — every definition added makes every future answer better.</p>
+
+        <h2>Why it matters beyond one company</h2>
+        <p>Most enterprise AI analytics fails in one of two ways: ungoverned access that produces confident nonsense, or governance so heavy nobody uses it. The pattern here — MCP as the governed gateway, a semantic layer as the source of truth, and an eval harness as the continuous proof — is a repeatable playbook for putting AI on top of enterprise data in a regulated environment.</p>
+
+        <p><a href="../index.html#projects">← Back to Projects</a></p>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/michelle-pellon/">LinkedIn</a>
+        <a href="https://github.com/michellepellon">GitHub</a>
+        <a href="mailto:mgracepellon@gmail.com">Email</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Michelle Pellon. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

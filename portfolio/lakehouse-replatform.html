@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lakehouse Replatform | Michelle Pellon</title>
+
+  <meta name="description" content="Replatforming a healthcare data estate from SQL Server and Power BI to a MotherDuck (DuckDB) lakehouse — Prefect, Soda, CI/CD — cutting platform and staffing costs by more than 75%." />
+  <meta name="author" content="Michelle Pellon" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://michellepellon.com/portfolio/lakehouse-replatform" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Lakehouse Replatform | Michelle Pellon" />
+  <meta property="og:description" content="SQL Server and Power BI to a MotherDuck (DuckDB) lakehouse: Prefect orchestration, Soda validation, GitHub CI/CD. Platform and staffing costs down more than 75%." />
+  <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+  <meta property="og:url" content="https://michellepellon.com/portfolio/lakehouse-replatform" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lakehouse Replatform | Michelle Pellon" />
+  <meta name="twitter:description" content="SQL Server and Power BI to a MotherDuck (DuckDB) lakehouse: Prefect orchestration, Soda validation, GitHub CI/CD. Platform and staffing costs down more than 75%." />
+  <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Lakehouse Replatform: SQL Server to MotherDuck (DuckDB)","description":"Replatforming a healthcare data estate to a MotherDuck (DuckDB) lakehouse with Prefect orchestration, Soda validation, and GitHub CI/CD.","author":{"@type":"Person","@id":"https://michellepellon.com/#person","name":"Michelle Pellon","jobTitle":"VP, AI & Analytics","url":"https://michellepellon.com"},"url":"https://michellepellon.com/portfolio/lakehouse-replatform"}</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Analytics - Delayed -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TPVXJT8FKZ';
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-TPVXJT8FKZ');
+      }, 1000);
+    });
+  </script>
+
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666;
+      --text-muted: #999;
+      --border-color: #e5e5e5;
+      --bg-white: #fff;
+      --max-width: 720px;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2.5rem;
+      --spacing-2xl: 4rem;
+      --spacing-3xl: 6rem;
+    }
+
+    html {
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg-white);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    .serif {
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s;
+    }
+
+    a:hover { opacity: 0.6; }
+
+    /* Navigation */
+    .nav {
+      padding: var(--spacing-lg) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+      opacity: 1;
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    /* Article body */
+    .article-body {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .article-body h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: var(--spacing-xl) 0 var(--spacing-md);
+    }
+
+    .article-body h2:first-child { margin-top: 0; }
+
+    .article-body p {
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--spacing-md);
+    }
+
+    .article-body ul li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-secondary);
+    }
+
+    .article-body ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .stat-row {
+      display: flex;
+      gap: var(--spacing-xl);
+      flex-wrap: wrap;
+      padding: var(--spacing-lg) 0;
+      margin-bottom: var(--spacing-md);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stat .stat-value {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .stat .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      html { font-size: 16px; }
+      .page-header { padding: var(--spacing-2xl) 0 var(--spacing-lg); }
+      .page-header h1 { font-size: 1.7rem; }
+      .footer-links { flex-direction: column; gap: var(--spacing-sm); }
+      .stat-row { gap: var(--spacing-lg); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="../index.html" class="nav-brand">Michelle Pellon</a>
+      <div class="nav-links">
+        <a href="../blog.html">Writing</a>
+        <a href="../index.html#projects" class="active">Projects</a>
+        <a href="../books.html">Reading</a>
+        <a href="../zen-cv.html">Practice</a>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header fade-up">
+      <h1>Lakehouse Replatform: SQL Server to MotherDuck</h1>
+      <p class="page-subtitle">Retiring a legacy analytics stack at a <span class="serif">PE-backed</span> healthcare provider — without a big-bang migration or a big-vendor invoice.</p>
+    </header>
+
+    <main>
+      <article class="article-body fade-up">
+        <div class="stat-row">
+          <div class="stat"><div class="stat-value">&gt;75%</div><div class="stat-label">Platform + staffing cost reduction</div></div>
+          <div class="stat"><div class="stat-value">3,000+</div><div class="stat-label">Clinicians supported</div></div>
+          <div class="stat"><div class="stat-value">160+</div><div class="stat-label">Sites</div></div>
+        </div>
+
+        <h2>The problem</h2>
+        <p>BlueSprig Pediatrics ran its reporting on a legacy SQL Server and Power BI stack. Producing routine operational reporting took weeks of manual work, the platform carried heavy licensing and support costs, and every new question from Finance or Clinical Ops queued behind an analyst. For a KKR-backed provider reporting monthly to PE sponsors, that latency was a business problem, not just a technical one.</p>
+
+        <h2>The approach</h2>
+        <p>Instead of a conventional cloud-warehouse migration, my team rebuilt the estate as a lakehouse on MotherDuck (DuckDB):</p>
+        <ul>
+          <li>MotherDuck (DuckDB) as the analytical engine — serverless economics sized to actual workload, not peak licensing tiers</li>
+          <li>Prefect Cloud for orchestration, replacing hand-run refresh jobs with observable, scheduled pipelines</li>
+          <li>Soda for continuous data validation, so quality failures surface before stakeholders see them</li>
+          <li>Everything version-controlled in GitHub with CI/CD — the data platform ships like software, because it is software</li>
+        </ul>
+
+        <h2>The outcome</h2>
+        <p>Platform and staffing costs fell by more than 75%. Reporting that took weeks became self-service. The board package draws from governed, continuously validated data, and the platform now underpins an <a href="ai-analytics-layer.html">AI-assisted analytics layer</a> that lets non-technical stakeholders query the lakehouse directly.</p>
+
+        <h2>Why it worked</h2>
+        <p>Two decisions mattered. First, choosing boring-but-modern components sized to the actual workload rather than to a vendor's reference architecture. Second, treating the migration as a product with users — Finance and Clinical Ops — rather than an infrastructure project, so adoption was designed in from the start.</p>
+
+        <p><a href="../index.html#projects">← Back to Projects</a></p>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/michelle-pellon/">LinkedIn</a>
+        <a href="https://github.com/michellepellon">GitHub</a>
+        <a href="mailto:mgracepellon@gmail.com">Email</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Michelle Pellon. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
