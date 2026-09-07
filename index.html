@@ -150,7 +150,7 @@
 
     /* Hero */
     .hero {
-      padding: var(--spacing-3xl) 0 var(--spacing-lg);
+      padding: var(--spacing-3xl) 0 var(--spacing-xl);
     }
 
     .hero-intro {
@@ -299,29 +299,6 @@
       margin-bottom: var(--spacing-lg);
     }
 
-    /* Proof stats */
-    .stat-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--spacing-lg);
-      margin-top: var(--spacing-xl);
-      padding: var(--spacing-lg) 0 0;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .stat-value {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
     /* Operating coverage */
     .domain-list {
       list-style: none;
@@ -379,7 +356,7 @@
     @media (max-width: 640px) {
       html { font-size: 16px; }
 
-      .hero { padding: var(--spacing-2xl) 0 var(--spacing-md); }
+      .hero { padding: var(--spacing-2xl) 0; }
 
       .hero-intro { font-size: 1.4rem; }
       .hero-intro .serif { font-size: 1.5rem; }
@@ -391,8 +368,6 @@
       }
 
       .domain-list { grid-template-columns: 1fr; }
-
-      .stat-row { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md) var(--spacing-lg); }
 
       .writing-item {
         flex-direction: column;
@@ -461,8 +436,7 @@
       a { text-decoration: none; color: #000; }
 
       /* Keep a role and its bullets on one page */
-      .experience-item,
-      .stat-row { break-inside: avoid; }
+      .experience-item { break-inside: avoid; }
 
       .footer { margin-top: var(--spacing-lg); padding: var(--spacing-lg) 0 0; }
     }
@@ -489,12 +463,6 @@
       <p class="hero-sub fade-up">
         VP, AI &amp; Analytics at <a href="https://www.bluesprig.com/">BlueSprig Pediatrics</a>, a KKR-backed pediatric ABA provider — 3,000+ clinicians across 150+ sites. Multi-site outpatient care runs on one operating model, whether it's ABA, senior care, or behavioral health. I own the data and AI function and its $8M budget, and report to sponsors regularly. Before BlueSprig, four SaaS EHR platforms readied for recapitalization. I still write code.
       </p>
-      <div class="stat-row fade-up">
-        <div class="stat"><div class="stat-value">&gt;75%</div><div class="stat-label">Platform cost cut</div></div>
-        <div class="stat"><div class="stat-value">$8M</div><div class="stat-label">Budget owned</div></div>
-        <div class="stat"><div class="stat-value">15+</div><div class="stat-label">M&amp;A integrations</div></div>
-        <div class="stat"><div class="stat-value">12</div><div class="stat-label">Team led</div></div>
-      </div>
     </section>
 
     <main>
