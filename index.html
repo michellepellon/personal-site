@@ -416,6 +416,54 @@
 
     .fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
     .fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+
+    /* Content must never depend on an animation having run */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up,
+      .fade-up-delay-1,
+      .fade-up-delay-2 {
+        animation: none;
+        opacity: 1;
+      }
+    }
+
+    /* Print: the page doubles as the resume */
+    @media print {
+      @page { margin: 1.6cm; }
+
+      html { font-size: 11pt; }
+
+      body { color: #000; }
+
+      .nav-links,
+      .footer-links,
+      #contact .section-title { display: none; }
+
+      .fade-up,
+      .fade-up-delay-1,
+      .fade-up-delay-2 {
+        animation: none;
+        opacity: 1;
+      }
+
+      .container { max-width: none; padding: 0; }
+
+      .hero { padding: 0 0 var(--spacing-lg); }
+
+      .hero-portrait { display: none; }
+
+      .hero-intro { font-size: 1.4rem; }
+
+      .section { padding: var(--spacing-lg) 0; }
+
+      a { text-decoration: none; color: #000; }
+
+      /* Keep a role and its bullets on one page */
+      .experience-item,
+      .stat-row { break-inside: avoid; }
+
+      .footer { margin-top: var(--spacing-lg); padding: var(--spacing-lg) 0 0; }
+    }
   </style>
 </head>
 
