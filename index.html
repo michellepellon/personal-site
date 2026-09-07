@@ -147,7 +147,7 @@
 
     /* Hero */
     .hero {
-      padding: var(--spacing-3xl) 0;
+      padding: var(--spacing-3xl) 0 var(--spacing-lg);
     }
 
     .hero-intro {
@@ -302,9 +302,8 @@
       gap: var(--spacing-xl);
       flex-wrap: wrap;
       margin-top: var(--spacing-xl);
-      padding: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) 0 0;
       border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
     }
 
     .stat-value {
@@ -377,7 +376,7 @@
     @media (max-width: 640px) {
       html { font-size: 16px; }
 
-      .hero { padding: var(--spacing-2xl) 0; }
+      .hero { padding: var(--spacing-2xl) 0 var(--spacing-md); }
 
       .hero-intro { font-size: 1.4rem; }
       .hero-intro .serif { font-size: 1.5rem; }
@@ -473,9 +472,7 @@
     <nav class="nav">
       <a href="/" class="nav-brand">Michelle Pellon</a>
       <div class="nav-links">
-        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="blog.html">Writing</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -497,21 +494,6 @@
     </section>
 
     <main>
-      <!-- Projects -->
-      <section class="section fade-up fade-up-delay-2" id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="writings-list">
-          <div class="writing-item">
-            <a href="portfolio/lakehouse-replatform.html">Lakehouse Replatform — SQL Server to a DuckDB lakehouse (DuckLake), platform costs down 75%</a>
-            <span class="writing-meta">BlueSprig</span>
-          </div>
-          <div class="writing-item">
-            <a href="portfolio/ai-analytics-layer.html">AI-Assisted Analytics Layer — Claude, MCP server, and a text-to-SQL eval harness</a>
-            <span class="writing-meta">BlueSprig</span>
-          </div>
-        </div>
-      </section>
-
       <!-- Experience -->
       <section class="section fade-up fade-up-delay-1" id="experience">
         <h2 class="section-title">Experience</h2>
@@ -610,25 +592,6 @@
         </ul>
       </section>
 
-      <!-- Writings -->
-      <section class="section fade-up fade-up-delay-2">
-        <h2 class="section-title">Writing</h2>
-        <div class="writings-list">
-          <div class="writing-item">
-            <a href="blog/2026-02-23-cognitive-debt.html">Cognitive Debt: The AI Risk Nobody's Measuring</a>
-            <span class="writing-meta">Feb 2026</span>
-          </div>
-          <div class="writing-item">
-            <a href="blog/2026-01-27-the-conflation-problem.html">The Conflation Problem: Why Financial Criticism Fails as Technology Assessment</a>
-            <span class="writing-meta">Jan 2026</span>
-          </div>
-          <div class="writing-item">
-            <a href="blog/2025-10-20-claude-skills-in-the-enterprise.html">Claude Skills in the Enterprise: A Practical Playbook</a>
-            <span class="writing-meta">Oct 2025</span>
-          </div>
-        </div>
-      </section>
-
       <!-- Education -->
       <section class="section fade-up fade-up-delay-2">
         <h2 class="section-title">Education</h2>
@@ -657,6 +620,8 @@
         <a href="https://www.linkedin.com/in/michelle-pellon/">LinkedIn</a>
         <a href="https://github.com/michellepellon">GitHub</a>
         <a href="mailto:mgracepellon@gmail.com">Email</a>
+        <a href="blog.html">Writing</a>
+        <a href="privacy.html">Privacy</a>
       </div>
       <div class="footer-copyright">
         &copy; 2026 Michelle Pellon. All rights reserved.
