@@ -286,6 +286,70 @@
       white-space: nowrap;
     }
 
+    /* Hero portrait */
+    .hero-portrait {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    /* Proof stats */
+    .stat-row {
+      display: flex;
+      gap: var(--spacing-xl);
+      flex-wrap: wrap;
+      margin-top: var(--spacing-xl);
+      padding: var(--spacing-lg) 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Operating coverage */
+    .domain-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .domain-list li {
+      position: relative;
+      padding-left: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .domain-list li::before {
+      content: "\00b7";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Contact */
+    .contact-line {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+
     /* Footer */
     .footer {
       padding: var(--spacing-3xl) 0 var(--spacing-xl);
@@ -324,6 +388,10 @@
         gap: var(--spacing-sm);
       }
 
+      .domain-list { grid-template-columns: 1fr; }
+
+      .stat-row { gap: var(--spacing-lg); }
+
       .writing-item {
         flex-direction: column;
         gap: 2px;
@@ -357,26 +425,47 @@
     <nav class="nav">
       <a href="/" class="nav-brand">Michelle Pellon</a>
       <div class="nav-links">
-        <a href="blog.html">Writing</a>
         <a href="#projects">Projects</a>
-        <a href="books.html">Reading</a>
-        <a href="zen-cv.html">Practice</a>
+        <a href="#experience">Experience</a>
+        <a href="blog.html">Writing</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
+      <img src="img/michelle-pellon-headshot.webp" alt="Michelle Pellon" class="hero-portrait fade-up" width="800" height="800" />
       <h1 class="hero-intro fade-up">
         I turn AI capability into <span class="serif">financial outcomes</span> for PE-backed healthcare.
       </h1>
       <p class="hero-sub fade-up">
-        I'm Michelle Pellon, VP, AI & Analytics at <a href="https://www.bluesprig.com/">BlueSprig Pediatrics</a>, a KKR-backed provider of pediatric ABA therapy. I run technology and data platforms: a 12-person team, a $7M portfolio, 3,000+ clinicians across 160+ sites, and a monthly board report to PE sponsors. My team replatformed a legacy stack to a DuckDB lakehouse (DuckLake) and cut platform and staffing costs by more than 75%. The AI we shipped is in production, and Finance and Clinical Ops use it every day. I also still write code: MCP servers, eval harnesses, clinical AI tools, all live on <a href="https://github.com/michellepellon">GitHub</a>.
+        VP, AI &amp; Analytics at <a href="https://www.bluesprig.com/">BlueSprig Pediatrics</a> — a KKR-backed pediatric ABA provider running 3,000+ clinicians across 160+ sites. I own the data platform, the AI that Finance and Clinical Ops use every day, and the monthly technology report to our sponsor. I still write code.
       </p>
+      <div class="stat-row fade-up">
+        <div class="stat"><div class="stat-value">&gt;75%</div><div class="stat-label">Platform cost cut</div></div>
+        <div class="stat"><div class="stat-value">15+</div><div class="stat-label">M&amp;A integrations</div></div>
+        <div class="stat"><div class="stat-value">$7M</div><div class="stat-label">Technology portfolio</div></div>
+      </div>
     </section>
 
     <main>
+      <!-- Projects -->
+      <section class="section fade-up fade-up-delay-2" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="writings-list">
+          <div class="writing-item">
+            <a href="portfolio/lakehouse-replatform.html">Lakehouse Replatform — SQL Server to a DuckDB lakehouse (DuckLake), platform costs down 75%</a>
+            <span class="writing-meta">BlueSprig</span>
+          </div>
+          <div class="writing-item">
+            <a href="portfolio/ai-analytics-layer.html">AI-Assisted Analytics Layer — Claude, MCP server, and a text-to-SQL eval harness</a>
+            <span class="writing-meta">BlueSprig</span>
+          </div>
+        </div>
+      </section>
+
       <!-- Experience -->
-      <section class="section fade-up fade-up-delay-1">
+      <section class="section fade-up fade-up-delay-1" id="experience">
         <h2 class="section-title">Experience</h2>
         <p class="experience-intro">Each of these roles was a mandate: take it, deliver it, hand it off. Along the way I've supported 15+ M&A integrations across four organizations.</p>
         <div class="experience-list">
@@ -459,37 +548,24 @@
         </div>
       </section>
 
-      <!-- Projects -->
-      <section class="section fade-up fade-up-delay-2" id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="writings-list">
-          <div class="writing-item">
-            <a href="portfolio/lakehouse-replatform.html">Lakehouse Replatform — SQL Server to a DuckDB lakehouse (DuckLake), platform costs down 75%</a>
-            <span class="writing-meta">BlueSprig</span>
-          </div>
-          <div class="writing-item">
-            <a href="portfolio/ai-analytics-layer.html">AI-Assisted Analytics Layer — Claude, MCP server, and a text-to-SQL eval harness</a>
-            <span class="writing-meta">BlueSprig</span>
-          </div>
-          <div class="writing-item">
-            <a href="portfolio/nfl-game-predictions.html">NFL Game Prediction System — ELO ratings and Monte Carlo on DuckDB and dbt</a>
-            <span class="writing-meta">Personal</span>
-          </div>
-          <div class="writing-item">
-            <a href="portfolio/moment.html">Moment — a Zen breathing Chrome extension, live in the Chrome Web Store</a>
-            <span class="writing-meta">Personal</span>
-          </div>
-        </div>
+      <!-- Operating Coverage -->
+      <section class="section fade-up fade-up-delay-2">
+        <h2 class="section-title">Operating Coverage</h2>
+        <p class="experience-intro">Reporting and applied AI across the operating spine of a multi-site outpatient provider — the metrics an operator and a sponsor actually run the business on.</p>
+        <ul class="domain-list">
+          <li>Clinical utilization and authorizations</li>
+          <li>Referral-to-intake funnel conversion</li>
+          <li>AR aging and collections</li>
+          <li>Clinician headcount, productivity, and turnover</li>
+          <li>Revenue and FP&amp;A reporting</li>
+          <li>EHR integration (CentralReach)</li>
+        </ul>
       </section>
 
       <!-- Writings -->
       <section class="section fade-up fade-up-delay-2">
         <h2 class="section-title">Writing</h2>
         <div class="writings-list">
-          <div class="writing-item">
-            <a href="blog/2026-04-20-rooted-and-reachable.html">Rooted and Reachable</a>
-            <span class="writing-meta">Apr 2026</span>
-          </div>
           <div class="writing-item">
             <a href="blog/2026-02-23-cognitive-debt.html">Cognitive Debt: The AI Risk Nobody's Measuring</a>
             <span class="writing-meta">Feb 2026</span>
@@ -499,24 +575,8 @@
             <span class="writing-meta">Jan 2026</span>
           </div>
           <div class="writing-item">
-            <a href="blog/2025-11-18-week-11-failure-feature-integration.html">Week 11: When Your Model Forgets to Look Outside</a>
-            <span class="writing-meta">Nov 2025</span>
-          </div>
-          <div class="writing-item">
-            <a href="blog/2025-11-13-building-an-nfl-prediction-model.html">How to Build an NFL Prediction Model with ELO Ratings and DuckDB</a>
-            <span class="writing-meta">Nov 2025</span>
-          </div>
-          <div class="writing-item">
-            <a href="blog/2025-10-20-claude-skills-in-the-enterprise.html">Claude Skills in the Enterprise</a>
+            <a href="blog/2025-10-20-claude-skills-in-the-enterprise.html">Claude Skills in the Enterprise: A Practical Playbook</a>
             <span class="writing-meta">Oct 2025</span>
-          </div>
-          <div class="writing-item">
-            <a href="blog/2025-08-24-ai-facilitated-delusional-ideation.html">AI-Facilitated Delusional Ideation</a>
-            <span class="writing-meta">Aug 2025</span>
-          </div>
-          <div class="writing-item">
-            <a href="blog/2025-08-18-a-case-for-digital-national-parks.html">A Case for Digital National Parks</a>
-            <span class="writing-meta">Aug 2025</span>
           </div>
         </div>
       </section>
@@ -535,6 +595,11 @@
             </div>
           </div>
         </div>
+      </section>
+      <!-- Contact -->
+      <section class="section fade-up fade-up-delay-2" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-line">Reach me by <a href="mailto:mgracepellon@gmail.com">email</a> or on <a href="https://www.linkedin.com/in/michelle-pellon/">LinkedIn</a>. Code lives on <a href="https://github.com/michellepellon">GitHub</a>.</p>
       </section>
     </main>
 

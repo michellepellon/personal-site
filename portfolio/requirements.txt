@@ -1,2 +1,0 @@
-# NFL Game Results Updater Dependencies
-requests>=2.31.0

@@ -1,2 +1,15 @@
-/services / 301
-/services.html / 301
+/services                                              /            301
+/services.html                                         /            301
+/zen-cv.html                                           /            301
+/zen-cv                                                /            301
+/books.html                                            /            301
+/books/*                                               /            301
+/portfolio/moment.html                                 /#projects   301
+/portfolio/moment                                      /#projects   301
+/portfolio/nfl-game-predictions.html                   /#projects   301
+/portfolio/nfl-game-predictions                        /#projects   301
+/blog/2026-04-20-rooted-and-reachable.html             /blog.html   301
+/blog/2025-11-18-week-11-failure-feature-integration.html  /blog.html  301
+/blog/2025-11-13-building-an-nfl-prediction-model.html /blog.html   301
+/blog/2025-08-24-ai-facilitated-delusional-ideation.html   /blog.html  301
+/blog/2025-08-18-a-case-for-digital-national-parks.html    /blog.html  301
