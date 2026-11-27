@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI-Assisted Analytics Layer | Michelle Pellon</title>
+  <title>Governed AI Analytics with Claude and MCP | Michelle Pellon</title>
 
   <meta name="description" content="How a PE-backed healthcare provider put production AI on governed data: Claude, a custom MCP server, and a text-to-SQL eval harness." />
   <meta name="author" content="Michelle Pellon" />
@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://michellepellon.com/portfolio/ai-analytics-layer" />
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="AI-Assisted Analytics Layer | Michelle Pellon" />
+  <meta property="og:title" content="Governed AI Analytics with Claude and MCP | Michelle Pellon" />
   <meta property="og:description" content="Claude, a custom MCP server, and governed semantic access let Finance and Clinical Ops query the lakehouse directly — with an eval harness keeping text-to-SQL honest." />
   <meta property="og:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
   <meta property="og:url" content="https://michellepellon.com/portfolio/ai-analytics-layer" />
@@ -19,7 +19,7 @@
 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AI-Assisted Analytics Layer | Michelle Pellon" />
+  <meta name="twitter:title" content="Governed AI Analytics with Claude and MCP | Michelle Pellon" />
   <meta name="twitter:description" content="Claude, a custom MCP server, and governed semantic access let Finance and Clinical Ops query the lakehouse directly — with an eval harness keeping text-to-SQL honest." />
   <meta name="twitter:image" content="https://michellepellon.com/img/michelle-pellon-headshot.jpg" />
 
@@ -160,6 +160,12 @@
       color: var(--text-secondary);
     }
 
+    .page-byline {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: var(--spacing-md);
+    }
+
     /* Article body */
     .article-body {
       padding: var(--spacing-2xl) 0;
@@ -290,13 +296,14 @@
       </div>
     </nav>
 
+    <main>
     <!-- Page Header -->
     <header class="page-header fade-up">
       <h1>AI-Assisted Analytics Layer</h1>
       <p class="page-subtitle">Claude, a custom MCP server, and <span class="serif">governed</span> semantic access — production AI for the people who actually have the questions.</p>
+      <p class="page-byline">By <a href="/">Michelle Pellon</a>, VP, AI &amp; Analytics at BlueSprig Pediatrics</p>
     </header>
 
-    <main>
       <article class="article-body fade-up">
         <h2>The bottleneck after the bottleneck</h2>
         <p>A modern lakehouse fixes the data platform. It does nothing about the queue of people waiting on analysts. At BlueSprig, stakeholders in Finance and Clinical Ops had questions the data could answer, but every question still needed someone fluent in SQL and the semantics of clinical operations data. The <a href="/portfolio/lakehouse-replatform">replatform</a> removed the infrastructure bottleneck. This layer removed the human one.</p>
