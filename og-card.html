@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- ABOUTME: Social preview card (1200x630), rendered to img/michelle-pellon-card.png by scripts/build-og-card.sh. -->
+<!-- ABOUTME: Shown when the site's URL is pasted into LinkedIn, Slack, iMessage or email. -->
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>Michelle Pellon | Social Card</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-primary: #1a1a1a;
+      --text-secondary: #595959;
+      --border-color: #e5e5e5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { width: 1200px; height: 630px; background: #fff; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* A border keeps the white card from dissolving into a white feed */
+    .card {
+      width: 1200px;
+      height: 630px;
+      padding: 64px 72px 52px;
+      border: 2px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lead {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .portrait {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex: none;
+    }
+
+    .name {
+      font-size: 60px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .positioning {
+      font-size: 42px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      text-wrap: balance;
+    }
+
+    .serif {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 45px;
+    }
+
+    .nowrap { white-space: nowrap; }
+
+    .role {
+      border-top: 2px solid var(--border-color);
+      padding-top: 26px;
+      font-size: 34px;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="lead">
+      <img class="portrait" src="img/michelle-pellon-headshot.jpg" alt="" />
+      <div>
+        <div class="name">Michelle Pellon</div>
+        <div class="positioning">Technology and AI value creation for <span class="serif">multi-site</span>, <span class="nowrap">PE-backed</span> healthcare.</div>
+      </div>
+    </div>
+    <div class="role">VP, AI &amp; Analytics &nbsp;·&nbsp; BlueSprig Pediatrics</div>
+  </div>
+</body>
+</html>
