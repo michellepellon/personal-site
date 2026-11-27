@@ -32,7 +32,7 @@
   <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
 
   <!-- Structured Data -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Lakehouse Replatform: SQL Server to DuckLake","description":"Replatforming a healthcare data estate to a DuckDB lakehouse (DuckLake) with Prefect orchestration, Soda validation, and GitHub CI/CD.","author":{"@type":"Person","@id":"https://michellepellon.com/#person","name":"Michelle Pellon","jobTitle":"VP, AI & Analytics","url":"https://michellepellon.com/"},"url":"https://michellepellon.com/portfolio/lakehouse-replatform"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cutting data platform cost by more than 75 percent at a multi-site healthcare provider","description":"Replatforming a healthcare data estate to a DuckDB lakehouse (DuckLake) with Prefect orchestration, Soda validation, and GitHub CI/CD.","author":{"@type":"Person","@id":"https://michellepellon.com/#person","name":"Michelle Pellon","jobTitle":"VP, AI & Analytics","url":"https://michellepellon.com/"},"url":"https://michellepellon.com/portfolio/lakehouse-replatform"}</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -209,6 +209,44 @@
       font-weight: 600;
     }
 
+    .page-kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: var(--spacing-md);
+    }
+
+    /* At-a-glance facts */
+    .glance {
+      margin: 0 0 var(--spacing-xl);
+      font-size: 0.95rem;
+    }
+
+    .glance div {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: var(--spacing-md);
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .glance dt { color: var(--text-muted); }
+    .glance dd { margin: 0; color: var(--text-secondary); }
+
+    /* Numbered approach */
+    .article-body ol.pillars {
+      margin: 0 0 var(--spacing-md);
+      padding-left: 1.4rem;
+      color: var(--text-secondary);
+    }
+
+    .article-body ol.pillars li { margin-bottom: var(--spacing-md); padding-left: 0.3rem; }
+    .article-body strong { color: var(--text-primary); font-weight: 600; }
+
+    .stat { flex: 1 1 10rem; }
+
     .stat-row {
       display: flex;
       gap: var(--spacing-xl);
@@ -262,6 +300,7 @@
       .page-header h1 { font-size: 1.7rem; }
       .footer-links { flex-direction: column; gap: var(--spacing-sm); }
       .stat-row { gap: var(--spacing-lg); }
+      .glance div { grid-template-columns: 1fr; gap: 0; }
     }
 
     /* Touch targets: links in the nav and footer get a 44px hit area */
@@ -304,35 +343,53 @@
     <article>
     <!-- Page Header -->
     <div class="page-header fade-up">
-      <h1>Lakehouse Replatform: SQL Server to DuckLake</h1>
-      <p class="page-subtitle">Retiring a legacy analytics stack at a <span class="serif">PE-backed</span> healthcare provider — without a big-bang migration or a big-vendor invoice.</p>
+      <p class="page-kicker">Case study · Data platform</p>
+      <h1>Cutting data platform cost by more than 75 percent at a multi-site healthcare provider</h1>
+      <p class="page-subtitle">BlueSprig Pediatrics replaced a legacy SQL Server and Power BI estate with a DuckDB lakehouse. Platform spend fell from $40K to under $10K a month, and reporting that took weeks became self-service.</p>
       <p class="page-byline">By <a href="/">Michelle Pellon</a>, VP, AI &amp; Analytics at BlueSprig Pediatrics</p>
     </div>
 
       <div class="article-body fade-up">
         <div class="stat-row">
-          <div class="stat"><div class="stat-value">&lt;$10K</div><div class="stat-label">Monthly platform spend, down from $40K</div></div>
-          <div class="stat"><div class="stat-value">3,000+</div><div class="stat-label">Clinicians supported</div></div>
-          <div class="stat"><div class="stat-value">150+</div><div class="stat-label">Sites</div></div>
+          <div class="stat"><div class="stat-value">75%+</div><div class="stat-label">Lower monthly platform spend, from $40K to under $10K</div></div>
+          <div class="stat"><div class="stat-value">$360K+</div><div class="stat-label">Saved each year</div></div>
+          <div class="stat"><div class="stat-value">10 months</div><div class="stat-label">Start to finish, with a team of three</div></div>
         </div>
 
-        <h2>The problem</h2>
-        <p>BlueSprig Pediatrics ran its reporting on a legacy SQL Server and Power BI stack. Routine operational reporting took weeks of manual work. The platform carried heavy licensing and support costs, and every new question from Finance or Clinical Ops queued behind an analyst. For a KKR-backed provider reporting monthly to PE sponsors, weeks of latency is a business problem.</p>
+        <dl class="glance">
+          <div><dt>Organization</dt><dd>BlueSprig Pediatrics, a pediatric ABA therapy provider with 3,000+ clinicians across 150+ sites</dd></div>
+          <div><dt>Ownership</dt><dd>KKR-backed</dd></div>
+          <div><dt>Scope</dt><dd>Enterprise reporting and analytics platform: 300+ data models from eight source systems</dd></div>
+          <div><dt>Source systems</dt><dd>CentralReach, ADP, Salesforce, Microsoft Dynamics, iCIMS, Indeed, Google Ads, Meta Ads</dd></div>
+          <div><dt>Timeline</dt><dd>January to October 2026</dd></div>
+          <div><dt>Team</dt><dd>Three people: Michelle Pellon as lead, a senior developer and a junior developer</dd></div>
+          <div><dt>Technology</dt><dd>MotherDuck (DuckDB), DuckLake, Prefect Cloud, Soda, GitHub CI/CD</dd></div>
+        </dl>
+
+        <h2>The challenge</h2>
+        <p>BlueSprig reports monthly to its private equity sponsor and runs clinical operations across more than 150 sites. Its reporting sat on a legacy SQL Server and Power BI estate that could not keep pace with either.</p>
+        <p>Three problems compounded. Routine operational reporting took weeks of manual work. The estate cost $40K a month across SQL Server licensing, Azure Data Factory runs, Power BI licensing and Microsoft Fabric. And every new question from Finance or Clinical Operations waited in a queue behind an analyst.</p>
+        <p>For a sponsor-backed provider, weeks of reporting latency is a business problem, not a technology one: decisions were being made on numbers that were already out of date.</p>
 
         <h2>The approach</h2>
-        <p>Instead of a conventional cloud-warehouse migration, my team rebuilt the estate as a DuckLake lakehouse on MotherDuck (DuckDB):</p>
+        <p>The conventional answer was a migration to a large cloud data warehouse. We chose a different path, built on three decisions.</p>
+        <ol class="pillars">
+          <li><strong>Size the platform to the workload.</strong> We rebuilt the estate as a DuckLake lakehouse on MotherDuck (DuckDB), whose serverless pricing matched the workload BlueSprig actually has: 300+ data models drawn from eight source systems. A warehouse sized for a far larger enterprise would have carried the old cost structure forward.</li>
+          <li><strong>Run the data platform as software.</strong> Hand-run refresh jobs gave way to scheduled, observable pipelines in Prefect Cloud. Soda validates the data continuously, so quality failures surface before stakeholders see them. Every change is version-controlled in GitHub and released through CI/CD.</li>
+          <li><strong>Migrate with the business.</strong> Finance and Clinical Operations were treated as the customers of a product launch, so adoption was planned from the first day. The estate moved without a single big-bang cutover.</li>
+        </ol>
+
+        <h2>The impact</h2>
         <ul>
-          <li>MotherDuck (DuckDB) as the analytical engine, with serverless economics sized to the workload we actually have</li>
-          <li>Prefect Cloud for orchestration, replacing hand-run refresh jobs with observable, scheduled pipelines</li>
-          <li>Soda for continuous data validation, so quality failures surface before stakeholders see them</li>
-          <li>Everything version-controlled in GitHub with CI/CD — the data platform ships like software, because it is software</li>
+          <li><strong>Cost.</strong> Data platform spend fell from $40K to under $10K a month, a saving of more than $360K a year.</li>
+          <li><strong>Delivery.</strong> A team of three moved 300+ data models from eight source systems in ten months.</li>
+          <li><strong>Speed.</strong> Reporting that took weeks of manual work became self-service.</li>
+          <li><strong>Trust.</strong> The board package now draws from governed, continuously validated data.</li>
+          <li><strong>Foundation.</strong> The platform underpins an <a href="/portfolio/ai-analytics-layer">AI-assisted analytics layer</a> that lets non-technical stakeholders query the lakehouse directly.</li>
         </ul>
 
-        <h2>The outcome</h2>
-        <p>Data platform spend fell from $40K to under $10K a month. Reporting that took weeks became self-service. The board package draws from governed, continuously validated data, and the platform now underpins an <a href="/portfolio/ai-analytics-layer">AI-assisted analytics layer</a> that lets non-technical stakeholders query the lakehouse directly.</p>
-
-        <h2>Why it worked</h2>
-        <p>Two decisions mattered. We sized boring, proven components to our actual workload and ignored the vendor reference architectures. And we ran the migration like a product launch for Finance and Clinical Ops, so adoption was built in from day one.</p>
+        <h2>What made the difference</h2>
+        <p>Two choices mattered more than any single technology. The first was to select proven components sized to the real workload, and to set aside vendor reference architectures designed for larger organizations. The second was to manage the migration as a change program for Finance and Clinical Operations, with adoption as a goal from the outset.</p>
 
         <p><a href="/#experience">← Back to Experience</a></p>
       </div>
