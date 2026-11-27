@@ -63,7 +63,7 @@
       --font-serif: 'Playfair Display', Georgia, serif;
       --text-primary: #1a1a1a;
       --text-secondary: #666;
-      --text-muted: #999;
+      --text-muted: #767676;
       --border-color: #e5e5e5;
       --bg-white: #fff;
       --max-width: 780px;
@@ -360,6 +360,17 @@
       .footer-links {
         flex-direction: column;
         gap: var(--spacing-sm);
+      }
+    }
+
+    /* Touch targets: links in the nav and footer get a 44px hit area */
+    @media (max-width: 640px), (pointer: coarse) {
+      .nav-brand,
+      .nav-links a,
+      .footer-links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
       }
     }
 
