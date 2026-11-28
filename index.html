@@ -35,9 +35,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://michellepellon.com/#person","name":"Michelle Pellon","jobTitle":"VP, AI & Analytics","worksFor":{"@type":"Organization","name":"BlueSprig Pediatrics","url":"https://www.bluesprig.com/"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Trinity University"},"description":"Technology and AI value creation for multi-site, PE-backed healthcare. Reports to the CEO and owns an $8M technology budget at a KKR-backed provider, with two sponsor transactions and 15+ M&A integrations across four companies.","url":"https://michellepellon.com/","image":"https://michellepellon.com/img/michelle-pellon-headshot.jpg","sameAs":["https://www.linkedin.com/in/michelle-pellon/","https://github.com/michellepellon"],"email":"mgracepellon@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"},"knowsAbout":["Enterprise Data & AI Strategy","Healthcare Analytics","Multi-Site Healthcare Operations","HIPAA Compliance","Lakehouse Architecture","DuckDB & MotherDuck","DuckLake","LLM & Agentic Applications","Private Equity Value Creation","M&A Technology Integration","Board Reporting"]},{"@type":"WebSite","@id":"https://michellepellon.com/#website","url":"https://michellepellon.com/","name":"Michelle Pellon","publisher":{"@id":"https://michellepellon.com/#person"}}]}</script>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <meta name="theme-color" content="#ffffff">
 
@@ -60,6 +58,23 @@
 
 
   <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url(/fonts/inter-latin.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Playfair Display';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/playfair-display-italic-latin.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
@@ -452,11 +467,11 @@
     <main>
     <!-- Hero -->
     <section class="hero">
-      <img src="img/michelle-pellon-headshot.webp" alt="Michelle Pellon" class="hero-portrait fade-up" width="800" height="800" />
-      <h1 class="hero-intro fade-up">
+      <img src="/img/michelle-pellon-headshot-184.webp" alt="Michelle Pellon" class="hero-portrait" width="184" height="184" />
+      <h1 class="hero-intro">
         Technology and AI value creation for <span class="nowrap">multi-site</span>, <span class="nowrap">PE-backed</span> healthcare.
       </h1>
-      <p class="hero-sub fade-up">
+      <p class="hero-sub">
         I'm Michelle Pellon, VP, AI &amp; Analytics at <a href="https://www.bluesprig.com/">BlueSprig Pediatrics</a>, a KKR-backed pediatric ABA provider with 3,000+ clinicians across 150+ sites. I have reported to the CEO in every role since 2019 and present to the board. Before BlueSprig, I carried technology through two sponsor transactions, both at Waud Capital portfolio companies. Multi-site outpatient care runs on one operating model, whether it is ABA, chiropractic, or optometry. I <a href="https://github.com/michellepellon">still write code</a>.
       </p>
     </section>
